@@ -7,34 +7,18 @@
   #body
 ]
 
-#let code_box(body, width: 80%) = align(center)[
+#let terminal_box(body, fill, stroke, text_fill, width: 80%) = align(center)[
   #rect(
     width: width,
-    fill: rgb("f8fafc"),
-    stroke: 1pt + rgb("cbd5e1"),
-    radius: 6pt,
-    inset: 14pt,
-  )[
-    #align(left)[
-      #set par(justify: false)
-      #set text(font: ("DejaVu Sans Mono", "Liberation Mono"), size: 10pt)
-      #body
-    ]
-  ]
-]
-
-#let output_box(body, width: 80%) = align(center)[
-  #rect(
-    width: width,
-    fill: rgb("1f2937"),
-    stroke: 1pt + rgb("4b5563"),
+    fill: fill,
+    stroke: 1pt + stroke,
     radius: 6pt,
     inset: 14pt,
   )[
     #align(left)[
       #set par(justify: false)
       #text(
-        fill: white,
+        fill: text_fill,
         size: 10pt,
         font: ("DejaVu Sans Mono", "Liberation Mono"),
       )[
@@ -43,3 +27,19 @@
     ]
   ]
 ]
+
+#let code_box(body, width: 80%) = terminal_box(
+  body,
+  rgb("f8fafc"),
+  rgb("cbd5e1"),
+  rgb("0f172a"),
+  width: width,
+)
+
+#let output_box(body, width: 80%) = terminal_box(
+  body,
+  rgb("1f2937"),
+  rgb("4b5563"),
+  white,
+  width: width,
+)
