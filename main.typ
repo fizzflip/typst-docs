@@ -19,17 +19,16 @@
 
 #align(center)[#text(size: 22pt, weight: "bold")[Index of Practicals]]
 
-#v(0.8em)
-#text(size: 14pt)[Index of Experiments]
+#v(2em)
 
 #for item in practicals [
-- Practical #item.at(0)
+  #text(size: 18pt)[Practical #item.at(0) \ #v(0.05em) ]
 ]
 
 #pagebreak()
 
 #for (i, item) in practicals.enumerate() [
-  #include("experiments/practical-" + item.at(1) + ".typ")
+  #include ("experiments/practical-" + item.at(1) + ".typ")
   #if i < practicals.len() - 1 [
     #pagebreak()
   ]
