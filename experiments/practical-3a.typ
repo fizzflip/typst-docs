@@ -1,12 +1,16 @@
-#align(center)[#text(size: 18pt, weight: "bold")[PRACTICAL - 3A]]
+#import "common.typ": *
 
-#text(size: 14pt, weight: "bold")[Aim:] \
+#practical_title("3A")
+
+#section("Aim")[
 To write a shell script to find the smallest and largest among three given numbers.
+]
 
-#text(size: 14pt, weight: "bold")[Name:] \
+#section("Name")[
 Minimum and Maximum of Three Numbers
+]
 
-#text(size: 14pt, weight: "bold")[Theory:] \
+#section("Theory")[
 Finding the minimum and maximum involves sequentially comparing variables. In Bash, conditional statements (`if`) combined with arithmetic comparison operators (such as `-lt` for less than and `-gt` for greater than) are used to evaluate the relative sizes of the inputs. \
 *Algorithm:*
 - Read three numbers (`a`, `b`, and `c`) from the user.
@@ -14,11 +18,10 @@ Finding the minimum and maximum involves sequentially comparing variables. In Ba
 - Compare the second number `b` with `min` and `max`, updating them if necessary.
 - Compare the third number `c` with `min` and `max`, updating them if necessary.
 - Print the final `min` and `max` values.
+]
 
-#text(size: 14pt, weight: "bold")[Code:] \
-#align(center)[
-  #rect(width: 80%, fill: rgb("f4f0ef"), stroke: 1pt + luma(200), inset: 12pt)[
-    #align(left)[
+#section("Code")[
+  #code_box(width: 80%, [
       ```bash
       #!/bin/bash
       
@@ -41,15 +44,11 @@ Finding the minimum and maximum involves sequentially comparing variables. In Ba
       echo "Smallest number: $min"
       echo "Largest number:  $max"
       ```
-    ]
-  ]
+  ])
 ]
 
-#text(size: 14pt, weight: "bold")[Output:] \
-#align(center)[
-  #rect(width: 80%, fill: rgb("300a24"), stroke: 1pt + black, inset: 12pt)[
-    #align(left)[
-      #text(fill: white, font: "Courier")[
+#section("Output")[
+  #output_box(width: 80%, [
         \$ ./min_max.sh \
         Enter three numbers separated by spaces: 10 25 5 \
         Smallest number: 5 \
@@ -59,12 +58,11 @@ Finding the minimum and maximum involves sequentially comparing variables. In Ba
         Enter three numbers separated by spaces: -3 0 7 \
         Smallest number: -3 \
         Largest number:  7
-      ]
-    ]
-  ]
+  ])
 ]
 
-#text(size: 14pt, weight: "bold")[Conclusion:] \
+#section("Conclusion")[
 The shell script successfully finds the minimum and maximum of three given numbers by utilizing sequential conditional comparisons.
+]
 
 #pagebreak()

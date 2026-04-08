@@ -1,23 +1,26 @@
-#align(center)[#text(size: 18pt, weight: "bold")[PRACTICAL - 7A]]
+#import "common.typ": *
 
-#text(size: 14pt, weight: "bold")[Aim:] \
+#practical_title("7A")
+
+#section("Aim")[
 To write a shell script to reverse the contents of a file.
+]
 
-#text(size: 14pt, weight: "bold")[Name:] \
+#section("Name")[
 File Content Reverser
+]
 
-#text(size: 14pt, weight: "bold")[Theory:] \
+#section("Theory")[
 In Linux, reversing a file typically means reversing the order of its lines (printing from the last line to the first). The `tac` command (which is `cat` spelled backward) is a built-in utility specifically designed for this purpose. If reversing the actual characters on each line is required instead, the `rev` command is used. \
 *Algorithm:*
 - Prompt the user to enter the name of the file.
 - Verify that the file exists and is a regular file.
 - If it exists, use the `tac` command to read and print the file's lines in reverse order.
 - If it does not exist, display an error message.
+]
 
-#text(size: 14pt, weight: "bold")[Code:] \
-#align(center)[
-  #rect(width: 80%, fill: rgb("f4f0ef"), stroke: 1pt + luma(200), inset: 12pt)[
-    #align(left)[
+#section("Code")[
+  #code_box(width: 80%, [
       ```bash
       #!/bin/bash
       
@@ -37,15 +40,11 @@ In Linux, reversing a file typically means reversing the order of its lines (pri
       # (Note: use 'rev "$file"' to reverse characters instead)
       tac "$file"
       ```
-    ]
-  ]
+  ])
 ]
 
-#text(size: 14pt, weight: "bold")[OUTPUT:] \
-#align(center)[
-  #rect(width: 80%, fill: rgb("300a24"), stroke: 1pt + black, inset: 12pt)[
-    #align(left)[
-      #text(fill: white, font: "Courier")[
+#section("Output")[
+  #output_box(width: 80%, [
         \$ cat sample.txt \
         First Line \
         Second Line \
@@ -61,12 +60,11 @@ In Linux, reversing a file typically means reversing the order of its lines (pri
         Third Line \
         Second Line \
         First Line
-      ]
-    ]
-  ]
+  ])
 ]
 
-#text(size: 14pt, weight: "bold")[Conclusion:] \
+#section("Conclusion")[
 The shell script successfully reverses the contents of a specified file by utilizing the `tac` utility to print its lines in reverse order, while also implementing standard file existence validation.
+]
 
 #pagebreak()

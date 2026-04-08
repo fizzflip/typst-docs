@@ -1,12 +1,16 @@
-#align(center)[#text(size: 18pt, weight: "bold")[PRACTICAL - 6]]
+#import "common.typ": *
 
-#text(size: 14pt, weight: "bold")[Aim:] \
+#practical_title("6")
+
+#section("Aim")[
 To write a shell script to count the number of regular files, directories, and symbolic links in a specified directory.
+]
 
-#text(size: 14pt, weight: "bold")[Name:] \
+#section("Name")[
 Directory Contents Counter
+]
 
-#text(size: 14pt, weight: "bold")[Theory:] \
+#section("Theory")[
 In Unix-like operating systems, various file types exist. Shell scripts can differentiate between them using conditional file test operators: `-L` checks for a symbolic link, `-f` checks for a regular file, and `-d` checks for a directory. It is important to test for symbolic links first, as a link pointing to a file or directory will also evaluate as true for `-f` or `-d`. \
 *Algorithm:*
 - Accept a directory path from the user.
@@ -15,11 +19,10 @@ In Unix-like operating systems, various file types exist. Shell scripts can diff
 - Iterate through the contents of the directory using a loop.
 - Use file test operators to categorize each item and increment the appropriate counter.
 - Display the final tallies.
+]
 
-#text(size: 14pt, weight: "bold")[Code:] \
-#align(center)[
-  #rect(width: 80%, fill: rgb("f4f0ef"), stroke: 1pt + luma(200), inset: 12pt)[
-    #align(left)[
+#section("Code")[
+  #code_box(width: 80%, [
       ```bash
       #!/bin/bash
       
@@ -58,15 +61,11 @@ In Unix-like operating systems, various file types exist. Shell scripts can diff
       echo "Directories    : $d_count"
       echo "Symbolic Links : $l_count"
       ```
-    ]
-  ]
+  ])
 ]
 
-#text(size: 14pt, weight: "bold")[OUTPUT:] \
-#align(center)[
-  #rect(width: 80%, fill: rgb("300a24"), stroke: 1pt + black, inset: 12pt)[
-    #align(left)[
-      #text(fill: white, font: "Courier")[
+#section("Output")[
+  #output_box(width: 80%, [
         \$ ./dir_counter.sh \
         Enter directory path: /invalid_path \
         Error: '/invalid_path' is not a valid directory. \
@@ -78,13 +77,12 @@ In Unix-like operating systems, various file types exist. Shell scripts can diff
         Regular Files  : 42 \
         Directories    : 12 \
         Symbolic Links : 3
-      ]
-    ]
-  ]
+  ])
 ]
 
-#text(size: 14pt, weight: "bold")[Conclusion:] \
+#section("Conclusion")[
 The shell script successfully counts and categorizes the contents of a user-specified directory into regular files, subdirectories, and symbolic links by combining an iterative loop with sequential file test operators.
 
+]
 
 #pagebreak()

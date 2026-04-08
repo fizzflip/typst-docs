@@ -1,12 +1,16 @@
-#align(center)[#text(size: 18pt, weight: "bold")[PRACTICAL - 7B]]
+#import "common.typ": *
 
-#text(size: 14pt, weight: "bold")[Aim:] \
+#practical_title("7B")
+
+#section("Aim")[
 To write a menu-driven shell script to copy, remove, and move a file in Linux.
+]
 
-#text(size: 14pt, weight: "bold")[Name:] \
+#section("Name")[
 Menu-Driven File Manager
+]
 
-#text(size: 14pt, weight: "bold")[Theory:] \
+#section("Theory")[
 Interactive shell scripts can serve as wrappers for standard Unix commands to make them more user-friendly. This script utilizes an infinite `while` loop combined with a `case` statement to continuously present a menu. Based on the selection, it executes the corresponding file operation commands: `cp` (copy), `rm` (remove), or `mv` (move). \
 *Algorithm:*
 - Start an infinite loop to display the menu.
@@ -18,11 +22,10 @@ Interactive shell scripts can serve as wrappers for standard Unix commands to ma
   - For option 3, read source and destination paths, then execute `mv`.
   - For option 4, exit the script.
 - Repeat until the user selects the exit option.
+]
 
-#text(size: 14pt, weight: "bold")[Code:] \
-#align(center)[
-  #rect(width: 80%, fill: rgb("f4f0ef"), stroke: 1pt + luma(200), inset: 12pt)[
-    #align(left)[
+#section("Code")[
+  #code_box(width: 80%, [
       ```bash
       #!/bin/bash
       
@@ -61,15 +64,11 @@ Interactive shell scripts can serve as wrappers for standard Unix commands to ma
           esac
       done
       ```
-    ]
-  ]
+  ])
 ]
 
-#text(size: 14pt, weight: "bold")[OUTPUT:] \
-#align(center)[
-  #rect(width: 80%, fill: rgb("300a24"), stroke: 1pt + black, inset: 12pt)[
-    #align(left)[
-      #text(fill: white, font: "Courier")[
+#section("Output")[
+  #output_box(width: 80%, [
         \$ ./file_manager.sh \
         \
         --- File Operations --- \
@@ -89,12 +88,11 @@ Interactive shell scripts can serve as wrappers for standard Unix commands to ma
         4. Exit \
         Enter your choice (1-4): 4 \
         \$
-      ]
-    ]
-  ]
+  ])
 ]
 
-#text(size: 14pt, weight: "bold")[Conclusion:] \
+#section("Conclusion")[
 The shell script successfully creates a user-friendly, interactive file manager using an infinite loop and a `case` statement to execute standard Unix file operations.
+]
 
 #pagebreak()

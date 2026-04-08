@@ -1,3 +1,5 @@
+#import "experiments/common.typ": *
+
 #align(center)[#text(size: 22pt, weight: "bold")[Operating Systems Lab Manual]]
 
 #v(0.8em)

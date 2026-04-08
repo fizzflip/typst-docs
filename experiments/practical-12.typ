@@ -1,15 +1,20 @@
-#align(center)[#text(size: 18pt, weight: "bold")[PRACTICAL - 12]]
+#import "common.typ": *
 
-#text(size: 14pt, weight: "bold")[Aim:] \
+#practical_title("12")
+
+#section("Aim")[
 To study and practice Linux commands used for user and permissions management, networking, system monitoring, and general utilities.
+]
 
-#text(size: 14pt, weight: "bold")[Name:] \
+#section("Name")[
 Study of System, User, and Network Commands
+]
 
-#text(size: 14pt, weight: "bold")[Theory:] \
+#section("Theory")[
 System administration and daily operations in Linux require a deep understanding of user privileges, network connectivity, and system resources. This suite of commands provides the necessary tools to secure files, diagnose network issues, monitor system health, and utilize general shell features efficiently.
+]
 
-#text(size: 14pt, weight: "bold")[COMMAND SUMMARY:]
+#section("COMMAND SUMMARY")[
 
 #table(
   columns: (15%, 45%, 40%),
@@ -57,12 +62,10 @@ System administration and daily operations in Linux require a deep understanding
   [`man`], [Opens the manual/reference for a command.], [`man chmod`],
   [`alias`], [Creates a shortcut for a longer command.], [`alias ll="ls -la"`],
 )
+]
 
-#text(size: 14pt, weight: "bold")[OUTPUT (Sample Execution):] \
-#align(center)[
-  #rect(width: 80%, fill: rgb("300a24"), stroke: 1pt + black, inset: 12pt)[
-    #align(left)[
-      #text(fill: white, font: "Courier")[
+#section("OUTPUT (Sample Execution)")[
+  #output_box(width: 80%, [
         \$ whoami \
         student \
         \
@@ -78,10 +81,10 @@ System administration and daily operations in Linux require a deep understanding
         \
         --- 127.0.0.1 ping statistics --- \
         1 packets transmitted, 1 received, 0% packet loss, time 0ms
-      ]
-    ]
-  ]
+  ])
 ]
 
-#text(size: 14pt, weight: "bold")[Conclusion:] \
+#section("Conclusion")[
 This experiment provided hands-on experience with administrative and diagnostic Linux commands. These tools are essential for managing user environments, monitoring system resources, and troubleshooting network connectivity.
+
+]

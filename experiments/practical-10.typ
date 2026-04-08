@@ -1,12 +1,16 @@
-#align(center)[#text(size: 18pt, weight: "bold")[PRACTICAL - 10]]
+#import "common.typ": *
 
-#text(size: 14pt, weight: "bold")[Aim:] \
+#practical_title("10")
+
+#section("Aim")[
 To write a C program to create a new process using the fork() system call and compile it using the GCC compiler.
+]
 
-#text(size: 14pt, weight: "bold")[Name:] \
+#section("Name")[
 Process Creation using fork()
+]
 
-#text(size: 14pt, weight: "bold")[Theory:] \
+#section("Theory")[
 In UNIX/Linux operating systems, a new process is created using the `fork()` system call. The newly created process is called the child process, which is an almost exact duplicate of the calling process (the parent). `fork()` returns a process ID (PID): it returns 0 to the child process, a positive integer (the child's PID) to the parent, and a negative value if process creation fails. \
 *Algorithm:*
 - Include the necessary standard libraries (`<stdio.h>`, `<unistd.h>`, `<sys/types.h>`).
@@ -17,11 +21,10 @@ In UNIX/Linux operating systems, a new process is created using the `fork()` sys
   - If the value equals 0, print a message identifying as the child process, displaying its PID (`getpid()`) and its parent's PID (`getppid()`).
   - If the value is greater than 0, print a message identifying as the parent process, displaying its own PID and the newly created child's PID.
 - Exit the program.
+]
 
-#text(size: 14pt, weight: "bold")[Code:] \
-#align(center)[
-  #rect(width: 80%, fill: rgb("f4f0ef"), stroke: 1pt + luma(200), inset: 12pt)[
-    #align(left)[
+#section("Code")[
+  #code_box(width: 80%, [
       ```c
       #include <stdio.h>
       #include <unistd.h>
@@ -53,26 +56,21 @@ In UNIX/Linux operating systems, a new process is created using the `fork()` sys
           return 0;
       }
       ```
-    ]
-  ]
+  ])
 ]
 
-#text(size: 14pt, weight: "bold")[OUTPUT:] \
-#align(center)[
-  #rect(width: 80%, fill: rgb("300a24"), stroke: 1pt + black, inset: 12pt)[
-    #align(left)[
-      #text(fill: white, font: "Courier")[
+#section("Output")[
+  #output_box(width: 80%, [
         \$ gcc process.c -o process \
         \$ ./process \
         PARENT PROCESS -> My PID: 1245 | Created Child's PID: 1246 \
         CHILD PROCESS  -> My PID: 1246 | Parent's PID: 1245
-      ]
-    ]
-  ]
+  ])
 ]
 
-#text(size: 14pt, weight: "bold")[Conclusion:] \
+#section("Conclusion")[
 The C program successfully demonstrates process creation using the `fork()` system call. By evaluating the return value of `fork()`, the program was able to distinguish between the parent and child execution contexts and print their respective Process IDs.
 
+]
 
 #pagebreak()

@@ -1,23 +1,26 @@
-#align(center)[#text(size: 18pt, weight: "bold")[PRACTICAL - 5]]
+#import "common.typ": *
 
-#text(size: 14pt, weight: "bold")[Aim:] \
+#practical_title("5")
+
+#section("Aim")[
 To write a shell script that prints the names of all subdirectories present in the current directory.
+]
 
-#text(size: 14pt, weight: "bold")[Name:] \
+#section("Name")[
 Subdirectory Lister
+]
 
-#text(size: 14pt, weight: "bold")[Theory:] \
+#section("Theory")[
 In Linux/UNIX systems, directories are treated as a special type of file. To filter and display only directories, a script can iterate through all items in a given path and use the file test operator `-d` to check if each item is a directory. Alternatively, shell globbing (like `*/`) can be used to match directories directly. \
 *Algorithm:*
 - Display a header message indicating the current directory.
 - Start a loop to iterate through all items (`*`) in the current directory.
 - For each item, use the conditional test `-d` to check if it is a directory.
 - If the condition is true, print the name of the directory.
+]
 
-#text(size: 14pt, weight: "bold")[Code:] \
-#align(center)[
-  #rect(width: 80%, fill: rgb("f4f0ef"), stroke: 1pt + luma(200), inset: 12pt)[
-    #align(left)[
+#section("Code")[
+  #code_box(width: 80%, [
       ```bash
       #!/bin/bash
       
@@ -32,15 +35,11 @@ In Linux/UNIX systems, directories are treated as a special type of file. To fil
           fi
       done
       ```
-    ]
-  ]
+  ])
 ]
 
-#text(size: 14pt, weight: "bold")[OUTPUT:] \
-#align(center)[
-  #rect(width: 80%, fill: rgb("300a24"), stroke: 1pt + black, inset: 12pt)[
-    #align(left)[
-      #text(fill: white, font: "Courier")[
+#section("Output")[
+  #output_box(width: 80%, [
         \$ ls -l \
         drwxr-xr-x 2 user user 4096 Oct 24 10:00 backups \
         -rw-r--r-- 1 user user  150 Oct 24 10:05 data.txt \
@@ -52,12 +51,11 @@ In Linux/UNIX systems, directories are treated as a special type of file. To fil
         ------------------------------------------- \
         backups \
         projects
-      ]
-    ]
-  ]
+  ])
 ]
 
-#text(size: 14pt, weight: "bold")[Conclusion:] \
+#section("Conclusion")[
 The shell script successfully lists all subdirectories within the current working directory by iterating over its contents and utilizing the `-d` test operator to accurately filter out standard files.
+]
 
 #pagebreak()
