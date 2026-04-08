@@ -1,4 +1,5 @@
 #let practical_title(code) = align(center)[
+  #v(1.5em)
   #text(size: 18pt, weight: "bold")[PRACTICAL - #code]
 ]
 

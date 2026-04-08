@@ -18,10 +18,9 @@
   ("11", "11", <practical-11>),
   ("12", "12", <practical-12>),
 )
-
+#v(4em)
 #align(center)[#text(size: 22pt, weight: "bold")[Index of Practicals]]
-
-#v(2em)
+#v(1.5em)
 
 #for item in practicals [
   #let target = item.at(2)
