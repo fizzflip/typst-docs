@@ -23,10 +23,18 @@
 
 #for item in practicals [
   #let target = item.at(2)
-  #text(size: 18pt)[
-    #link(target)[Practical #item.at(0)] (Page #context counter(page).at(target).first()) \
-    #v(0.05em)
-  ]
+  #grid(
+    columns: (1fr, auto),
+    column-gutter: 1em,
+    align: (left, right),
+    [
+      #text(size: 18pt)[#link(target)[Practical #item.at(0)]]
+    ],
+    [
+      #text(size: 18pt)[#context counter(page).at(target).first() pg]
+    ],
+  )
+  #v(0.15em)
 ]
 
 #pagebreak()
