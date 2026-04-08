@@ -1,20 +1,20 @@
 #import "experiments/common.typ": *
 
 #let practicals = (
-  ("2A", "2a"),
-  ("2B", "2b"),
-  ("3A", "3a"),
-  ("3B", "3b"),
-  ("4", "4"),
-  ("5", "5"),
-  ("6", "6"),
-  ("7A", "7a"),
-  ("7B", "7b"),
-  ("8", "8"),
-  ("9", "9"),
-  ("10", "10"),
-  ("11", "11"),
-  ("12", "12"),
+  ("2A", "2a", <practical-2a>),
+  ("2B", "2b", <practical-2b>),
+  ("3A", "3a", <practical-3a>),
+  ("3B", "3b", <practical-3b>),
+  ("4", "4", <practical-4>),
+  ("5", "5", <practical-5>),
+  ("6", "6", <practical-6>),
+  ("7A", "7a", <practical-7a>),
+  ("7B", "7b", <practical-7b>),
+  ("8", "8", <practical-8>),
+  ("9", "9", <practical-9>),
+  ("10", "10", <practical-10>),
+  ("11", "11", <practical-11>),
+  ("12", "12", <practical-12>),
 )
 
 #align(center)[#text(size: 22pt, weight: "bold")[Index of Practicals]]
@@ -22,7 +22,11 @@
 #v(2em)
 
 #for item in practicals [
-  #text(size: 18pt)[Practical #item.at(0) \ #v(0.05em) ]
+  #let target = item.at(2)
+  #text(size: 18pt)[
+    #link(target)[Practical #item.at(0)] (Page #context counter(page).at(target).first()) \
+    #v(0.05em)
+  ]
 ]
 
 #pagebreak()

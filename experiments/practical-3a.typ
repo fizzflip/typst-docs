@@ -1,5 +1,6 @@
 #import "common.typ": *
 
+<practical-3a>
 #practical_title("3A")
 
 #section("Aim")[
