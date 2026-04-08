@@ -28,11 +28,43 @@
 ]
 
 #let code_box(body, width: 80%) = terminal_box(
-  body,
+  [
+    #stack(
+      spacing: 0pt,
+      rect(
+        width: 100%,
+        fill: rgb("e2e8f0"),
+        stroke: none,
+        inset: (x: 10pt, y: 6pt),
+        radius: (top-left: 6pt, top-right: 6pt, bottom-left: 0pt, bottom-right: 0pt),
+      )[
+        #grid(
+          columns: (auto, auto, auto, 1fr, auto),
+          column-gutter: 5pt,
+          align: (left, center),
+          [#circle(radius: 3pt, fill: rgb("94a3b8"))],
+          [#circle(radius: 3pt, fill: rgb("94a3b8"))],
+          [#circle(radius: 3pt, fill: rgb("94a3b8"))],
+          [],
+          [#text(size: 8pt, fill: rgb("64748b"))[code]],
+        )
+      ],
+      rect(
+        width: 100%,
+        fill: rgb("f8fafc"),
+        stroke: none,
+        inset: (x: 14pt, y: 10pt),
+        radius: (top-left: 0pt, top-right: 0pt, bottom-left: 6pt, bottom-right: 6pt),
+      )[
+        #body
+      ],
+    )
+  ],
   rgb("f8fafc"),
   rgb("cbd5e1"),
   rgb("0f172a"),
   width: width,
+  inset: 0pt,
 )
 
 #let output_box(body, width: 80%) = terminal_box(
