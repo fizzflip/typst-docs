@@ -16,8 +16,15 @@
 ]
 
 #let output_box(body, width: 80%) = align(center)[
-  #rect(width: width, fill: rgb("300a24"), stroke: 1pt + black, inset: 12pt)[
+  #rect(
+    width: width,
+    fill: rgb("1f2937"),
+    stroke: 1pt + rgb("4b5563"),
+    radius: 6pt,
+    inset: 14pt,
+  )[
     #align(left)[
+      #set par(justify: false)
       #text(
         fill: white,
         size: 10pt,
