@@ -8,8 +8,16 @@
 ]
 
 #let code_box(body, width: 80%) = align(center)[
-  #rect(width: width, fill: rgb("f4f0ef"), stroke: 1pt + luma(200), inset: 12pt)[
+  #rect(
+    width: width,
+    fill: rgb("f8fafc"),
+    stroke: 1pt + rgb("cbd5e1"),
+    radius: 6pt,
+    inset: 14pt,
+  )[
     #align(left)[
+      #set par(justify: false)
+      #set text(font: ("DejaVu Sans Mono", "Liberation Mono"), size: 10pt)
       #body
     ]
   ]
