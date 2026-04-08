@@ -17,7 +17,7 @@
   ("12", "12"),
 )
 
-#align(center)[#text(size: 22pt, weight: "bold")[Operating Systems Lab Manual]]
+#align(center)[#text(size: 22pt, weight: "bold")[Index of Practicals]]
 
 #v(0.8em)
 #text(size: 14pt)[Index of Experiments]
