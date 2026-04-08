@@ -95,5 +95,3 @@ Interactive shell scripts can serve as wrappers for standard Unix commands to ma
 #section("Conclusion")[
 The shell script successfully creates a user-friendly, interactive file manager using an infinite loop and a `case` statement to execute standard Unix file operations.
 ]
-
-#pagebreak()

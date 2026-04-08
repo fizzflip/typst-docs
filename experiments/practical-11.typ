@@ -75,5 +75,3 @@ An Operating System provides a command-line interface (CLI) to interact with the
 #section("Conclusion")[
 Through this study, the fundamental Linux commands for system interaction were explored. Proficiency in these commands allows for efficient management of the file system and system resources directly through the shell.
 ]
-
-#pagebreak()

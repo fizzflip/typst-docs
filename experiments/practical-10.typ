@@ -73,5 +73,3 @@ In UNIX/Linux operating systems, a new process is created using the `fork()` sys
 The C program successfully demonstrates process creation using the `fork()` system call. By evaluating the return value of `fork()`, the program was able to distinguish between the parent and child execution contexts and print their respective Process IDs.
 
 ]
-
-#pagebreak()

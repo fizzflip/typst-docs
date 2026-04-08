@@ -65,5 +65,3 @@ While the `tr` command is normally the go-to tool for character swapping in shel
 #section("Conclusion")[
 The shell script successfully performs case inversion on a given string by using `awk` to iterate through individual characters and apply conditional transformations based on regular expression matching.
 ]
-
-#pagebreak()

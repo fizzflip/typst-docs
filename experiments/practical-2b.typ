@@ -62,5 +62,3 @@ The Fibonacci sequence is a series of numbers where the next number is found by 
 #section("Conclusion")[
 The shell script successfully generates the Fibonacci sequence up to the user-specified number of terms using an iterative loop and variable reassignment.
 ]
-
-#pagebreak()

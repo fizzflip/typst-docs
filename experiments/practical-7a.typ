@@ -67,5 +67,3 @@ In Linux, reversing a file typically means reversing the order of its lines (pri
 #section("Conclusion")[
 The shell script successfully reverses the contents of a specified file by utilizing the `tac` utility to print its lines in reverse order, while also implementing standard file existence validation.
 ]
-
-#pagebreak()

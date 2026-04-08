@@ -85,5 +85,3 @@ In Unix-like operating systems, various file types exist. Shell scripts can diff
 The shell script successfully counts and categorizes the contents of a user-specified directory into regular files, subdirectories, and symbolic links by combining an iterative loop with sequential file test operators.
 
 ]
-
-#pagebreak()

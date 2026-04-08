@@ -72,5 +72,3 @@ A menu-driven script presents a list of options to the user and executes specifi
 #section("Conclusion")[
 The shell script successfully implements a menu-driven calculator, utilizing the `case` statement to efficiently route user input to the correct arithmetic operation and display the computed result.
 ]
-
-#pagebreak()

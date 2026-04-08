@@ -58,5 +58,3 @@ In Linux/UNIX systems, directories are treated as a special type of file. To fil
 #section("Conclusion")[
 The shell script successfully lists all subdirectories within the current working directory by iterating over its contents and utilizing the `-d` test operator to accurately filter out standard files.
 ]
-
-#pagebreak()

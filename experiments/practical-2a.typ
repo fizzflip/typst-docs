@@ -56,5 +56,3 @@ A palindrome is a sequence of characters or digits that reads the same forward a
 #section("Conclusion")[
 The shell script successfully determines whether an entered string or number is a palindrome by effectively reversing it and performing a string comparison.
 ]
-
-#pagebreak()

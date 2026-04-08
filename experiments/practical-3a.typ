@@ -65,5 +65,3 @@ Finding the minimum and maximum involves sequentially comparing variables. In Ba
 #section("Conclusion")[
 The shell script successfully finds the minimum and maximum of three given numbers by utilizing sequential conditional comparisons.
 ]
-
-#pagebreak()

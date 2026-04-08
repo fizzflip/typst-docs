@@ -56,5 +56,3 @@ String manipulation in Bash allows for extracting specific characters using para
 The shell script successfully extracts and prints the digits at the 1st, 3rd, and 5th positions from a 6-digit number by utilizing Bash's built-in string parameter expansion capabilities.
 
 ]
-
-#pagebreak()
