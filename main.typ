@@ -1,25 +1,6 @@
 #import "experiments/common.typ": *
 
-#set page(
-  margin: (top: 1.6cm, bottom: 1.8cm),
-  header: [
-    #text(size: 9pt)[
-      #grid(
-        columns: (1fr, 1fr, 1fr),
-        column-gutter: 1em,
-        align: (left, center, right),
-        [Rahul P Jani],
-        [xxxxxxxxxxxxx],
-        [Operating Systems],
-      )
-    ]
-    #v(-0.1em)
-    #line(length: 100%, stroke: 0.5pt + luma(180))
-  ],
-  footer: [
-    #context align(center)[#text(size: 9pt)[Page #counter(page).display()]]
-  ],
-)
+#set page(margin: (top: 1.6cm, bottom: 1.8cm))
 
 #let practicals = (
   ("2A", "2a", <practical-2a>),
@@ -59,6 +40,27 @@
 ]
 
 #pagebreak()
+
+#counter(page).update(1)
+#set page(
+  header: [
+    #text(size: 9pt)[
+      #grid(
+        columns: (1fr, 1fr, 1fr),
+        column-gutter: 1em,
+        align: (left, center, right),
+        [Rahul P Jani],
+        [xxxxxxxxxxxxx],
+        [Operating Systems],
+      )
+    ]
+    #v(-0.1em)
+    #line(length: 100%, stroke: 0.5pt + luma(180))
+  ],
+  footer: [
+    #context align(center)[#text(size: 9pt)[Page #counter(page).display()]]
+  ],
+)
 
 #for (i, item) in practicals.enumerate() [
   #include ("experiments/practical-" + item.at(1) + ".typ")
