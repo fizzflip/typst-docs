@@ -26,7 +26,7 @@ String manipulation in Bash allows for extracting specific characters using para
       ```bash
       #!/bin/bash
       
-      # [Boilerplate] Prompt user for input
+      # Prompt user for input
       read -p "Enter a 6-digit number: " num
       
       # Core Logic: Use parameter expansion to extract characters by index (0-based)
@@ -34,7 +34,7 @@ String manipulation in Bash allows for extracting specific characters using para
       pos3=${num:2:1}
       pos5=${num:4:1}
       
-      # [Boilerplate] Print the results
+      # Print the results
       echo "Digits at odd positions (1st, 3rd, 5th): $pos1, $pos3, $pos5"
       ```
   ])

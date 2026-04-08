@@ -27,7 +27,7 @@ In Unix-like operating systems, various file types exist. Shell scripts can diff
       ```bash
       #!/bin/bash
       
-      # [Boilerplate] Prompt user and validate input
+      # Prompt user and validate input
       read -p "Enter directory path: " target_dir
       
       if [ ! -d "$target_dir" ]; then
@@ -55,7 +55,7 @@ In Unix-like operating systems, various file types exist. Shell scripts can diff
           fi
       done
       
-      # [Boilerplate] Print the results
+      # Print the results
       echo "Statistics for $target_dir:"
       echo "---------------------------"
       echo "Regular Files  : $f_count"

@@ -27,7 +27,7 @@ While the `tr` command is normally the go-to tool for character swapping in shel
       ```bash
       #!/bin/bash
       
-      # [Boilerplate] Prompt user for input
+      # Prompt user for input
       read -p "Enter a string to toggle case: " input
       echo -n "Converted string: "
       

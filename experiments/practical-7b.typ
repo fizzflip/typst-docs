@@ -32,7 +32,7 @@ Interactive shell scripts can serve as wrappers for standard Unix commands to ma
       
       # Core Logic: Infinite loop to keep the menu active until exit
       while true; do
-          # [Boilerplate] Display menu options
+          # Display menu options
           echo -e "\n--- File Operations ---"
           echo "1. Copy a file"
           echo "2. Remove a file"
@@ -60,7 +60,7 @@ Interactive shell scripts can serve as wrappers for standard Unix commands to ma
                   exit 0 # Exit the script successfully
                   ;;
               *)
-                  echo "Invalid choice. Please select 1-4." # [Boilerplate] Error handling
+                  echo "Invalid choice. Please select 1-4." # Error handling
                   ;;
           esac
       done

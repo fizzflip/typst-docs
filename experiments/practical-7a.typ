@@ -25,7 +25,7 @@ In Linux, reversing a file typically means reversing the order of its lines (pri
       ```bash
       #!/bin/bash
       
-      # [Boilerplate] Prompt user for filename
+      # Prompt user for filename
       read -p "Enter the filename to reverse: " file
       
       # Check if file exists to prevent errors
@@ -34,7 +34,7 @@ In Linux, reversing a file typically means reversing the order of its lines (pri
           exit 1
       fi
       
-      # [Boilerplate] Print header
+      # Print header
       echo "--- Reversed Contents ---"
       
       # Core Logic: Use 'tac' to reverse lines

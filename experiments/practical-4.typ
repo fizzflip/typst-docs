@@ -26,11 +26,11 @@ A menu-driven script presents a list of options to the user and executes specifi
       ```bash
       #!/bin/bash
       
-      # [Boilerplate] Prompt for two input numbers
+      # Prompt for two input numbers
       read -p "Enter first number: " a
       read -p "Enter second number: " b
       
-      # [Boilerplate] Display options and read choice
+      # Display options and read choice
       echo -e "\nOptions: 1) Add 2) Subtract 3) Multiply 4) Divide"
       read -p "Enter your choice (1-4): " ch
       
@@ -40,10 +40,10 @@ A menu-driven script presents a list of options to the user and executes specifi
           2) res=$((a - b)) ;;
           3) res=$((a * b)) ;;
           4) res=$((a / b)) ;; # Note: Performs integer division
-          *) echo "Invalid choice"; exit 1 ;; # [Boilerplate] Error handling
+          *) echo "Invalid choice"; exit 1 ;; # Error handling
       esac
       
-      # [Boilerplate] Print output
+      # Print output
       echo "Result: $res"
       ```
   ])

@@ -34,7 +34,7 @@ In UNIX/Linux operating systems, a new process is created using the `fork()` sys
       int main() {
           pid_t pid;
       
-          // [Boilerplate] Call fork() to create a child process
+          // Call fork() to create a child process
           pid = fork();
       
           // Core Logic: Determine execution context based on fork's return value

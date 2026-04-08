@@ -25,7 +25,7 @@ In Linux/UNIX systems, directories are treated as a special type of file. To fil
       ```bash
       #!/bin/bash
       
-      # [Boilerplate] Print header
+      # Print header
       echo "Subdirectories in current directory ($(pwd)):"
       echo "-------------------------------------------"
       

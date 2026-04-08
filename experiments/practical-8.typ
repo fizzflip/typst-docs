@@ -29,7 +29,7 @@ System administrators regularly monitor disk space to prevent system crashes. Th
       
       THRESHOLD=80
       
-      # [Boilerplate] Print startup message
+      # Print startup message
       echo "Monitoring disk usage (Alert threshold: >= $THRESHOLD%)..."
       echo "---------------------------------------------------------"
       

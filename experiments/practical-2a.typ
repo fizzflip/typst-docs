@@ -25,7 +25,7 @@ A palindrome is a sequence of characters or digits that reads the same forward a
       ```bash
       #!/bin/bash
       
-      # [Boilerplate] Prompt user for input
+      # Prompt user for input
       read -p "Enter a string or number: " input
       
       # Reverse the input

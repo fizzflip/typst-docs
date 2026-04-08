@@ -26,7 +26,7 @@ Finding the minimum and maximum involves sequentially comparing variables. In Ba
       ```bash
       #!/bin/bash
       
-      # [Boilerplate] Prompt user for input
+      # Prompt user for input
       read -p "Enter three numbers separated by spaces: " a b c
       
       # Core Logic: Initialize min and max to the first number
@@ -41,7 +41,7 @@ Finding the minimum and maximum involves sequentially comparing variables. In Ba
       if [ $c -lt $min ]; then min=$c; fi
       if [ $c -gt $max ]; then max=$c; fi
       
-      # [Boilerplate] Print the results
+      # Print the results
       echo "Smallest number: $min"
       echo "Largest number:  $max"
       ```
