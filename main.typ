@@ -46,6 +46,17 @@
 
 #counter(page).update(1)
 #set page(
+  margin: (top: 3.0cm, bottom: 1.8cm),
+  background: [
+    #place(top + center, dy: 2.1cm)[
+      #box(
+        width: 85%,
+        height: 100% - 2.6cm,
+        inset: 0pt,
+        stroke: 0.7pt + luma(180),
+      )[]
+    ]
+  ],
   header: [
     #text(size: 9pt)[
       #grid(
