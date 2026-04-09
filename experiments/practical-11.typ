@@ -15,7 +15,7 @@
   An Operating System provides a command-line interface (CLI) to interact with the system kernel. In Linux, the shell interprets these commands to perform system-level tasks. Understanding these commands is fundamental for navigating the file system, manipulating data, and controlling running processes.
 ]
 
-#section("COMMAND SUMMARY")[
+#section("Commands")[
 
   #table(
     columns: (15%, 45%, 40%),
@@ -55,7 +55,8 @@
   )
 ]
 
-#section("OUTPUT (Sample Execution)")[
+#pagebreak()
+#section("Output")[
   #output_box(width: 80%, [
     \$ pwd \
     /home/user/lab \

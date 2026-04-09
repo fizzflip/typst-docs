@@ -48,6 +48,8 @@
   ])
 ]
 
+#pagebreak()
+
 #section("Output")[
   #output_box(width: 80%, [
     \$ ./min_max.sh \

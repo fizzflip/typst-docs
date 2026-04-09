@@ -44,6 +44,8 @@
   ])
 ]
 
+#pagebreak()
+
 #section("Output")[
   #output_box(width: 80%, [
     \$ cat sample.txt \

@@ -15,7 +15,7 @@
   System administration and daily operations in Linux require a deep understanding of user privileges, network connectivity, and system resources. This suite of commands provides the necessary tools to secure files, diagnose network issues, monitor system health, and utilize general shell features efficiently.
 ]
 
-#section("COMMAND SUMMARY")[
+#section("Commands")[
 
   #table(
     columns: (15%, 45%, 40%),
@@ -65,7 +65,7 @@
   )
 ]
 
-#section("OUTPUT (Sample Execution)")[
+#section("Output")[
   #output_box(width: 80%, [
     \$ whoami \
     student \

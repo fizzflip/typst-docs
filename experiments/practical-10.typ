@@ -24,8 +24,10 @@
   - Exit the program.
 ]
 
+#pagebreak()
+
 #section("Code")[
-  #code_box(width: 80%, [
+  #code_box(width: 90%, [
     ```c
     #include <stdio.h>
     #include <unistd.h>
@@ -61,7 +63,7 @@
 ]
 
 #section("Output")[
-  #output_box(width: 80%, [
+  #output_box(width: 90%, [
     \$ gcc process.c -o process \
     \$ ./process \
     PARENT PROCESS -> My PID: 1245 | Created Child's PID: 1246 \

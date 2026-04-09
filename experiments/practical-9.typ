@@ -50,6 +50,8 @@
   ])
 ]
 
+#pagebreak()
+
 #section("Output")[
   #output_box(width: 80%, [
     \$ ./case_toggle.sh \

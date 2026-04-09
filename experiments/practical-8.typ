@@ -46,6 +46,8 @@
   ])
 ]
 
+#pagebreak()
+
 #section("Output")[
   #output_box(width: 80%, [
     \$ ./disk_monitor.sh \

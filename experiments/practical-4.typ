@@ -49,6 +49,8 @@
   ])
 ]
 
+#pagebreak()
+
 #section("Output")[
   #output_box(width: 80%, [
     \$ ./calculator.sh \

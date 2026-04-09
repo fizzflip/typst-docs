@@ -22,8 +22,10 @@
   - Display the final tallies.
 ]
 
+#pagebreak()
+
 #section("Code")[
-  #code_box(width: 80%, [
+  #code_box(width: 90%, [
     ```bash
     #!/bin/bash
 
@@ -44,7 +46,6 @@
     for item in "$target_dir"/*; do
         # Skip if directory is empty (prevents '*' from being treated as a file)
         [ -e "$item" ] || [ -L "$item" ] || continue
-
         # Note: Check for links FIRST, as links to files also pass the -f test
         if [ -L "$item" ]; then
             ((l_count++))

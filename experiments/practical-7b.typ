@@ -25,8 +25,10 @@
   - Repeat until the user selects the exit option.
 ]
 
+#pagebreak()
+
 #section("Code")[
-  #code_box(width: 80%, [
+  #code_box(width: 90%, [
     ```bash
     #!/bin/bash
 
@@ -67,6 +69,8 @@
     ```
   ])
 ]
+
+#pagebreak()
 
 #section("Output")[
   #output_box(width: 80%, [
