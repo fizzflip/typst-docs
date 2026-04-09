@@ -1,6 +1,9 @@
 #import "experiments/common.typ": *
 
-#set page(margin: (top: 1.6cm, bottom: 1.8cm))
+#set page(
+  paper: "a4",
+  margin: (top: 1.6cm, bottom: 1.8cm),
+)
 
 #let practicals = (
   ("2A", "2a", <practical-2a>),
@@ -48,9 +51,7 @@
         columns: (1fr, 1fr, 1fr),
         column-gutter: 1em,
         align: (left, center, right),
-        [Rahul P Jani],
-        [xxxxxxxxxxxxx],
-        [Operating Systems],
+        [Rahul P Jani], [xxxxxxxxxxxxx], [Operating Systems],
       )
     ]
     #v(-0.1em)
