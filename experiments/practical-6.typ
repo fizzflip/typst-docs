@@ -12,17 +12,8 @@
 ]
 
 #section("Theory")[
-  In Unix-like operating systems, various file types exist. Shell scripts can differentiate between them using conditional file test operators: `-L` checks for a symbolic link, `-f` checks for a regular file, and `-d` checks for a directory. It is important to test for symbolic links first, as a link pointing to a file or directory will also evaluate as true for `-f` or `-d`. \
-  *Algorithm:*
-  - Accept a directory path from the user.
-  - Validate if the given path exists and is a directory.
-  - Initialize counters for files, directories, and links to zero.
-  - Iterate through the contents of the directory using a loop.
-  - Use file test operators to categorize each item and increment the appropriate counter.
-  - Display the final tallies.
+  In Unix-like operating systems, various file types exist. Shell scripts can differentiate between them using conditional file test operators: `-L` checks for a symbolic link, `-f` checks for a regular file, and `-d` checks for a directory. It is important to test for symbolic links first, as a link pointing to a file or directory will also evaluate as true for `-f` or `-d`.
 ]
-
-#pagebreak()
 
 #section("Code")[
   #code_box(width: 90%, [
@@ -65,6 +56,8 @@
     ```
   ])
 ]
+
+#pagebreak()
 
 #section("Output")[
   #output_box(width: 80%, [

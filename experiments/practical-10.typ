@@ -12,19 +12,8 @@
 ]
 
 #section("Theory")[
-  In UNIX/Linux operating systems, a new process is created using the `fork()` system call. The newly created process is called the child process, which is an almost exact duplicate of the calling process (the parent). `fork()` returns a process ID (PID): it returns 0 to the child process, a positive integer (the child's PID) to the parent, and a negative value if process creation fails. \
-  *Algorithm:*
-  - Include the necessary standard libraries (`<stdio.h>`, `<unistd.h>`, `<sys/types.h>`).
-  - Declare a variable of type `pid_t` to store the process ID.
-  - Call the `fork()` function and assign its return value to the variable.
-  - Use an `if-else` block to evaluate the return value:
-    - If the value is less than 0, print an error message (Fork failed).
-    - If the value equals 0, print a message identifying as the child process, displaying its PID (`getpid()`) and its parent's PID (`getppid()`).
-    - If the value is greater than 0, print a message identifying as the parent process, displaying its own PID and the newly created child's PID.
-  - Exit the program.
+  In UNIX/Linux operating systems, a new process is created using the `fork()` system call. The newly created process is called the child process, which is an almost exact duplicate of the calling process (the parent). `fork()` returns a process ID (PID): it returns 0 to the child process, a positive integer (the child's PID) to the parent, and a negative value if process creation fails.
 ]
-
-#pagebreak()
 
 #section("Code")[
   #code_box(width: 90%, [
@@ -45,13 +34,11 @@
             fprintf(stderr, "Error: Process creation failed!\n");
             return 1;
         }
-        else if (pid == 0) {
-            // Child process context
+        else if (pid == 0) { // Child process context
             printf("CHILD PROCESS  -> My PID: %d | Parent's PID: %d\n",
                    getpid(), getppid());
         }
-        else {
-            // Parent process context
+        else { // Parent process context
             printf("PARENT PROCESS -> My PID: %d | Created Child's PID: %d\n",
                    getpid(), pid);
         }
@@ -61,7 +48,7 @@
     ```
   ])
 ]
-
+// #pagebreak()
 #section("Output")[
   #output_box(width: 90%, [
     \$ gcc process.c -o process \

@@ -13,11 +13,6 @@
 
 #section("Theory")[
   In Linux/UNIX systems, directories are treated as a special type of file. To filter and display only directories, a script can iterate through all items in a given path and use the file test operator `-d` to check if each item is a directory. Alternatively, shell globbing (like `*/`) can be used to match directories directly. \
-  *Algorithm:*
-  - Display a header message indicating the current directory.
-  - Start a loop to iterate through all items (`*`) in the current directory.
-  - For each item, use the conditional test `-d` to check if it is a directory.
-  - If the condition is true, print the name of the directory.
 ]
 
 #section("Code")[

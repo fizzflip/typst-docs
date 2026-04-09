@@ -12,14 +12,7 @@
 ]
 
 #section("Theory")[
-  The Fibonacci sequence is a series of numbers where the next number is found by adding up the two numbers before it. Generating this computationally requires maintaining two variables that represent the previous two terms, printing the current term, and iteratively updating the variables. \
-  *Algorithm:*
-  - Read the desired number of terms ($n$) from the user.
-  - Initialize the first two terms: `a = 1` and `b = 1`.
-  - Start a loop that runs $n$ times.
-  - In each iteration, print the current value of `a`.
-  - Calculate the next term (`next = a + b`).
-  - Update the variables (`a = b` and `b = next`).
+  The Fibonacci sequence is a series of numbers where the next number is found by adding up the two numbers before it. Generating this computationally requires maintaining two variables that represent the previous two terms, printing the current term, and iteratively updating the variables.
 ]
 
 #section("Code")[
