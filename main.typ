@@ -6,6 +6,7 @@
 )
 
 #let practicals = (
+  ("1", "1", <practical-1>),
   ("2A", "2a", <practical-2a>),
   ("2B", "2b", <practical-2b>),
   ("3A", "3a", <practical-3a>),
