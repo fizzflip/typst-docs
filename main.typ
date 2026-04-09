@@ -70,15 +70,15 @@
     ]
   ],
   header: [
-    #text(size: 9pt)[
+    #text(size: 9pt, font: ("DejaVu Sans Mono", "Liberation Mono"))[
       #grid(
         columns: (1fr, 1fr, 1fr),
         column-gutter: 1em,
         align: (left, center, right),
-        [Rahul P Jani], [xxxxxxxxxxxxx], [Operating Systems],
+        [Rahul P Jani], [xxxxxxxxxxxx], [Operating System],
       )
     ]
-    #v(-0.1em)
+    #v(0.25em)
     #line(length: 100%, stroke: 0.5pt + luma(180))
   ],
   footer: [
