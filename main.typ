@@ -50,10 +50,22 @@
   background: [
     #place(top + center, dy: 2.1cm)[
       #box(
-        width: 85%,
+        width: 86%,
         height: 100% - 2.6cm,
         inset: 0pt,
-        stroke: 0.7pt + luma(180),
+        radius: 8pt,
+        stroke: 1.1pt + rgb("94a3b8"),
+        fill: none,
+      )[]
+    ]
+    #place(top + center, dy: 2.35cm)[
+      #box(
+        width: 83.8%,
+        height: 100% - 3.1cm,
+        inset: 0pt,
+        radius: 6pt,
+        stroke: 0.6pt + rgb("cbd5e1"),
+        fill: none,
       )[]
     ]
   ],
