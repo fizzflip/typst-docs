@@ -7,7 +7,14 @@
   #body
 ]
 
-#let terminal_box(body, fill, stroke, text_fill, width: 80%, inset: 14pt) = align(center)[
+#let terminal_box(
+  body,
+  fill,
+  stroke,
+  text_fill,
+  width: 80%,
+  inset: 14pt,
+) = align(center)[
   #rect(
     width: width,
     fill: fill,
@@ -36,7 +43,12 @@
         fill: rgb("e2e8f0"),
         stroke: none,
         inset: (x: 10pt, y: 6pt),
-        radius: (top-left: 6pt, top-right: 6pt, bottom-left: 0pt, bottom-right: 0pt),
+        radius: (
+          top-left: 6pt,
+          top-right: 6pt,
+          bottom-left: 0pt,
+          bottom-right: 0pt,
+        ),
       )[
         #grid(
           columns: (auto, auto, auto, 1fr, auto),
@@ -46,7 +58,7 @@
           [#circle(radius: 3pt, fill: rgb("94a3b8"))],
           [#circle(radius: 3pt, fill: rgb("94a3b8"))],
           [],
-          [#text(size: 8pt, fill: rgb("64748b"))[code]],
+          [#text(size: 8pt, fill: rgb("64748b"))[script]],
         )
       ],
       rect(
@@ -54,7 +66,12 @@
         fill: rgb("f8fafc"),
         stroke: none,
         inset: (x: 14pt, y: 10pt),
-        radius: (top-left: 0pt, top-right: 0pt, bottom-left: 6pt, bottom-right: 6pt),
+        radius: (
+          top-left: 0pt,
+          top-right: 0pt,
+          bottom-left: 6pt,
+          bottom-right: 6pt,
+        ),
       )[
         #body
       ],
@@ -76,7 +93,12 @@
         fill: rgb("111827"),
         stroke: none,
         inset: (x: 10pt, y: 6pt),
-        radius: (top-left: 6pt, top-right: 6pt, bottom-left: 0pt, bottom-right: 0pt),
+        radius: (
+          top-left: 6pt,
+          top-right: 6pt,
+          bottom-left: 0pt,
+          bottom-right: 0pt,
+        ),
       )[
         #grid(
           columns: (auto, auto, auto, 1fr, auto),
@@ -94,7 +116,12 @@
         fill: rgb("1f2937"),
         stroke: none,
         inset: (x: 14pt, y: 10pt),
-        radius: (top-left: 0pt, top-right: 0pt, bottom-left: 6pt, bottom-right: 6pt),
+        radius: (
+          top-left: 0pt,
+          top-right: 0pt,
+          bottom-left: 6pt,
+          bottom-right: 6pt,
+        ),
       )[
         #body
       ],

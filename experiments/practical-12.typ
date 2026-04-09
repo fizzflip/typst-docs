@@ -24,9 +24,17 @@
     fill: (x, y) => if y == 0 { silver },
     [*Command*], [*Description*], [*Example Usage*],
     [`who`], [Lists users currently logged into the system.], [`who`],
-    [`whoami`], [Prints the effective username of the current user.], [`whoami`],
-    [`chmod`], [Changes access permissions (Read/Write/Execute).], [`chmod 755 script.sh`],
-    [`chown`], [Changes file/directory owner and group.], [`sudo chown user:grp file`],
+    [`whoami`],
+    [Prints the effective username of the current user.],
+    [`whoami`],
+
+    [`chmod`],
+    [Changes access permissions (Read/Write/Execute).],
+    [`chmod 755 script.sh`],
+
+    [`chown`],
+    [Changes file/directory owner and group.],
+    [`sudo chown user:grp file`],
   )
 
   #table(
@@ -35,8 +43,14 @@
     align: horizon,
     fill: (x, y) => if y == 0 { silver },
     [*Command*], [*Description*], [*Example Usage*],
-    [`ping`], [Tests reachability of a host via ICMP packets.], [`ping -c 4 google.com`],
-    [`ifconfig`], [Legacy tool to view/configure network interfaces.], [`ifconfig`],
+    [`ping`],
+    [Tests reachability of a host via ICMP packets.],
+    [`ping -c 4 google.com`],
+
+    [`ifconfig`],
+    [Legacy tool to view/configure network interfaces.],
+    [`ifconfig`],
+
     [`ip a`], [Modern tool to show network device addresses.], [`ip a`],
   )
 
@@ -50,7 +64,7 @@
     [`free`], [Displays amount of free and used memory (`-h`).], [`free -h`],
     [`uname`], [Prints system information and kernel version.], [`uname -a`],
   )
-
+  #pagebreak()
   #table(
     columns: (15%, 45%, 40%),
     inset: 7pt,
@@ -61,7 +75,9 @@
     [`date`], [Displays or sets the system date and time.], [`date "+%D"`],
     [`history`], [Shows the list of previously executed commands.], [`history`],
     [`man`], [Opens the manual/reference for a command.], [`man chmod`],
-    [`alias`], [Creates a shortcut for a longer command.], [`alias ll="ls -la"`],
+    [`alias`],
+    [Creates a shortcut for a longer command.],
+    [`alias ll="ls -la"`],
   )
 ]
 
@@ -87,5 +103,4 @@
 
 #section("Conclusion")[
   This experiment provided hands-on experience with administrative and diagnostic Linux commands. These tools are essential for managing user environments, monitoring system resources, and troubleshooting network connectivity.
-
 ]

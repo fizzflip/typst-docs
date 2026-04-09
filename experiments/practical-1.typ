@@ -30,7 +30,9 @@
 #pagebreak()
 
 #text(size: 14pt, weight: "bold")[Installation Walkthrough:] \
-#text(size: 12pt)[Step 1: Start installation by selecting language on the initial welcome screen.] \
+#text(
+  size: 12pt,
+)[Step 1: Start installation by selecting language on the initial welcome screen.] \
 #align(center)[
   #figure(
     image("assets/ubuntu-25-install-01-language.png", width: 88%),
@@ -39,7 +41,9 @@
 ]
 
 #v(0.6em)
-#text(size: 12pt)[Step 2: Configure optimization options (drivers/codecs) based on lab requirements.] \
+#text(
+  size: 12pt,
+)[Step 2: Configure optimization options (drivers/codecs) based on lab requirements.] \
 #align(center)[
   #figure(
     image("assets/ubuntu-25-install-02-optimise.png", width: 88%),
@@ -47,7 +51,9 @@
   )
 ]
 #pagebreak()
-#text(size: 12pt)[Step 3: Choose installation method in disk setup and select dual-boot option if required.] \
+#text(
+  size: 12pt,
+)[Step 3: Choose installation method in disk setup and select dual-boot option if required.] \
 #align(center)[
   #figure(
     image("assets/ubuntu-25-install-03-disk-setup.png", width: 88%),
@@ -56,7 +62,9 @@
 ]
 
 #v(0.6em)
-#text(size: 12pt)[Step 4: Allocate partition space using the resize slider and finalize storage layout.] \
+#text(
+  size: 12pt,
+)[Step 4: Allocate partition space using the resize slider and finalize storage layout.] \
 #align(center)[
   #figure(
     image("assets/ubuntu-25-install-04-partition-slider.png", width: 88%),
@@ -64,7 +72,9 @@
   )
 ]
 #pagebreak()
-#text(size: 12pt)[Step 5: Create the primary user account and set login security options.] \
+#text(
+  size: 12pt,
+)[Step 5: Create the primary user account and set login security options.] \
 #align(center)[
   #figure(
     image("assets/ubuntu-25-install-06-create-account.png", width: 88%),
@@ -84,7 +94,9 @@
 ]
 
 #pagebreak()
-#text(size: 12pt)[Step 7: After first boot, verify installed system details from Settings -> About.] \
+#text(
+  size: 12pt,
+)[Step 7: After first boot, verify installed system details from Settings -> About.] \
 #align(center)[
   #figure(
     image("assets/ubuntu-25-install-07-system-about.png", width: 88%),
