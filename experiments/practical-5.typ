@@ -35,7 +35,7 @@
 ]
 
 #section("Output")[
-  #output_box(width: 80%, [
+  #output_box(width: 90%, [
     \$ ls -l \
     drwxr-xr-x 2 user user 4096 Oct 24 10:00 backups \
     -rw-r--r-- 1 user user  150 Oct 24 10:05 data.txt \
@@ -44,7 +44,7 @@
     \
     \$ ./subdir_lister.sh \
     Subdirectories in current directory (/home/user/workspace): \
-    ------------------------------------------- \
+    -------------------------------------------- \
     backups \
     projects
   ])

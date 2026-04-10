@@ -82,7 +82,7 @@
 ]
 
 #section("Output")[
-  #output_box(width: 80%, [
+  #output_box(width: 90%, [
     \$ whoami \
     student \
     \

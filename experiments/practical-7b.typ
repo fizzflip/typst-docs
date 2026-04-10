@@ -15,6 +15,8 @@
   Interactive shell scripts can serve as wrappers for standard Unix commands to make them more user-friendly. This script utilizes an infinite `while` loop combined with a `case` statement to continuously present a menu. Based on the selection, it executes the corresponding file operation commands: `cp` (copy), `rm` (remove), or `mv` (move).
 ]
 
+#pagebreak()
+
 #section("Code")[
   #code_box(width: 90%, [
     ```bash

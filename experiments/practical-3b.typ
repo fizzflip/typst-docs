@@ -21,6 +21,8 @@
   - Print the extracted digits.
 ]
 
+#pagebreak()
+
 #section("Code")[
   #code_box(width: 80%, [
     ```bash
