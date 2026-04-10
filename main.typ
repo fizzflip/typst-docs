@@ -30,9 +30,11 @@
   #let title = item.at(0)
   #let target = item.at(2)
   #let group_num = title.replace("A", "").replace("B", "").replace("C", "")
-  
+
   #let prev_title = if i > 0 { practicals.at(i - 1).at(0) } else { "" }
-  #let prev_group = prev_title.replace("A", "").replace("B", "").replace("C", "")
+  #let prev_group = (
+    prev_title.replace("A", "").replace("B", "").replace("C", "")
+  )
 
   #if group_num != prev_group [
     #grid(
@@ -98,17 +100,22 @@
   #let title = item.at(0)
   #let is_grouped = title.contains("A") or title.contains("B")
   #let group_num = title.replace("A", "").replace("B", "")
-  
+
   #let prev_title = if i > 0 { practicals.at(i - 1).at(0) } else { "" }
   #let prev_group = prev_title.replace("A", "").replace("B", "")
 
   #if is_grouped and group_num != prev_group [
+    #v(0.35cm)
     #align(center)[#text(size: 18pt, weight: "bold")[PRACTICAL - #group_num]]
-    #v(1.5em)
+    #v(0.15cm)
   ]
 
   #if is_grouped [
-    #let part_label = if title.contains("A") { "I" } else if title.contains("B") { "II" } else if title.contains("C") { "III" } else { "" }
+    #let part_label = if title.contains("A") { "I" } else if title.contains(
+      "B",
+    ) { "II" } else if title.contains("C") {
+      "III"
+    } else { "" }
     #pad(x: -8mm)[
       #grid(
         columns: (1fr, auto, 1fr),
@@ -116,15 +123,17 @@
         column-gutter: 1em,
         line(length: 100%, stroke: 0.6pt + rgb("cbd5e1")),
         text(weight: "bold", size: 13pt, fill: rgb("64748b"))[[ #part_label ]],
-        line(length: 100%, stroke: 0.6pt + rgb("cbd5e1"))
+        line(length: 100%, stroke: 0.6pt + rgb("cbd5e1")),
       )
     ]
-    #v(1em)
+    #v(0.8em)
   ]
 
   #include ("experiments/practical-" + item.at(1) + ".typ")
-  
-  #let next_title = if i < practicals.len() - 1 { practicals.at(i + 1).at(0) } else { "" }
+
+  #let next_title = if i < practicals.len() - 1 {
+    practicals.at(i + 1).at(0)
+  } else { "" }
   #let next_group = next_title.replace("A", "").replace("B", "")
 
   #if i < practicals.len() - 1 [

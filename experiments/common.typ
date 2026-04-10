@@ -2,7 +2,9 @@
   let is_grouped = code.contains("A") or code.contains("B")
   if not is_grouped {
     align(center)[
+      #v(.35cm)
       #text(size: 18pt, weight: "bold")[PRACTICAL - #code]
+      #v(.35cm)
     ]
   }
 }
