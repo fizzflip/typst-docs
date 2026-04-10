@@ -82,6 +82,7 @@
     3. Move a file \
     4. Exit \
     Enter your choice (1-4): 4 \
+    \
     #prompt
   ])
 ]
