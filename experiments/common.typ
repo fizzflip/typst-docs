@@ -6,8 +6,12 @@
     align(center)[
       #v(.35cm)
       #text(size: 18pt, weight: "bold")[PRACTICAL - #code]
-      #v(.35cm)
+      #v(0.15cm)
     ]
+    pad(x: -8mm)[
+      #line(length: 100%, stroke: 0.6pt + rgb("cbd5e1"))
+    ]
+    v(0.8em)
   }
 }
 

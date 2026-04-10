@@ -28,6 +28,7 @@
 ]
 
 #pagebreak()
+#v(.5em)
 
 #text(size: 14pt, weight: "bold")[Installation Walkthrough:] \
 #text(
@@ -51,6 +52,8 @@
   )
 ]
 #pagebreak()
+#v(.5em)
+
 #text(
   size: 12pt,
 )[Step 3: Choose installation method in disk setup and select dual-boot option if required.] \
@@ -72,6 +75,8 @@
   )
 ]
 #pagebreak()
+#v(.5em)
+
 #text(
   size: 12pt,
 )[Step 5: Create the primary user account and set login security options.] \
@@ -94,6 +99,7 @@
 ]
 
 #pagebreak()
+#v(.5em)
 #text(
   size: 12pt,
 )[Step 7: After first boot, verify installed system details from Settings -> About.] \

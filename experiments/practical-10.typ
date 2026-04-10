@@ -48,7 +48,7 @@
     ```
   ])
 ]
-// #pagebreak()
+#pagebreak()
 #section("Output")[
   #output_box(width: 90%, [
     #prompt gcc process.c -o process \
