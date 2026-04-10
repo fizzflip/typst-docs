@@ -1,3 +1,5 @@
+#let prompt = "someone@mach>"
+
 #let practical_title(code) = {
   let is_grouped = code.contains("A") or code.contains("B")
   if not is_grouped {

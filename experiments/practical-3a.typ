@@ -52,12 +52,12 @@
 
 #section("Output")[
   #output_box(width: 80%, [
-    \$ ./min_max.sh \
+    #prompt ./min_max.sh \
     Enter three numbers separated by spaces: 10 25 5 \
     Smallest number: 5 \
     Largest number:  25 \
     \
-    \$ ./min_max.sh \
+    #prompt ./min_max.sh \
     Enter three numbers separated by spaces: -3 0 7 \
     Smallest number: -3 \
     Largest number:  7

@@ -36,13 +36,13 @@
 
 #section("Output")[
   #output_box(width: 90%, [
-    \$ ls -l \
+    #prompt ls -l \
     drwxr-xr-x 2 user user 4096 Oct 24 10:00 backups \
     -rw-r--r-- 1 user user  150 Oct 24 10:05 data.txt \
     drwxr-xr-x 4 user user 4096 Oct 24 09:30 projects \
     -rwxr-xr-x 1 user user  320 Oct 24 10:15 subdir_lister.sh \
     \
-    \$ ./subdir_lister.sh \
+    #prompt ./subdir_lister.sh \
     Subdirectories in current directory (/home/user/workspace): \
     -------------------------------------------- \
     backups \

@@ -61,11 +61,11 @@
 
 #section("Output")[
   #output_box(width: 80%, [
-    \$ ./dir_counter.sh \
+    #prompt ./dir_counter.sh \
     Enter directory path: /invalid_path \
     Error: '/invalid_path' is not a valid directory. \
     \
-    \$ ./dir_counter.sh \
+    #prompt ./dir_counter.sh \
     Enter directory path: /var/log \
     Statistics for /var/log: \
     --------------------------- \

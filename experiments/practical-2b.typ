@@ -42,11 +42,11 @@
 
 #section("Output")[
   #output_box(width: 80%, [
-    \$ ./fibonacci_generator.sh \
+    #prompt ./fibonacci_generator.sh \
     Enter the number of terms (n): 7 \
     Fibonacci Series: 1 1 2 3 5 8 13 \
     \
-    \$ ./fibonacci_generator.sh \
+    #prompt ./fibonacci_generator.sh \
     Enter the number of terms (n): 10 \
     Fibonacci Series: 1 1 2 3 5 8 13 21 34 55
   ])

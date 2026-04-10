@@ -64,7 +64,7 @@
 
 #section("Output")[
   #output_box(width: 80%, [
-    \$ ./file_manager.sh \
+    #prompt ./file_manager.sh \
     \
     --- File Operations --- \
     1. Copy a file \
@@ -82,7 +82,7 @@
     3. Move a file \
     4. Exit \
     Enter your choice (1-4): 4 \
-    \$
+    #prompt
   ])
 ]
 

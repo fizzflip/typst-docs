@@ -78,15 +78,15 @@
 #pagebreak()
 #section("Output")[
   #output_box(width: 80%, [
-    \$ pwd \
+    #prompt pwd \
     /home/user/lab \
     \
-    \$ mkdir test_dir && cd test_dir \
-    \$ touch file1.txt file2.txt \
-    \$ ls \
+    #prompt mkdir test_dir && cd test_dir \
+    #prompt touch file1.txt file2.txt \
+    #prompt ls \
     file1.txt  file2.txt \
     \
-    \$ ps | head -n 3 \
+    #prompt ps | head -n 3 \
     PID TTY          TIME CMD \
     1245 pts/0    00:00:00 bash \
     3021 pts/0    00:00:00 ps

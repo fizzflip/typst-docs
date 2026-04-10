@@ -83,17 +83,17 @@
 
 #section("Output")[
   #output_box(width: 90%, [
-    \$ whoami \
+    #prompt whoami \
     student \
     \
-    \$ uptime \
+    #prompt uptime \
     \ 20:15:01 up 2 days,  4:32,  1 user,  load average: 0.08, 0.03, 0.01 \
     \
-    \$ free -h \
+    #prompt free -h \
     total        used        free      shared  buff/cache   available \
     Mem:          7.7Gi       1.2Gi       4.5Gi       156Mi       2.0Gi       6.2Gi \
     \
-    \$ ping -c 1 127.0.0.1 \
+    #prompt ping -c 1 127.0.0.1 \
     64 bytes from 127.0.0.1: icmp_seq=1 ttl=64 time=0.032 ms \
     \
     --- 127.0.0.1 ping statistics --- \

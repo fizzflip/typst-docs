@@ -54,11 +54,11 @@
 
 #section("Output")[
   #output_box(width: 80%, [
-    \$ ./case_toggle.sh \
+    #prompt ./case_toggle.sh \
     Enter a string to toggle case: Hello World! \
     Converted string: hELLO wORLD! \
     \
-    \$ ./case_toggle.sh \
+    #prompt ./case_toggle.sh \
     Enter a string to toggle case: BASH script 123 \
     Converted string: bash SCRIPT 123
   ])

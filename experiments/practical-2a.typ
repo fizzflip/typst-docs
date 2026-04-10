@@ -43,11 +43,11 @@
 
 #section("Output")[
   #output_box(width: 80%, [
-    \$ ./palindrome_checker.sh \
+    #prompt ./palindrome_checker.sh \
     Enter a string or number: radar \
     Result: 'radar' is a Palindrome. \
     \
-    \$ ./palindrome_checker.sh \
+    #prompt ./palindrome_checker.sh \
     Enter a string or number: 12345 \
     Result: '12345' is NOT a Palindrome.
   ])

@@ -48,16 +48,16 @@
 
 #section("Output")[
   #output_box(width: 80%, [
-    \$ cat sample.txt \
+    #prompt cat sample.txt \
     First Line \
     Second Line \
     Third Line \
     \
-    \$ ./reverser.sh \
+    #prompt ./reverser.sh \
     Enter the filename to reverse: invalid_file.txt \
     Error: File 'invalid_file.txt' does not exist. \
     \
-    \$ ./reverser.sh \
+    #prompt ./reverser.sh \
     Enter the filename to reverse: sample.txt \
     --- Reversed Contents --- \
     Third Line \

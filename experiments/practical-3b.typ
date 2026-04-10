@@ -44,11 +44,11 @@
 
 #section("Output")[
   #output_box(width: 80%, [
-    \$ ./odd_digits.sh \
+    #prompt ./odd_digits.sh \
     Enter a 6-digit number: 123456 \
     Digits at odd positions (1st, 3rd, 5th): 1, 3, 5 \
     \
-    \$ ./odd_digits.sh \
+    #prompt ./odd_digits.sh \
     Enter a 6-digit number: 987654 \
     Digits at odd positions (1st, 3rd, 5th): 9, 7, 5
   ])

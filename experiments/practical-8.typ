@@ -50,17 +50,17 @@
 
 #section("Output")[
   #output_box(width: 80%, [
-    \$ ./disk_monitor.sh \
+    #prompt ./disk_monitor.sh \
     Monitoring disk usage (Alert threshold: >= 80%)... \
     --------------------------------------------------------- \
     CRITICAL ALERT: Partition /dev/sda1 is at 85% usage! \
     CRITICAL ALERT: Partition /dev/sdb2 is at 81% usage! \
     \
-    \$ (Example when all partitions are under threshold) \
-    \$ ./disk_monitor.sh \
+    #prompt (Example when all partitions are under threshold) \
+    #prompt ./disk_monitor.sh \
     Monitoring disk usage (Alert threshold: >= 80%)... \
     --------------------------------------------------------- \
-    \$
+    #prompt
   ])
 ]
 

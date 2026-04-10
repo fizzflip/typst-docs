@@ -53,7 +53,7 @@
 
 #section("Output")[
   #output_box(width: 80%, [
-    \$ ./calculator.sh \
+    #prompt ./calculator.sh \
     Enter first number: 12 \
     Enter second number: 4 \
     \
@@ -61,7 +61,7 @@
     Enter your choice (1-4): 3 \
     Result: 48 \
     \
-    \$ ./calculator.sh \
+    #prompt ./calculator.sh \
     Enter first number: 10 \
     Enter second number: 3 \
     \

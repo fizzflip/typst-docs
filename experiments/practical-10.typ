@@ -51,8 +51,8 @@
 // #pagebreak()
 #section("Output")[
   #output_box(width: 90%, [
-    \$ gcc process.c -o process \
-    \$ ./process \
+    #prompt gcc process.c -o process \
+    #prompt ./process \
     PARENT PROCESS -> My PID: 1245 | Created Child's PID: 1246 \
     CHILD PROCESS  -> My PID: 1246 | Parent's PID: 1245
   ])
