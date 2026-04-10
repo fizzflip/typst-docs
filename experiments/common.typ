@@ -1,11 +1,6 @@
 #let practical_title(code) = {
   let is_grouped = code.contains("A") or code.contains("B")
-  if is_grouped {
-    let part_letter = code.replace(regex("[0-9]"), "")
-    align(left)[
-      #text(size: 15pt, weight: "bold")[Part #part_letter]
-    ]
-  } else {
+  if not is_grouped {
     align(center)[
       #text(size: 18pt, weight: "bold")[PRACTICAL - #code]
     ]

@@ -26,20 +26,28 @@
 #align(center)[#text(size: 22pt, weight: "bold")[Index of Practicals]]
 #v(1.5em)
 
-#for item in practicals [
+#for (i, item) in practicals.enumerate() [
+  #let title = item.at(0)
   #let target = item.at(2)
-  #grid(
-    columns: (1fr, auto),
-    column-gutter: 1em,
-    align: (left, right),
-    [
-      #text(size: 18pt)[#link(target)[Practical #item.at(0)]]
-    ],
-    [
-      #text(size: 18pt)[#context counter(page).at(target).first() pg]
-    ],
-  )
-  #v(0.15em)
+  #let group_num = title.replace("A", "").replace("B", "").replace("C", "")
+  
+  #let prev_title = if i > 0 { practicals.at(i - 1).at(0) } else { "" }
+  #let prev_group = prev_title.replace("A", "").replace("B", "").replace("C", "")
+
+  #if group_num != prev_group [
+    #grid(
+      columns: (1fr, auto),
+      column-gutter: 1em,
+      align: (left, right),
+      [
+        #text(size: 18pt)[#link(target)[Practical #group_num]]
+      ],
+      [
+        #text(size: 18pt)[#context counter(page).at(target).first() pg]
+      ],
+    )
+    #v(0.15em)
+  ]
 ]
 
 #pagebreak()
@@ -99,6 +107,21 @@
     #v(1.5em)
   ]
 
+  #if is_grouped [
+    #let part_label = if title.contains("A") { "I" } else if title.contains("B") { "II" } else if title.contains("C") { "III" } else { "" }
+    #pad(x: -8mm)[
+      #grid(
+        columns: (1fr, auto, 1fr),
+        align: (horizon, center, horizon),
+        column-gutter: 1em,
+        line(length: 100%, stroke: 0.6pt + rgb("cbd5e1")),
+        text(weight: "bold", size: 13pt, fill: rgb("64748b"))[[ #part_label ]],
+        line(length: 100%, stroke: 0.6pt + rgb("cbd5e1"))
+      )
+    ]
+    #v(1em)
+  ]
+
   #include ("experiments/practical-" + item.at(1) + ".typ")
   
   #let next_title = if i < practicals.len() - 1 { practicals.at(i + 1).at(0) } else { "" }
@@ -106,9 +129,7 @@
 
   #if i < practicals.len() - 1 [
     #if is_grouped and group_num == next_group [
-      #v(2.5em)
-      #line(length: 100%, stroke: 0.5pt + luma(200))
-      #v(2em)
+      #v(3em)
     ] else [
       #pagebreak()
     ]
