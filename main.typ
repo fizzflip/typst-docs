@@ -87,8 +87,30 @@
 )
 
 #for (i, item) in practicals.enumerate() [
+  #let title = item.at(0)
+  #let is_grouped = title.contains("A") or title.contains("B")
+  #let group_num = title.replace("A", "").replace("B", "")
+  
+  #let prev_title = if i > 0 { practicals.at(i - 1).at(0) } else { "" }
+  #let prev_group = prev_title.replace("A", "").replace("B", "")
+
+  #if is_grouped and group_num != prev_group [
+    #align(center)[#text(size: 18pt, weight: "bold")[PRACTICAL - #group_num]]
+    #v(1.5em)
+  ]
+
   #include ("experiments/practical-" + item.at(1) + ".typ")
+  
+  #let next_title = if i < practicals.len() - 1 { practicals.at(i + 1).at(0) } else { "" }
+  #let next_group = next_title.replace("A", "").replace("B", "")
+
   #if i < practicals.len() - 1 [
-    #pagebreak()
+    #if is_grouped and group_num == next_group [
+      #v(2.5em)
+      #line(length: 100%, stroke: 0.5pt + luma(200))
+      #v(2em)
+    ] else [
+      #pagebreak()
+    ]
   ]
 ]
