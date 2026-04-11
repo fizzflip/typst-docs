@@ -40,7 +40,12 @@
     stroke: (bottom: 2pt + rgb("#1a365d")),
     inset: (bottom: 1em),
     [
-      #text(28pt, font: "Arial", weight: "bold", fill: rgb("#1a365d"))[Cyber Ethics Policy] \
+      #text(
+        28pt,
+        font: "Arial",
+        weight: "bold",
+        fill: rgb("#1a365d"),
+      )[Cyber Ethics Policy] \
       #v(0.5em)
       #text(14pt, fill: luma(100))[Totally Not Evil Corporation]
     ],
