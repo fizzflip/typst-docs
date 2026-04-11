@@ -3,9 +3,13 @@
 #set page(
   paper: "a4",
   margin: (x: 1.5in, y: 1.5in),
-  header: align(right)[
-    #text(8pt, fill: luma(120))[Totally Not Evil Corp | Cyber Ethics Policy]
-  ],
+  header: context {
+    if counter(page).get().first() > 1 {
+      align(right)[
+        #text(8pt, fill: luma(120))[Totally Not Evil Corp | Cyber Ethics Policy]
+      ]
+    }
+  },
   footer: context {
     let page-number = counter(page).get().first()
     align(center)[
