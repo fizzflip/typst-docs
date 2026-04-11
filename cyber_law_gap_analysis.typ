@@ -1,4 +1,7 @@
-#set document(title: "Cyber Law Gap Analysis: A Global Perspective", author: "[STUDENT NAME]")
+#set document(
+  title: "Cyber Law Gap Analysis: A Global Perspective",
+  author: "[STUDENT NAME]",
+)
 #set text(
   font: ("Libertinus Serif", "Georgia", "Times New Roman", "serif"),
   size: 11pt,
@@ -212,11 +215,17 @@ Before identifying specific gaps, it is essential to understand the divergent ph
     [#text(fill: white, weight: "bold", size: 9pt)[PRIMARY FOCUS]],
     [#text(fill: white, weight: "bold", size: 9pt)[KEY LEGISLATION]],
 
-    [*India*], [Digital Sovereignty and Secure Public Infrastructure (DPI).], [DPDP Act (2023), IT Act (2000).],
+    [*India*],
+    [Digital Sovereignty and Secure Public Infrastructure (DPI).],
+    [DPDP Act (2023), IT Act (2000).],
 
-    [*European Union*], [Fundamental Rights & Consumer Protection (Risk-based).], [GDPR, EU AI Act, DORA, NIS2.],
+    [*European Union*],
+    [Fundamental Rights & Consumer Protection (Risk-based).],
+    [GDPR, EU AI Act, DORA, NIS2.],
 
-    [*China*], [National Security & Centralized Data Control.], [Data Security Law, PIPL, Cybersecurity Law.],
+    [*China*],
+    [National Security & Centralized Data Control.],
+    [Data Security Law, PIPL, Cybersecurity Law.],
 
     [*United States*],
     [Market-led Resilience & Sectoral Privacy.],

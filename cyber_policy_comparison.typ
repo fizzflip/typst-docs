@@ -236,13 +236,21 @@ The *U.S.-India Initiative on Critical and Emerging Technology (iCET)*, launched
     [IT Act, 2000 & DPDP Act, 2023. Highly codified.],
     [Sectoral patchwork & State laws (CCPA/GDPR style).],
 
-    [*Authority*], [CERT-In (Tactical) & NCIIPC (Critical).], [CISA (Risk Advisor) & Regional regulators.],
+    [*Authority*],
+    [CERT-In (Tactical) & NCIIPC (Critical).],
+    [CISA (Risk Advisor) & Regional regulators.],
 
-    [*Reporting*], [6-hour mandatory window (Very strict).], [72-hour CIRCIA (Critical Infrastructure only).],
+    [*Reporting*],
+    [6-hour mandatory window (Very strict).],
+    [72-hour CIRCIA (Critical Infrastructure only).],
 
-    [*Emerging Tech*], [Sovereign-led (IndiaAI, NQM).], [Market-led with EO 2023 oversight.],
+    [*Emerging Tech*],
+    [Sovereign-led (IndiaAI, NQM).],
+    [Market-led with EO 2023 oversight.],
 
-    [*Objective*], [Resilience & Digital Sovereignty.], [Dominance & Global Shielding.],
+    [*Objective*],
+    [Resilience & Digital Sovereignty.],
+    [Dominance & Global Shielding.],
   ),
 )
 
@@ -302,9 +310,11 @@ While transitioning from different starting points, both the United States and I
   [#text(weight: "bold", fill: primary-color)[CII]],
   [Critical Information Infrastructure (e.g., power grids, banking).],
 
-  [#text(weight: "bold", fill: primary-color)[DPI]], [Digital Public Infrastructure (e.g., UPI, Aadhar).],
+  [#text(weight: "bold", fill: primary-color)[DPI]],
+  [Digital Public Infrastructure (e.g., UPI, Aadhar).],
 
-  [#text(weight: "bold", fill: primary-color)[iCET]], [Initiative on Critical and Emerging Technology.],
+  [#text(weight: "bold", fill: primary-color)[iCET]],
+  [Initiative on Critical and Emerging Technology.],
 
   [#text(weight: "bold", fill: primary-color)[NIST CSF]],
   [National Institute of Standards and Technology - Cybersecurity Framework.],
