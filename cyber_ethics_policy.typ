@@ -51,12 +51,13 @@
     align(left)[
       *Prepared By:* \
       Information Security & \
-      Human Resources Departments
+      Human Resources Departments \
+      *Classification*: Internal
     ],
     align(right)[
       *Date:* #datetime.today().display() \
-      *Version:* 3.0 ("Final" Revision) \
-      *Status:* Active
+      *Status:* Active \
+      *Version:* 3.0 \ ("final" revision) \
     ],
   )
   #v(4em)
@@ -73,7 +74,7 @@
   ],
 )
 
-#v(2em)
+#pagebreak()
 #outline(depth: 2, indent: auto)
 #pagebreak()
 
@@ -82,6 +83,8 @@
 Totally Not Evil Corporation is fundamentally committed to establishing, maintaining, and continually refining a secure, ethically grounded, and highly productive technological environment. As digital infrastructure becomes the primary conduit through which modern business operations are executed, this Comprehensive Cyber Ethics Policy serves as the foundational normative document outlining the expected standards of technological engagement.
 
 The policy applies unconditionally to all employees, contractors, consultants, and third-party affiliates who utilize hardware, software, network resources, or digital communication platforms owned, leased, or managed by Totally Not Evil Corporation. It serves to protect our users, secure our assets, and maintain our legal compliance within a rapidly evolving digital landscape.
+
+#v(1em)
 
 = Data Privacy
 
@@ -97,6 +100,8 @@ Employees handling Personally Identifiable Information (PII) belonging to custom
 - All restricted and confidential PII must be encrypted both at rest and in transit across networks using mathematically secure, pre-approved cryptographic protocols (e.g., AES-256).
 - Unauthorized extraction, uncontrolled cloud synchronization, or external sharing of PII is strictly prohibited and constitutes a severe breach of this policy.
 
+#pagebreak()
+
 = Acceptable Use
 
 Totally Not Evil Corporation invests heavily in robust IT resources—encompassing computational devices, internal networks, and specialized software suites—engineered strictly to facilitate legitimate business operations. Employees are expected to utilize these resources in a manner that constitutes ethical organizational utility.
@@ -111,6 +116,8 @@ To maintain operational integrity and legal immunity, the following activities a
 - Employing undocumented, unapproved software ("Shadow IT"). Bypassing the IT procurement process to install unvetted applications exposes the entire organization to unquantifiable security risks and constitutes an ethical breach of trust.
 - Intentional monopolization of network resources, such as continuous high-definition media streaming or unauthorized cryptocurrency mining.
 
+#v(1em)
+
 = Intellectual Property
 
 The creation, curation, and preservation of Intellectual Property (IP) guarantee Totally Not Evil Corporation's continued competitive advantage. Operating ethically within the cyber domain requires rigorous respect for the IP rights of both our organization and external entities.
@@ -123,6 +130,8 @@ Plagiarism and digital theft are categorically unethical. Employees must respect
 - *Software Piracy:* There is an absolute prohibition against deploying, storing, or benefiting from unlicensed or pirated commercial software.
 - *Open-Source Integration:* When incorporating Open-Source Software (OSS), employees must initiate strict code reviews to ensure total licensing compliance. Developers must understand and respect the legal disparities between permissive licenses (e.g., MIT) and copyleft licenses (e.g., GPL), ensuring proprietary code is not inadvertently compromised.
 - *Attribution:* The organization mandates the rigorous citation of external sources, algorithms, and design paradigms to combat intellectual dishonesty.
+
+#v(1em)
 
 = Employee Behavior Online
 
