@@ -42,6 +42,7 @@
         size: 10pt,
         font: ("DejaVu Sans Mono", "Liberation Mono"),
       )
+      #show raw: set text(size: 10pt, font: ("DejaVu Sans Mono", "Liberation Mono"))
       #body
     ]
   ]
