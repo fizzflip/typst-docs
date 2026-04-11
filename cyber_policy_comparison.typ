@@ -6,120 +6,137 @@
 )
 
 // --- Global Style Definitions ---
-#let primary-color = rgb("#1a365d")
-#let secondary-color = rgb("#f8fafc")
-#let accent-color = rgb("#3b82f6")
-#let border-color = rgb("#e2e8f0")
+#let primary-color = rgb("#0f172a") // Deep Midnight
+#let accent-color = rgb("#22d3ee") // Sharp Cyan
+#let secondary-color = rgb("#f1f5f9") // Light Slate
+#let border-color = rgb("#cbd5e1")
+#let text-muted = rgb("#64748b")
 
 // Reusable callout box function
 #let callout(title: "", body, color: primary-color) = block(
   width: 100%,
   fill: secondary-color,
   stroke: (left: 4pt + color),
-  inset: 12pt,
-  radius: (top-right: 4pt, bottom-right: 4pt),
+  inset: 16pt,
+  radius: 4pt,
   [
     #if title != "" {
-      text(11pt, weight: "bold", fill: color)[#title]
-      v(0.4em)
+      text(12pt, weight: "bold", fill: primary-color)[#upper(title)]
+      v(0.6em)
     }
-    #text(10pt)[#body]
+    #text(10.5pt, fill: primary-color.lighten(10%))[#body]
   ],
 )
 
 // Page Setup
 #set page(
   paper: "a4",
-  margin: (x: 1in, y: 1.25in),
+  margin: (x: 1.1in, y: 1.2in),
   header: context {
     if counter(page).get().first() > 1 {
-      align(right)[
-        #text(
-          8pt,
-          fill: luma(120),
-        )[Cyber Law and Ethics | Advanced Comparative Analysis]
-      ]
+      box(
+        width: 100%,
+        stroke: (bottom: 0.5pt + border-color),
+        inset: (bottom: 8pt),
+        [
+          #text(
+            8pt,
+            fill: text-muted,
+          )[Cyber Law and Ethics | *Advanced Comparative Analysis*]
+          #h(1fr)
+          #text(8pt, fill: text-muted)[#datetime.today().display()]
+        ],
+      )
     }
   },
   footer: context {
     let page-number = counter(page).get().first()
     align(center)[
-      #text(8pt, fill: luma(120))[- #page-number -]
+      #text(9pt, weight: "bold", fill: primary-color)[#page-number]
     ]
   },
 )
 
-#set par(justify: true, leading: 0.65em)
+#set par(justify: true, leading: 0.7em)
 #set heading(numbering: "1.1 ")
 
 // Custom heading styling
 #show heading: it => {
-  set text(font: "Arial", weight: "bold", fill: primary-color)
-  block(below: 0.8em, above: 1.2em)[
+  let color = if it.level == 1 { primary-color } else { primary-color.lighten(30%) }
+  set text(font: "Arial", weight: "bold", fill: color)
+  block(below: 1em, above: 1.5em)[
     #if it.level == 1 {
-      set text(size: 16pt)
-      it
+      stack(
+        dir: ltr,
+        spacing: 0.5em,
+        rect(width: 4pt, height: 1.2em, fill: accent-color, radius: 2pt),
+        text(size: 18pt)[#it.body],
+      )
     } else if it.level == 2 {
-      set text(size: 14pt)
-      it
+      text(size: 14pt)[#it.body]
     } else {
-      set text(size: 12pt)
-      it
+      text(size: 12pt)[#it.body]
     }
   ]
 }
 
 // --- Cover Page ---
-#align(center)[
-  #v(4em)
-  #text(
-    32pt,
-    font: "Arial",
-    weight: "bold",
+#set page(margin: (x: 0in, y: 0in))
+#grid(
+  columns: (1.2fr, 2.8fr),
+  rows: (100%),
+  // Sidebar
+  rect(
     fill: primary-color,
-  )[CYBER POLICY ANALYSIS] \
-  #v(0.5em)
-  #text(
-    18pt,
-    fill: luma(100),
-  )[A Strategic Comparison of India and the United States]
-
-  #v(2em)
-  #line(length: 60%, stroke: 1pt + primary-color)
-  #v(2em)
-
-  #grid(
-    columns: (1fr, 1fr),
-    align(left)[
-      *Prepared For:* \
-      Department of Cyber Law \
-      GMIU University
-    ],
-    align(right)[
-      *Student Details:* \
-      #text(fill: luma(80))[Class: X (Section A)] \
-      Date: #datetime.today().display()
-    ],
-  )
-
-  #v(8em)
-
-  #box(
-    width: 80%,
-    inset: 20pt,
-    fill: primary-color,
-    radius: 8pt,
-    [
-      #text(fill: white, size: 12pt, weight: "bold")[Research Monograph] \
-      #v(0.5em)
-      #text(fill: white.darken(10%), size: 10pt)[
-        Exploring the legal, ethical, and strategic frameworks governing
-        digital sovereignty, critical infrastructure protection, and
-        emerging technologies (AI/Quantum) in the 21st Century.
+    width: 100%,
+    height: 100%,
+    align(bottom + right)[
+      #pad(right: 20pt, bottom: 40pt)[
+        #text(fill: accent-color, size: 40pt, weight: "bold")[2026] \
+        #v(-10pt)
+        #text(fill: white.darken(20%), size: 14pt)[STRATEGIC] \
+        #text(fill: white.darken(20%), size: 14pt)[REPORT]
       ]
-    ],
-  )
-]
+    ]
+  ),
+  // Main Content
+  pad(x: 40pt, y: 60pt)[
+    #v(4em)
+    #text(12pt, tracking: 2pt, weight: "bold", fill: accent-color)[CYBER LAW & ETHICS] \
+    #v(1em)
+    #par(leading: 0.4em)[
+      #text(48pt, font: "Arial", weight: "bold", fill: primary-color)[
+        Policy \ Comparison: \ India vs USA
+      ]
+    ]
+    
+    #v(2em)
+    #line(length: 20%, stroke: 2pt + accent-color)
+    #v(2em)
+    
+    #text(14pt, fill: text-muted)[
+      A comprehensive strategic analysis of legal frameworks, digital sovereignty, 
+      and the impact of emerging technologies (AI/Quantum) on 21st-century 
+      cybersecurity doctrines.
+    ]
+    
+    #v(1fr)
+    
+    #grid(
+      columns: (1fr, 1fr),
+      align(left)[
+        #text(weight: "bold", fill: primary-color)[PREPARED FOR] \
+        #text(size: 10pt, fill: text-muted)[Dept. of Cyber Law \ GMIU University]
+      ],
+      align(left)[
+        #text(weight: "bold", fill: primary-color)[STUDENT DETAILS] \
+        #text(size: 10pt, fill: text-muted)[Class: X (Section A) \ Date: #datetime.today().display()]
+      ]
+    )
+  ]
+)
+#set page(margin: (x: 1.1in, y: 1.2in))
+#pagebreak()
 
 #pagebreak()
 #outline(depth: 3, indent: auto)
@@ -129,14 +146,14 @@
 
 The rapid digitization of global economies has placed cybersecurity at the forefront of national security and economic stability agendas. This monograph provides an in-depth analysis of the cybersecurity policies, legal frameworks, and strategic pivots adopted by the *United States* and *India*.
 
-As both nations navigate the "Third Wave" of internet evolution—characterized by Artificial Intelligence, Quantum Computing, and 5G/6G infrastructures—their policies are beginning to converge on shared democratic principles while maintaining distinct structural identities. The US continues to refine its market-responsive, public-private model through the **NIST 2.0 framework**, while India leverages its **Digital Public Infrastructure (DPI)** to establish a robust, centralized model for digital sovereignty. This document evaluates these approaches, their ethical implications, and the burgeoning bilateral synergy through the **iCET (Initiative on Critical and Emerging Technology)**.
+As both nations navigate the "Third Wave" of internet evolution—characterized by Artificial Intelligence, Quantum Computing, and 5G/6G infrastructures—their policies are beginning to converge on shared democratic principles while maintaining distinct structural identities. The US continues to refine its market-responsive, public-private model through the *NIST 2.0 framework*, while India leverages its *Digital Public Infrastructure (DPI)* to establish a robust, centralized model for digital sovereignty. This document evaluates these approaches, their ethical implications, and the burgeoning bilateral synergy through the *iCET (Initiative on Critical and Emerging Technology)*.
 
 = The United States: A Decentralized, Market-Driven Ecosystem
 
 The US approach is characterized by its reliance on sectoral regulations, voluntary frameworks, and the strategic distribution of risk across private entities. Recent pivots suggest a shift towards "Secure by Design" principles, as outlined in the 2023-2025 CISA Strategic Plan.
 
 == The NIST Cybersecurity Framework (CSF) 2.0
-The cornerstone of US cyber policy evolved significantly with the release of **NIST CSF 2.0** in early 2024.
+The cornerstone of US cyber policy evolved significantly with the release of *NIST CSF 2.0* in early 2024. 
 - *The 'Govern' Function:* A major update that elevates cybersecurity from a technical task to a senior leadership responsibility. It emphasizes that cyber risk must be integrated into the broader enterprise risk management strategy.
 - *Broadened Scope:* While the original framework focused on Critical Infrastructure, version 2.0 is designed for organizations of all sizes, from small non-profits to global conglomerates.
 - *Implementation Tiers:* Organizations can measure their "maturity" across four tiers (Partial to Adaptive), allowing for a non-linear, flexible growth path that respects unique resource constraints.
@@ -165,12 +182,12 @@ The enactment of the DPDP Act marks a paradigm shift in India's cyber law landsc
 - *Financial Penalties:* Violations can lead to penalties up to ₹250 Crores (approx. \$30M USD), making it one of the most stringent data protection laws globally.
 
 == CERT-In and Mandatory Tactical Directives
-The Indian Computer Emergency Response Team (CERT-In) is the national nodal agency for incident response.
+The Indian Computer Emergency Response Team (CERT-In) is the national nodal agency for incident response. 
 - *The 6-Hour Reporting Mandate:* Issued in April 2022, this directive requires virtually all entities (including VPN providers and exchanges) to report a vast array of cyber incidents within 6 hours.
 - *System Time Sync:* Mandates synchronization with NTP servers of the National Physical Laboratory (NPL) or NIC to ensure forensic consistency across the nation's digital landscape.
 
 == Digital Public Infrastructure (DPI) and Sovereignty
-India's "India Stack" (Aadhar, UPI, DigiLocker) forms a unique layer of its cyber policy.
+India's "India Stack" (Aadhar, UPI, DigiLocker) forms a unique layer of its cyber policy. 
 - *Policy through Platform:* By building robust, secure public platforms, India effectively sets cybersecurity standards through implementation rather than just regulation.
 - *Digital Sovereignty:* India seeks to reduce dependence on external proprietary systems, fostering an indigenous "Trusted Electronics" ecosystem to mitigate supply chain risks.
 
@@ -183,54 +200,54 @@ India's "India Stack" (Aadhar, UPI, DigiLocker) forms a unique layer of its cybe
 As we enter 2025, both nations have fast-tracked their policies for disruptive technologies.
 
 == Artificial Intelligence Governance
-- *US Approach:* Driven by the **Executive Order on Safe, Secure, and Trustworthy AI (2023)**. It emphasizes rigorous testing (Red-teaming) for powerful AI models, watermarking AI-generated content, and protecting civil rights against algorithmic bias.
-- *India's Approach:* Primarily governed through the **National Program on AI (IndiaAI)**. India focuses on "AI for All," prioritizing ethical deployment in healthcare and agriculture, while leveraging the DPDP Act to ensure AI training data respects privacy.
+- *US Approach:* Driven by the *Executive Order on Safe, Secure, and Trustworthy AI (2023)*. It emphasizes rigorous testing (Red-teaming) for powerful AI models, watermarking AI-generated content, and protecting civil rights against algorithmic bias.
+- *India's Approach:* Primarily governed through the *National Program on AI (IndiaAI)*. India focuses on "AI for All," prioritizing ethical deployment in healthcare and agriculture, while leveraging the DPDP Act to ensure AI training data respects privacy.
 
 == The Quantum Race and Post-Quantum Cryptography (PQC)
 The "Quantum Day" (Q-Day)—when quantum computers might break current RSA encryption—is a major policy driver.
 - *National Quantum Mission (India):* A ₹6,000 Crore initiative focusing on quantum communications and secure key distribution (QKD).
-- *US National Quantum Initiative:* Focuses on maintaining a "Quantum Leap" in computing power while transitioning federal systems to **Post-Quantum Cryptography (PQC)** standards to prevent "Harvest Now, Decrypt Later" attacks.
+- *US National Quantum Initiative:* Focuses on maintaining a "Quantum Leap" in computing power while transitioning federal systems to *Post-Quantum Cryptography (PQC)* standards to prevent "Harvest Now, Decrypt Later" attacks.
 
 = Strategic Bilateral Synergy: iCET and TRUST
 
-The **U.S.-India Initiative on Critical and Emerging Technology (iCET)**, launched in 2023 and expanded in 2024-2025, serves as the primary bridge between the two nations.
+The *U.S.-India Initiative on Critical and Emerging Technology (iCET)*, launched in 2023 and expanded in 2024-2025, serves as the primary bridge between the two nations.
 
 - *iCET TRUST Initiative:* A 2025 milestone focusing on verified technology vendors, ensuring that the critical tech supply chain between the two democracies remains free from malicious actor interference.
 - *Joint Quantum Coordination:* Establishing shared standards for quantum-safe communication to protect collective national security interests.
 
-= Visualizing the Structural Divide
-
 #v(1em)
 #align(center)[
   #box(
-    width: 90%,
-    fill: secondary-color,
-    stroke: 1pt + border-color,
-    inset: 1.5em,
-    radius: 8pt,
+    width: 100%,
+    fill: gradient.linear(secondary-color, white, angle: 45deg),
+    stroke: (left: 4pt + accent-color),
+    inset: 2em,
+    radius: 4pt,
   )[
-    #text(
-      13pt,
-      weight: "bold",
-      fill: primary-color,
-    )[Core Philosophical Differences]
-    #v(1em)
+    #text(14pt, weight: "bold", fill: primary-color)[CORE PHILOSOPHICAL DIVIDE]
+    #v(1.5em)
     #grid(
       columns: (1fr, 1fr),
-      gutter: 2em,
+      gutter: 3em,
       align(left)[
-        *United States:* \
-        - Flexible, voluntary guidelines (NIST). \
-        - Market accountability & liability. \
-        - Proactive adversary disruption. \
-        - Protect highly privatized infrastructure.
+        #text(weight: "bold", fill: primary-color)[UNITED STATES] \
+        #v(0.5em)
+        #text(size: 10pt, fill: text-muted)[
+          - Market-responsive & Decentralized \
+          - Industry-led Standards (NIST) \
+          - Liability Shift to Providers \
+          - Intelligence-driven Disruptions
+        ]
       ],
       align(left)[
-        *India:* \
-        - Strict, mandatory legal directives. \
-        - Focus on capacity & DPI resilience. \
-        - Rapid incident reporting (6-hour window). \
-        - Drive towards 'Digital Sovereignty'.
+        #text(weight: "bold", fill: primary-color)[INDIA] \
+        #v(0.5em)
+        #text(size: 10pt, fill: text-muted)[
+          - Centralized & Government-led \
+          - Mandatory Legal Directives \
+          - Capacity Building (DPI Focus) \
+          - Strategic Digital Sovereignty
+        ]
       ],
     )
   ]
@@ -239,40 +256,40 @@ The **U.S.-India Initiative on Critical and Emerging Technology (iCET)**, launch
 
 = Comparative Policy Master Table
 
+#v(1em)
 #figure(
-  caption: [In-Depth Comparison of Cyber Strategies and Policies],
+  caption: [Strategic Comparison Matrix: IN vs. US],
   kind: table,
   table(
-    columns: (1fr, 2.5fr, 2.5fr),
-    fill: (x, y) => if y == 0 { primary-color } else if calc.odd(y) {
-      secondary-color
-    } else { white },
-    stroke: border-color,
-    inset: 12pt,
+    columns: (1fr, 2fr, 2fr),
+    fill: (x, y) => if y == 0 { primary-color } else if calc.odd(y) { secondary-color.lighten(30%) } else { white },
+    stroke: none,
+    inset: (x: 12pt, y: 15pt),
+    align: (left, left, left),
 
-    [#text(fill: white)[*Feature Domain*]],
-    [#text(fill: white)[*India*]],
-    [#text(fill: white)[*United States*]],
+    [#text(fill: white, weight: "bold", size: 9pt)[DOMAIN]],
+    [#text(fill: white, weight: "bold", size: 9pt)[INDIA]],
+    [#text(fill: white, weight: "bold", size: 9pt)[UNITED STATES]],
 
-    [Primary Legal Basis],
-    [IT Act, 2000 & DPDP Act, 2023. Explicit, centralized code.],
-    [Sectoral patchwork (HIPAA, GLBA) & State laws (CCPA).],
+    [*Legal Basis*],
+    [IT Act, 2000 & DPDP Act, 2023. Highly codified.],
+    [Sectoral patchwork & State laws (CCPA/GDPR style).],
 
-    [Structural Approach],
-    [Highly centralized, government-mandated. Regulatory and institutional authority.],
-    [Decentralized, market-driven, and relies on voluntary adoption (NICE/NIST).],
+    [*Authority*],
+    [CERT-In (Tactical) & NCIIPC (Critical).],
+    [CISA (Risk Advisor) & Regional regulators.],
 
-    [*Incident Reporting*],
-    [Strict 6-hour mandatory reporting to CERT-In.],
-    [72-hour window for Critical Infrastructure (CIRCIA).],
+    [*Reporting*],
+    [6-hour mandatory window (Very strict).],
+    [72-hour CIRCIA (Critical Infrastructure only).],
 
-    [*AI Governance*],
-    [Ethical 'AI for All' & DPDP data constraints.],
-    [Executive Order-driven, Red-teaming & Saftey focus.],
+    [*Emerging Tech*],
+    [Sovereign-led (IndiaAI, NQM).],
+    [Market-led with EO 2023 oversight.],
 
-    [*Strategic Objective*],
-    [DPI expansion & Digital Sovereignty.],
-    [Global tech dominance & Adversary disruption.],
+    [*Objective*],
+    [Resilience & Digital Sovereignty.],
+    [Dominance & Global Shielding.],
   ),
 )
 
@@ -285,9 +302,13 @@ While transitioning from different starting points, both the United States and I
 
 = Appendix: Glossary of Terms
 
-- CII: Critical Information Infrastructure (e.g., power grids, banking).
-- DPI: Digital Public Infrastructure (e.g., UPI, Aadhar).
-- iCET: Initiative on Critical and Emerging Technology.
-- NIST CSF: National Institute of Standards and Technology - Cybersecurity Framework.
-- PQC: Post-Quantum Cryptography; encryption resilient to quantum computer attacks.
-- Red-teaming: Rigorous adversarial testing of AI models to find security vulnerabilities.
+#grid(
+  columns: (1fr, 3fr),
+  gutter: 1.5em,
+  [#text(weight: "bold", fill: primary-color)[CII]], [Critical Information Infrastructure (e.g., power grids, banking).],
+  [#text(weight: "bold", fill: primary-color)[DPI]], [Digital Public Infrastructure (e.g., UPI, Aadhar).],
+  [#text(weight: "bold", fill: primary-color)[iCET]], [Initiative on Critical and Emerging Technology.],
+  [#text(weight: "bold", fill: primary-color)[NIST CSF]], [National Institute of Standards and Technology - Cybersecurity Framework.],
+  [#text(weight: "bold", fill: primary-color)[PQC]], [Post-Quantum Cryptography; encryption resilient to quantum computer attacks.],
+  [#text(weight: "bold", fill: primary-color)[RED-TEAM]], [Rigorous adversarial testing of AI models to find security vulnerabilities.],
+)
