@@ -80,7 +80,7 @@
             font: ui-font,
           )[Cyber Law and Ethics | *Interview Preparation*]
           #h(1fr)
-          #text(8pt, fill: text-muted, font: ui-font)[April 12, 2026]
+          #text(8pt, fill: text-muted, font: ui-font)[April 11, 2026]
         ],
       )
     }
@@ -155,31 +155,18 @@
     ]
 
     #v(1fr)
-
     #grid(
-      columns: 1fr,
-      gutter: 2em,
-      [
+      columns: (1fr, 1fr),
+      align(left)[
+        #text(weight: "bold", fill: primary-color)[STUDENT DETAILS] \
         #text(
-          weight: "bold",
-          fill: primary-color,
-          font: ui-font,
-        )[PREPARED FOR] \
-        #text(
-          size: 11pt,
+          size: 10pt,
           fill: text-muted,
-        )[Cyber Law and Ethics (Assignment III)]
+        )[Name \ xxxxxxxxxxxx \ Class]
       ],
-      [
-        #text(
-          weight: "bold",
-          fill: primary-color,
-          font: ui-font,
-        )[SUBMISSION METADATA] \
-        #text(
-          size: 11pt,
-          fill: text-muted,
-        )[Portal: GMIU Web Submission \ Date: April 12, 2026]
+      align(left)[
+        #text(weight: "bold", fill: primary-color)[PREPARED FOR] \
+        #text(size: 10pt, fill: text-muted)[Cyber Law and Ethics \ ALA - xxx]
       ],
     )
     #v(2em)
@@ -266,6 +253,8 @@
   #interview-tip[Mention that for a global organization, "Compliance is the floor, not the ceiling," because they must navigate the conflicting jurisdictional requirements of every country they operate in.]
 ]
 
+#pagebreak()
+
 #question(
   6,
 )[Explain the hierarchy of courts in India and their role in cyber cases.]
@@ -322,6 +311,8 @@
   - *Non-Repudiation:* Under the IT Act, a person cannot later claim "I didn't send this" once it's digitally signed with their unique key.
 ]
 
+#pagebreak()
+
 #question(11)[What is cyberspace? How is it different from web space?]
 #answer[
   *Cyberspace:* A global, virtual environment of hardware and software where human communication occurs. It includes the Internet, private Intranets, Cellular networks, and the "Internet of Things" (IoT). It is the *infrastructure*.
@@ -366,27 +357,3 @@
 
   #interview-tip[Emphasize that a "Culture of Security" is more effective than any firewall. Mention that ethics training reduces the "Human Risk" factor.]
 ]
-
-#pagebreak()
-
-= Appendix: Landmark Judicial Precedents
-
-To excel in an interview, referencing these cases demonstrates a profound understanding of the evolution of Cyber Law.
-
-#v(1em)
-
-#grid(
-  columns: (1.5fr, 3.5fr),
-  gutter: 1.5em,
-  [#text(weight: "bold", fill: primary-color)[Shreya Singhal v. UoI (2015)]],
-  [Struck down *Section 66A* of the IT Act. It protected online free speech by ruling that "vague" and "offensive" are not grounds for arrest.],
-
-  [#text(weight: "bold", fill: primary-color)[Justice K.S. Puttaswamy (2017)]],
-  [A landmark Supreme Court judgment that declared *Privacy* as a Fundamental Right under Article 21 of the Indian Constitution. This led to the creation of the DPDP Act 2023.],
-
-  [#text(weight: "bold", fill: primary-color)[SMC Pneumatics v. Jogesh Kwatra]],
-  [India's first case of *Cyber Defamation*, where an employee was restrained from sending derogatory emails about the company.],
-
-  [#text(weight: "bold", fill: primary-color)[Tata v. Celephack]],
-  [Dealt with *Cybersquatting*. The court ruled that domain names are not just addresses but "Digital Trademarks."],
-)
