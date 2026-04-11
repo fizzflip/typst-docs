@@ -1,9 +1,11 @@
 #set document(title: "Cyber Policy Comparison: India vs USA", author: "Student")
 #set text(
-  font: ("Libertinus Serif", "Linux Libertine", "Times New Roman", "serif"),
+  font: ("Libertinus Serif", "Georgia", "Times New Roman", "serif"),
   size: 11pt,
   lang: "en",
 )
+#let heading-font = "DeepMind Sans"
+#let ui-font = "Inter"
 
 // --- Global Style Definitions ---
 #let primary-color = rgb("#0f172a") // Deep Midnight
@@ -62,16 +64,13 @@
 
 // Custom heading styling
 #show heading: it => {
-  let color = if it.level == 1 { primary-color } else { primary-color.lighten(30%) }
-  set text(font: "Arial", weight: "bold", fill: color)
+  let color = if it.level == 1 { primary-color } else {
+    primary-color.lighten(30%)
+  }
+  set text(font: heading-font, weight: "bold", fill: color)
   block(below: 1em, above: 1.5em)[
     #if it.level == 1 {
-      stack(
-        dir: ltr,
-        spacing: 0.5em,
-        rect(width: 4pt, height: 1.2em, fill: accent-color, radius: 2pt),
-        text(size: 18pt)[#it.body],
-      )
+      text(size: 18pt)[#upper(it.body)]
     } else if it.level == 2 {
       text(size: 14pt)[#it.body]
     } else {
@@ -84,7 +83,7 @@
 #set page(margin: (x: 0in, y: 0in))
 #grid(
   columns: (1.2fr, 2.8fr),
-  rows: (100%),
+  rows: 100%,
   // Sidebar
   rect(
     fill: primary-color,
@@ -97,48 +96,55 @@
         #text(fill: white.darken(20%), size: 14pt)[STRATEGIC] \
         #text(fill: white.darken(20%), size: 14pt)[REPORT]
       ]
-    ]
+    ],
   ),
   // Main Content
   pad(x: 40pt, y: 60pt)[
     #v(4em)
-    #text(12pt, tracking: 2pt, weight: "bold", fill: accent-color)[CYBER LAW & ETHICS] \
+    #text(
+      12pt,
+      tracking: 2pt,
+      weight: "bold",
+      font: heading-font,
+      fill: accent-color,
+    )[CYBER LAW & ETHICS] \
     #v(1em)
     #par(leading: 0.4em)[
-      #text(48pt, font: "Arial", weight: "bold", fill: primary-color)[
+      #text(48pt, font: heading-font, weight: "bold", fill: primary-color)[
         Policy \ Comparison: \ India vs USA
       ]
     ]
-    
+
     #v(2em)
     #line(length: 20%, stroke: 2pt + accent-color)
     #v(2em)
-    
-    #text(14pt, fill: text-muted)[
-      A comprehensive strategic analysis of legal frameworks, digital sovereignty, 
-      and the impact of emerging technologies (AI/Quantum) on 21st-century 
+
+    #text(14pt, fill: text-muted, font: "DeepMind Sans")[
+      A comprehensive strategic analysis of legal frameworks, digital sovereignty,
+      and the impact of emerging technologies (AI/Quantum) on 21st-century
       cybersecurity doctrines.
     ]
-    
+
     #v(1fr)
-    
+
     #grid(
       columns: (1fr, 1fr),
       align(left)[
         #text(weight: "bold", fill: primary-color)[PREPARED FOR] \
-        #text(size: 10pt, fill: text-muted)[Dept. of Cyber Law \ GMIU University]
+        #text(size: 10pt, fill: text-muted)[Cyber Law and Ethics \ ALA - III]
       ],
       align(left)[
         #text(weight: "bold", fill: primary-color)[STUDENT DETAILS] \
-        #text(size: 10pt, fill: text-muted)[Class: X (Section A) \ Date: #datetime.today().display()]
-      ]
+        #text(
+          size: 10pt,
+          fill: text-muted,
+        )[Class: X (Section A) \ Date: #datetime.today().display()]
+      ],
     )
-  ]
+  ],
 )
 #set page(margin: (x: 1.1in, y: 1.2in))
-#pagebreak()
-
-#pagebreak()
+#show outline: set text(font: heading-font)
 #outline(depth: 3, indent: auto)
 #pagebreak()
 
@@ -153,7 +159,7 @@ As both nations navigate the "Third Wave" of internet evolution—characterized 
 The US approach is characterized by its reliance on sectoral regulations, voluntary frameworks, and the strategic distribution of risk across private entities. Recent pivots suggest a shift towards "Secure by Design" principles, as outlined in the 2023-2025 CISA Strategic Plan.
 
 == The NIST Cybersecurity Framework (CSF) 2.0
-The cornerstone of US cyber policy evolved significantly with the release of *NIST CSF 2.0* in early 2024. 
+The cornerstone of US cyber policy evolved significantly with the release of *NIST CSF 2.0* in early 2024.
 - *The 'Govern' Function:* A major update that elevates cybersecurity from a technical task to a senior leadership responsibility. It emphasizes that cyber risk must be integrated into the broader enterprise risk management strategy.
 - *Broadened Scope:* While the original framework focused on Critical Infrastructure, version 2.0 is designed for organizations of all sizes, from small non-profits to global conglomerates.
 - *Implementation Tiers:* Organizations can measure their "maturity" across four tiers (Partial to Adaptive), allowing for a non-linear, flexible growth path that respects unique resource constraints.
@@ -182,12 +188,12 @@ The enactment of the DPDP Act marks a paradigm shift in India's cyber law landsc
 - *Financial Penalties:* Violations can lead to penalties up to ₹250 Crores (approx. \$30M USD), making it one of the most stringent data protection laws globally.
 
 == CERT-In and Mandatory Tactical Directives
-The Indian Computer Emergency Response Team (CERT-In) is the national nodal agency for incident response. 
+The Indian Computer Emergency Response Team (CERT-In) is the national nodal agency for incident response.
 - *The 6-Hour Reporting Mandate:* Issued in April 2022, this directive requires virtually all entities (including VPN providers and exchanges) to report a vast array of cyber incidents within 6 hours.
 - *System Time Sync:* Mandates synchronization with NTP servers of the National Physical Laboratory (NPL) or NIC to ensure forensic consistency across the nation's digital landscape.
 
 == Digital Public Infrastructure (DPI) and Sovereignty
-India's "India Stack" (Aadhar, UPI, DigiLocker) forms a unique layer of its cyber policy. 
+India's "India Stack" (Aadhar, UPI, DigiLocker) forms a unique layer of its cyber policy.
 - *Policy through Platform:* By building robust, secure public platforms, India effectively sets cybersecurity standards through implementation rather than just regulation.
 - *Digital Sovereignty:* India seeks to reduce dependence on external proprietary systems, fostering an indigenous "Trusted Electronics" ecosystem to mitigate supply chain risks.
 
@@ -262,7 +268,9 @@ The *U.S.-India Initiative on Critical and Emerging Technology (iCET)*, launched
   kind: table,
   table(
     columns: (1fr, 2fr, 2fr),
-    fill: (x, y) => if y == 0 { primary-color } else if calc.odd(y) { secondary-color.lighten(30%) } else { white },
+    fill: (x, y) => if y == 0 { primary-color } else if calc.odd(y) {
+      secondary-color.lighten(30%)
+    } else { white },
     stroke: none,
     inset: (x: 12pt, y: 15pt),
     align: (left, left, left),
@@ -305,10 +313,21 @@ While transitioning from different starting points, both the United States and I
 #grid(
   columns: (1fr, 3fr),
   gutter: 1.5em,
-  [#text(weight: "bold", fill: primary-color)[CII]], [Critical Information Infrastructure (e.g., power grids, banking).],
-  [#text(weight: "bold", fill: primary-color)[DPI]], [Digital Public Infrastructure (e.g., UPI, Aadhar).],
-  [#text(weight: "bold", fill: primary-color)[iCET]], [Initiative on Critical and Emerging Technology.],
-  [#text(weight: "bold", fill: primary-color)[NIST CSF]], [National Institute of Standards and Technology - Cybersecurity Framework.],
-  [#text(weight: "bold", fill: primary-color)[PQC]], [Post-Quantum Cryptography; encryption resilient to quantum computer attacks.],
-  [#text(weight: "bold", fill: primary-color)[RED-TEAM]], [Rigorous adversarial testing of AI models to find security vulnerabilities.],
+  [#text(weight: "bold", fill: primary-color)[CII]],
+  [Critical Information Infrastructure (e.g., power grids, banking).],
+
+  [#text(weight: "bold", fill: primary-color)[DPI]],
+  [Digital Public Infrastructure (e.g., UPI, Aadhar).],
+
+  [#text(weight: "bold", fill: primary-color)[iCET]],
+  [Initiative on Critical and Emerging Technology.],
+
+  [#text(weight: "bold", fill: primary-color)[NIST CSF]],
+  [National Institute of Standards and Technology - Cybersecurity Framework.],
+
+  [#text(weight: "bold", fill: primary-color)[PQC]],
+  [Post-Quantum Cryptography; encryption resilient to quantum computer attacks.],
+
+  [#text(weight: "bold", fill: primary-color)[RED-TEAM]],
+  [Rigorous adversarial testing of AI models to find security vulnerabilities.],
 )
