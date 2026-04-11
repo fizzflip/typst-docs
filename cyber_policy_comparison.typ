@@ -46,7 +46,7 @@
             fill: text-muted,
           )[Cyber Law and Ethics | *Comparative Analysis*]
           #h(1fr)
-          #text(8pt, fill: text-muted)[#datetime.today().display()]
+          #text(8pt, fill: text-muted)[April 11, 2026]
         ],
       )
     }
@@ -130,7 +130,7 @@
         #text(
           size: 10pt,
           fill: text-muted,
-        )[Class: X (Section A) \ Date: #datetime.today().display()]
+        )[Class: X (Section A) \ Date: April 11, 2026]
       ],
     )
   ],
