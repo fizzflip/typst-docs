@@ -44,7 +44,7 @@
           #text(
             8pt,
             fill: text-muted,
-          )[Cyber Law and Ethics | *Advanced Comparative Analysis*]
+          )[Cyber Law and Ethics | *Comparative Analysis*]
           #h(1fr)
           #text(8pt, fill: text-muted)[#datetime.today().display()]
         ],
@@ -89,14 +89,6 @@
     fill: primary-color,
     width: 100%,
     height: 100%,
-    align(bottom + right)[
-      #pad(right: 20pt, bottom: 40pt)[
-        #text(fill: accent-color, size: 40pt, weight: "bold")[2026] \
-        #v(-10pt)
-        #text(fill: white.darken(20%), size: 14pt)[STRATEGIC] \
-        #text(fill: white.darken(20%), size: 14pt)[REPORT]
-      ]
-    ],
   ),
   // Main Content
   pad(x: 40pt, y: 60pt)[
@@ -120,8 +112,8 @@
     #v(2em)
 
     #text(14pt, fill: text-muted, font: "DeepMind Sans")[
-      A comprehensive strategic analysis of legal frameworks, digital sovereignty,
-      and the impact of emerging technologies (AI/Quantum) on 21st-century
+      A comprehensive strategic analysis of legal \ frameworks, digital sovereignty,
+      and the impact \ of emerging technologies on 21st-century \
       cybersecurity doctrines.
     ]
 
@@ -154,7 +146,7 @@ The rapid digitization of global economies has placed cybersecurity at the foref
 
 As both nations navigate the "Third Wave" of internet evolution—characterized by Artificial Intelligence, Quantum Computing, and 5G/6G infrastructures—their policies are beginning to converge on shared democratic principles while maintaining distinct structural identities. The US continues to refine its market-responsive, public-private model through the *NIST 2.0 framework*, while India leverages its *Digital Public Infrastructure (DPI)* to establish a robust, centralized model for digital sovereignty. This document evaluates these approaches, their ethical implications, and the burgeoning bilateral synergy through the *iCET (Initiative on Critical and Emerging Technology)*.
 
-= The United States: A Decentralized, Market-Driven Ecosystem
+= The United States: \ A Decentralized, Market-Driven Ecosystem
 
 The US approach is characterized by its reliance on sectoral regulations, voluntary frameworks, and the strategic distribution of risk across private entities. Recent pivots suggest a shift towards "Secure by Design" principles, as outlined in the 2023-2025 CISA Strategic Plan.
 
@@ -221,7 +213,41 @@ The *U.S.-India Initiative on Critical and Emerging Technology (iCET)*, launched
 - *iCET TRUST Initiative:* A 2025 milestone focusing on verified technology vendors, ensuring that the critical tech supply chain between the two democracies remains free from malicious actor interference.
 - *Joint Quantum Coordination:* Establishing shared standards for quantum-safe communication to protect collective national security interests.
 
+= Comparative Policy Master Table
+
 #v(1em)
+#figure(
+  caption: [Strategic Comparison Matrix: IN vs. US],
+  kind: table,
+  table(
+    columns: (1fr, 2fr, 2fr),
+    fill: (x, y) => if y == 0 { primary-color } else if calc.odd(y) {
+      secondary-color.lighten(30%)
+    } else { white },
+    stroke: none,
+    inset: (x: 12pt, y: 15pt),
+    align: (left, left, left),
+
+    [#text(fill: white, weight: "bold", size: 9pt)[DOMAIN]],
+    [#text(fill: white, weight: "bold", size: 9pt)[INDIA]],
+    [#text(fill: white, weight: "bold", size: 9pt)[UNITED STATES]],
+
+    [*Legal Basis*],
+    [IT Act, 2000 & DPDP Act, 2023. Highly codified.],
+    [Sectoral patchwork & State laws (CCPA/GDPR style).],
+
+    [*Authority*], [CERT-In (Tactical) & NCIIPC (Critical).], [CISA (Risk Advisor) & Regional regulators.],
+
+    [*Reporting*], [6-hour mandatory window (Very strict).], [72-hour CIRCIA (Critical Infrastructure only).],
+
+    [*Emerging Tech*], [Sovereign-led (IndiaAI, NQM).], [Market-led with EO 2023 oversight.],
+
+    [*Objective*], [Resilience & Digital Sovereignty.], [Dominance & Global Shielding.],
+  ),
+)
+
+#v(4em)
+
 #align(center)[
   #box(
     width: 100%,
@@ -258,48 +284,8 @@ The *U.S.-India Initiative on Critical and Emerging Technology (iCET)*, launched
     )
   ]
 ]
-#v(1.5em)
 
-= Comparative Policy Master Table
-
-#v(1em)
-#figure(
-  caption: [Strategic Comparison Matrix: IN vs. US],
-  kind: table,
-  table(
-    columns: (1fr, 2fr, 2fr),
-    fill: (x, y) => if y == 0 { primary-color } else if calc.odd(y) {
-      secondary-color.lighten(30%)
-    } else { white },
-    stroke: none,
-    inset: (x: 12pt, y: 15pt),
-    align: (left, left, left),
-
-    [#text(fill: white, weight: "bold", size: 9pt)[DOMAIN]],
-    [#text(fill: white, weight: "bold", size: 9pt)[INDIA]],
-    [#text(fill: white, weight: "bold", size: 9pt)[UNITED STATES]],
-
-    [*Legal Basis*],
-    [IT Act, 2000 & DPDP Act, 2023. Highly codified.],
-    [Sectoral patchwork & State laws (CCPA/GDPR style).],
-
-    [*Authority*],
-    [CERT-In (Tactical) & NCIIPC (Critical).],
-    [CISA (Risk Advisor) & Regional regulators.],
-
-    [*Reporting*],
-    [6-hour mandatory window (Very strict).],
-    [72-hour CIRCIA (Critical Infrastructure only).],
-
-    [*Emerging Tech*],
-    [Sovereign-led (IndiaAI, NQM).],
-    [Market-led with EO 2023 oversight.],
-
-    [*Objective*],
-    [Resilience & Digital Sovereignty.],
-    [Dominance & Global Shielding.],
-  ),
-)
+#pagebreak()
 
 = Conclusion and Future Outlook
 
@@ -311,16 +297,14 @@ While transitioning from different starting points, both the United States and I
 = Appendix: Glossary of Terms
 
 #grid(
-  columns: (1fr, 3fr),
+  columns: (1fr, 6fr),
   gutter: 1.5em,
   [#text(weight: "bold", fill: primary-color)[CII]],
   [Critical Information Infrastructure (e.g., power grids, banking).],
 
-  [#text(weight: "bold", fill: primary-color)[DPI]],
-  [Digital Public Infrastructure (e.g., UPI, Aadhar).],
+  [#text(weight: "bold", fill: primary-color)[DPI]], [Digital Public Infrastructure (e.g., UPI, Aadhar).],
 
-  [#text(weight: "bold", fill: primary-color)[iCET]],
-  [Initiative on Critical and Emerging Technology.],
+  [#text(weight: "bold", fill: primary-color)[iCET]], [Initiative on Critical and Emerging Technology.],
 
   [#text(weight: "bold", fill: primary-color)[NIST CSF]],
   [National Institute of Standards and Technology - Cybersecurity Framework.],
