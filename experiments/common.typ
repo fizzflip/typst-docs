@@ -1,5 +1,21 @@
 #let prompt = "someone@mach>"
 
+#let term_font = ("DejaVu Sans Mono", "Liberation Mono")
+#let color_bg_term = rgb("f8fafc")
+#let color_bg_code = rgb("e2e8f0")
+#let color_bg_diff = rgb("e5e7eb")
+#let color_bg_out = rgb("f9fafb")
+
+#let get_group_num(title) = (
+  title.replace("A", "").replace("B", "").replace("C", "")
+)
+
+#let subheading(label) = {
+  v(.8em)
+  text(size: 14pt, weight: "bold")[#label]
+  linebreak()
+}
+
 #let practical_title(code) = {
   let is_grouped = code.contains("A") or code.contains("B")
   if not is_grouped {
@@ -40,9 +56,9 @@
       #set text(
         fill: text_fill,
         size: 10pt,
-        font: ("DejaVu Sans Mono", "Liberation Mono"),
+        font: term_font,
       )
-      #show raw: set text(size: 10pt, font: ("DejaVu Sans Mono", "Liberation Mono"))
+      #show raw: set text(size: 10pt, font: term_font)
       #body
     ]
   ]
@@ -54,7 +70,7 @@
       spacing: 0pt,
       rect(
         width: 100%,
-        fill: rgb("e2e8f0"),
+        fill: color_bg_code,
         stroke: none,
         inset: (x: 10pt, y: 6pt),
         radius: (
@@ -77,7 +93,7 @@
       ],
       rect(
         width: 100%,
-        fill: rgb("f8fafc"),
+        fill: color_bg_term,
         stroke: none,
         inset: (x: 14pt, y: 10pt),
         radius: (
@@ -91,7 +107,7 @@
       ],
     )
   ],
-  rgb("f8fafc"),
+  color_bg_term,
   rgb("cbd5e1"),
   rgb("0f172a"),
   width: width,
@@ -104,7 +120,7 @@
       spacing: 0pt,
       rect(
         width: 100%,
-        fill: rgb("e5e7eb"),
+        fill: color_bg_diff,
         stroke: none,
         inset: (x: 10pt, y: 6pt),
         radius: (
@@ -127,7 +143,7 @@
       ],
       rect(
         width: 100%,
-        fill: rgb("f9fafb"),
+        fill: color_bg_out,
         stroke: none,
         inset: (x: 14pt, y: 10pt),
         radius: (
@@ -141,7 +157,7 @@
       ],
     )
   ],
-  rgb("f9fafb"),
+  color_bg_out,
   rgb("d1d5db"),
   rgb("111827"),
   width: width,

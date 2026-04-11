@@ -28,9 +28,7 @@
 ]
 
 #pagebreak()
-#v(.5em)
-
-#text(size: 14pt, weight: "bold")[Installation Walkthrough:] \
+#subheading("Installation Walkthrough:")
 #text(
   size: 12pt,
 )[Step 1: Start installation by selecting language on the initial welcome screen.] \
@@ -110,13 +108,11 @@
   )
 ]
 
-#v(0.8em)
-#text(size: 14pt, weight: "bold")[Post-Installation Checklist:] \
+#subheading("Post-Installation Checklist:")
 - Verify internet connectivity and repository access.
 - Update packages using your distribution package manager.
 - Install developer essentials (compiler, editor, terminal tools).
 - Take a snapshot/backup of the clean base system.
 
-#v(0.8em)
-#text(size: 14pt, weight: "bold")[Result:] \
+#subheading("Result:")
 Linux installation and initial configuration were completed successfully, and the environment is ready for subsequent practical exercises.
