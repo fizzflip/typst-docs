@@ -1,5 +1,7 @@
 #set page(
-  header: align(right)[Name: Rahul Sharma | Enrollment No: 123456 | Subject: Operating System],
+  header: align(
+    right,
+  )[Name: Rahul Sharma | Enrollment No: 123456 | Subject: Operating System],
   footer: align(center)[#context counter(page).display()],
 )
 #set text(font: "Times New Roman", size: 12pt)
@@ -28,7 +30,10 @@ FACULTY: Prof. Rahul P. Jani (RPJ)
 
 #align(center)[#text(size: 18pt, weight: "bold")[INSTRUCTIONS]]
 
-#text(size: 14pt, weight: "bold")[Operating System Practical File – Instructions]
+#text(
+  size: 14pt,
+  weight: "bold",
+)[Operating System Practical File – Instructions]
 
 #text(size: 14pt, weight: "bold")[Formatting]
 - Font: Times New RomanPractical Heading : 20 or 18
@@ -81,7 +86,12 @@ In this practical:
 #text(size: 14pt, weight: "bold")[CODE :] \
 // Placeholder for the bash script image
 #align(center)[
-  #rect(width: 80%, height: 180pt, fill: rgb("f4f0ef"), stroke: 1pt + luma(200))[
+  #rect(
+    width: 80%,
+    height: 180pt,
+    fill: rgb("f4f0ef"),
+    stroke: 1pt + luma(200),
+  )[
     #align(center + horizon)[Bash Script Code Image Placeholder]
   ]
 ]
@@ -93,7 +103,9 @@ In this practical:
     #align(left)[
       #text(fill: white)[Terminal Output Image Placeholder]
     ]
-    #align(center + horizon)[#text(fill: white)[Terminal Output Image Placeholder]]
+    #align(center + horizon)[#text(
+      fill: white,
+    )[Terminal Output Image Placeholder]]
   ]
 ]
 

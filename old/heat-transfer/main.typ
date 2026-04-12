@@ -6,9 +6,9 @@
 
 // Font Selection: Linux Libertine is a built-in, elegant serif font in Typst
 #set text(
-//  font: "Linux Libertine",
+  //  font: "Linux Libertine",
   size: 12pt,
-  lang: "en"
+  lang: "en",
 )
 
 // Paragraph formatting
@@ -97,11 +97,15 @@ When slabs are placed side-by-side, such that heat flows sequentially through ea
 
 The total temperature difference across the entire structure is $Delta T_("total") = T_1 - T_n$. The total thermal resistance ($R_(t h, "total")$) is the sum of the individual thermal resistances:
 
-$ R_(t h, "total") = R_(t h, 1) + R_(t h, 2) + dots + R_(t h, n) = sum_i L_i / (k_i A) $
+$
+  R_(t h, "total") = R_(t h, 1) + R_(t h, 2) + dots + R_(t h, n) = sum_i L_i / (k_i A)
+$
 
 The overall rate of heat flow is:
 
-$ H = (Delta T_("total")) / R_(t h, "total") = (A(T_1 - T_n)) / (sum_i (L_i \/ k_i)) $
+$
+  H = (Delta T_("total")) / R_(t h, "total") = (A(T_1 - T_n)) / (sum_i (L_i \/ k_i))
+$
 
 This is an equivalent way to express the formula from the original table:
 
@@ -109,11 +113,8 @@ This is an equivalent way to express the formula from the original table:
   columns: (1fr, 2fr),
   inset: 10pt,
   align: horizon,
-  table.header(
-    [*Arrangement*], [*Rate of Heat Flow Formula*]
-  ),
-  [Slabs in Series],
-  $ H = (A(T_1 - T_2)) / (sum_i (L_i \/ k_i)) $
+  table.header([*Arrangement*], [*Rate of Heat Flow Formula*]),
+  [Slabs in Series], $ H = (A(T_1 - T_2)) / (sum_i (L_i \/ k_i)) $,
 )
 
 _Note: The original table's formula uses $T_1$ and $T_2$ for the overall temperature difference, implying only two layers or the overall difference across the entire stack._
@@ -137,11 +138,8 @@ This aligns with the formula presented in the original content:
   columns: (1fr, 2fr),
   inset: 10pt,
   align: horizon,
-  table.header(
-    [*Arrangement*], [*Rate of Heat Flow Formula*]
-  ),
-  [Slabs in Parallel],
-  $ H = ((T_1 - T_2) sum_i (k_i A_i)) / L $
+  table.header([*Arrangement*], [*Rate of Heat Flow Formula*]),
+  [Slabs in Parallel], $ H = ((T_1 - T_2) sum_i (k_i A_i)) / L $,
 )
 
 Where $L$ is the common length for all slabs in parallel.
@@ -162,13 +160,13 @@ The process typically begins when a fluid comes into contact with a surface at a
 Convection is classified based on the mechanism that drives the fluid motion:
 
 - *Natural (or Free) Convection:* The fluid motion is caused exclusively by density differences that arise from temperature variations within the fluid. For instance, when water is heated from the bottom, the water near the bottom expands, becomes less dense, and rises. Cooler, denser water sinks to replace it, creating a circulating current known as a convection current. Examples include:
-    - Heating water in a pot.
-    - Atmospheric circulation (wind and weather patterns).
-    - Land and sea breezes near coastlines.
+  - Heating water in a pot.
+  - Atmospheric circulation (wind and weather patterns).
+  - Land and sea breezes near coastlines.
 - *Forced Convection:* The fluid motion is induced by an external mechanical device, such as a pump, fan, blower, or stirrer. This external force overrides the natural buoyancy forces. Examples include:
-    - A forced-air furnace circulating warm air through a house.
-    - The cooling system (radiator and fan) in a car engine.
-    - A fan blowing air over a hot electronic component (e.g., a computer's CPU heat sink).
+  - A forced-air furnace circulating warm air through a house.
+  - The cooling system (radiator and fan) in a car engine.
+  - A fan blowing air over a hot electronic component (e.g., a computer's CPU heat sink).
 
 == Newton's Law of Cooling (Convective Heat Loss)
 While often referred to as Newton's Law of Cooling, the following equation describes the rate of heat transfer (loss or gain) by convection between a surface and a fluid:
@@ -271,7 +269,7 @@ $ L = L_0 (1 + alpha Delta T) $
     [Glass (Pyrex)], [3.2],
     [Invar (Fe-Ni alloy)], [0.7],
   ),
-  caption: [Typical Coefficients of Linear Expansion ($alpha$) at 20$degree$C]
+  caption: [Typical Coefficients of Linear Expansion ($alpha$) at 20$degree$C],
 )
 
 == Area Expansion
@@ -360,13 +358,31 @@ The following table summarizes the fundamental differences between the three mod
     inset: 8pt,
     align: (left, left, left, left, left),
     table.header(
-      [*Mode*], [*Mechanism*], [*Medium Required*], [*Driving Potential*], [*Governing Law*]
+      [*Mode*],
+      [*Mechanism*],
+      [*Medium Required*],
+      [*Driving Potential*],
+      [*Governing Law*],
     ),
-    [*Conduction*], [Microscopic collision of particles and movement of electrons.], [Yes (Solid, Liquid, Gas)], [Temp. Gradient ($nabla T$)], [Fourier's Law],
-    [*Convection*], [Macroscopic bulk motion of fluid mixing with conduction.], [Yes (Fluid)], [Temp. Difference ($Delta T$)], [Newton's Law of Cooling],
-    [*Radiation*], [Emission and absorption of electromagnetic waves.], [No (Vacuum or transparent)], [Diff. of fourth powers ($T^4 - T_s^4$)], [Stefan-Boltzmann Law],
+    [*Conduction*],
+    [Microscopic collision of particles and movement of electrons.],
+    [Yes (Solid, Liquid, Gas)],
+    [Temp. Gradient ($nabla T$)],
+    [Fourier's Law],
+
+    [*Convection*],
+    [Macroscopic bulk motion of fluid mixing with conduction.],
+    [Yes (Fluid)],
+    [Temp. Difference ($Delta T$)],
+    [Newton's Law of Cooling],
+
+    [*Radiation*],
+    [Emission and absorption of electromagnetic waves.],
+    [No (Vacuum or transparent)],
+    [Diff. of fourth powers ($T^4 - T_s^4$)],
+    [Stefan-Boltzmann Law],
   ),
-  caption: [Comparison of Heat Transfer Modes]
+  caption: [Comparison of Heat Transfer Modes],
 )
 
 == Coupled Heat Transfer
@@ -530,10 +546,21 @@ Thermometers rely on a thermometric property (a physical property that changes l
   table.header(
     [*Thermometer Type*], [*Thermometric Property*], [*Typical Range*]
   ),
-  [Liquid-in-glass], [Volume expansion of liquid (e.g., Mercury, Alcohol)], [-39$degree C$ to 357$degree C$],
-  [Resistance Temperature Detector (RTD)], [Electrical resistance of a metal (e.g., Platinum)], [-200$degree C$ to 850$degree C$],
-  [Thermocouple], [Seebeck effect (voltage generated between two dissimilar metals)], [Very wide range],
-  [Pyrometer], [Thermal radiation emitted ($E prop T^4$)], [High temperatures only (> 600$degree C$)],
+  [Liquid-in-glass],
+  [Volume expansion of liquid (e.g., Mercury, Alcohol)],
+  [-39$degree C$ to 357$degree C$],
+
+  [Resistance Temperature Detector (RTD)],
+  [Electrical resistance of a metal (e.g., Platinum)],
+  [-200$degree C$ to 850$degree C$],
+
+  [Thermocouple],
+  [Seebeck effect (voltage generated between two dissimilar metals)],
+  [Very wide range],
+
+  [Pyrometer],
+  [Thermal radiation emitted ($E prop T^4$)],
+  [High temperatures only (> 600$degree C$)],
 )
 
 The choice of thermometer depends on the required accuracy, range, and the specific application environment.

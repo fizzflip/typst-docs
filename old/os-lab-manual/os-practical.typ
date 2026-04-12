@@ -7,7 +7,10 @@
   #v(2em)
   NAME: [cite: 1] \
   #v(1em)
-  #text(size: 18pt, weight: "bold")[GYANMANJARI INNOVATIVE UNIVERSITY [cite: 2]] \
+  #text(
+    size: 18pt,
+    weight: "bold",
+  )[GYANMANJARI INNOVATIVE UNIVERSITY [cite: 2]] \
   #v(0.5em)
   #text(size: 16pt, weight: "bold")[OS PRACTICAL FILE FORMATE [cite: 3]] \
   #v(2em)
@@ -28,7 +31,10 @@
 
 // PAGE 2
 #text(size: 14pt, weight: "bold")[INSTRUCTIONS [cite: 11]] \
-#text(size: 14pt, weight: "bold")[Operating System Practical File - Instructions [cite: 12]] \
+#text(
+  size: 14pt,
+  weight: "bold",
+)[Operating System Practical File - Instructions [cite: 12]] \
 #v(1em)
 
 *1. Formatting* [cite: 13] \

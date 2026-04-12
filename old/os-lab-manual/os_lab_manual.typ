@@ -16,7 +16,12 @@ A palindrome is a sequence of characters or digits that reads the same forward a
 #text(size: 14pt, weight: "bold")[CODE:] \
 // Placeholder for the bash script image
 #align(center)[
-  #rect(width: 80%, height: 180pt, fill: rgb("f4f0ef"), stroke: 1pt + luma(200))[
+  #rect(
+    width: 80%,
+    height: 180pt,
+    fill: rgb("f4f0ef"),
+    stroke: 1pt + luma(200),
+  )[
     #align(center + horizon)[Bash Script Code Image Placeholder]
   ]
 ]
@@ -24,7 +29,9 @@ A palindrome is a sequence of characters or digits that reads the same forward a
 // Placeholder for the terminal output image
 #align(center)[
   #rect(width: 80%, height: 180pt, fill: rgb("300a24"), stroke: 1pt + black)[
-    #align(center + horizon)[#text(fill: white)[Terminal Output Image Placeholder]]
+    #align(center + horizon)[#text(
+      fill: white,
+    )[Terminal Output Image Placeholder]]
   ]
 ]
 #text(size: 14pt, weight: "bold")[Conclusion:] \
@@ -52,7 +59,12 @@ The Fibonacci sequence is a series of numbers where the next number is found by 
 #text(size: 14pt, weight: "bold")[CODE:] \
 // Placeholder for the bash script image
 #align(center)[
-  #rect(width: 80%, height: 180pt, fill: rgb("f4f0ef"), stroke: 1pt + luma(200))[
+  #rect(
+    width: 80%,
+    height: 180pt,
+    fill: rgb("f4f0ef"),
+    stroke: 1pt + luma(200),
+  )[
     #align(center + horizon)[Bash Script Code Image Placeholder]
   ]
 ]
@@ -60,7 +72,9 @@ The Fibonacci sequence is a series of numbers where the next number is found by 
 // Placeholder for the terminal output image
 #align(center)[
   #rect(width: 80%, height: 180pt, fill: rgb("300a24"), stroke: 1pt + black)[
-    #align(center + horizon)[#text(fill: white)[Terminal Output Image Placeholder]]
+    #align(center + horizon)[#text(
+      fill: white,
+    )[Terminal Output Image Placeholder]]
   ]
 ]
 #text(size: 14pt, weight: "bold")[Conclusion:] \
@@ -87,7 +101,12 @@ Finding the minimum and maximum involves sequentially comparing variables. In Ba
 #text(size: 14pt, weight: "bold")[CODE:] \
 // Placeholder for the bash script image
 #align(center)[
-  #rect(width: 80%, height: 180pt, fill: rgb("f4f0ef"), stroke: 1pt + luma(200))[
+  #rect(
+    width: 80%,
+    height: 180pt,
+    fill: rgb("f4f0ef"),
+    stroke: 1pt + luma(200),
+  )[
     #align(center + horizon)[Bash Script Code Image Placeholder]
   ]
 ]
@@ -95,7 +114,9 @@ Finding the minimum and maximum involves sequentially comparing variables. In Ba
 // Placeholder for the terminal output image
 #align(center)[
   #rect(width: 80%, height: 180pt, fill: rgb("300a24"), stroke: 1pt + black)[
-    #align(center + horizon)[#text(fill: white)[Terminal Output Image Placeholder]]
+    #align(center + horizon)[#text(
+      fill: white,
+    )[Terminal Output Image Placeholder]]
   ]
 ]
 #text(size: 14pt, weight: "bold")[Conclusion:] \
@@ -122,7 +143,12 @@ String manipulation in Bash allows for extracting specific characters using para
 #text(size: 14pt, weight: "bold")[CODE:] \
 // Placeholder for the bash script image
 #align(center)[
-  #rect(width: 80%, height: 180pt, fill: rgb("f4f0ef"), stroke: 1pt + luma(200))[
+  #rect(
+    width: 80%,
+    height: 180pt,
+    fill: rgb("f4f0ef"),
+    stroke: 1pt + luma(200),
+  )[
     #align(center + horizon)[Bash Script Code Image Placeholder]
   ]
 ]
@@ -130,7 +156,9 @@ String manipulation in Bash allows for extracting specific characters using para
 // Placeholder for the terminal output image
 #align(center)[
   #rect(width: 80%, height: 180pt, fill: rgb("300a24"), stroke: 1pt + black)[
-    #align(center + horizon)[#text(fill: white)[Terminal Output Image Placeholder]]
+    #align(center + horizon)[#text(
+      fill: white,
+    )[Terminal Output Image Placeholder]]
   ]
 ]
 #text(size: 14pt, weight: "bold")[Conclusion:] \
@@ -157,7 +185,12 @@ A menu-driven script presents a list of options to the user and executes specifi
 #text(size: 14pt, weight: "bold")[CODE:] \
 // Placeholder for the bash script image
 #align(center)[
-  #rect(width: 80%, height: 180pt, fill: rgb("f4f0ef"), stroke: 1pt + luma(200))[
+  #rect(
+    width: 80%,
+    height: 180pt,
+    fill: rgb("f4f0ef"),
+    stroke: 1pt + luma(200),
+  )[
     #align(center + horizon)[Bash Script Code Image Placeholder]
   ]
 ]
@@ -165,7 +198,9 @@ A menu-driven script presents a list of options to the user and executes specifi
 // Placeholder for the terminal output image
 #align(center)[
   #rect(width: 80%, height: 180pt, fill: rgb("300a24"), stroke: 1pt + black)[
-    #align(center + horizon)[#text(fill: white)[Terminal Output Image Placeholder]]
+    #align(center + horizon)[#text(
+      fill: white,
+    )[Terminal Output Image Placeholder]]
   ]
 ]
 #text(size: 14pt, weight: "bold")[Conclusion:] \
@@ -191,7 +226,12 @@ In Linux/UNIX systems, directories are treated as a special type of file. To fil
 #text(size: 14pt, weight: "bold")[CODE:] \
 // Placeholder for the bash script image
 #align(center)[
-  #rect(width: 80%, height: 180pt, fill: rgb("f4f0ef"), stroke: 1pt + luma(200))[
+  #rect(
+    width: 80%,
+    height: 180pt,
+    fill: rgb("f4f0ef"),
+    stroke: 1pt + luma(200),
+  )[
     #align(center + horizon)[Bash Script Code Image Placeholder]
   ]
 ]
@@ -199,7 +239,9 @@ In Linux/UNIX systems, directories are treated as a special type of file. To fil
 // Placeholder for the terminal output image
 #align(center)[
   #rect(width: 80%, height: 180pt, fill: rgb("300a24"), stroke: 1pt + black)[
-    #align(center + horizon)[#text(fill: white)[Terminal Output Image Placeholder]]
+    #align(center + horizon)[#text(
+      fill: white,
+    )[Terminal Output Image Placeholder]]
   ]
 ]
 #text(size: 14pt, weight: "bold")[Conclusion:] \
@@ -227,7 +269,12 @@ In Unix-like operating systems, various file types exist. Shell scripts can diff
 #text(size: 14pt, weight: "bold")[CODE:] \
 // Placeholder for the bash script image
 #align(center)[
-  #rect(width: 80%, height: 180pt, fill: rgb("f4f0ef"), stroke: 1pt + luma(200))[
+  #rect(
+    width: 80%,
+    height: 180pt,
+    fill: rgb("f4f0ef"),
+    stroke: 1pt + luma(200),
+  )[
     #align(center + horizon)[Bash Script Code Image Placeholder]
   ]
 ]
@@ -235,7 +282,9 @@ In Unix-like operating systems, various file types exist. Shell scripts can diff
 // Placeholder for the terminal output image
 #align(center)[
   #rect(width: 80%, height: 180pt, fill: rgb("300a24"), stroke: 1pt + black)[
-    #align(center + horizon)[#text(fill: white)[Terminal Output Image Placeholder]]
+    #align(center + horizon)[#text(
+      fill: white,
+    )[Terminal Output Image Placeholder]]
   ]
 ]
 #text(size: 14pt, weight: "bold")[Conclusion:] \
@@ -261,7 +310,12 @@ In Linux, reversing a file typically means reversing the order of its lines (pri
 #text(size: 14pt, weight: "bold")[CODE:] \
 // Placeholder for the bash script image
 #align(center)[
-  #rect(width: 80%, height: 180pt, fill: rgb("f4f0ef"), stroke: 1pt + luma(200))[
+  #rect(
+    width: 80%,
+    height: 180pt,
+    fill: rgb("f4f0ef"),
+    stroke: 1pt + luma(200),
+  )[
     #align(center + horizon)[Bash Script Code Image Placeholder]
   ]
 ]
@@ -269,7 +323,9 @@ In Linux, reversing a file typically means reversing the order of its lines (pri
 // Placeholder for the terminal output image
 #align(center)[
   #rect(width: 80%, height: 180pt, fill: rgb("300a24"), stroke: 1pt + black)[
-    #align(center + horizon)[#text(fill: white)[Terminal Output Image Placeholder]]
+    #align(center + horizon)[#text(
+      fill: white,
+    )[Terminal Output Image Placeholder]]
   ]
 ]
 #text(size: 14pt, weight: "bold")[Conclusion:] \
@@ -300,7 +356,12 @@ Interactive shell scripts can serve as wrappers for standard Unix commands to ma
 #text(size: 14pt, weight: "bold")[CODE:] \
 // Placeholder for the bash script image
 #align(center)[
-  #rect(width: 80%, height: 180pt, fill: rgb("f4f0ef"), stroke: 1pt + luma(200))[
+  #rect(
+    width: 80%,
+    height: 180pt,
+    fill: rgb("f4f0ef"),
+    stroke: 1pt + luma(200),
+  )[
     #align(center + horizon)[Bash Script Code Image Placeholder]
   ]
 ]
@@ -308,7 +369,9 @@ Interactive shell scripts can serve as wrappers for standard Unix commands to ma
 // Placeholder for the terminal output image
 #align(center)[
   #rect(width: 80%, height: 180pt, fill: rgb("300a24"), stroke: 1pt + black)[
-    #align(center + horizon)[#text(fill: white)[Terminal Output Image Placeholder]]
+    #align(center + horizon)[#text(
+      fill: white,
+    )[Terminal Output Image Placeholder]]
   ]
 ]
 #text(size: 14pt, weight: "bold")[Conclusion:] \
@@ -336,7 +399,12 @@ System administrators regularly monitor disk space to prevent system crashes. Th
 #text(size: 14pt, weight: "bold")[CODE:] \
 // Placeholder for the bash script image
 #align(center)[
-  #rect(width: 80%, height: 180pt, fill: rgb("f4f0ef"), stroke: 1pt + luma(200))[
+  #rect(
+    width: 80%,
+    height: 180pt,
+    fill: rgb("f4f0ef"),
+    stroke: 1pt + luma(200),
+  )[
     #align(center + horizon)[Bash Script Code Image Placeholder]
   ]
 ]
@@ -344,7 +412,9 @@ System administrators regularly monitor disk space to prevent system crashes. Th
 // Placeholder for the terminal output image
 #align(center)[
   #rect(width: 80%, height: 180pt, fill: rgb("300a24"), stroke: 1pt + black)[
-    #align(center + horizon)[#text(fill: white)[Terminal Output Image Placeholder]]
+    #align(center + horizon)[#text(
+      fill: white,
+    )[Terminal Output Image Placeholder]]
   ]
 ]
 #text(size: 14pt, weight: "bold")[Conclusion:] \
@@ -372,7 +442,12 @@ While the `tr` command is normally the go-to tool for character swapping in shel
 #text(size: 14pt, weight: "bold")[CODE:] \
 // Placeholder for the bash script image
 #align(center)[
-  #rect(width: 80%, height: 180pt, fill: rgb("f4f0ef"), stroke: 1pt + luma(200))[
+  #rect(
+    width: 80%,
+    height: 180pt,
+    fill: rgb("f4f0ef"),
+    stroke: 1pt + luma(200),
+  )[
     #align(center + horizon)[Bash Script Code Image Placeholder]
   ]
 ]
@@ -380,7 +455,9 @@ While the `tr` command is normally the go-to tool for character swapping in shel
 // Placeholder for the terminal output image
 #align(center)[
   #rect(width: 80%, height: 180pt, fill: rgb("300a24"), stroke: 1pt + black)[
-    #align(center + horizon)[#text(fill: white)[Terminal Output Image Placeholder]]
+    #align(center + horizon)[#text(
+      fill: white,
+    )[Terminal Output Image Placeholder]]
   ]
 ]
 #text(size: 14pt, weight: "bold")[Conclusion:] \
@@ -410,7 +487,12 @@ In UNIX/Linux operating systems, a new process is created using the `fork()` sys
 #text(size: 14pt, weight: "bold")[CODE:] \
 // Placeholder for the C program image
 #align(center)[
-  #rect(width: 80%, height: 180pt, fill: rgb("f4f0ef"), stroke: 1pt + luma(200))[
+  #rect(
+    width: 80%,
+    height: 180pt,
+    fill: rgb("f4f0ef"),
+    stroke: 1pt + luma(200),
+  )[
     #align(center + horizon)[C Program Code Image Placeholder]
   ]
 ]
@@ -418,7 +500,9 @@ In UNIX/Linux operating systems, a new process is created using the `fork()` sys
 // Placeholder for the terminal output image
 #align(center)[
   #rect(width: 80%, height: 180pt, fill: rgb("300a24"), stroke: 1pt + black)[
-    #align(center + horizon)[#text(fill: white)[Terminal Output Image Placeholder]]
+    #align(center + horizon)[#text(
+      fill: white,
+    )[Terminal Output Image Placeholder]]
   ]
 ]
 #text(size: 14pt, weight: "bold")[Conclusion:] \
@@ -475,7 +559,12 @@ These commands are used to monitor active programs (processes) and send them sig
 #text(size: 14pt, weight: "bold")[CODE:] \
 // Placeholder for the terminal demonstration image
 #align(center)[
-  #rect(width: 80%, height: 180pt, fill: rgb("f4f0ef"), stroke: 1pt + luma(200))[
+  #rect(
+    width: 80%,
+    height: 180pt,
+    fill: rgb("f4f0ef"),
+    stroke: 1pt + luma(200),
+  )[
     #align(center + horizon)[Command Demonstration Image Placeholder]
   ]
 ]
@@ -483,7 +572,9 @@ These commands are used to monitor active programs (processes) and send them sig
 // Placeholder for the terminal output image
 #align(center)[
   #rect(width: 80%, height: 180pt, fill: rgb("300a24"), stroke: 1pt + black)[
-    #align(center + horizon)[#text(fill: white)[Terminal Output Image Placeholder]]
+    #align(center + horizon)[#text(
+      fill: white,
+    )[Terminal Output Image Placeholder]]
   ]
 ]
 #text(size: 14pt, weight: "bold")[Conclusion:] \
@@ -547,7 +638,12 @@ These are everyday shell commands used for terminal management, scripting, and g
 #text(size: 14pt, weight: "bold")[CODE:] \
 // Placeholder for the terminal demonstration image
 #align(center)[
-  #rect(width: 80%, height: 180pt, fill: rgb("f4f0ef"), stroke: 1pt + luma(200))[
+  #rect(
+    width: 80%,
+    height: 180pt,
+    fill: rgb("f4f0ef"),
+    stroke: 1pt + luma(200),
+  )[
     #align(center + horizon)[Command Demonstration Image Placeholder]
   ]
 ]
@@ -555,7 +651,9 @@ These are everyday shell commands used for terminal management, scripting, and g
 // Placeholder for the terminal output image
 #align(center)[
   #rect(width: 80%, height: 180pt, fill: rgb("300a24"), stroke: 1pt + black)[
-    #align(center + horizon)[#text(fill: white)[Terminal Output Image Placeholder]]
+    #align(center + horizon)[#text(
+      fill: white,
+    )[Terminal Output Image Placeholder]]
   ]
 ]
 #text(size: 14pt, weight: "bold")[Conclusion:] \
