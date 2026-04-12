@@ -73,7 +73,7 @@
       [#meta.subject], [#meta.sub_code],
       [#meta.roll_no], [#meta.ern],
       [#meta.section], [#meta.cla],
-      [#meta.batch], [#meta.ala],
+      [II], [#meta.ala],
     )
   ]
 ]
@@ -199,7 +199,10 @@ This methodology allows deadlocks to occur but runs a background task (e.g., Cyc
   [Resource Costs], [Very Low], [Moderate (Tracking)], [High (Preemption)],
   [Runtime Complexity], [Static], [Dynamic (O(n²))], [Periodic Checks],
   [Implementation], [Code Design], [Resource Manager], [Kernel Task],
-  [Best Use Case], [Application Code], [Safety-Critical Systems], [General Purpose OS],
+  [Best Use Case],
+  [Application Code],
+  [Safety-Critical Systems],
+  [General Purpose OS],
 )
 
 #v(1em)

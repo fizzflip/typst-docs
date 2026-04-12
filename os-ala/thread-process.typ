@@ -72,7 +72,7 @@
       [#meta.subject], [#meta.sub_code],
       [#meta.roll_no], [#meta.ern],
       [#meta.section], [#meta.cla],
-      [#meta.batch], [#meta.ala],
+      [III], [#meta.ala],
     )
   ]
 ]
@@ -263,12 +263,12 @@ To assist in system design, we use the following decision tree:
   - *Yes*: Use #m[threading] (shared memory) or #m[multiprocessing.Manager] (proxy objects).
 
 #v(1em)
-= VII. Best Practices and Future Context
+= VII. Best Practices
 To ensure robust execution in Python, we adhere to the following principles:
 - *Always use the Main Guard*: Mandatory for cross-platform reliability, especially on Windows.
 - *Minimize Shared State*: The most stable concurrent systems are those that pass messages rather than sharing and locking memory.
 - *Use Context Managers*: Always use the #m[with] statement with Executors and Managers to ensure resources are cleaned up even if errors occur.
 
 
-= VIII. Conclusion and Further Reading
+= VIII. Conclusion
 By mastering the creation of threads and processes, we unlock the full potential of multi-core architectures, transforming Python from a single-threaded interpreter into a powerful engine for concurrent system engineering and data science.
