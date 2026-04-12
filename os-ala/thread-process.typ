@@ -107,8 +107,8 @@
 In the domain of modern software engineering, concurrency is the foundation of responsive and high-performance applications. In this report, our primary objective is to demonstrate the methodologies for the creation of threads and processes within the Python ecosystem.
 
 We distinguish between two primary forms of concurrency:
-- **Lightweight Threads**: Utilizing the #m[threading] module for I/O-bound tasks.
-- **Heavyweight Processes**: Utilizing the #m[multiprocessing] module to achieve true parallelism for CPU-bound tasks, bypassing the #m[Global Interpreter Lock (GIL)].
+- *Lightweight Threads*: Utilizing the #m[threading] module for I/O-bound tasks.
+- *Heavyweight Processes*: Utilizing the #m[multiprocessing] module to achieve true parallelism for CPU-bound tasks, bypassing the #m[Global Interpreter Lock (GIL)].
 
 == Glossary of Concurrency Concepts
 To ensure a rigorous understanding, we define the following core terminology:
@@ -232,8 +232,8 @@ Effective concurrency requires that we safely coordinate data between threads or
 
 #v(1em)
 = V. Process Lifecycle and Daemons
-- **Daemon Processes**: Flagging a process with #m[p.daemon = True] ensures it terminates as soon as the parent finishes. This is critical for background workers.
-- **Termination**: Use #m[p.terminate()] for a graceful shutdown signal. Always call #m[p.join()] after termination to avoid "zombie" processes consuming OS PIDs.
+- *Daemon Processes*: Flagging a process with #m[p.daemon = True] ensures it terminates as soon as the parent finishes. This is critical for background workers.
+- *Termination*: Use #m[p.terminate()] for a graceful shutdown signal. Always call #m[p.join()] after termination to avoid "zombie" processes consuming OS PIDs.
 
 #pagebreak()
 
@@ -255,19 +255,19 @@ When choosing the correct concurrency model, we must consider our tasks and the 
 #v(1em)
 == Case Study: Architecture Selection Tree
 To assist in system design, we use the following decision tree:
-1. **Is the task spending most of its time waiting for I/O?**
+1. *Is the task spending most of its time waiting for I/O?*
   - *Yes*: Use #m[threading] or #m[asyncio] to maximize responsiveness.
-2. **Is the task computationally heavy (e.g., NumPy/Math)?**
+2. *Is the task computationally heavy (e.g., NumPy/Math)?*
   - *Yes*: Use #m[multiprocessing] to distribute the load across multiple CPU cores.
-3. **Does the task require frequent sharing of complex Python objects?**
+3. *Does the task require frequent sharing of complex Python objects?*
   - *Yes*: Use #m[threading] (shared memory) or #m[multiprocessing.Manager] (proxy objects).
 
 #v(1em)
 = VII. Best Practices and Future Context
 To ensure robust execution in Python, we adhere to the following principles:
-- **Always use the Main Guard**: Mandatory for cross-platform reliability, especially on Windows.
-- **Minimize Shared State**: The most stable concurrent systems are those that pass messages rather than sharing and locking memory.
-- **Use Context Managers**: Always use the #m[with] statement with Executors and Managers to ensure resources are cleaned up even if errors occur.
+- *Always use the Main Guard*: Mandatory for cross-platform reliability, especially on Windows.
+- *Minimize Shared State*: The most stable concurrent systems are those that pass messages rather than sharing and locking memory.
+- *Use Context Managers*: Always use the #m[with] statement with Executors and Managers to ensure resources are cleaned up even if errors occur.
 
 
 = VIII. Conclusion and Further Reading
