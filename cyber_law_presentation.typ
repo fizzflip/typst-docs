@@ -24,7 +24,7 @@
     subtitle: [A Comprehensive Case Study Analysis],
     author: [Sandeep Prasad],
     // institution: [GMIU — Department of Computer Science & Engineering],
-    date: [April 2026],
+    // date: [April 2026],
   ),
   config-colors(
     primary: midnight,
@@ -38,7 +38,9 @@
   header: self => utils.display-current-heading(level: 1),
   // Footer: only slide numbers on the right
   footer: none,
-  footer-right: context utils.slide-counter.display() + " / " + utils.last-slide-number,
+  footer-right: context utils.slide-counter.display()
+    + " / "
+    + utils.last-slide-number,
   footer-progress: true,
 )
 
@@ -114,10 +116,10 @@
 
 #title-slide(
   extra: [
-    #v(1em)
-    #text(size: 13pt, fill: slate-text)[
-      240905050085  ·  X21 (CSE) \
-      Cyber Law and Ethics -- ALA-II
+    // #v(1em)
+    #text(size: 13pt, fill: rgb("#0f172a90"))[
+      // 240905050085  ·  X21 (CSE) \
+      Cyber Law and Ethics \ ALA-II
     ]
   ],
 )
@@ -165,7 +167,11 @@
       radius: 6pt,
       width: 100%,
     )[
-      #text(weight: "bold", size: 16pt, fill: midnight)[Information Technology Act, 2000] \
+      #text(
+        weight: "bold",
+        size: 16pt,
+        fill: midnight,
+      )[Information Technology Act, 2000] \
       #v(6pt)
       - Legal recognition for e-transactions #provision[Section 4]
       - Digital signature framework #provision[Section 5]
@@ -376,6 +382,8 @@
   #ethical[Internet Anonymity vs. Victim Protection]
   #v(10pt)
 
+  #pagebreak()
+
   *Facts of the Case:*
   - The accused was a known acquaintance who had been rejected
   - Created *fake Yahoo profiles* in the victim's name
@@ -383,8 +391,8 @@
   - Victim received hundreds of harassing and obscene phone calls
   - FIR filed at the *Chennai Cyber Crime Cell*
 
-  #v(37pt)
 
+  \
   #verdict[Convicted under Section 67, IT Act & Section 509, IPC]
 
   #text(size: 14pt, fill: slate-text)[
@@ -786,7 +794,11 @@
       radius: 4pt,
       width: 100%,
     )[
-      #text(weight: "bold", size: 16pt, fill: warn-red.darken(10%))[Violations] \
+      #text(
+        weight: "bold",
+        size: 16pt,
+        fill: warn-red.darken(10%),
+      )[Violations] \
       #v(6pt)
       - *Informed Consent:* Users consented to a quiz, not mass data extraction
       - *Data Minimization:* Friends' data was collected far beyond any stated purpose
@@ -800,7 +812,11 @@
       radius: 4pt,
       width: 100%,
     )[
-      #text(weight: "bold", size: 16pt, fill: emerald.darken(10%))[Consequences] \
+      #text(
+        weight: "bold",
+        size: 16pt,
+        fill: emerald.darken(10%),
+      )[Consequences] \
       #v(6pt)
       - Facebook fined *\$5 billion* by the US FTC
       - GDPR enforcement *accelerated* across Europe
@@ -833,7 +849,10 @@
       radius: 4pt,
       width: 100%,
     )[
-      #text(weight: "bold", fill: emerald.darken(10%))[FOR — Governance Benefits] \
+      #text(
+        weight: "bold",
+        fill: emerald.darken(10%),
+      )[FOR — Governance Benefits] \
       #v(4pt)
       - *Direct Benefit Transfer (DBT)*: Saved ₹2.25 lakh crore by eliminating middlemen
       - Enables *financial inclusion* for the unbanked
@@ -847,7 +866,10 @@
       radius: 4pt,
       width: 100%,
     )[
-      #text(weight: "bold", fill: warn-red.darken(10%))[AGAINST — Privacy Concerns] \
+      #text(
+        weight: "bold",
+        fill: warn-red.darken(10%),
+      )[AGAINST — Privacy Concerns] \
       #v(4pt)
       - *Biometric data is irrevocable* -- you can't change fingerprints
       - Creates a *"single point of surveillance"*
@@ -868,7 +890,6 @@
     AI-generated deepfakes have evolved from research curiosities to *weaponized tools* for fraud, disinformation, and non-consensual content. India reported a *230% surge* in deepfake-related offences in 2023–24.
   ]
   #danger[No dedicated deepfake law in India]  #ethical[Free Expression & Satire vs. Fabricated Reality] \
-
   *Threat Landscape:*
   - *Political deepfakes:* Synthetic videos of leaders making fabricated statements during elections
   - *Financial fraud:* Deepfake video calls impersonating CEOs to authorize wire transfers (₹40L+ cases reported in India)
@@ -890,7 +911,7 @@
       - #provision[Section 66E] Privacy Violation and Publishing of Private Images
       - #provision[Section 67 / 67A / 67B] Obscene / Sexually Explicit Material
       - IPC/BNS provisions on defamation and fraud
-      - IT Rules 2021 — Intermediary obligations to remove deepfakes
+      - IT Rules 2021 -- Intermediary obligations to remove deepfakes
     ],
     [
       *What's Missing:*
@@ -898,14 +919,14 @@
       - No mandatory *content authentication* or watermarking standard
       - No clear *liability framework* for AI model developers
       - No *technological mandate* for platforms to detect and label synthetic media
-      - Jurisdictional challenges — generators may be outside India
+      - Jurisdictional challenges -- generators may be outside India
     ],
   )
 
   #highlight-box(color: amber)[
     #text(
       size: 14pt,
-    )[*The Ethical Core:* Who is responsible when AI creates harmful content — the *developer* of the AI model, the *user* who prompted it, or the *platform* that hosted it? Current law has no clear answer.]
+    )[*The Ethical Core:* Who is responsible when AI creates harmful content -- the *developer* of the AI model, the *user* who prompted it, or the *platform* that hosted it? Current law has no clear answer.]
   ]
 ]
 
@@ -945,8 +966,8 @@
   #v(10pt)
 
   *The Dilemma:*
-  - *Section 43*: Unauthorized access to a computer — No intent requirement
-  - *Section 66*: Computer-related offences — Criminal penalties for unauthorized access
+  - *Section 43*: Unauthorized access to a computer -- No intent requirement
+  - *Section 66*: Computer-related offences -- Criminal penalties for unauthorized access
   - Unlike the US (*CFAA Safe Harbour*) or EU (*NIS2 framework*), India has *no legal protection* for responsible disclosure
 
   #v(10pt)
@@ -972,21 +993,54 @@
       align: left,
       stroke: 0.5pt + midnight.lighten(70%),
       inset: 8pt,
-      fill: (x, y) => if y == 0 { midnight } else if calc.rem(y, 2) == 0 { light-bg } else { white },
+      fill: (x, y) => if y == 0 { midnight } else if calc.rem(y, 2) == 0 {
+        light-bg
+      } else { white },
       table.header(
         text(fill: white, weight: "bold")[Case / Incident],
         text(fill: white, weight: "bold")[Legal Provisions],
         text(fill: white, weight: "bold")[Ethical Theme],
         text(fill: white, weight: "bold")[Outcome / Impact],
       ),
-      [Shreya Singhal], [Section 66A], [Free Speech vs. Safety], [66A struck down],
-      [Puttaswamy], [Article 21], [Privacy vs. Surveillance], [Privacy = Fundamental Right],
-      [Suhas Katti], [67 IT Act + 509 IPC], [Anonymity vs. Protection], [First cyber conviction],
-      [Bazee.com], [Section 67, 79], [Platform Liability], [Safe Harbour introduced],
-      [WannaCry], [Section 66F], [State Weapons vs. Civilian Safety], [Patch management critical],
-      [AIIMS Attack], [Section 66, 66F], [Healthcare Data Security], [2-week system failure],
-      [Cambridge Analytica], [GDPR / DPDP], [Data vs. Democracy], [\$5B fine, DPDP catalyst],
-      [Pegasus], [Article 21, IT Act], [Surveillance vs. Press Freedom], [SC Committee formed],
+      [Shreya Singhal],
+      [Section 66A],
+      [Free Speech vs. Safety],
+      [66A struck down],
+
+      [Puttaswamy],
+      [Article 21],
+      [Privacy vs. Surveillance],
+      [Privacy = Fundamental Right],
+
+      [Suhas Katti],
+      [67 IT Act + 509 IPC],
+      [Anonymity vs. Protection],
+      [First cyber conviction],
+
+      [Bazee.com],
+      [Section 67, 79],
+      [Platform Liability],
+      [Safe Harbour introduced],
+
+      [WannaCry],
+      [Section 66F],
+      [State Weapons vs. Civilian Safety],
+      [Patch management critical],
+
+      [AIIMS Attack],
+      [Section 66, 66F],
+      [Healthcare Data Security],
+      [2-week system failure],
+
+      [Cambridge Analytica],
+      [GDPR / DPDP],
+      [Data vs. Democracy],
+      [\$5B fine, DPDP catalyst],
+
+      [Pegasus],
+      [Article 21, IT Act],
+      [Surveillance vs. Press Freedom],
+      [SC Committee formed],
     )
   ]
 ]
@@ -1005,7 +1059,7 @@
     )[
       #text(weight: "bold", size: 17pt, fill: midnight)[Legislative Gaps] \
       #v(8pt)
-      - IT Act 2000 is *over two decades old* — written before smartphones, cloud computing, and AI
+      - IT Act 2000 is *over two decades old* -- written before smartphones, cloud computing, and AI
       - No dedicated laws for *deepfakes, AI liability, cryptocurrency fraud, or IoT security*
       - Section 66A struck down but *no replacement* for online speech regulation
       - *Bug bounty / responsible disclosure* has no legal protection
@@ -1017,7 +1071,11 @@
       radius: 8pt,
       width: 100%,
     )[
-      #text(weight: "bold", size: 17pt, fill: midnight)[Evolving Jurisprudence] \
+      #text(
+        weight: "bold",
+        size: 17pt,
+        fill: midnight,
+      )[Evolving Jurisprudence] \
       #v(8pt)
       - Courts are *progressively expanding digital rights* (Puttaswamy, Shreya Singhal)
       - Shift from *"technology-specific"* to *"technology-neutral"* legal reasoning
@@ -1146,7 +1204,11 @@
 == Recommendations
 
 #slide(config: config-page(header: none))[
-  #text(weight: "bold", size: 18pt, fill: midnight)[Policy & Legislative Recommendations]
+  #text(
+    weight: "bold",
+    size: 18pt,
+    fill: midnight,
+  )[Policy & Legislative Recommendations]
   #v(10pt)
 
   #grid(
@@ -1162,7 +1224,7 @@
     ],
     [
       *For Organizations:*
-      + Implement *Privacy by Design* — not as an afterthought
+      + Implement *Privacy by Design* -- not as an afterthought
       + Conduct regular *data protection impact assessments (DPIA)*
       + Institute *mandatory cybersecurity training* for all employees
       + Establish *bug bounty programs* with clear legal protections
@@ -1227,7 +1289,7 @@
       #v(10pt)
       #text(size: 14pt, style: "italic", fill: slate-text)[
         "The law must be stable, but it must not stand still." \
-        — Roscoe Pound
+        \- Roscoe Pound -
       ]
     ]
   ]
