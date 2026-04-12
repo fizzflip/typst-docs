@@ -1,4 +1,4 @@
-#let prompt = "someone@mach>"
+#let prompt = "sandeep@mach>"
 
 #let term_font = ("DejaVu Sans Mono", "Liberation Mono")
 #let color_bg_term = rgb("f8fafc")

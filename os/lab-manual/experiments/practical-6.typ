@@ -16,7 +16,7 @@
 ]
 
 #section("Code")[
-  #code_box(width: 90%, [
+  #code_box(width: 85%, [
     #raw(read("../scripts/practical-6.sh"), lang: "bash")
   ])
 ]

@@ -16,7 +16,7 @@
 ]
 
 #section("Code")[
-  #code_box(width: 90%, [
+  #code_box(width: 100%, [
     #raw(read("src/process.c"), lang: "c")
   ])
 ]

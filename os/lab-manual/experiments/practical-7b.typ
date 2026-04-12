@@ -18,7 +18,7 @@
 #pagebreak()
 
 #section("Code")[
-  #code_box(width: 90%, [
+  #code_box(width: 100%, [
     #raw(read("../scripts/practical-7b.sh"), lang: "bash")
   ])
 ]

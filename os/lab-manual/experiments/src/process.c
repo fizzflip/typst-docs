@@ -5,10 +5,12 @@
 int main() {
     pid_t pid;
 
-    // Call fork() to create a child process
+    // Call fork() 
+    // to create a child process
     pid = fork();
 
-    // Core Logic: Determine execution context based on fork's return value
+    // Core Logic: Determine execution context
+    //             based on fork's return value
     if (pid < 0) {
         // Fork failed
         fprintf(stderr, "Error: Process creation failed!\n");
@@ -19,8 +21,8 @@ int main() {
                getpid(), getppid());
     }
     else { // Parent process context
-        printf("PARENT PROCESS -> My PID: %d | Created Child's PID: %d\n",
-               getpid(), pid);
+        printf("PARENT PROCESS -> My PID: %d 
+                | Created Child's PID: %d\n", getpid(), pid);
     }
 
     return 0;

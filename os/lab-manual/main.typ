@@ -120,7 +120,7 @@
         align: (horizon, center, horizon),
         column-gutter: 1em,
         line(length: 100%, stroke: 0.6pt + rgb("cbd5e1")),
-        text(weight: "bold", size: 13pt, fill: rgb("64748b"))[[ #part_label ]],
+        text(weight: "bold", size: 13pt, fill: rgb("64748b"))[ #part_label ],
         line(length: 100%, stroke: 0.6pt + rgb("cbd5e1")),
       )
     ]
