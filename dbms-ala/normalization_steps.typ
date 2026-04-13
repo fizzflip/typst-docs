@@ -1,7 +1,13 @@
-#set page(paper: "a4", margin: (x: 0.8in, y: 0.8in))
+#set page(
+  paper: "a4",
+  margin: (x: 0.8in, y: 0.8in),
+  numbering: "1",
+  number-align: center,
+)
 #set text(font: "Magnisa Sans", size: 10.5pt)
 
 #import "@preview/fletcher:0.5.6" as fletcher: diagram, edge, node
+#let meta = json("metadata.json")
 
 // Helpers for Key formatting
 #let pk(t) = text(fill: rgb("#2563eb"), strong([#t (PK)]))
@@ -56,7 +62,7 @@
   #text(
     size: 13pt,
     fill: rgb("#64748b"),
-    [Interactive Exercise: Visualizing Schema Evolution],
+    [#meta.name \ #meta.roll_no],
   )
 ]
 
@@ -71,7 +77,7 @@
     #set text(size: 10pt, fill: rgb("#334155"))
     #set par(leading: 0.65em)
     *ALA - II \ Interactive Digital Tools* \
-    In this activity, students utilize digital design tools to experiment with creating normalized tables. By visualizing transformation steps, we can test functional dependencies and observe how normalization structurally resolves redundancy and potential anomalies. \
+    Use digital design tools to experiment with creating normalized tables. By visualizing transformation steps, we can test functional dependencies and observe how normalization structurally resolves redundancy and anomalies. \
     *Tools*: dbdesigner.net, erd.dbdesigner.net
   ],
 )
@@ -82,7 +88,7 @@
 == 1. First Normal Form (1NF): Flattening for Atomicity
 
 Normalization begins by addressing the *Unnormalized Form (UNF)*. In this state, data contains attributes with multiple values (repeating groups), representing a non-relational structure.
-#v(1em)
+#v(.5em)
 
 #db-table(
   "Orders_UNF",
