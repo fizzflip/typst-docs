@@ -41,6 +41,7 @@
     Converted string: bash SCRIPT 123
   ])
 ]
+#v(1em)
 
 #section("Conclusion")[
   The shell script successfully performs case inversion on a given string by using `awk` to iterate through individual characters and apply conditional transformations based on regular expression matching.

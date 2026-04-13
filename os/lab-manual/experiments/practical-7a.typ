@@ -47,6 +47,7 @@
     First Line
   ])
 ]
+#v(1em)
 
 #section("Conclusion")[
   The shell script successfully reverses the contents of a specified file by utilizing the `tac` utility to print its lines in reverse order, while also implementing standard file existence validation.

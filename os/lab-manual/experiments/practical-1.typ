@@ -7,9 +7,13 @@
   To install and configure a Linux (or similar) operating system in a system or virtual environment.
 ]
 
+#v(.5em)
+
 #section("Name")[
   Install and configure Linux (or alike) operating system.
 ]
+#v(.5em)
+
 
 #section("Theory")[
   Installing and configuring Linux (Ubuntu 25.10) is a foundational system administration task that introduces core operating-system concepts such as boot workflow, storage management, user provisioning, and package maintenance. In a practical environment, installation may be performed either on bare metal or inside a virtual machine; both approaches follow similar logical stages even though hardware handling differs. The installer coordinates language and locale setup, software selection, bootloader placement, and account creation to produce a ready-to-use environment.
@@ -18,17 +22,14 @@
   \
   After first boot, post-install verification is necessary to confirm the system state and configuration integrity.
   \
-  #v(0.1em)
-  *Post-install validation points:*
-  - Confirm installed OS version and hardware detection in the system information panel.
-  - Verify network connectivity and repository reachability for package operations.
-  - Apply package updates and security patches to baseline the system.
-  - Ensure user authentication and login policies are configured as intended.
-  - Prepare the environment for future lab work by installing required tools.
+
 ]
 
-#pagebreak()
+#v(.5em)
+
 #subheading("Installation Walkthrough:")
+#v(.25em)
+
 #text(
   size: 12pt,
 )[Step 1: Start installation by selecting language on the initial welcome screen.] \
@@ -39,7 +40,9 @@
   )
 ]
 
-#v(0.6em)
+#pagebreak()
+#v(2em)
+
 #text(
   size: 12pt,
 )[Step 2: Configure optimization options (drivers/codecs) based on lab requirements.] \
@@ -49,8 +52,8 @@
     caption: [Optimization options screen.],
   )
 ]
-#pagebreak()
-#v(.5em)
+
+#v(2.5em)
 
 #text(
   size: 12pt,
@@ -61,8 +64,9 @@
     caption: [Disk setup screen.],
   )
 ]
+#pagebreak()
+#v(2em)
 
-#v(0.6em)
 #text(
   size: 12pt,
 )[Step 4: Allocate partition space using the resize slider and finalize storage layout.] \
@@ -72,8 +76,7 @@
     caption: [Partition resize screen.],
   )
 ]
-#pagebreak()
-#v(.5em)
+#v(2.5em)
 
 #text(
   size: 12pt,
@@ -85,19 +88,19 @@
   )
 ]
 
-#v(0.6em)
+#pagebreak()
+#v(.25em)
+
 #text(
   size: 12pt,
-)[Step 6: Review the installer summary on the "Ready to install" screen before committing disk changes.] \
+)[Step 6: Review the installer summary on the "Ready to install" screen] \
 #align(center)[
   #figure(
     image("assets/ubuntu-25-install-05-ready-to-install.png", width: 88%),
     caption: [Ready-to-install summary.],
   )
 ]
-
-#pagebreak()
-#v(.5em)
+#v(1em)
 #text(
   size: 12pt,
 )[Step 7: After first boot, verify installed system details from Settings -> About.] \

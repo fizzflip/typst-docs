@@ -28,6 +28,7 @@
     #raw(read("../scripts/practical-3b.sh"), lang: "bash")
   ])
 ]
+#v(1em)
 
 #section("Output")[
   #output_box(width: 80%, [
@@ -40,6 +41,7 @@
     Digits at odd positions (1st, 3rd, 5th): 9, 7, 5
   ])
 ]
+#v(1em)
 
 #section("Conclusion")[
   The shell script successfully extracts and prints the digits at the 1st, 3rd, and 5th positions from a 6-digit number by utilizing Bash's built-in string parameter expansion capabilities.

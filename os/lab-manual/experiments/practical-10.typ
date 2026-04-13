@@ -29,6 +29,7 @@
     CHILD PROCESS  -> My PID: 1246 | Parent's PID: 1245
   ])
 ]
+#v(1em)
 
 #section("Conclusion")[
   The C program successfully demonstrates process creation using the `fork()` system call. By evaluating the return value of `fork()`, the program was able to distinguish between the parent and child execution contexts and print their respective Process IDs.

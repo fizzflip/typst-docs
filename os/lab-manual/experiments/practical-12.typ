@@ -80,6 +80,7 @@
     [`alias ll="ls -la"`],
   )
 ]
+#v(1em)
 
 #section("Output")[
   #output_box(width: 90%, [
@@ -100,6 +101,7 @@
     1 packets transmitted, 1 received, 0% packet loss, time 0ms
   ])
 ]
+#v(1em)
 
 #section("Conclusion")[
   This experiment provided hands-on experience with administrative and diagnostic Linux commands. These tools are essential for managing user environments, monitoring system resources, and troubleshooting network connectivity.

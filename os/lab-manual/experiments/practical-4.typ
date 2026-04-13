@@ -48,6 +48,7 @@
     Result: 3
   ])
 ]
+#v(1em)
 
 #section("Conclusion")[
   The shell script successfully implements a menu-driven calculator, utilizing the `case` statement to efficiently route user input to the correct arithmetic operation and display the computed result.

@@ -49,6 +49,7 @@
     #prompt
   ])
 ]
+#v(1em)
 
 #section("Conclusion")[
   The shell script successfully creates a user-friendly, interactive file manager using an infinite loop and a `case` statement to execute standard Unix file operations.

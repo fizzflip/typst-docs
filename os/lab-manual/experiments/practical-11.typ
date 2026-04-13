@@ -74,6 +74,7 @@
     [`kill`], [Sends a signal (like SIGKILL `-9`) to a PID.], [`kill -9 1234`],
   )
 ]
+#v(1em)
 
 #section("Output")[
   #output_box(width: 80%, [
@@ -91,6 +92,7 @@
     3021 pts/0    00:00:00 ps
   ])
 ]
+#v(1em)
 
 #section("Conclusion")[
   Through this study, the fundamental Linux commands for system interaction were explored. Proficiency in these commands allows for efficient management of the file system and system resources directly through the shell.

@@ -1,4 +1,5 @@
 #import "experiments/common.typ": *
+#let meta = json("metadata.json")
 
 #set page(
   paper: "a4",
@@ -83,7 +84,7 @@
         columns: (1fr, 1fr, 1fr),
         column-gutter: 1em,
         align: (left, center, right),
-        [Rahul P Jani], [xxxxxxxxxxxx], [Operating System],
+        [#meta.name], [#meta.roll_no], [Operating System],
       )
     ]
     #v(0.25em)

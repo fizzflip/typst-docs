@@ -42,6 +42,7 @@
     Largest number:  7
   ])
 ]
+#v(1em)
 
 #section("Conclusion")[
   The shell script successfully finds the minimum and maximum of three given numbers by utilizing sequential conditional comparisons.

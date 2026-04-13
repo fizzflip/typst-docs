@@ -38,6 +38,7 @@
     Symbolic Links : 3
   ])
 ]
+#v(1em)
 
 #section("Conclusion")[
   The shell script successfully counts and categorizes the contents of a user-specified directory into regular files, subdirectories, and symbolic links by combining an iterative loop with sequential file test operators.

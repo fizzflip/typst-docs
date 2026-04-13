@@ -45,6 +45,7 @@
     #prompt
   ])
 ]
+#v(1em)
 
 #section("Conclusion")[
   The shell script successfully monitors system disk usage by processing `df` command output through `awk`, identifying and alerting the user only when partitions reach or exceed the defined critical threshold.
