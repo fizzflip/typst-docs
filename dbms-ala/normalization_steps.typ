@@ -1,7 +1,7 @@
 #set page(paper: "a4", margin: 1in)
-#set text(font: "Linux Libertine", size: 11pt)
+#set text(font: "Magnisa Sans", size: 11pt)
 
-#import "@preview/fletcher:0.5.1" as fletcher: diagram, edge, node
+#import "@preview/fletcher:0.5.6" as fletcher: diagram, edge, node
 
 // Helpers for Key formatting
 #let pk(t) = strong([#t (PK)])
@@ -32,7 +32,7 @@
 
 
 == 1. Unnormalized Form (UNF) & First Normal Form (1NF)
-**Action:** Flatten the repeating item lists to ensure atomic values.
+*Action:* Flatten the repeating item lists to ensure atomic values.
 
 #v(0.5em)
 #align(center)[
@@ -64,8 +64,8 @@
 
 #v(1.5em)
 == 2. Second Normal Form (2NF)
-**Action:** Remove partial dependencies.
-Here we begin to see true relational design. Fletcher allows us to easily map the **1-to-many (`1..n`)** relationships using connected nodes and labeled arrows (`-|>`).
+*Action:* Remove partial dependencies.
+Here we begin to see true relational design. Fletcher allows us to easily map the *1-to-many (`1..n`)* relationships using connected nodes and labeled arrows (`-|>`).
 
 #v(0.5em)
 #align(center)[
@@ -74,7 +74,7 @@ Here we begin to see true relational design. Fletcher allows us to easily map th
     node((0, 0), db-entity("Order", pk("Order_ID"), "Order_Date", "Customer_ID", "Customer_Name"), name: <order>),
     node((2, 0), db-entity("Order_Item", pkfk("Order_ID"), pkfk("Item_ID"), "Quantity"), name: <order_item>),
     node((4, 0), db-entity("Item", pk("Item_ID"), "Item_Name", "Price"), name: <item>),
-    
+
     edge(<order>, <order_item>, "-|>", label: [1..n]),
     edge(<item>, <order_item>, "-|>", label: [1..n]),
   )
@@ -82,7 +82,7 @@ Here we begin to see true relational design. Fletcher allows us to easily map th
 
 #v(1.5em)
 == 3. Third Normal Form (3NF)
-**Action:** Remove transitive dependencies.
+*Action:* Remove transitive dependencies.
 `Customer` gets its own table. Fletcher routes everything cleanly onto a 2D coordinate plane.
 
 #v(0.5em)
@@ -93,7 +93,7 @@ Here we begin to see true relational design. Fletcher allows us to easily map th
     node((2, 0), db-entity("Order", pk("Order_ID"), "Order_Date", fk("Customer_ID")), name: <order>),
     node((4, 0), db-entity("Order_Item", pkfk("Order_ID"), pkfk("Item_ID"), "Quantity"), name: <order_item>),
     node((4, 1), db-entity("Item", pk("Item_ID"), "Item_Name", "Price"), name: <item>),
-    
+
     edge(<customer>, <order>, "-|>", label: [1..n]),
     edge(<order>, <order_item>, "-|>", label: [1..n]),
     edge(<item>, <order_item>, "-|>", label: [1..n]), // Fletcher automatically routes this upwards!
