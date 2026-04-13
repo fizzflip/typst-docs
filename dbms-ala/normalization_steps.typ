@@ -122,13 +122,13 @@
     ),
     node(
       (2, 0),
-      db-entity("Order_Item", pkfk("Order_ID"), pkfk("Item_ID"), "Quantity"),
-      name: <order_item>,
-    ),
-    node(
-      (4, 0),
       db-entity("Item", pk("Item_ID"), "Item_Name", "Price"),
       name: <item>,
+    ),
+    node(
+      (1, 1),
+      db-entity("Order_Item", pkfk("Order_ID"), pkfk("Item_ID"), "Quantity"),
+      name: <order_item>,
     ),
 
     edge(<order>, <order_item>, "-|>", label: [1..n]),
@@ -155,23 +155,23 @@
       name: <customer>,
     ),
     node(
-      (2, 0),
+      (0, 1),
       db-entity("Order", pk("Order_ID"), "Order_Date", fk("Customer_ID")),
       name: <order>,
     ),
     node(
-      (4, 0),
-      db-entity("Order_Item", pkfk("Order_ID"), pkfk("Item_ID"), "Quantity"),
-      name: <order_item>,
-    ),
-    node(
-      (4, 1),
+      (2, 1),
       db-entity("Item", pk("Item_ID"), "Item_Name", "Price"),
       name: <item>,
+    ),
+    node(
+      (1, 2),
+      db-entity("Order_Item", pkfk("Order_ID"), pkfk("Item_ID"), "Quantity"),
+      name: <order_item>,
     ),
 
     edge(<customer>, <order>, "-|>", label: [1..n]),
     edge(<order>, <order_item>, "-|>", label: [1..n]),
-    edge(<item>, <order_item>, "-|>", label: [1..n]), // Fletcher automatically routes this upwards!
+    edge(<item>, <order_item>, "-|>", label: [1..n]),
   )
 ]
