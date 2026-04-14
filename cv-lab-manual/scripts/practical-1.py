@@ -1,7 +1,6 @@
 import cv2
 import numpy as np
 import os
-
 os.makedirs("output", exist_ok=True)
 
 # 1. Reading and Writing Images
