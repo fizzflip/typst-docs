@@ -28,7 +28,7 @@
     size: 24pt,
     weight: "bold",
     fill: rgb("#1e293b"),
-    [Database Triggers Assignment],
+    [Database Triggers],
   ) #v(0.2em)
   #text(
     size: 13pt,
@@ -47,8 +47,8 @@
   [
     #set text(size: 10pt, fill: rgb("#334155"))
     #set par(leading: 0.65em)
-    *ALA - II \ Simulation and Execution Order* \
-    This document outlines the process of simulating database triggers using MySQL. The objective is to create an inventory table, insert data, and observe the automatic execution of both `BEFORE` and `AFTER` triggers by tracking their activity in an audit log. Finally, it notes and explains the execution order of these database triggers.
+    *ALA - III \ Trigger Simulation and Execution Order* \
+    Using tools like MySQL Workbench or phpMyAdmin simulate the impact of triggers by creating a table, inserting data, and observing the automatic execution of their triggers. Note and explain the trigger execution order.
   ],
 )
 
@@ -59,7 +59,7 @@
 To begin the simulation, we establish the core database tables. The `inventory` table stores our primary business data, while the `audit_log` table acts as a structured record for trigger execution events.
 
 #styled-image(
-  "Screenshot-2026-04-15 00-13-25.png",
+  "assets/setup_tables.png",
   caption: [SQL implementation for table creation in phpMyAdmin environment.],
 ) <fig-setup>
 
@@ -81,7 +81,7 @@ CREATE TABLE audit_log (
 ```
 
 #styled-image(
-  "Screenshot-2026-04-15 00-15-03.png",
+  "assets/verify_tables.png",
   width: 85%,
   caption: [Verification of table structure within the database schema.],
 ) <fig-verification>
@@ -90,7 +90,7 @@ CREATE TABLE audit_log (
 To observe execution order, two triggers are attached to the `inventory` table. The `BEFORE` trigger captures the intent of the transaction, while the `AFTER` trigger confirms its successful completion.
 
 #styled-image(
-  "Screenshot-2026-04-15 00-15-47.png",
+  "assets/trigger_logic.png",
   caption: [Defining trigger delimiters and logic in the SQL console.],
 ) <fig-trigger-creation>
 
@@ -119,7 +119,7 @@ DELIMITER ;
 ```
 
 #styled-image(
-  "Screenshot-2026-04-15 00-17-23.png",
+  "assets/verify_triggers.png",
   caption: [Verification of successful trigger deployment.],
 ) <fig-trigger-verify>
 
@@ -128,7 +128,7 @@ DELIMITER ;
 To validate the trigger automation, a standard `INSERT` operation is performed on the `inventory` table.
 
 #styled-image(
-  "Screenshot-2026-04-15 00-17-55.png",
+  "assets/insert_operation.png",
   caption: [Executing the test insert operation.],
 ) <fig-insert>
 
@@ -140,7 +140,7 @@ VALUES ('Laptop', 15);
 *Observation:* Upon execution, the database engine automatically fires the triggers. A query of the `audit_log` table reveals two entries generated without manual intervention, confirming the deterministic execution of the trigger chain.
 
 #styled-image(
-  "Screenshot-2026-04-15 00-18-26.png",
+  "assets/audit_logs.png",
   caption: [The audit log showing the captured BEFORE and AFTER execution states.],
 ) <fig-logs>
 
