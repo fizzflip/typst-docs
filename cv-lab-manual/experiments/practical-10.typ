@@ -20,14 +20,14 @@
 ]
 
 // #v(.5em)
-#pagebreak()
+// #pagebreak()
 #section("Code")[
   #code_box(width: 100%, label: "practical-10.py", [
     #raw(read("../scripts/practical-10.py"), lang: "python")
   ])
 ]
+#v(.5em)
 
-#pagebreak()
 #section("Explanation")[
   - *`cv2.ORB_create()`:* ORB is fast, rotation-invariant, and completely free/unpatented (unlike SIFT/SURF). \
   - *`cv2.BFMatcher(NORM_HAMMING, crossCheck=True)`:* Hamming distance compares binary descriptors. `crossCheck` ensures a match is only accepted if mutually best. \

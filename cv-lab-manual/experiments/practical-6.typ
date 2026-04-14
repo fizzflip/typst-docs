@@ -11,20 +11,20 @@
 
 #section("Theory")[
   Thresholding is a fundamental segmentation technique that converts a grayscale image to a binary (black and white) image by comparing pixel intensities against a threshold value. \
-  \
-  Three principal approaches:
+
+  *Three principal approaches:*
   - *Global Thresholding:* Uses a single fixed value for the entire image.
   - *Otsu's Method:* Mathematically calculates the optimal global threshold by minimizing intra-class variance in a bimodal histogram.
   - *Adaptive Thresholding:* Calculates varying threshold values for smaller local regions, making it robust against uneven lighting and shadows. \
-  \
+
   Connected Component Analysis (CCA) is then applied to the resulting binary image to label and quantify the distinct isolated shapes.
 ]
 
-// #v(.5em)
-#pagebreak()
+#v(.5em)
+// #pagebreak()
 
 #section("Code")[
-  #code_box(width: 95%, label: "practical-6.py", [
+  #code_box(width: 100%, label: "practical-6.py", [
     #raw(read("../scripts/practical-6.py"), lang: "python")
   ])
 ]
@@ -38,8 +38,8 @@
   - *`cv2.connectedComponentsWithStats()`:* Groups adjacent white pixels into numbered labels with associated area, bounding box, and centroid statistics.
 ]
 
-// #v(.5em)
-#pagebreak()
+#v(.5em)
+// #pagebreak()
 #section("Output")[
   #output_grid(
     (

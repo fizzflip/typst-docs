@@ -26,8 +26,8 @@
   ])
 ]
 
-// #v(.5em)
-#pagebreak()
+#v(.5em)
+// #pagebreak()
 
 #section("Explanation")[
   - *`cv2.imread()` / `cv2.imwrite()`:* Standard I/O functions. By default, `imread` loads images in BGR (Blue, Green, Red) colour space rather than standard RGB. \

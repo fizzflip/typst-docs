@@ -6,7 +6,6 @@ os.makedirs("output", exist_ok=True)
 
 img = cv2.imread("../samples/images/pixel-art.png")
 img = cv2.resize(img, (400, 400), interpolation=cv2.INTER_NEAREST)
-
 rows, cols = img.shape[:2]
 
 # 1. Affine Transformation (rotation + translation)

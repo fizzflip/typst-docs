@@ -18,7 +18,6 @@ gray_scene = cv2.cvtColor(scene, cv2.COLOR_BGR2GRAY)
 
 # ORB detector
 orb = cv2.ORB_create(nfeatures=500)
-
 kp1, des1 = orb.detectAndCompute(gray_obj, None)
 kp2, des2 = orb.detectAndCompute(gray_scene, None)
 
@@ -29,7 +28,7 @@ matches = sorted(matches, key=lambda x: x.distance)
 
 # Draw top 30 matches
 match_img = cv2.drawMatches(obj, kp1, scene, kp2, matches[:30],
-                             None, flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)
+            None, flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)
 cv2.imwrite("output/practical-10-matches.jpg", match_img)
 
 print(f"Found {len(matches)} matches, showing top 30.")

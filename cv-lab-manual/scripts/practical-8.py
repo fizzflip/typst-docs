@@ -1,6 +1,5 @@
 import cv2
 import os
-
 os.makedirs("output", exist_ok=True)
 
 img = cv2.imread("../samples/images/corpo-building.jpg", cv2.IMREAD_GRAYSCALE)

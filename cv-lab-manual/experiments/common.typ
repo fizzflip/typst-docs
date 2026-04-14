@@ -44,12 +44,13 @@
   width: 80%,
   inset: 14pt,
 ) = align(center)[
-  #rect(
+  #block(
     width: width,
     fill: fill,
     stroke: 1pt + stroke,
     radius: 6pt,
     inset: inset,
+    breakable: true,
   )[
     #align(left)[
       #set par(justify: false)
@@ -66,46 +67,30 @@
 
 #let code_box(body, width: 80%, label: "script") = terminal_box(
   [
-    #stack(
-      spacing: 0pt,
-      rect(
-        width: 100%,
-        fill: color_bg_code,
-        stroke: none,
-        inset: (x: 10pt, y: 6pt),
-        radius: (
-          top-left: 6pt,
-          top-right: 6pt,
-          bottom-left: 0pt,
-          bottom-right: 0pt,
-        ),
-      )[
-        #grid(
-          columns: (auto, auto, auto, 1fr, auto),
-          column-gutter: 5pt,
-          align: (left, center),
-          [#circle(radius: 3pt, fill: rgb("94a3b8"))],
-          [#circle(radius: 3pt, fill: rgb("94a3b8"))],
-          [#circle(radius: 3pt, fill: rgb("94a3b8"))],
-          [],
-          [#text(size: 8pt, fill: rgb("64748b"), font: term_font)[python]],
-        )
-      ],
-      rect(
-        width: 100%,
-        fill: color_bg_term,
-        stroke: none,
-        inset: (x: 14pt, y: 10pt),
-        radius: (
-          top-left: 0pt,
-          top-right: 0pt,
-          bottom-left: 6pt,
-          bottom-right: 6pt,
-        ),
-      )[
-        #body
-      ],
-    )
+    #block(
+      width: 100%,
+      fill: color_bg_code,
+      stroke: none,
+      inset: (x: 10pt, y: 6pt),
+      radius: (
+        top-left: 6pt,
+        top-right: 6pt,
+        bottom-left: 0pt,
+        bottom-right: 0pt,
+      ),
+    )[
+      #grid(
+        columns: (auto, auto, auto, 1fr, auto),
+        column-gutter: 5pt,
+        align: (left, center),
+        [#circle(radius: 3pt, fill: rgb("94a3b8"))],
+        [#circle(radius: 3pt, fill: rgb("94a3b8"))],
+        [#circle(radius: 3pt, fill: rgb("94a3b8"))],
+        [],
+        [#text(size: 8pt, fill: rgb("64748b"), font: term_font)[python]],
+      )
+    ]
+    #pad(x: 14pt, y: 10pt)[#body]
   ],
   color_bg_term,
   rgb("cbd5e1"),
@@ -116,46 +101,30 @@
 
 #let output_box(body, width: 80%) = terminal_box(
   [
-    #stack(
-      spacing: 0pt,
-      rect(
-        width: 100%,
-        fill: color_bg_diff,
-        stroke: none,
-        inset: (x: 10pt, y: 6pt),
-        radius: (
-          top-left: 6pt,
-          top-right: 6pt,
-          bottom-left: 0pt,
-          bottom-right: 0pt,
-        ),
-      )[
-        #grid(
-          columns: (auto, auto, auto, 1fr, auto),
-          column-gutter: 5pt,
-          align: (left, center),
-          [#circle(radius: 3pt, fill: rgb("ef4444"))],
-          [#circle(radius: 3pt, fill: rgb("f59e0b"))],
-          [#circle(radius: 3pt, fill: rgb("22c55e"))],
-          [],
-          [#text(size: 8pt, fill: rgb("6b7280"))[terminal]],
-        )
-      ],
-      rect(
-        width: 100%,
-        fill: color_bg_out,
-        stroke: none,
-        inset: (x: 14pt, y: 10pt),
-        radius: (
-          top-left: 0pt,
-          top-right: 0pt,
-          bottom-left: 6pt,
-          bottom-right: 6pt,
-        ),
-      )[
-        #body
-      ],
-    )
+    #block(
+      width: 100%,
+      fill: color_bg_diff,
+      stroke: none,
+      inset: (x: 10pt, y: 6pt),
+      radius: (
+        top-left: 6pt,
+        top-right: 6pt,
+        bottom-left: 0pt,
+        bottom-right: 0pt,
+      ),
+    )[
+      #grid(
+        columns: (auto, auto, auto, 1fr, auto),
+        column-gutter: 5pt,
+        align: (left, center),
+        [#circle(radius: 3pt, fill: rgb("ef4444"))],
+        [#circle(radius: 3pt, fill: rgb("f59e0b"))],
+        [#circle(radius: 3pt, fill: rgb("22c55e"))],
+        [],
+        [#text(size: 8pt, fill: rgb("6b7280"))[terminal]],
+      )
+    ]
+    #pad(x: 14pt, y: 10pt)[#body]
   ],
   color_bg_out,
   rgb("d1d5db"),
@@ -229,71 +198,58 @@
 ]
 
 #let output_grid(items, columns: 2, width: 90%) = align(center)[
-  #rect(
+  #block(
     width: width,
     fill: white,
     stroke: 1pt + rgb("cbd5e1"),
     radius: 6pt,
     inset: 0pt,
+    breakable: true,
   )[
-    #stack(
-      spacing: 0pt,
-      rect(
-        width: 100%,
-        fill: rgb("f1f5f9"),
-        stroke: none,
-        inset: (x: 10pt, y: 6pt),
-        radius: (
-          top-left: 6pt,
-          top-right: 6pt,
-          bottom-left: 0pt,
-          bottom-right: 0pt,
-        ),
-      )[
-        #grid(
-          columns: (auto, auto, auto, 1fr, auto),
-          column-gutter: 5pt,
-          align: (left, center),
-          [#circle(radius: 3pt, fill: rgb("3b82f6"))],
-          [#circle(radius: 3pt, fill: rgb("8b5cf6"))],
-          [#circle(radius: 3pt, fill: rgb("06b6d4"))],
-          [],
-          [#text(size: 8pt, fill: rgb("64748b"), font: term_font)[output]],
-        )
-      ],
-      rect(
-        width: 100%,
-        fill: white,
-        stroke: none,
-        inset: (x: 10pt, y: 10pt),
-        radius: (
-          top-left: 0pt,
-          top-right: 0pt,
-          bottom-left: 6pt,
-          bottom-right: 6pt,
-        ),
-      )[
-        #grid(
-          columns: (1fr,) * columns,
-          column-gutter: 8pt,
-          row-gutter: 10pt,
-          ..items.map(item => [
-            #align(center)[
-              #block(
-                width: 100%,
-                height: 120pt, // Standardized height for grid items
-                stroke: 0.5pt + rgb("e2e8f0"),
-                radius: 4pt,
-                clip: true,
-              )[
-                #image(item.at(0), width: 100%, height: 100%, fit: "cover")
-              ]
-              #v(.5pt)
-              #text(size: 8pt, fill: rgb("64748b"), weight: "medium")[#item.at(1)]
+    #block(
+      width: 100%,
+      fill: rgb("f1f5f9"),
+      stroke: none,
+      inset: (x: 10pt, y: 6pt),
+      radius: (
+        top-left: 6pt,
+        top-right: 6pt,
+        bottom-left: 0pt,
+        bottom-right: 0pt,
+      ),
+    )[
+      #grid(
+        columns: (auto, auto, auto, 1fr, auto),
+        column-gutter: 5pt,
+        align: (left, center),
+        [#circle(radius: 3pt, fill: rgb("3b82f6"))],
+        [#circle(radius: 3pt, fill: rgb("8b5cf6"))],
+        [#circle(radius: 3pt, fill: rgb("06b6d4"))],
+        [],
+        [#text(size: 8pt, fill: rgb("64748b"), font: term_font)[output]],
+      )
+    ]
+    #pad(x: 10pt, y: 10pt)[
+      #grid(
+        columns: (1fr,) * columns,
+        column-gutter: 8pt,
+        row-gutter: 10pt,
+        ..items.map(item => [
+          #align(center)[
+            #block(
+              width: 100%,
+              height: 120pt, // Standardized height for grid items
+              stroke: 0.5pt + rgb("e2e8f0"),
+              radius: 4pt,
+              clip: true,
+            )[
+              #image(item.at(0), width: 100%, height: 100%, fit: "cover")
             ]
-          ])
-        )
-      ],
-    )
+            #v(.5pt)
+            #text(size: 8pt, fill: rgb("64748b"), weight: "medium")[#item.at(1)]
+          ]
+        ])
+      )
+    ]
   ]
 ]

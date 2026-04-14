@@ -20,7 +20,7 @@
   - All drawing functions operate _in-place_, modifying the array directly rather than returning a new copy.
 ]
 
-#pagebreak()
+// #pagebreak()
 #section("Code")[
   #code_box(width: 100%, label: "practical-2.py", [
     #raw(read("../scripts/practical-2.py"), lang: "python")

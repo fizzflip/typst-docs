@@ -19,9 +19,9 @@
   *Connected Component Analysis (CCA)* scans a binary image and groups adjacent foreground pixels into discrete, labelled objects, allowing extraction of properties like area, bounding boxes, and centroids.
 ]
 
-// #v(.5em)
+#v(.5em)
 
-#pagebreak()
+// #pagebreak()
 #section("Code")[
   #code_box(width: 90%, label: "practical-5.py", [
     #raw(read("../scripts/practical-5.py"), lang: "python")
@@ -37,8 +37,8 @@
   - *`cv2.connectedComponentsWithStats()`:* Returns `num_labels` (count including background as label 0), `labels` (pixel-to-object map), `stats` (X, Y, width, height, area per object), and `centroids` (centre coordinates per object).
 ]
 
-// #v(.5em)
-#pagebreak()
+#v(.5em)
+// #pagebreak()
 #section("Output")[
   #output_grid(
     (

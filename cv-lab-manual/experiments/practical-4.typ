@@ -19,8 +19,8 @@
   - *Resource Cleanup:* `.release()` on both capture and writer objects is mandatory to prevent corrupted files or locked hardware.
 ]
 
-// #v(.5em)
-#pagebreak()
+#v(.5em)
+// #pagebreak()
 
 #section("Code")[
   #code_box(width: 100%, label: "practical-4.py", [

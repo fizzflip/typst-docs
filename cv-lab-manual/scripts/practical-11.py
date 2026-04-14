@@ -6,7 +6,6 @@ os.makedirs("output", exist_ok=True)
 
 img = cv2.imread("../samples/images/gray-catbird.jpg")
 img = cv2.resize(img, (600, 400))
-
 mask = np.zeros(img.shape[:2], np.uint8)
 
 # Define a rectangle around the foreground object (the bird)
