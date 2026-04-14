@@ -288,7 +288,7 @@
               )[
                 #image(item.at(0), width: 100%, height: 100%, fit: "cover")
               ]
-              #v(2pt)
+              #v(.5pt)
               #text(size: 8pt, fill: rgb("64748b"), weight: "medium")[#item.at(1)]
             ]
           ])
