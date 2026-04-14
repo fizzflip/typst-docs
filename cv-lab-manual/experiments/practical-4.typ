@@ -19,10 +19,11 @@
   - *Resource Cleanup:* `.release()` on both capture and writer objects is mandatory to prevent corrupted files or locked hardware.
 ]
 
-#v(.5em)
+// #v(.5em)
+#pagebreak()
 
 #section("Code")[
-  #code_box(width: 90%, label: "practical-4.py", [
+  #code_box(width: 100%, label: "practical-4.py", [
     #raw(read("../scripts/practical-4.py"), lang: "python")
   ])
 ]
@@ -39,7 +40,10 @@
 #v(.5em)
 
 #section("Output")[
-  #output_image("../scripts/output/practical-4-frame-capture.jpg", caption: "Captured Frame from Video Stream (Frame at 25% position)")
+  #output_image(
+    "../scripts/output/practical-4-frame-capture.jpg",
+    caption: "Captured Frame from Video Stream (Frame at 25% position)",
+  )
 ]
 
 #v(.5em)

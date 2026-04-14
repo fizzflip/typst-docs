@@ -10,7 +10,6 @@ img = cv2.resize(img, (600, 400))
 mask = np.zeros(img.shape[:2], np.uint8)
 
 # Define a rectangle around the foreground object (the bird)
-# Format: (startX, startY, width, height)
 h, w = img.shape[:2]
 rect = (w // 6, h // 6, 4 * w // 6, 4 * h // 6)
 

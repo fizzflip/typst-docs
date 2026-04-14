@@ -219,7 +219,7 @@
             #image(path, width: 100%)
           ]
           #if caption != "" [
-            #v(6pt)
+            // #v(.5pt)
             #text(size: 8pt, fill: rgb("64748b"), weight: "medium")[#caption]
           ]
         ]

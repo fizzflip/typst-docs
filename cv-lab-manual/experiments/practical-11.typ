@@ -11,16 +11,16 @@
 
 #section("Theory")[
   GrabCut is an advanced segmentation technique that treats an image as a graph. It requires an initial user-defined bounding box to identify the "probable foreground." \
-  \
+
   The algorithm uses Gaussian Mixture Models (GMMs) to model the colour distributions of the foreground and background. It then iteratively refines the segmentation by minimizing an energy function using graph cuts, effectively finding the most likely boundary between the object and the background. \
-  \
+
   The resulting mask contains four states: Definite Background (0), Definite Foreground (1), Probable Background (2), and Probable Foreground (3), enabling fine-grained segmentation control.
 ]
 
 #v(.5em)
 
 #section("Code")[
-  #code_box(width: 90%, label: "practical-11.py", [
+  #code_box(width: 100%, label: "practical-11.py", [
     #raw(read("../scripts/practical-11.py"), lang: "python")
   ])
 ]

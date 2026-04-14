@@ -20,10 +20,11 @@
   Connected Component Analysis (CCA) is then applied to the resulting binary image to label and quantify the distinct isolated shapes.
 ]
 
-#v(.5em)
+// #v(.5em)
+#pagebreak()
 
 #section("Code")[
-  #code_box(width: 90%, label: "practical-6.py", [
+  #code_box(width: 95%, label: "practical-6.py", [
     #raw(read("../scripts/practical-6.py"), lang: "python")
   ])
 ]
@@ -37,8 +38,8 @@
   - *`cv2.connectedComponentsWithStats()`:* Groups adjacent white pixels into numbered labels with associated area, bounding box, and centroid statistics.
 ]
 
-#v(.5em)
-
+// #v(.5em)
+#pagebreak()
 #section("Output")[
   #output_grid(
     (

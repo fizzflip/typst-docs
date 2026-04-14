@@ -11,24 +11,23 @@
 
 #section("Theory")[
   Feature matching identifies corresponding points between a query image (object) and a train image (scene). \
-  \
+
   - *ORB:* An efficient, rotation-invariant algorithm that detects unique "keypoints" and describes their surrounding pixel patterns as binary descriptors.
   - *Brute-Force Matcher:* Compares every descriptor in Image 1 against every descriptor in Image 2 using Hamming distance (bitwise XOR for binary descriptors).
   - *RANSAC:* Iteratively selects random subsets of matches to calculate a Homography model, discarding matches that deviate beyond a pixel threshold as outliers, leaving only geometrically consistent inliers. \
-  \
+
   The verified Homography matrix enables projecting the object's bounding box into the scene.
 ]
 
-#v(.5em)
-
+// #v(.5em)
+#pagebreak()
 #section("Code")[
-  #code_box(width: 90%, label: "practical-10.py", [
+  #code_box(width: 100%, label: "practical-10.py", [
     #raw(read("../scripts/practical-10.py"), lang: "python")
   ])
 ]
 
-#v(.5em)
-
+#pagebreak()
 #section("Explanation")[
   - *`cv2.ORB_create()`:* ORB is fast, rotation-invariant, and completely free/unpatented (unlike SIFT/SURF). \
   - *`cv2.BFMatcher(NORM_HAMMING, crossCheck=True)`:* Hamming distance compares binary descriptors. `crossCheck` ensures a match is only accepted if mutually best. \
@@ -39,7 +38,11 @@
 #v(.5em)
 
 #section("Output")[
-  #output_image("../scripts/output/practical-10-matches.jpg", caption: "ORB Feature Matches — Top 30 Correspondences (Object ↔ Scene)", width: 90%)
+  #output_image(
+    "../scripts/output/practical-10-matches.jpg",
+    caption: "ORB Feature Matches — Top 30 Correspondences (Object ↔ Scene)",
+    width: 90%,
+  )
 ]
 
 #v(.5em)

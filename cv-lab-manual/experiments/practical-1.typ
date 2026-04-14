@@ -11,8 +11,7 @@
 
 #section("Theory")[
   Basic image processing serves as the preprocessing pipeline for almost all Computer Vision tasks. Images in OpenCV are represented as multidimensional NumPy arrays. Operations like cropping and resizing normalize image data for algorithms, while bitwise operations allow for pixel-level logical combinations, which are essential for masking and filtering specific regions of interest. \
-  \
-  Key operations include:
+
   - *Reading/Writing:* `cv2.imread()` loads images as BGR arrays; `cv2.imwrite()` saves them.
   - *Resizing:* `cv2.resize()` changes spatial dimensions to a target `(width, height)`.
   - *Cropping:* Achieved via NumPy array slicing: `image[y1:y2, x1:x2]`.
@@ -27,7 +26,8 @@
   ])
 ]
 
-#v(.5em)
+// #v(.5em)
+#pagebreak()
 
 #section("Explanation")[
   - *`cv2.imread()` / `cv2.imwrite()`:* Standard I/O functions. By default, `imread` loads images in BGR (Blue, Green, Red) colour space rather than standard RGB. \

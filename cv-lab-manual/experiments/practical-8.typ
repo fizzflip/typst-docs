@@ -11,14 +11,13 @@
 
 #section("Theory")[
   Edge detection identifies points in an image where brightness changes sharply (high-frequency gradients). \
-  \
+
   - *Sobel Operator:* Calculates the first derivative of pixel intensities in the X (horizontal) and Y (vertical) directions to detect vertical and horizontal edges respectively.
   - *Canny Edge Detector:* A multi-stage algorithm that:
     + Applies Gaussian blur to reduce noise.
     + Finds intensity gradients using Sobel.
     + Applies "non-maximum suppression" to thin edges to a single pixel width.
     + Uses "hysteresis thresholding" with two parameters (`min_val`, `max_val`) to link strong and weak edges while discarding noise. \
-  \
   Gradients above `max_val` are guaranteed edges; below `min_val` are discarded. Values in between are kept only if connected to a sure-edge pixel.
 ]
 

@@ -11,19 +11,19 @@
 
 #section("Theory")[
   Haar Cascade classifiers use machine learning to train an object detection function based on positive (faces) and negative (non-faces) images. Instead of using complex deep learning models, Haar cascades extract simple "Haar features" (comparing sums of pixels in adjacent rectangular regions) by sliding a window across the image. \
-  \
+
   Performance optimizations:
   - *Integral Image:* Pre-computes cumulative sums for extremely fast rectangular region calculations.
   - *Cascade Structure:* A series of classification stages that immediately discard non-face regions at early stages, dramatically reducing computation.
   - *Multi-Scale Detection:* `detectMultiScale` progressively shrinks the image by `scaleFactor` on each pass to find faces of varying sizes. \
-  \
+
   The `minNeighbors` parameter acts as a confidence threshold—requiring multiple overlapping detections at the same location before confirming a face.
 ]
 
 #v(.5em)
 
 #section("Code")[
-  #code_box(width: 90%, label: "practical-12.py", [
+  #code_box(width: 100%, label: "practical-12.py", [
     #raw(read("../scripts/practical-12.py"), lang: "python")
   ])
 ]

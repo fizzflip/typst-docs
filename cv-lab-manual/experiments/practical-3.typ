@@ -25,7 +25,8 @@
   ])
 ]
 
-#v(.5em)
+// #v(.5em)
+#pagebreak()
 
 #section("Explanation")[
   - *`cv2.convertScaleAbs()`:* The safest way to adjust brightness/contrast—scales, takes absolute values, and converts to `uint8` with automatic clamping. \

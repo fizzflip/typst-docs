@@ -28,8 +28,8 @@
   ])
 ]
 
-#v(.5em)
-
+// #v(.5em)
+#pagebreak()
 #section("Explanation")[
   - *`cv2.GaussianBlur()`:* Averages neighbours with Gaussian-weighted values. Kernel size must be positive and odd. `sigmaX=0` auto-calculates sigma from the kernel size. \
   - *`cv2.medianBlur()`:* Takes the literal middle value in a sorted neighbourhood, making it the best choice for salt-and-pepper noise elimination. \

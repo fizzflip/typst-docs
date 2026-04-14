@@ -19,7 +19,7 @@
 #v(.5em)
 
 #section("Code")[
-  #code_box(width: 90%, label: "practical-9.py", [
+  #code_box(width: 100%, label: "practical-9.py", [
     #raw(read("../scripts/practical-9.py"), lang: "python")
   ])
 ]

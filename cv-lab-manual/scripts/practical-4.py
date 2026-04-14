@@ -21,8 +21,8 @@ if ret:
 # Write a short clip (first 60 frames) to output
 cap.set(cv2.CAP_PROP_POS_FRAMES, 0)
 fourcc = cv2.VideoWriter_fourcc(*"mp4v")
-out = cv2.VideoWriter("output/practical-4-output.mp4", fourcc, fps,
-                       (frame_width, frame_height))
+out = cv2.VideoWriter("output/practical-4-output.mp4",
+                        fourcc, fps, (frame_width, frame_height))
 
 for i in range(min(60, total_frames)):
     ret, frame = cap.read()
