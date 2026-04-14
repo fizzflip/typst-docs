@@ -19,4 +19,3 @@ cv2.imwrite("output/practical-8-sobel.jpg", sobel_combined)
 canny = cv2.Canny(img, 50, 150)
 cv2.imwrite("output/practical-8-canny.jpg", canny)
 
-print("Practical 8 outputs generated.")

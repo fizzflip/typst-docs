@@ -23,4 +23,3 @@ cv2.putText(img, "OpenCV Annotations", (200, 470),
             cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
 
 cv2.imwrite("output/practical-2-annotated.jpg", img)
-print("Practical 2 outputs generated.")

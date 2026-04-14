@@ -20,4 +20,3 @@ for (x, y, w, h) in faces:
 
 cv2.imwrite("output/practical-12-faces.jpg", img)
 print(f"Detected {len(faces)} face(s).")
-print("Practical 12 outputs generated.")

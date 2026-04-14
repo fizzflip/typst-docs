@@ -28,4 +28,3 @@ cv2.imwrite("output/practical-5-opened.jpg", opened)
 closed = cv2.morphologyEx(binary, cv2.MORPH_CLOSE, kernel)
 cv2.imwrite("output/practical-5-closed.jpg", closed)
 
-print("Practical 5 outputs generated.")

@@ -18,4 +18,3 @@ cv2.imwrite("output/practical-7-median.jpg", median)
 bilateral = cv2.bilateralFilter(img, 15, 75, 75)
 cv2.imwrite("output/practical-7-bilateral.jpg", bilateral)
 
-print("Practical 7 outputs generated.")

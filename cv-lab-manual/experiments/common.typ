@@ -88,7 +88,7 @@
           [#circle(radius: 3pt, fill: rgb("94a3b8"))],
           [#circle(radius: 3pt, fill: rgb("94a3b8"))],
           [],
-          [#text(size: 8pt, fill: rgb("64748b"))[python]],
+          [#text(size: 8pt, fill: rgb("64748b"), font: term_font)[python]],
         )
       ],
       rect(
@@ -194,7 +194,7 @@
           [#circle(radius: 3pt, fill: rgb("8b5cf6"))],
           [#circle(radius: 3pt, fill: rgb("06b6d4"))],
           [],
-          [#text(size: 8pt, fill: rgb("64748b"))[output]],
+          [#text(size: 8pt, fill: rgb("64748b"), font: term_font)[output]],
         )
       ],
       rect(
@@ -251,7 +251,7 @@
           [#circle(radius: 3pt, fill: rgb("8b5cf6"))],
           [#circle(radius: 3pt, fill: rgb("06b6d4"))],
           [],
-          [#text(size: 8pt, fill: rgb("64748b"))[output]],
+          [#text(size: 8pt, fill: rgb("64748b"), font: term_font)[output]],
         )
       ],
       rect(

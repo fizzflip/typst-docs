@@ -27,4 +27,3 @@ for i in range(1, num_labels):
 
 cv2.imwrite("output/practical-6-connected.jpg", output)
 print(f"Found {num_labels - 1} connected components.")
-print("Practical 6 outputs generated.")

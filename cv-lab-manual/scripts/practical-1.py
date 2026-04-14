@@ -27,4 +27,3 @@ cv2.imwrite("output/practical-1-bitwise-and.jpg", bit_and)
 bit_not = cv2.bitwise_not(resized)
 cv2.imwrite("output/practical-1-bitwise-not.jpg", bit_not)
 
-print("Practical 1 outputs generated.")

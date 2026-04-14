@@ -33,4 +33,3 @@ match_img = cv2.drawMatches(obj, kp1, scene, kp2, matches[:30],
 cv2.imwrite("output/practical-10-matches.jpg", match_img)
 
 print(f"Found {len(matches)} matches, showing top 30.")
-print("Practical 10 outputs generated.")

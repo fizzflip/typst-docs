@@ -23,4 +23,3 @@ M_persp = cv2.getPerspectiveTransform(pts1, pts2)
 persp_result = cv2.warpPerspective(img, M_persp, (cols, rows))
 cv2.imwrite("output/practical-9-perspective.jpg", persp_result)
 
-print("Practical 9 outputs generated.")

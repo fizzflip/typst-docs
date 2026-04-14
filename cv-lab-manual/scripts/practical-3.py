@@ -20,4 +20,3 @@ overlay = np.full_like(img, (40, 100, 200), dtype=np.uint8)
 blended = cv2.addWeighted(img, 0.7, overlay, 0.3, 0)
 cv2.imwrite("output/practical-3-blended.jpg", blended)
 
-print("Practical 3 outputs generated.")

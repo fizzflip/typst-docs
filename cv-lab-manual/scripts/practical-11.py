@@ -24,4 +24,3 @@ mask2 = np.where((mask == 2) | (mask == 0), 0, 1).astype("uint8")
 result = img * mask2[:, :, np.newaxis]
 
 cv2.imwrite("output/practical-11-grabcut.jpg", result)
-print("Practical 11 outputs generated.")

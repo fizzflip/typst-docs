@@ -32,4 +32,3 @@ for i in range(min(60, total_frames)):
 
 cap.release()
 out.release()
-print("Practical 4 outputs generated.")
