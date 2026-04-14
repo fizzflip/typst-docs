@@ -1,4 +1,4 @@
-#let meta = json("metadata.json")
+#let meta = json("../../misc/metadata.json")
 
 #let m(it) = box(
   fill: rgb("#1b1b1f"),

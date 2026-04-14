@@ -1,5 +1,5 @@
 #import "experiments/common.typ": *
-#let meta = json("metadata.json")
+#let meta = json("../../misc/metadata.json")
 
 #set page(
   paper: "a4",

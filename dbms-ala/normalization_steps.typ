@@ -7,7 +7,7 @@
 #set text(font: "Magnisa Sans", size: 10.5pt)
 
 #import "@preview/fletcher:0.5.6" as fletcher: diagram, edge, node
-#let meta = json("metadata.json")
+#let meta = json("../misc/metadata.json")
 
 // Helpers for Key formatting
 #let pk(t) = text(fill: rgb("#2563eb"), strong([#t (PK)]))
