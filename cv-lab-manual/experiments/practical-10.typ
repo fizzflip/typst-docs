@@ -39,7 +39,7 @@
 #v(.5em)
 
 #section("Output")[
-  #output_image("../scripts/output/practical-10-matches.jpg", caption: "ORB Feature Matches — Top 30 Correspondences (Object ↔ Scene)")
+  #output_image("../scripts/output/practical-10-matches.jpg", caption: "ORB Feature Matches — Top 30 Correspondences (Object ↔ Scene)", width: 90%)
 ]
 
 #v(.5em)

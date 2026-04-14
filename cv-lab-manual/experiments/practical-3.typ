@@ -37,11 +37,15 @@
 #v(.5em)
 
 #section("Output")[
-  #output_image("../scripts/output/practical-3-brightened.jpg", caption: "Brightness Adjusted (β = +60)")
-  #v(.5em)
-  #output_image("../scripts/output/practical-3-contrasted.jpg", caption: "Contrast Enhanced (α = 1.8)")
-  #v(.5em)
-  #output_image("../scripts/output/practical-3-blended.jpg", caption: "Blended Output (70% Original + 30% Overlay)")
+  #output_grid(
+    (
+      ("../samples/images/nasa-sphere.jpg", "Original Input"),
+      ("../scripts/output/practical-3-brightened.jpg", "Brightness +60"),
+      ("../scripts/output/practical-3-contrasted.jpg", "Contrast ×1.8"),
+      ("../scripts/output/practical-3-blended.jpg", "Blended (70/30)"),
+    ),
+    columns: 2,
+  )
 ]
 
 #v(.5em)

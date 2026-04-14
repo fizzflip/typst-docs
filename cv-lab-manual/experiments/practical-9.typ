@@ -37,9 +37,14 @@
 #v(.5em)
 
 #section("Output")[
-  #output_image("../scripts/output/practical-9-affine.jpg", caption: "Affine Transformation (3-Point Warp)")
-  #v(.5em)
-  #output_image("../scripts/output/practical-9-perspective.jpg", caption: "Perspective Transformation (4-Point Warp)")
+  #output_grid(
+    (
+      ("../samples/images/pixel-art.png", "Original Input"),
+      ("../scripts/output/practical-9-affine.jpg", "Affine Warp"),
+      ("../scripts/output/practical-9-perspective.jpg", "Perspective Warp"),
+    ),
+    columns: 3,
+  )
 ]
 
 #v(.5em)

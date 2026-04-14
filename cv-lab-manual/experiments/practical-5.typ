@@ -39,11 +39,14 @@
 #v(.5em)
 
 #section("Output")[
-  #output_image("../scripts/output/practical-5-eroded.jpg", caption: "Erosion — Thinned Foreground Strokes")
-  #v(.5em)
-  #output_image("../scripts/output/practical-5-dilated.jpg", caption: "Dilation — Expanded Foreground Strokes")
-  #v(.5em)
-  #output_image("../scripts/output/practical-5-opened.jpg", caption: "Opening — Noise Removal with Shape Preservation")
+  #output_grid(
+    (
+      ("../samples/images/handwritten-notes.jpg", "Original Input"),
+      ("../scripts/output/practical-5-eroded.jpg", "Erosion"),
+      ("../scripts/output/practical-5-dilated.jpg", "Dilation"),
+    ),
+    columns: 3,
+  )
 ]
 
 #v(.5em)

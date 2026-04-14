@@ -39,11 +39,15 @@
 #v(.5em)
 
 #section("Output")[
-  #output_image("../scripts/output/practical-7-gaussian.jpg", caption: "Gaussian Blur (kernel = 15×15)")
-  #v(.5em)
-  #output_image("../scripts/output/practical-7-median.jpg", caption: "Median Blur (kernel = 15)")
-  #v(.5em)
-  #output_image("../scripts/output/practical-7-bilateral.jpg", caption: "Bilateral Filter (d=15, σ=75)")
+  #output_grid(
+    (
+      ("../samples/images/stone-wall.jpg", "Original Input"),
+      ("../scripts/output/practical-7-gaussian.jpg", "Gaussian Blur"),
+      ("../scripts/output/practical-7-median.jpg", "Median Blur"),
+      ("../scripts/output/practical-7-bilateral.jpg", "Bilateral Filter"),
+    ),
+    columns: 2,
+  )
 ]
 
 #v(.5em)

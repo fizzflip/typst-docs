@@ -39,11 +39,15 @@
 #v(.5em)
 
 #section("Output")[
-  #output_image("../scripts/output/practical-1-resized.jpg", caption: "Resized Image (400×300)")
-  #v(.5em)
-  #output_image("../scripts/output/practical-1-cropped.jpg", caption: "Cropped Centre Region")
-  #v(.5em)
-  #output_image("../scripts/output/practical-1-bitwise-not.jpg", caption: "Bitwise NOT (Colour Inversion)")
+  #output_grid(
+    (
+      ("../samples/images/paris-street.jpg", "Original Input"),
+      ("../scripts/output/practical-1-resized.jpg", "Resized (400×300)"),
+      ("../scripts/output/practical-1-cropped.jpg", "Cropped Centre"),
+      ("../scripts/output/practical-1-bitwise-not.jpg", "Bitwise NOT"),
+    ),
+    columns: 2,
+  )
 ]
 
 #v(.5em)

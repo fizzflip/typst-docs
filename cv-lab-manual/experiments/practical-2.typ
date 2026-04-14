@@ -40,7 +40,13 @@
 #v(.5em)
 
 #section("Output")[
-  #output_image("../scripts/output/practical-2-annotated.jpg", caption: "Annotated Image with Shapes and Text")
+  #output_grid(
+    (
+      ("../samples/images/boat-town.jpg", "Original Input"),
+      ("../scripts/output/practical-2-annotated.jpg", "Annotated Output"),
+    ),
+    columns: 2,
+  )
 ]
 
 #v(.5em)

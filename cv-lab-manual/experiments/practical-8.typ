@@ -41,9 +41,14 @@
 #v(.5em)
 
 #section("Output")[
-  #output_image("../scripts/output/practical-8-sobel.jpg", caption: "Sobel Edge Detection (Combined X + Y Gradients)")
-  #v(.5em)
-  #output_image("../scripts/output/practical-8-canny.jpg", caption: "Canny Edge Detection (thresholds: 50, 150)")
+  #output_grid(
+    (
+      ("../samples/images/corpo-building.jpg", "Original Input"),
+      ("../scripts/output/practical-8-sobel.jpg", "Sobel Edges"),
+      ("../scripts/output/practical-8-canny.jpg", "Canny Edges"),
+    ),
+    columns: 3,
+  )
 ]
 
 #v(.5em)

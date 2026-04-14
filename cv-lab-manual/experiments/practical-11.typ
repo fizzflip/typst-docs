@@ -37,7 +37,13 @@
 #v(.5em)
 
 #section("Output")[
-  #output_image("../scripts/output/practical-11-grabcut.jpg", caption: "GrabCut Segmentation — Foreground Extraction")
+  #output_grid(
+    (
+      ("../samples/images/gray-catbird.jpg", "Original Input"),
+      ("../scripts/output/practical-11-grabcut.jpg", "GrabCut Segmentation"),
+    ),
+    columns: 2,
+  )
 ]
 
 #v(.5em)

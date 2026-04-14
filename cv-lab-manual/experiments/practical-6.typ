@@ -40,11 +40,14 @@
 #v(.5em)
 
 #section("Output")[
-  #output_image("../scripts/output/practical-6-binary.jpg", caption: "Binary Thresholding (threshold = 127)")
-  #v(.5em)
-  #output_image("../scripts/output/practical-6-otsu.jpg", caption: "Otsu's Automatic Thresholding")
-  #v(.5em)
-  #output_image("../scripts/output/practical-6-connected.jpg", caption: "Connected Components — Colourized Labels")
+  #output_grid(
+    (
+      ("../samples/images/handwritten-notes.jpg", "Original Input"),
+      ("../scripts/output/practical-6-otsu.jpg", "Otsu's Threshold"),
+      ("../scripts/output/practical-6-connected.jpg", "Connected Components"),
+    ),
+    columns: 3,
+  )
 ]
 
 #v(.5em)

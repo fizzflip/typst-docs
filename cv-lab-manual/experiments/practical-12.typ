@@ -42,7 +42,13 @@
 #v(.5em)
 
 #section("Output")[
-  #output_image("../scripts/output/practical-12-faces.jpg", caption: "Haar Cascade Face Detection — 8 Faces Detected")
+  #output_grid(
+    (
+      ("../samples/images/crowd-low-res.jpg", "Original Input"),
+      ("../scripts/output/practical-12-faces.jpg", "8 Faces Detected"),
+    ),
+    columns: 2,
+  )
 ]
 
 #v(.5em)
