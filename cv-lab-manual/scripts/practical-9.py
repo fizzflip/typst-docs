@@ -1,23 +1,26 @@
 import cv2
 import numpy as np
+import os
 
-# Create a synthetic image (white square with a red circle)
-img = np.zeros((300, 300, 3), dtype="uint8")
-cv2.rectangle(img, (50, 50), (250, 250), (255, 255, 255), -1)
-cv2.circle(img, (150, 150), 50, (0, 0, 255), -1)
+os.makedirs("output", exist_ok=True)
 
-rows, cols, ch = img.shape
+img = cv2.imread("../samples/images/pixel-art.png")
+img = cv2.resize(img, (400, 400), interpolation=cv2.INTER_NEAREST)
 
-# 1. Affine Transformation
-pts1_affine = np.float32([[50, 50], [250, 50], [50, 250]])
-pts2_affine = np.float32([[10, 100], [200, 50], [100, 250]])
+rows, cols = img.shape[:2]
 
-M_affine = cv2.getAffineTransform(pts1_affine, pts2_affine)
-affine_warped = cv2.warpAffine(img, M_affine, (cols, rows))
+# 1. Affine Transformation (rotation + translation)
+pts1 = np.float32([[50, 50], [200, 50], [50, 200]])
+pts2 = np.float32([[10, 100], [200, 50], [100, 250]])
+M_affine = cv2.getAffineTransform(pts1, pts2)
+affine_result = cv2.warpAffine(img, M_affine, (cols, rows))
+cv2.imwrite("output/practical-9-affine.jpg", affine_result)
 
-# 2. Perspective Transformation (Homography)
-pts1_persp = np.float32([[50, 50], [250, 50], [50, 250], [250, 250]])
-pts2_persp = np.float32([[0, 0], [300, 0], [50, 300], [250, 300]])
+# 2. Perspective Transformation
+pts1 = np.float32([[0, 0], [cols, 0], [0, rows], [cols, rows]])
+pts2 = np.float32([[50, 50], [cols - 30, 20], [30, rows - 50], [cols - 50, rows - 20]])
+M_persp = cv2.getPerspectiveTransform(pts1, pts2)
+persp_result = cv2.warpPerspective(img, M_persp, (cols, rows))
+cv2.imwrite("output/practical-9-perspective.jpg", persp_result)
 
-M_persp = cv2.getPerspectiveTransform(pts1_persp, pts2_persp)
-persp_warped = cv2.warpPerspective(img, M_persp, (cols, rows))
+print("Practical 9 outputs generated.")

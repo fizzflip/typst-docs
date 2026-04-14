@@ -9,11 +9,6 @@
 
 #v(.5em)
 
-#section("Name")[
-  Image Enhancement and Mathematical Operations
-]
-#v(.5em)
-
 #section("Theory")[
   Image enhancement improves the perceptibility of information in images. Adjusting contrast and brightness mathematically transforms individual pixel values using the fundamental equation $g(x) = alpha f(x) + beta$, where $alpha$ controls contrast (multiplication) and $beta$ controls brightness (addition). \
   \
@@ -37,6 +32,16 @@
   - *`np.ones() * 50`:* Creates a matrix of matching dimensions where every pixel has value 50, enabling element-wise mathematical operations. \
   - *`cv2.add()` / `cv2.subtract()`:* Use _clipping_ (saturation arithmetic), so $250 + 10 = 255$ instead of wrapping to 4 as NumPy would. \
   - *`cv2.addWeighted()`:* Linearly blends two same-sized images using weighted contributions.
+]
+
+#v(.5em)
+
+#section("Output")[
+  #output_image("../scripts/output/practical-3-brightened.jpg", caption: "Brightness Adjusted (β = +60)")
+  #v(.5em)
+  #output_image("../scripts/output/practical-3-contrasted.jpg", caption: "Contrast Enhanced (α = 1.8)")
+  #v(.5em)
+  #output_image("../scripts/output/practical-3-blended.jpg", caption: "Blended Output (70% Original + 30% Overlay)")
 ]
 
 #v(.5em)

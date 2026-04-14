@@ -9,11 +9,6 @@
 
 #v(.5em)
 
-#section("Name")[
-  Thresholding and Connected Component Analysis
-]
-#v(.5em)
-
 #section("Theory")[
   Thresholding is a fundamental segmentation technique that converts a grayscale image to a binary (black and white) image by comparing pixel intensities against a threshold value. \
   \
@@ -40,6 +35,16 @@
   - *`cv2.THRESH_OTSU`:* An additional flag that analyses the image histogram to find the optimal threshold value that minimizes intra-class variance. \
   - *`cv2.adaptiveThreshold()`:* Examines a local window (e.g., $11 times 11$). `ADAPTIVE_THRESH_GAUSSIAN_C` uses a weighted Gaussian sum of neighbourhood values minus a constant $C$. \
   - *`cv2.connectedComponentsWithStats()`:* Groups adjacent white pixels into numbered labels with associated area, bounding box, and centroid statistics.
+]
+
+#v(.5em)
+
+#section("Output")[
+  #output_image("../scripts/output/practical-6-binary.jpg", caption: "Binary Thresholding (threshold = 127)")
+  #v(.5em)
+  #output_image("../scripts/output/practical-6-otsu.jpg", caption: "Otsu's Automatic Thresholding")
+  #v(.5em)
+  #output_image("../scripts/output/practical-6-connected.jpg", caption: "Connected Components — Colourized Labels")
 ]
 
 #v(.5em)

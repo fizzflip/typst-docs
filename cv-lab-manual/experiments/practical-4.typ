@@ -9,11 +9,6 @@
 
 #v(.5em)
 
-#section("Name")[
-  Video Input/Output Operations
-]
-#v(.5em)
-
 #section("Theory")[
   In Computer Vision, a video is simply a rapid sequence of individual images called "frames." OpenCV handles video by reading these frames one by one inside a loop using `cv2.VideoCapture`. To save a video, `cv2.VideoWriter` takes individual frames, encodes them using a specified codec (FourCC), and compiles them into a single file. \
   \
@@ -39,6 +34,12 @@
   - *`cv2.VideoWriter_fourcc(*'mp4v')`:* FourCC (Four-Character Code) specifies the video codec. `*'mp4v'` unpacks the string into individual characters. \
   - *`cap.read()`:* Returns `(ret, frame)`. Checking `ret` prevents crashes when a video ends or a webcam disconnects. \
   - *`cv2.waitKey(25)`:* A small delay (25 ms) to display the frame and check for keyboard input. The bitwise `& 0xFF` ensures cross-platform compatibility for key capture.
+]
+
+#v(.5em)
+
+#section("Output")[
+  #output_image("../scripts/output/practical-4-frame-capture.jpg", caption: "Captured Frame from Video Stream (Frame at 25% position)")
 ]
 
 #v(.5em)

@@ -9,11 +9,6 @@
 
 #v(.5em)
 
-#section("Name")[
-  Image Segmentation using GrabCut
-]
-#v(.5em)
-
 #section("Theory")[
   GrabCut is an advanced segmentation technique that treats an image as a graph. It requires an initial user-defined bounding box to identify the "probable foreground." \
   \
@@ -37,6 +32,12 @@
   - *`cv2.GC_INIT_WITH_RECT`:* Tells the algorithm to initialise segmentation from a rectangular bounding box. \
   - *Mask Processing:* Values 0 and 2 (Definite/Probable Background) map to 0; values 1 and 3 (Definite/Probable Foreground) map to 1, creating a clean binary alpha mask. \
   - *`np.newaxis`:* Aligns the 2D mask (H×W) with the 3D image (H×W×C) for element-wise multiplication, zeroing out background pixels.
+]
+
+#v(.5em)
+
+#section("Output")[
+  #output_image("../scripts/output/practical-11-grabcut.jpg", caption: "GrabCut Segmentation — Foreground Extraction")
 ]
 
 #v(.5em)

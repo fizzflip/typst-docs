@@ -1,27 +1,30 @@
 import cv2
 import numpy as np
+import os
 
-# Create a synthetic grayscale image with gradient background
-img = np.zeros((300, 300), dtype="uint8")
-for i in range(300):
-    img[:, i] = int((i / 300) * 150)
-cv2.rectangle(img, (50, 50), (150, 150), 200, -1)
-cv2.circle(img, (220, 220), 50, 30, -1)
+os.makedirs("output", exist_ok=True)
 
-# 1. Simple Global Thresholding
-ret, thresh_simple = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY)
+img = cv2.imread("../samples/images/handwritten-notes.jpg", cv2.IMREAD_GRAYSCALE)
+img = cv2.resize(img, (600, 800))
 
-# 2. Otsu's Binarization
-ret_otsu, thresh_otsu = cv2.threshold(img, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
-print(f"Otsu's calculated threshold value: {ret_otsu}")
+# 1. Simple binary thresholding
+_, thresh_binary = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY)
+cv2.imwrite("output/practical-6-binary.jpg", thresh_binary)
 
-# 3. Adaptive Thresholding
-thresh_adaptive = cv2.adaptiveThreshold(
-    img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 11, 2
-)
+# 2. Otsu's thresholding (automatic threshold selection)
+_, thresh_otsu = cv2.threshold(img, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+cv2.imwrite("output/practical-6-otsu.jpg", thresh_otsu)
 
-# 4. Connected Component Analysis
-num_labels, labels, stats, centroids = cv2.connectedComponentsWithStats(
-    thresh_simple, connectivity=8
-)
-print(f"Total components detected: {num_labels} (includes background)")
+# 3. Connected Component Analysis
+_, binary_inv = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY_INV)
+num_labels, labels, stats, centroids = cv2.connectedComponentsWithStats(binary_inv)
+
+# Colorize connected components
+output = np.zeros((*labels.shape, 3), dtype=np.uint8)
+for i in range(1, num_labels):
+    color = np.random.randint(50, 255, size=3).tolist()
+    output[labels == i] = color
+
+cv2.imwrite("output/practical-6-connected.jpg", output)
+print(f"Found {num_labels - 1} connected components.")
+print("Practical 6 outputs generated.")

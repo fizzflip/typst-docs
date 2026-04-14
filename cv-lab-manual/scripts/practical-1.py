@@ -1,32 +1,30 @@
 import cv2
 import numpy as np
+import os
 
-def show_image(title, image):
-    """Displays an image using OpenCV and waits for a key press."""
-    cv2.imshow(title, image)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
+os.makedirs("output", exist_ok=True)
 
 # 1. Reading and Writing Images
-img = cv2.imread('input.jpg')
-cv2.imwrite('output_copy.jpg', img)
+img = cv2.imread("../samples/images/paris-street.jpg")
+cv2.imwrite("output/practical-1-original.jpg", img)
 
 # 2. Resizing
-resized_img = cv2.resize(img, (400, 300))
+resized = cv2.resize(img, (400, 300))
+cv2.imwrite("output/practical-1-resized.jpg", resized)
 
 # 3. Cropping
-cropped_img = img[50:250, 100:300]
+h, w = img.shape[:2]
+cropped = img[h // 4 : 3 * h // 4, w // 4 : 3 * w // 4]
+cv2.imwrite("output/practical-1-cropped.jpg", cropped)
 
 # 4. Bitwise Operations
-mask = np.zeros(resized_img.shape[:2], dtype="uint8")
+mask = np.zeros(resized.shape[:2], dtype="uint8")
 cv2.rectangle(mask, (100, 50), (300, 250), 255, -1)
 
-bit_and = cv2.bitwise_and(resized_img, resized_img, mask=mask)
-bit_not = cv2.bitwise_not(resized_img)
+bit_and = cv2.bitwise_and(resized, resized, mask=mask)
+cv2.imwrite("output/practical-1-bitwise-and.jpg", bit_and)
 
-show_image("Original", img)
-show_image("Resized", resized_img)
-show_image("Cropped", cropped_img)
-show_image("Mask", mask)
-show_image("Bitwise AND", bit_and)
-show_image("Bitwise NOT", bit_not)
+bit_not = cv2.bitwise_not(resized)
+cv2.imwrite("output/practical-1-bitwise-not.jpg", bit_not)
+
+print("Practical 1 outputs generated.")

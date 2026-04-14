@@ -1,18 +1,23 @@
 import cv2
 import numpy as np
+import os
 
-img = cv2.imread('input.jpg')
+os.makedirs("output", exist_ok=True)
 
-# 1. Brightness and Contrast Adjustment
-alpha = 1.5  # Contrast control (1.0 is original)
-beta = 30    # Brightness control (0 is original)
-enhanced_img = cv2.convertScaleAbs(img, alpha=alpha, beta=beta)
+img = cv2.imread("../samples/images/nasa-sphere.jpg")
+img = cv2.resize(img, (600, 400))
 
-# 2. Mathematical Operations
-matrix = np.ones(img.shape, dtype="uint8") * 50
+# 1. Brightness adjustment (add constant)
+brightened = cv2.convertScaleAbs(img, alpha=1.0, beta=60)
+cv2.imwrite("output/practical-3-brightened.jpg", brightened)
 
-added_img = cv2.add(img, matrix)
-subtracted_img = cv2.subtract(img, matrix)
+# 2. Contrast adjustment (multiply by scalar)
+contrasted = cv2.convertScaleAbs(img, alpha=1.8, beta=0)
+cv2.imwrite("output/practical-3-contrasted.jpg", contrasted)
 
-# 3. Image Blending (Weighted Addition)
-blended_img = cv2.addWeighted(img, 0.7, enhanced_img, 0.3, 0)
+# 3. Image blending (addWeighted)
+overlay = np.full_like(img, (40, 100, 200), dtype=np.uint8)
+blended = cv2.addWeighted(img, 0.7, overlay, 0.3, 0)
+cv2.imwrite("output/practical-3-blended.jpg", blended)
+
+print("Practical 3 outputs generated.")

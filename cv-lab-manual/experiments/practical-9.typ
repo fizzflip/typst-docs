@@ -9,11 +9,6 @@
 
 #v(.5em)
 
-#section("Name")[
-  Geometric Transformations and Image Alignment
-]
-#v(.5em)
-
 #section("Theory")[
   Geometric transformations change the spatial arrangement of pixels in an image. \
   \
@@ -37,6 +32,14 @@
   - *`cv2.warpAffine()`:* Applies $M$ to every pixel, mapping them to new locations in the destination canvas. \
   - *`cv2.getPerspectiveTransform()`:* Calculates a $3 times 3$ matrix using 4 points, accounting for depth/Z-axis scaling. \
   - *`cv2.warpPerspective()`:* Applies the perspective matrix, enabling trapezoidal warps from rectangular inputs.
+]
+
+#v(.5em)
+
+#section("Output")[
+  #output_image("../scripts/output/practical-9-affine.jpg", caption: "Affine Transformation (3-Point Warp)")
+  #v(.5em)
+  #output_image("../scripts/output/practical-9-perspective.jpg", caption: "Perspective Transformation (4-Point Warp)")
 ]
 
 #v(.5em)

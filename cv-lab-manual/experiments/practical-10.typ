@@ -9,11 +9,6 @@
 
 #v(.5em)
 
-#section("Name")[
-  Feature Matching and Object Alignment
-]
-#v(.5em)
-
 #section("Theory")[
   Feature matching identifies corresponding points between a query image (object) and a train image (scene). \
   \
@@ -39,6 +34,12 @@
   - *`cv2.BFMatcher(NORM_HAMMING, crossCheck=True)`:* Hamming distance compares binary descriptors. `crossCheck` ensures a match is only accepted if mutually best. \
   - *`cv2.findHomography(..., RANSAC, 5.0)`:* RANSAC finds the dominant geometric transformation, discarding outliers beyond 5 pixels. Returns the $3 times 3$ Homography matrix and an inlier mask. \
   - *`cv2.perspectiveTransform()`:* Projects the object's corner coordinates through the Homography to localize it in the scene.
+]
+
+#v(.5em)
+
+#section("Output")[
+  #output_image("../scripts/output/practical-10-matches.jpg", caption: "ORB Feature Matches — Top 30 Correspondences (Object ↔ Scene)")
 ]
 
 #v(.5em)

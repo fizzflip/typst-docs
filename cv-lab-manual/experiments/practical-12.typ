@@ -9,11 +9,6 @@
 
 #v(.5em)
 
-#section("Name")[
-  Real-Time Face Detection
-]
-#v(.5em)
-
 #section("Theory")[
   Haar Cascade classifiers use machine learning to train an object detection function based on positive (faces) and negative (non-faces) images. Instead of using complex deep learning models, Haar cascades extract simple "Haar features" (comparing sums of pixels in adjacent rectangular regions) by sliding a window across the image. \
   \
@@ -42,6 +37,12 @@
     - `scaleFactor=1.1`: Image reduced by 10% at each scale. Smaller steps improve detection but slow processing.
     - `minNeighbors=5`: Requires at least 5 overlapping detections to confirm a face—primary defence against false positives.
     - `minSize=(30, 30)`: Ignores potential faces smaller than $30 times 30$ pixels.
+]
+
+#v(.5em)
+
+#section("Output")[
+  #output_image("../scripts/output/practical-12-faces.jpg", caption: "Haar Cascade Face Detection — 8 Faces Detected")
 ]
 
 #v(.5em)

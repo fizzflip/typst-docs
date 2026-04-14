@@ -9,11 +9,6 @@
 
 #v(.5em)
 
-#section("Name")[
-  Image Annotation Techniques
-]
-#v(.5em)
-
 #section("Theory")[
   Image annotation is vital for visualizing the results of computer vision algorithms, such as drawing bounding boxes around detected faces or labeling tracked objects. OpenCV provides built-in drawing functions that modify the multidimensional image array directly in place. \
   \
@@ -40,6 +35,12 @@
   - *`cv2.rectangle()`:* Draws an outline or filled rectangle given top-left and bottom-right corners. \
   - *`cv2.circle()`:* Draws an outline or filled circle given centre coordinates and radius. \
   - *`cv2.putText()`:* Overlays a text string at the specified bottom-left origin using a chosen font face and scale.
+]
+
+#v(.5em)
+
+#section("Output")[
+  #output_image("../scripts/output/practical-2-annotated.jpg", caption: "Annotated Image with Shapes and Text")
 ]
 
 #v(.5em)

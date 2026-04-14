@@ -9,11 +9,6 @@
 
 #v(.5em)
 
-#section("Name")[
-  Morphological Operations and Connected Components
-]
-#v(.5em)
-
 #section("Theory")[
   Morphological operations process images based on shape using a small matrix called a *structuring element* (kernel) to probe the image. *Erosion* shrinks foreground objects (removing small white noise), while *dilation* expands them (filling small black holes). \
   \
@@ -39,6 +34,16 @@
   - *`cv2.erode()` / `cv2.dilate()`:* Base morphological functions. The `iterations` parameter controls how many times the operation is applied consecutively. \
   - *`cv2.morphologyEx()`:* Wrapper for compound operations. `MORPH_OPEN` performs erosion then dilation; `MORPH_CLOSE` does the reverse. \
   - *`cv2.connectedComponentsWithStats()`:* Returns `num_labels` (count including background as label 0), `labels` (pixel-to-object map), `stats` (X, Y, width, height, area per object), and `centroids` (centre coordinates per object).
+]
+
+#v(.5em)
+
+#section("Output")[
+  #output_image("../scripts/output/practical-5-eroded.jpg", caption: "Erosion — Thinned Foreground Strokes")
+  #v(.5em)
+  #output_image("../scripts/output/practical-5-dilated.jpg", caption: "Dilation — Expanded Foreground Strokes")
+  #v(.5em)
+  #output_image("../scripts/output/practical-5-opened.jpg", caption: "Opening — Noise Removal with Shape Preservation")
 ]
 
 #v(.5em)

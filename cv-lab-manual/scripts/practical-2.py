@@ -1,22 +1,26 @@
 import cv2
-import numpy as np
+import os
 
-canvas = np.zeros((500, 500, 3), dtype="uint8")
+os.makedirs("output", exist_ok=True)
 
-# 1. Drawing a Line
-cv2.line(canvas, (50, 50), (450, 50), (255, 0, 0), 3)
+img = cv2.imread("../samples/images/boat-town.jpg")
+img = cv2.resize(img, (800, 500))
 
-# 2. Drawing Rectangles
-cv2.rectangle(canvas, (50, 100), (200, 250), (0, 255, 0), 2)
-cv2.rectangle(canvas, (250, 100), (400, 250), (0, 0, 255), -1)
+# Drawing a line
+cv2.line(img, (50, 50), (750, 50), (0, 255, 0), 3)
 
-# 3. Drawing a Circle
-cv2.circle(canvas, (125, 375), 50, (0, 255, 255), 2)
+# Drawing a rectangle
+cv2.rectangle(img, (100, 100), (400, 350), (255, 0, 0), 2)
 
-# 4. Adding Text
-font = cv2.FONT_HERSHEY_SIMPLEX
-cv2.putText(canvas, 'OpenCV Annotations', (50, 470), font, 1.2, (255, 255, 255), 2)
+# Drawing a circle
+cv2.circle(img, (600, 250), 80, (0, 0, 255), 3)
 
-cv2.imshow("Annotations", canvas)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+# Drawing an ellipse
+cv2.ellipse(img, (400, 250), (120, 60), 0, 0, 360, (255, 255, 0), 2)
+
+# Adding text
+cv2.putText(img, "OpenCV Annotations", (200, 470),
+            cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
+
+cv2.imwrite("output/practical-2-annotated.jpg", img)
+print("Practical 2 outputs generated.")

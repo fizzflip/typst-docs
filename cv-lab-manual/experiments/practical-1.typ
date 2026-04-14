@@ -9,11 +9,6 @@
 
 #v(.5em)
 
-#section("Name")[
-  Basic Image Processing Operations
-]
-#v(.5em)
-
 #section("Theory")[
   Basic image processing serves as the preprocessing pipeline for almost all Computer Vision tasks. Images in OpenCV are represented as multidimensional NumPy arrays. Operations like cropping and resizing normalize image data for algorithms, while bitwise operations allow for pixel-level logical combinations, which are essential for masking and filtering specific regions of interest. \
   \
@@ -39,6 +34,16 @@
   - *`cv2.resize()`:* Takes the source image and a tuple defining the new `(width, height)`. Can also resize by scaling factors using `fx` and `fy` parameters. \
   - *Cropping `img[y1:y2, x1:x2]`:* OpenCV doesn't have a dedicated crop function—images are NumPy arrays, so cropping is just height (Y-axis) and width (X-axis) slicing. \
   - *Bitwise Operations:* `bitwise_and` is highly useful for applying masks to extract specific parts of an image. `bitwise_not` creates a colour negative.
+]
+
+#v(.5em)
+
+#section("Output")[
+  #output_image("../scripts/output/practical-1-resized.jpg", caption: "Resized Image (400×300)")
+  #v(.5em)
+  #output_image("../scripts/output/practical-1-cropped.jpg", caption: "Cropped Centre Region")
+  #v(.5em)
+  #output_image("../scripts/output/practical-1-bitwise-not.jpg", caption: "Bitwise NOT (Colour Inversion)")
 ]
 
 #v(.5em)

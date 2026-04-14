@@ -163,3 +163,60 @@
   width: width,
   inset: 0pt,
 )
+
+#let output_image(path, caption: "", width: 80%) = align(center)[
+  #rect(
+    width: width,
+    fill: white,
+    stroke: 1pt + rgb("cbd5e1"),
+    radius: 6pt,
+    inset: 0pt,
+  )[
+    #stack(
+      spacing: 0pt,
+      rect(
+        width: 100%,
+        fill: rgb("f1f5f9"),
+        stroke: none,
+        inset: (x: 10pt, y: 6pt),
+        radius: (
+          top-left: 6pt,
+          top-right: 6pt,
+          bottom-left: 0pt,
+          bottom-right: 0pt,
+        ),
+      )[
+        #grid(
+          columns: (auto, auto, auto, 1fr, auto),
+          column-gutter: 5pt,
+          align: (left, center),
+          [#circle(radius: 3pt, fill: rgb("3b82f6"))],
+          [#circle(radius: 3pt, fill: rgb("8b5cf6"))],
+          [#circle(radius: 3pt, fill: rgb("06b6d4"))],
+          [],
+          [#text(size: 8pt, fill: rgb("64748b"))[output]],
+        )
+      ],
+      rect(
+        width: 100%,
+        fill: white,
+        stroke: none,
+        inset: (x: 10pt, y: 10pt),
+        radius: (
+          top-left: 0pt,
+          top-right: 0pt,
+          bottom-left: 6pt,
+          bottom-right: 6pt,
+        ),
+      )[
+        #align(center)[
+          #image(path, width: 100%)
+          #if caption != "" [
+            #v(4pt)
+            #text(size: 9pt, fill: rgb("64748b"), style: "italic")[#caption]
+          ]
+        ]
+      ],
+    )
+  ]
+]

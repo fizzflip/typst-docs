@@ -9,11 +9,6 @@
 
 #v(.5em)
 
-#section("Name")[
-  Edge Detection Techniques
-]
-#v(.5em)
-
 #section("Theory")[
   Edge detection identifies points in an image where brightness changes sharply (high-frequency gradients). \
   \
@@ -45,6 +40,14 @@
 
 #v(.5em)
 
+#section("Output")[
+  #output_image("../scripts/output/practical-8-sobel.jpg", caption: "Sobel Edge Detection (Combined X + Y Gradients)")
+  #v(.5em)
+  #output_image("../scripts/output/practical-8-canny.jpg", caption: "Canny Edge Detection (thresholds: 50, 150)")
+]
+
+#v(.5em)
+
 #section("Conclusion")[
-  The experiment demonstrated Sobel and Canny edge detection on a synthetic image. Canny's multi-stage pipeline produces cleaner, single-pixel-width edges, and its hysteresis thresholds allow precise tuning of detection sensitivity.
+  The experiment demonstrated Sobel and Canny edge detection on a real-world architectural image. Canny's multi-stage pipeline produces cleaner, single-pixel-width edges, and its hysteresis thresholds allow precise tuning of detection sensitivity.
 ]
