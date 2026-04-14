@@ -272,9 +272,17 @@
           row-gutter: 10pt,
           ..items.map(item => [
             #align(center)[
-              #image(item.at(0), width: 100%)
-              #v(2pt)
-              #text(size: 8pt, fill: rgb("64748b"), style: "italic")[#item.at(1)]
+              #block(
+                width: 100%,
+                height: 120pt, // Standardized height for grid items
+                stroke: 0.5pt + rgb("e2e8f0"),
+                radius: 4pt,
+                clip: true,
+              )[
+                #image(item.at(0), width: 100%, height: 100%, fit: "cover")
+              ]
+              #v(4pt)
+              #text(size: 8pt, fill: rgb("64748b"), weight: "medium")[#item.at(1)]
             ]
           ])
         )
