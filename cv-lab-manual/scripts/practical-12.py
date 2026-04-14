@@ -21,8 +21,8 @@ for (x, y, w, h) in faces:
     
     # Label background (filled rectangle)
     label = "Face"
-    (text_w, text_h), baseline = cv2.getTextSize(label,
-                                    cv2.FONT_HERSHEY_SIMPLEX, 0.5, 1)
+    (text_w, text_h), baseline = 
+            cv2.getTextSize(label, cv2.FONT_HERSHEY_SIMPLEX, 0.5, 1)
     cv2.rectangle(
         img, (x, y - text_h - 10),
         (x + text_w + 10, y), (0, 255, 0), -1

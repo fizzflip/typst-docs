@@ -19,6 +19,7 @@
   - *Thickness:* A positive integer sets border width in pixels; `-1` fills the shape completely.
   - All drawing functions operate _in-place_, modifying the array directly rather than returning a new copy.
 ]
+#v(.5em)
 
 // #pagebreak()
 #section("Code")[

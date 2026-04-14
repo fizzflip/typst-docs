@@ -21,8 +21,6 @@ cv2.imwrite("output/practical-1-cropped.jpg", cropped)
 mask = np.zeros(resized.shape[:2], dtype="uint8")
 cv2.rectangle(mask, (100, 50), (300, 250), 255, -1)
 
-
-
 bit_and = cv2.bitwise_and(resized, resized, mask=mask)
 cv2.imwrite("output/practical-1-bitwise-and.jpg", bit_and)
 
