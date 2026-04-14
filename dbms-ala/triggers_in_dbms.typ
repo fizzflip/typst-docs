@@ -55,7 +55,8 @@
 #v(1.5em)
 
 // --- Document Content ---
-= Phase 1: Environment Setup
+= Environment Setup
+\
 To begin the simulation, we establish the core database tables. The `inventory` table stores our primary business data, while the `audit_log` table acts as a structured record for trigger execution events.
 
 #styled-image(
@@ -63,22 +64,7 @@ To begin the simulation, we establish the core database tables. The `inventory` 
   caption: [SQL implementation for table creation in phpMyAdmin environment.],
 ) <fig-setup>
 
-
-```sql
--- Create the main inventory table
-CREATE TABLE inventory (
-    item_id INT AUTO_INCREMENT PRIMARY KEY,
-    item_name VARCHAR(50),
-    quantity INT
-);
-
--- Create a table to log the trigger actions
-CREATE TABLE audit_log (
-    log_id INT AUTO_INCREMENT PRIMARY KEY,
-    action_description VARCHAR(255),
-    logged_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-```
+#v(2em)
 
 #styled-image(
   "assets/verify_tables.png",
@@ -86,7 +72,9 @@ CREATE TABLE audit_log (
   caption: [Verification of table structure within the database schema.],
 ) <fig-verification>
 
-= Phase 2: Trigger Implementation
+#pagebreak()
+= Trigger Implementation
+\
 To observe execution order, two triggers are attached to the `inventory` table. The `BEFORE` trigger captures the intent of the transaction, while the `AFTER` trigger confirms its successful completion.
 
 #styled-image(
@@ -94,37 +82,16 @@ To observe execution order, two triggers are attached to the `inventory` table. 
   caption: [Defining trigger delimiters and logic in the SQL console.],
 ) <fig-trigger-creation>
 
-```sql
-DELIMITER //
-
--- Trigger 1: Runs BEFORE the insert happens
-CREATE TRIGGER before_item_insert
-BEFORE INSERT ON inventory
-FOR EACH ROW
-BEGIN
-    INSERT INTO audit_log (action_description)
-    VALUES (CONCAT('BEFORE TRIGGER: Attempting to insert item: ', NEW.item_name));
-END //
-
--- Trigger 2: Runs AFTER the insert happens
-CREATE TRIGGER after_item_insert
-AFTER INSERT ON inventory
-FOR EACH ROW
-BEGIN
-    INSERT INTO audit_log (action_description)
-    VALUES (CONCAT('AFTER TRIGGER: Successfully inserted item: ', NEW.item_name, ' with quantity ', NEW.quantity));
-END //
-
-DELIMITER ;
-```
+#v(2em)
 
 #styled-image(
   "assets/verify_triggers.png",
   caption: [Verification of successful trigger deployment.],
 ) <fig-trigger-verify>
 
-
-= Phase 3: Transactional Execution
+#pagebreak()
+= Transactional Execution
+\
 To validate the trigger automation, a standard `INSERT` operation is performed on the `inventory` table.
 
 #styled-image(
@@ -132,11 +99,12 @@ To validate the trigger automation, a standard `INSERT` operation is performed o
   caption: [Executing the test insert operation.],
 ) <fig-insert>
 
+\
 ```sql
 INSERT INTO inventory (item_name, quantity)
 VALUES ('Laptop', 15);
 ```
-
+\
 *Observation:* Upon execution, the database engine automatically fires the triggers. A query of the `audit_log` table reveals two entries generated without manual intervention, confirming the deterministic execution of the trigger chain.
 
 #styled-image(
@@ -144,8 +112,10 @@ VALUES ('Laptop', 15);
   caption: [The audit log showing the captured BEFORE and AFTER execution states.],
 ) <fig-logs>
 
+#pagebreak()
 
-= Phase 4: Logic & Execution Analysis
+= Logic & Execution Analysis
+\
 Based on the simulation results, the execution order of triggers during a Data Manipulation Language (DML) event is structured and immutable.
 
 #v(1em)
@@ -175,7 +145,8 @@ The execution flow involves the following distinct stages:
 + *The Intercept (BEFORE):* The RDBMS intercepts the DML request. This phase is critical for data validation or normalization (modifying the `NEW` record) before the physical write. If the `BEFORE` trigger fails, the entire transaction is rolled back.
 + *The Nucleus (Primary Operation):* If the pre-validation passes, the database engine executes the actual `INSERT`, `UPDATE`, or `DELETE`.
 + *The Confirmation (AFTER):* Immediately following a successful nucleus operation, the `AFTER` trigger fires. This is the optimal location for logging (as seen in @fig-logs) or updating dependent aggregate tables, as success is guaranteed.
-
+\
 = Conclusion
+\
 The use of database triggers provides a powerful mechanism for enforcing business rules and maintaining comprehensive audit trails. As demonstrated in this assignment, the strict ordering of `BEFORE` and `AFTER` triggers allows developers to decouple validation logic from outcome logging, ensuring data integrity across complex transactional workflows.
 
