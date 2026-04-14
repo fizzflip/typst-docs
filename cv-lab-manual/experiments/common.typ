@@ -210,10 +210,17 @@
         ),
       )[
         #align(center)[
-          #image(path, width: 100%)
+          #block(
+            width: 100%,
+            stroke: 0.5pt + rgb("e2e8f0"),
+            radius: 4pt,
+            clip: true,
+          )[
+            #image(path, width: 100%)
+          ]
           #if caption != "" [
-            #v(4pt)
-            #text(size: 9pt, fill: rgb("64748b"), style: "italic")[#caption]
+            #v(6pt)
+            #text(size: 8pt, fill: rgb("64748b"), weight: "medium")[#caption]
           ]
         ]
       ],
@@ -281,7 +288,7 @@
               )[
                 #image(item.at(0), width: 100%, height: 100%, fit: "cover")
               ]
-              #v(4pt)
+              #v(2pt)
               #text(size: 8pt, fill: rgb("64748b"), weight: "medium")[#item.at(1)]
             ]
           ])
