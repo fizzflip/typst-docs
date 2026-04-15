@@ -42,103 +42,102 @@
   #line(length: 30%, stroke: 0.5pt + luma(200))
 ]
 
-= 1. Work Breakdown Structure (WBS)
-The project is decomposed into granular tasks across four primary execution phases.
+= 1. Granular Work Breakdown Structure (WBS)
+The execution of *MedConnect* is partitioned into four major phases, with specific sub-tasks assigned to ensure operational transparency.
 
 #table(
-  columns: (0.8fr, 3fr, 1fr),
-  inset: 7pt,
+  columns: (0.6fr, 2.5fr, 1fr),
+  inset: 6pt,
   stroke: 0.5pt + luma(220),
   fill: (x, y) => if x == 0 { rgb("#f1f7fd") } else if y == 0 { rgb("#0d47a1") },
-  [*ID*], [#text(fill: white)[*Task Description*]], [#text(fill: white)[*Owner*]],
-  [1.1], [Stakeholder interviews and requirement validation], [PM],
-  [1.2], [UI/UX Wireframing and Patient Journey mapping], [FE Designer],
-  [2.1], [Database schema implementation (SQLite/SQLAlchemy)], [BE Dev],
-  [2.2], [Clinical triage logic tree development in Python], [BE Dev / SME],
-  [2.3], [Frontend Portal integration with Flask API], [FE Dev],
-  [3.1], [Integrated Security Audit & Penetration Testing], [QA / Dev],
-  [3.2], [User Acceptance Testing (UAT) with Clinic Staff], [PM / SME],
-  [4.1], [Final Cloud Deployment and DNS configuration], [DevOps],
+  [*ID*], [#text(fill: white)[*Phase / Task Description*]], [#text(fill: white)[*Owner*]],
+  [*P1*], [*Discovery & Logic Definition*], [*PM*],
+  [1.1], [-- Conduct clinical stakeholder discovery workshops.], [PM / SME],
+  [1.2], [-- Map decision-tree logic for urgent vs routine triage.], [SME],
+  [1.3], [-- Finalize UI/UX wireframes for patient onboarding portal.], [FE Designer],
+  [*P2*], [*Core Development Sprint*], [*Dev Team*],
+  [2.1], [-- Provision secure cloud infrastructure (PostgreSQL/Redis).], [BE Dev],
+  [2.2], [-- Engineer the Flask-based Triage Intelligence API.], [BE Dev],
+  [2.3], [-- Build responsive frontend booking interface components.], [FE Dev],
+  [*P3*], [*Security & Validation Phase*], [*QA / Dev*],
+  [3.1], [-- Perform automated security hardening and pen-testing.], [BE Dev],
+  [3.2], [-- Execute UAT cycles with clinic administrative staff.], [PM / SME],
+  [*P4*], [*Deployment & Closure*], [*DevOps*],
+  [4.1], [-- Execute final production deployment and DNS sync.], [DevOps],
+  [4.2], [-- Deliver staff training modules and technical handbook.], [PM],
 )
 
-= 2. Project Timeline (Blueprint Visualization)
-The following Gantt chart illustrates the 16-week timeline, highlighting phase overlaps and critical milestones.
+= 2. Project Timeline & Blueprint
+The following Gantt chart visualizes the overlaps and critical dependencies required to meet the Week-16 launch.
 
+#v(1em)
 #let gantt-bar(start, end, fill-color, stroke-color, label) = {
   grid(
     columns: (1fr * start, 1fr * (end - start), 1fr * (16 - end)),
     [],
-    rect(width: 100%, height: 1.25em, fill: fill-color, stroke: 0.5pt + stroke-color, radius: 2pt)[
+    rect(width: 100%, height: 1.2em, fill: fill-color, stroke: 0.5pt + stroke-color, radius: 2pt)[
       #set align(center + horizon)
-      #text(size: 7pt, fill: stroke-color.darken(30%))[#label]
+      #text(size: 6.5pt, fill: stroke-color.darken(30%))[#label]
     ],
     [],
   )
 }
 
-#box(width: 100%, stroke: 0.5pt + luma(200), inset: 10pt, radius: 4pt)[
-  // Header: Months
-  #grid(
-    columns: (1.5fr, 1fr, 4fr, 4fr, 4fr, 4fr),
-    gutter: 2pt,
-    [*Phase*], [*ID*], [*Month 1*], [*Month 2*], [*Month 3*], [*Month 4*],
-  )
-  #v(0.5em)
-  #line(length: 100%, stroke: 0.2pt + luma(200))
-  #v(0.5em)
-
-  // Header: Weeks
-  #grid(
-    columns: (1.5fr, 1fr, ..(1fr,) * 16),
-    gutter: 2pt,
-    [], [], ..range(1, 17).map(i => text(size: 6pt, fill: luma(150))[W#i]),
-  )
-  #v(0.5em)
-
-  // Tasks
-  #let task-row(phase, id, start, end, color) = grid(
-    columns: (1.5fr, 1fr, 16fr),
-    gutter: 2pt,
-    text(size: 8pt)[#phase], text(size: 8pt)[#id], gantt-bar(start, end, color.lighten(80%), color, ""),
-  )
-
-  #task-row("Discovery", "1.1", 0, 3, rgb("#0d47a1"))
-  #task-row("", "1.2", 2, 5, rgb("#0d47a1"))
+#box(width: 100%, stroke: 0.5pt + luma(200), inset: 8pt, radius: 4pt)[
+  #grid(columns: (1.2fr, 0.8fr, ..(1fr,) * 16), gutter: 2pt, [], [], ..range(1, 17).map(i => text(size: 6pt, fill: luma(150))[W#i]))
   #v(0.3em)
-  #task-row("Dev", "2.1", 4, 9, rgb("#2e7d32"))
-  #task-row("", "2.2", 5, 10, rgb("#2e7d32"))
-  #task-row("", "2.3", 7, 11, rgb("#2e7d32"))
-  #v(0.3em)
-  #task-row("Testing", "3.1", 10, 13, rgb("#f57c00"))
-  #task-row("", "3.2", 12, 14, rgb("#f57c00"))
-  #v(0.3em)
-  #task-row("Launch", "4.1", 14, 16, rgb("#d32f2f"))
+  #let task-row(phase, id, start, end, color) = grid(columns: (1.2fr, 0.8fr, 16fr), gutter: 2pt, text(size: 7.5pt)[#phase], text(size: 7.5pt)[#id], gantt-bar(start, end, color.lighten(80%), color, ""))
+  #task-row("Discovery", "1.1-1.3", 0, 4, rgb("#0d47a1"))
+  #task-row("App Dev", "2.1-2.3", 4, 11, rgb("#2e7d32"))
+  #task-row("Testing", "3.1-3.2", 10, 14, rgb("#f57c00"))
+  #task-row("Launch", "4.1-4.2", 14, 16, rgb("#d32f2f"))
 ]
 
-= 3. Roles and Responsibilities (RACI Matrix)
+#v(1em)
+
+= 3. Project Risk Register & Mitigation
+We have identified high-impact risks with proactive strategies to ensure clinical and technical stability.
+
 #table(
-  columns: (2fr, 1fr, 1fr, 1fr, 1fr),
+  columns: (1fr, 0.8fr, 0.8fr, 2fr),
+  inset: 7pt,
+  fill: (x, y) => if y == 0 { rgb("#ECEFF1") },
+  [*Risk Event*], [*Prob.*], [*Impact*], [*Mitigation Strategy*],
+  [Triage Logic Error], [Low], [Critical], [Mandatory double-sign-off by clinical SMEs for all trees.],
+  [Security Breach], [Medium], [Critical], [Implementation of Zero-Trust and AES-256 vault protocols.],
+  [Resource Churn], [Low], [High], [Maintain detailed technical shadowing and documentation.],
+  [Staff Resistance], [Medium], [Medium], [Incentivize feedback early via the Beta UAT phase.],
+)
+
+= 4. Roles & Responsibilities (RACI Matrix)
+#table(
+  columns: (2fr, 0.8fr, 0.8fr, 0.8fr, 0.8fr),
   inset: 6pt,
   align: center,
   stroke: 0.5pt + luma(220),
   fill: (x, y) => if y == 0 { rgb("#ECEFF1") },
-  [*Deliverable*], [*PM*], [*Dev BE*], [*Dev FE*], [*SME*],
-  [Project Charter], [A/R], [C], [I], [C],
-  [Triage Logic Engine], [I], [R/A], [I], [C],
-  [User Interface], [C], [I], [R/A], [I],
-  [Test Reports], [A], [C], [C], [R],
-  [Security Hardening], [I], [R/A], [C], [I],
+  [*Key Deliverable*], [*PM*], [*Dev BE*], [*Dev FE*], [*SME*],
+  [Requirement Spec], [A/R], [C], [I], [R],
+  [Logic Intelligence API], [I], [R/A], [I], [C],
+  [Patient Portal UI], [C], [I], [R/A], [I],
+  [System Security Audit], [A], [R], [C], [I],
+  [Final UAT Report], [R/A], [C], [C], [R],
 )
-#text(size: 8pt, style: "italic")[R: Responsible, A: Accountable, C: Consulted, I: Informed]
 
-= 4. Communication Plan
+= 5. Quality Assurance & Testing Plan
+MedConnect follows a "Safety-First" QA methodology.
+- *Unit Testing:* Automated Python/PyTest suites for all logic-tree execution paths.
+- *Security Audit:* OWASP Top 10 vulnerability assessment prior to deployment.
+- *Clinical UAT:* 3-stage validation: Alpha (Dev walkthrough), Beta (Admin use), and Final (Parallel run).
+
+= 6. Integrated Communication Plan
 #table(
   columns: (1fr, 1.5fr, 1fr, 1.5fr),
   inset: 7pt,
   fill: (x, y) => if y == 0 { rgb("#ECEFF1") },
-  [*Meeting/Report*], [*Stakeholders*], [*Freq.*], [*Channel*],
-  [Daily Stand-up], [Internal Dev Team], [Daily], [Slack / Teams],
-  [Status Report], [Clinic Admin], [Weekly], [Email / PDF],
-  [Sprint Review], [Project Steering Group], [Monthly], [Video Conf.],
-  [Incident Alert], [DevOps / PM], [As Needed], [Automated SMS],
+  [*Component*], [*Target Stakeholders*], [*Freq*], [*Channel / Deliverable*],
+  [Stand-ups], [Dev Team / Project Lead], [Daily], [Slack Collaboration Channel.],
+  [Board Progress], [Clinic Administrators], [Weekly], [Automated PDF Status Report.],
+  [Logic Review], [Clinical SME / Devs], [Weekly], [Technical workshop (Teams/Zoom).],
+  [Release Notes], [Entire Staff Ecosystem], [Phase-End], [Briefing Memo & Roadmap update.],
 )

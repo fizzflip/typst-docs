@@ -58,61 +58,91 @@
   #v(2em)
 ]
 
-= 1. Project Scope Definition
-The scope of *MedConnect* is focused on the "Digital Front Door" of clinical operations—specifically the interface between patient symptoms and physician time.
+= 1. Project Scope & Deliverable Matrix
+The scope of *MedConnect* is precisely defined to focus on the "Digital Front Door" of clinical operations. To ensure clarity, the following matrix outlines specific functional requirements and their associated acceptance criteria.
 
-== 1.1 In-Scope Deliverables
-- *Patient Triage Interface:* A symptom-input system utilizing clinical decision-tree logic.
-- *Autonomous Scheduling Engine:* Real-time calendar synchronization with physician availability.
-- *Administrative Dashboard:* Management view for clinic staff to oversee triage results and handle overrides.
-- *Automated Notification System:* SMS/Email triggers for appointment confirmations and reminders.
-- *Secured Database Schema:* HIPAA-compliant (standardized) storage for PII and scheduling logs.
+#table(
+  columns: (1fr, 1.8fr, 1.5fr),
+  inset: 7pt,
+  fill: (x, y) => if y == 0 { rgb("#ECEFF1") },
+  [*Feature*], [*Functional Requirement*], [*Acceptance Criteria*],
+  [Symp. Triage], [Digital questionnaire with logic-tree execution.], [100% logic alignment with clinical SME trees.],
+  [Self-Schedule], [Native calendar binding with real-time slots.], [Sync latency < 2s for all availability updates.],
+  [Notifications], [Automated SMS/Email confirmations & alerts.], [Delivery success rate >= 98% in pilot phase.],
+  [Secure Vault], [Encryption-at-rest for all patient PII data.], [Passes HIPAA-compliant vulnerability scan.],
+)
 
-== 1.2 Out-of-Scope (Exclusions)
-- *Billing & Insurance Processing:* Integration with financial gateways or insurance verification.
-- *Telehealth Video Conferencing:* Built-in video calling modules (referral to external services).
-- *Comprehensive EHR:* Replacement of internal medical record systems (MedConnect acts as a middleware).
+== 1.2 Boundary Conditions (Exclusions)
+To prevent "Scope Creep," the following are explicitly *Out-of-Scope*:
+- *Internal EMR Replacement:* We act as a middleware, not a primary medical record repository.
+- *Financial Gateways:* Billing and insurance claims are handled by existing third-party systems.
 
-= 2. Project Objectives (SMART)
-The success of MedConnect is predicated on achieving the following specific, measurable goals:
+= 2. Strategic Objectives (SMART)
+The project aims for operational excellence through quantifiable mission goals.
 
-+ *Primary Objective:* Deploy a fully functional triage and scheduling prototype within a 16-week timeline that handles 100% of digital bookings without manual intervention.
-+ *Efficiency Goal:* Reduce the time required for a patient to secure an appointment from an average of 8 minutes (phone) to under 2 minutes (portal).
-+ *Accuracy Goal:* Achieve a *Zero Double-Booking* incident rate through atomic database transactions.
-+ *Clinical Safety:* Ensure 100% of high-urgency symptoms (as defined by the logic tree) are flagged for immediate administrative review within 60 seconds of submission.
+- *O1 (Operational):* Deploy a functional prototype within 16 weeks, automating 90% of routine bookings.
+- *O2 (Efficiency):* Target a 75% reduction in patient interaction time for basic scheduling (from 8m to \<2m).
+- *O3 (Safety):* 100% of "Urgent" flagged cases must generate a high-priority administrative alert within 60s.
+- *O4 (Scale):* Data architecture must support a peak load of 50 concurrent triage sessions without latency degradation.
+
+= 3. Constraints & Critical Assumptions
+Successful delivery is contingent on managing the following environmental factors.
+
+- *Constraints:* Must comply with regional health data regulations (HIPAA/GDPR); fixed budget of \$45k.
+- *Assumptions:* Clinical SMEs are available 4 hours/week for logic validation; Existing clinic API handles read-access for physician schedules.
+
+= 4. Stakeholder Analysis Matrix
+Mapping the influence and interest of the project’s key participants.
+
+#table(
+  columns: (1fr, 1fr, 2fr),
+  inset: 7pt,
+  fill: (x, y) => if y == 0 { rgb("#ECEFF1") },
+  [*Stakeholder*], [*Power/Interest*], [*Engagement Strategy*],
+  [Clinic Board], [High / High], [Monthly steering committee and ROI reports.],
+  [SME Doctors], [High / Medium], [Weekly logic-tree validation workshops.],
+  [Reception Staff], [Medium / High], [Bi-weekly training and feedback loops.],
+  [Patients], [Low / High], [UX beta testing and accessibility surveys.],
+)
+
 #pagebreak()
-= 3. Resource Requirements
-The project necessitates a lean but highly specialized team and a strategic allocation of technical resources.
+= 5. Resource Allocation & Financial Plan
+The project requires a specialized team and a strategic allocation of the capital budget.
 
-== 3.1 Personnel
-- *1 x Project Manager (PM):* Overseeing SDLC, stakeholder alignment, and risk mitigation.
-- *2 x Backend Developers (Python/Flask):* Focused on triage algorithms and API security.
-- *1 x Frontend Developer (UI/UX):* Creating the patient-facing responsive interface.
-- *1 x Clinical Consultant (Subject Matter Expert):* Verifying the accuracy of triage logic trees.
+== 5.1 Project Personnel
+- *Project Lead (1x):* SDLC management, stakeholder liaison, and timeline integrity.
+- *Dev Team (2x):* Python/Flask backend specialists and UI/UX front-end development.
+- *Clinical Consultant (1x):* Verification of medical logic-trees and safety triggers.
 
-== 3.2 Technical & Financial Resources
-- *Infrastructure:* Cloud-based hosting (AWS/Azure) for staging and production environments.
-- *Software Tools:* GitHub for version control, Jira for task tracking, and Figma for design.
-- *Budget Allocation:* Estimated total of \$45,000 for initial development, licensing, and 12-month maintenance.
+== 5.2 Comprehensive Budget Breakdown
+#table(
+  columns: (2fr, 1fr, 2fr),
+  inset: 10pt,
+  stroke: 0.5pt + luma(220),
+  fill: (x, y) => if x == 0 { rgb("#F8F9FA") } else if y == 0 { rgb("#ECEFF1") },
+  [*Expenditure Category*], [*Cost (Est)*], [*Allocation Detail*],
+  [Personnel / Talent], [\$32,000], [Developer stipends and PM leadership fees.],
+  [Infra & Hosting], [\$4,500], [AWS Instances, Database hosting, and SSL.],
+  [Security & Compliance], [\$6,000], [Third-party pen-testing and HIPAA audit tool.],
+  [Contingency / Misc], [\$2,500], [Emergency buffer (5% of total budget).],
+  [*Total Project Budget*], [*\$45,000*], [*Total Capital Requirement*],
+)
 
-= 4. Timing & Milestones
-High-level timing for the 16-week iterative development cycle.
-
+= 6. Key Milestones & Completion Timing
 #v(1em)
 #table(
   columns: (1fr, 2fr, 1.5fr),
   inset: 10pt,
   stroke: 0.5pt + luma(220),
   fill: (x, y) => if x == 0 { rgb("#eceff1") },
-  [*Milestone*], [*Key Activities*], [*Expected Date*],
-  [M1: Scoping], [Requirement Lock & UX Design], [Week 3],
-  [M2: Alpha], [Triage Engine & DB Integration], [Week 8],
-  [M4: Beta], [UAT with Clinic Staff & Patients], [Week 12],
-  [M5: Launch], [Full System Deployment], [Week 16],
+  [*Milestone*], [*Key Deliverables*], [*Expected Date*],
+  [M1: Scoping], [Requirement Lock & UX Blueprint], [Week 3],
+  [M2: Alpha], [Triage Engine Core & DB Finalization], [Week 8],
+  [M3: Beta], [Staff UAT & Logic-Tree Validation], [Week 12],
+  [M4: Launch], [System Deployment & Handover], [Week 16],
 )
 
 #v(2em)
-
 #plan-block(title: "Project Commitment")[
   By defining these boundaries and objectives, the MedConnect team ensures a high-quality delivery that avoids "Scope Creep" while maximizing clinical value. The focus remains on stability, security, and user accessibility.
 ]
