@@ -157,7 +157,7 @@ We have identified high-impact risks with proactive strategies to ensure clinica
   [Resource Churn], [Low], [High], [Maintain detailed technical shadowing and documentation.],
   [Staff Resistance], [Medium], [Medium], [Incentivize feedback early via the Beta UAT phase.],
 )
-
+#pagebreak()
 = 4. Roles & Responsibilities (RACI Matrix)
 #table(
   columns: (2fr, 0.8fr, 0.8fr, 0.8fr, 0.8fr),
