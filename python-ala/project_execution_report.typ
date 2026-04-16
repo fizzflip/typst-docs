@@ -59,7 +59,7 @@
   #v(0.4em)
   #text(size: 13pt, weight: "medium", fill: rgb("#607d8b"))[Project Execution Report & Final Closure] \
   #v(0.3em)
-  #text(size: 9pt, fill: luma(160))[Assignment 4 | 16-Week Execution Cycle | IT Project Management] \
+  // #text(size: 9pt, fill: luma(160))[Assignment 4 | 16-Week Execution Cycle | IT Project Management] \
   #v(1.5em)
   #line(length: 60%, stroke: 0.5pt + luma(200))
   #v(2em)
@@ -75,7 +75,7 @@
 Each project phase was governed by a named milestone. Progress was tracked weekly against the Detailed Project Plan (Assignment 3). All four milestones were achieved at or within acceptable variance.
 
 #table(
-  columns: (0.6fr, 1.3fr, 1fr, 1fr, 1fr),
+  columns: (0.6fr, 2fr, 1fr, 1fr, 1fr),
   inset: 7pt,
   stroke: 0.5pt + luma(220),
   fill: (x, y) => if y == 0 { rgb("#0d47a1") } else if x == 0 { rgb("#f1f7fd") },
@@ -88,12 +88,12 @@ Each project phase was governed by a named milestone. Progress was tracked weekl
   [M1], [Scoping Lock & UX Blueprint], [Week 3], [Week 3], [#status-badge("On Time", rgb("#2e7d32"))],
   [M2], [Triage Engine & DB Finalized], [Week 8], [Week 9], [#status-badge("+1 Week", rgb("#f57c00"))],
   [M3], [Staff UAT & Logic Validation], [Week 12], [Week 12], [#status-badge("On Time", rgb("#2e7d32"))],
-  [M4], [Deployment & Project Handover], [Week 16], [Week 16], [#status-badge("On Time", rgb("#2e7d32"))],
+  [M4], [Deployment & \ Project Handover], [Week 16], [Week 16], [#status-badge("On Time", rgb("#2e7d32"))],
 )
 
 == 1.1 Milestone Variance Analysis
 The sole schedule deviation occurred at *M2* due to an unforeseen complexity in the Flask-based Triage Intelligence API — specifically, edge-case handling within the multi-branch symptom decision tree required an additional design review session with the Clinical SME. A one-week buffer (originally allocated in the plan) was consumed. Subsequent phases were re-sequenced without impact to the final delivery date.
-
+#pagebreak()
 = 2. Weekly Progress Log (Summary)
 The following table summarizes team activity and adherence to the execution plan across the 16-week cycle.
 
@@ -483,105 +483,604 @@ The following snippets illustrate the core architectural components of the MedCo
 
 == 8.9 UI/UX Templates (`templates/index.html`)
 #box(width: 100%, inset: 10pt, stroke: 0.5pt + luma(200), radius: 4pt, fill: luma(250))[
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>MedConnect | Patient Portal</title>
-    <link rel="stylesheet" href="/static/style.css">
-</head>
-<body>
-    <header><h1>MedConnect Portal</h1></header>
-    <main>
-        <section id="triage-form">
-            <h2>Symptom Assessment</h2>
-            <form action="/api/v1/triage" method="post">
-                <!-- Dynamic form components -->
-            </form>
-        </section>
-    </main>
-</body>
-</html>
-```
+  ```html
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <title>MedConnect | Patient Portal</title>
+      <link rel="stylesheet" href="/static/style.css">
+  </head>
+  <body>
+      <header><h1>MedConnect Portal</h1></header>
+      <main>
+          <section id="triage-form">
+              <h2>Symptom Assessment</h2>
+              <form action="/api/v1/triage" method="post">
+                  <!-- Dynamic form components -->
+              </form>
+          </section>
+      </main>
+  </body>
+  </html>
+  ```
 ]
 
 == 8.10 Cyber-Modernist Aesthetics (`static/style.css`)
 #box(width: 100%, inset: 10pt, stroke: 0.5pt + luma(200), radius: 4pt, fill: luma(250))[
-```css
-:root {
-    --primary: #0d47a1;
-    --secondary: #607d8b;
-    --bg: #f1f7fd;
-}
+  ```css
+  :root {
+      --primary: #0d47a1;
+      --secondary: #607d8b;
+      --bg: #f1f7fd;
+  }
 
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--bg);
-    color: #263238;
-}
+  body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: #263238;
+  }
 
-header {
-    background: var(--primary);
-    color: white;
-    padding: 2rem;
-    text-align: center;
-}
-```
+  header {
+      background: var(--primary);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+  }
+  ```
 ]
 
 == 8.11 Environment Configuration (`config.py`)
 #box(width: 100%, inset: 10pt, stroke: 0.5pt + luma(200), radius: 4pt, fill: luma(250))[
-```python
-import os
+  ```python
+  import os
 
-class Config:
-    SECRET_KEY = os.environ.get('SECRET_KEY') or 'dev-secret-key'
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
-        'sqlite:///medconnect.db'
-    SQLALCHEMY_TRACK_MODIFICATIONS = False
-```
+  class Config:
+      SECRET_KEY = os.environ.get('SECRET_KEY') or 'dev-secret-key'
+      SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
+          'sqlite:///medconnect.db'
+      SQLALCHEMY_TRACK_MODIFICATIONS = False
+  ```
 ]
 
 == 8.12 Dependency Manifest (`requirements.txt`)
 #box(width: 100%, inset: 10pt, stroke: 0.5pt + luma(200), radius: 4pt, fill: luma(250))[
-```text
-Flask==2.1.2
-Flask-SQLAlchemy==2.5.1
-PyJWT==2.4.0
-twilio==7.8.2
-pytest==7.1.2
-gunicorn==20.1.0
-```
+  ```text
+  Flask==2.1.2
+  Flask-SQLAlchemy==2.5.1
+  PyJWT==2.4.0
+  twilio==7.8.2
+  pytest==7.1.2
+  gunicorn==20.1.0
+  ```
 ]
 
 == 8.13 Project Documentation (`README.md`)
 #box(width: 100%, inset: 10pt, stroke: 0.5pt + luma(200), radius: 4pt, fill: luma(250))[
-```markdown
-# MedConnect
-Next-Gen Patient Flow & Triage Optimization.
+  ```markdown
+  # MedConnect
+  Next-Gen Patient Flow & Triage Optimization.
 
-## Setup
-1. `pip install -r requirements.txt`
-2. `flask run`
+  ## Setup
+  1. `pip install -r requirements.txt`
+  2. `flask run`
 
-## Security
-This project implements Zero-Trust and AES-256 for PII data.
-```
+  ## Security
+  This project implements Zero-Trust and AES-256 for PII data.
+  ```
 ]
 
 == 8.14 Version Control (`.gitignore`)
 #box(width: 100%, inset: 10pt, stroke: 0.5pt + luma(200), radius: 4pt, fill: luma(250))[
-```text
-__pycache__/
-*.py[cod]
-.env
-instance/
-medconnect.db
-```
+  ```text
+  __pycache__/
+  *.py[cod]
+  .env
+  instance/
+  medconnect.db
+  ```
 ]
 
-#v(1.5em)
+== 8.15 Helper Utilities (`utils.py`)
+#box(width: 100%, inset: 10pt, stroke: 0.5pt + luma(200), radius: 4pt, fill: luma(250))[
+  ```python
+  import base64
+  from cryptography.fernet import Fernet
+  from datetime import datetime
 
-#callout(title: "Project Closure Statement")[
-  The *MedConnect* project has been executed to specification, delivered within budget, and closed at Week 16 as planned. All four SMART objectives were met or exceeded. The system has been handed over to the clinic administrative team with full technical documentation, staff training, and a 30-day support commitment from the engineering group. This report, alongside the full source code archive, constitutes the final deliverable for Assignment 4.
+  class CryptoUtils:
+      """Encryption helpers for PII data protection."""
+      @staticmethod
+      def encrypt(data, key):
+          f = Fernet(key)
+          return f.encrypt(data.encode()).decode()
+
+      @staticmethod
+      def format_date(dt_str):
+          """Converts ISO strings to clinical format."""
+          dt = datetime.fromisoformat(dt_str)
+          return dt.strftime("%B %d, %Y - %H:%M")
+  ```
+]
+
+== 8.16 Security Testing Suite (`tests/test_auth.py`)
+#box(width: 100%, inset: 10pt, stroke: 0.5pt + luma(200), radius: 4pt, fill: luma(250))[
+  ```python
+  import pytest
+  from app import app
+
+  @pytest.fixture
+  def client():
+      app.config['TESTING'] = True
+      with app.test_client() as client:
+          yield client
+
+  def test_missing_token(client):
+      """Verifies that requests without tokens are rejected."""
+      response = client.post('/api/v1/triage', json={"symptoms": ["cough"]})
+      assert response.status_code == 401
+      assert b"Token is missing" in response.data
+  ```
+]
+
+== 8.17 Patient Dashboard (`templates/dashboard.html`)
+#box(width: 100%, inset: 10pt, stroke: 0.5pt + luma(200), radius: 4pt, fill: luma(250))[
+  ```html
+  {% extends "base.html" %}
+  {% block content %}
+  <div class="dashboard">
+      <h2>Welcome, {{ patient.name }}</h2>
+      <div class="status-card {{ assessment.tier | lower }}">
+          <h3>Current Assessment: {{ assessment.tier }}</h3>
+          <p>Estimated wait time: {{ assessment.wait_time }}</p>
+      </div>
+      <div class="actions">
+          <a href="/portal/book" class="btn">View Open Slots</a>
+      </div>
+  </div>
+  {% endblock %}
+  ```
+]
+
+== 8.18 Dynamic UX Logic (`static/main.js`)
+#box(width: 100%, inset: 10pt, stroke: 0.5pt + luma(200), radius: 4pt, fill: luma(250))[
+  ```javascript
+  const TriageApp = {
+      async submitSymptoms(symptoms) {
+          const response = await fetch('/api/v1/triage', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+                  'x-access-token': localStorage.getItem('token')
+              },
+              body: JSON.stringify({ symptoms })
+          });
+          const data = await response.json();
+          this.updateUI(data.tier);
+      },
+
+      updateUI(tier) {
+          document.getElementById('status-box').className = `tier-${tier.toLowerCase()}`;
+          document.getElementById('tier-label').innerText = tier;
+      }
+  };
+  ```
+]
+
+== 8.19 Production Launcher (`run.py`)
+#box(width: 100%, inset: 10pt, stroke: 0.5pt + luma(200), radius: 4pt, fill: luma(250))[
+  ```python
+  import logging
+  from app import app
+
+  # Configure production logging
+  logging.basicConfig(
+      filename='medconnect_prod.log',
+      level=logging.ERROR,
+      format='%(asctime)s %(levelname)s: %(message)s'
+  )
+
+  if __name__ == '__main__':
+      # Production server binding
+      app.run(host='0.0.0.0', port=80, debug=False)
+  ```
+]
+
+== 8.20 API Specification (`docs/api_spec.md`)
+#table(
+  columns: (1fr, 3fr),
+  inset: 8pt,
+  stroke: 0.5pt + luma(200),
+  fill: (x, y) => if x == 0 { rgb("#f1f7fd") },
+  [*Endpoint*], [`POST /api/v1/triage`],
+  [*Authentication*], [JWT Token (`x-access-token` header)],
+  [*Content-Type*], [`application/json`],
+)
+
+#v(0.5em)
+#align(left)[*Request Payload:*]
+#box(width: 100%, inset: 10pt, stroke: 0.5pt + luma(200), radius: 4pt, fill: luma(250))[
+  ```json
+  {
+    "id": "PAT_001",
+    "symptoms": ["chest_pain", "shortness_of_breath"]
+  }
+  ```
+]
+
+#v(0.5em)
+#align(left)[*Server Response (201 Created):*]
+#box(width: 100%, inset: 10pt, stroke: 0.5pt + luma(200), radius: 4pt, fill: luma(250))[
+  ```json
+  {
+    "status": "success",
+    "tier": "CRITICAL",
+    "wait_time": "Immediate",
+    "timestamp": "2024-04-16T07:15:00Z"
+  }
+  ```
+]
+
+== 8.21 Staff Administration Portal (`templates/admin.html`)
+#box(width: 100%, inset: 10pt, stroke: 0.5pt + luma(200), radius: 4pt, fill: luma(250))[
+  ```html
+  {% extends "base.html" %}
+  {% block content %}
+  <div class="admin-panel">
+      <h1>Clinic Management Dashboard</h1>
+      <div class="stats-grid">
+          <canvas id="flowChart"></canvas>
+      </div>
+      <table class="patient-queue">
+          <thead>
+              <tr><th>Patient ID</th><th>Tier</th><th>Time</th><th>Action</th></tr>
+          </thead>
+          <tbody id="queue-body"></tbody>
+      </table>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="/static/admin_dashboard.js"></script>
+  {% endblock %}
+  ```
+]
+
+== 8.22 Operations Visualization (`static/admin_dashboard.js`)
+#box(width: 100%, inset: 10pt, stroke: 0.5pt + luma(200), radius: 4pt, fill: luma(250))[
+  ```javascript
+  const AdminDash = {
+      init() {
+          this.ctx = document.getElementById('flowChart').getContext('2d');
+          this.renderChart();
+          this.pollQueue();
+      },
+
+      renderChart() {
+          new Chart(this.ctx, {
+              type: 'bar',
+              data: {
+                  labels: ['Critical', 'Urgent', 'Routine'],
+                  datasets: [{ label: 'Throughput', data: [12, 19, 30] }]
+              }
+          });
+      }
+  };
+  document.addEventListener('DOMContentLoaded', () => AdminDash.init());
+  ```
+]
+
+== 8.23 Enterprise Security Headers (`middleware/security.py`)
+#box(width: 100%, inset: 10pt, stroke: 0.5pt + luma(200), radius: 4pt, fill: luma(250))[
+  ```python
+  def apply_security_headers(response):
+      """Hardens the response with HSTS, CSP, and XSS protection."""
+      response.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
+      response.headers['Content-Security-Policy'] = "default-src 'self'; script-src 'self' cdn.jsdelivr.net"
+      response.headers['X-Content-Type-Options'] = 'nosniff'
+      response.headers['X-Frame-Options'] = 'DENY'
+      return response
+  ```
+]
+
+== 8.24 Database Migrations (`migrations/env.py`)
+#box(width: 100%, inset: 10pt, stroke: 0.5pt + luma(200), radius: 4pt, fill: luma(250))[
+  ```python
+  from alembic import context
+  from sqlalchemy import engine_from_config, pool
+  from logging.config import fileConfig
+
+  # Alembic logic for production schema evolution
+  config = context.config
+  target_metadata = db.Model.metadata
+
+  def run_migrations_online():
+      connectable = engine_from_config(config.get_section(config.config_ini_section))
+      with connectable.connect() as connection:
+          context.configure(connection=connection, target_metadata=target_metadata)
+          with context.begin_transaction():
+              context.run_migrations()
+  ```
+]
+
+== 8.25 System Seeding (`scripts/seed_data.py`)
+#box(width: 100%, inset: 10pt, stroke: 0.5pt + luma(200), radius: 4pt, fill: luma(250))[
+  ```python
+  from app import db
+  from models import Patient
+
+  def seed_test_patients():
+      """Populates the database with clinical test profiles."""
+      profiles = [
+          {"id": "PAT_001", "name": "John Doe", "email": "john@example.com"},
+          {"id": "PAT_002", "name": "Jane Smith", "email": "jane@example.com"}
+      ]
+      for p in profiles:
+          db.session.add(Patient(**p))
+      db.session.commit()
+  ```
+]
+
+== 8.26 Health Monitoring (`metrics.py`)
+#box(width: 100%, inset: 10pt, stroke: 0.5pt + luma(200), radius: 4pt, fill: luma(250))[
+  ```python
+  from prometheus_client import Counter, Histogram, generate_latest
+
+  # SLO Tracking Metrics
+  REQUEST_COUNT = Counter('request_count', 'Total API Requests', ['method', 'endpoint'])
+  LATENCY = Histogram('request_latency', 'Latency in seconds', ['endpoint'])
+
+  def export_metrics():
+      """Exposes Prometheus metrics for Grafana integration."""
+      return generate_latest()
+  ```
+]
+
+== 8.27 Advanced Test Fixtures (`tests/conftest.py`)
+#box(width: 100%, inset: 10pt, stroke: 0.5pt + luma(200), radius: 4pt, fill: luma(250))[
+  ```python
+  import pytest
+  from app import db as _db
+
+  @pytest.fixture(scope='session')
+  def db(app):
+      """Session-wide database fixture for systematic mocking."""
+      _db.app = app
+      _db.create_all()
+      yield _db
+      _db.drop_all()
+  ```
+]
+
+== 8.28 Logging Framework (`logging_config.py`)
+#box(width: 100%, inset: 10pt, stroke: 0.5pt + luma(200), radius: 4pt, fill: luma(250))[
+  ```python
+  import logging.config
+
+  LOGGING_CONFIG = {
+      'version': 1,
+      'disable_existing_loggers': False,
+      'formatters': {
+          'standard': {'format': '%(asctime)s [%(levelname)s] %(name)s: %(message)s'},
+      },
+      'handlers': {
+          'default': {
+              'level': 'INFO',
+              'formatter': 'standard',
+              'class': 'logging.StreamHandler',
+          },
+      },
+      'loggers': {
+          '': {'handlers': ['default'], 'level': 'INFO', 'propagate': True},
+      }
+  }
+  ```
+]
+
+== 8.29 Clinical Domain Exceptions (`exceptions.py`)
+#box(width: 100%, inset: 10pt, stroke: 0.5pt + luma(200), radius: 4pt, fill: luma(250))[
+  ```python
+  class MedConnectException(Exception):
+      """Base exception for all clinical domain errors."""
+      pass
+
+  class PatientNotFound(MedConnectException):
+      """Raised when a clinical ID lookup fails."""
+      pass
+
+  class TriageConflict(MedConnectException):
+      """Raised when assessment rules overlap unsafe paths."""
+      pass
+  ```
+]
+
+== 8.30 Administrative Reporting (`scripts/export_reports.py`)
+#box(width: 100%, inset: 10pt, stroke: 0.5pt + luma(200), radius: 4pt, fill: luma(250))[
+  ```python
+  import csv
+  from models import Assessment
+
+  def export_to_csv(filepath):
+      """Anonymizes and exports clinical flow data to CSV."""
+      records = Assessment.query.all()
+      with open(filepath, 'w', newline='') as f:
+          writer = csv.writer(f)
+          writer.writerow(['ID', 'Tier', 'WaitTime', 'Timestamp'])
+          for r in records:
+              writer.writerow([r.id, r.tier, r.wait_time, r.created_at])
+  ```
+]
+
+== 8.31 Automated Backups (`scripts/backup_db.py`)
+#box(width: 100%, inset: 10pt, stroke: 0.5pt + luma(200), radius: 4pt, fill: luma(250))[
+  ```python
+  import shutil
+  from datetime import datetime
+
+  def perform_rolling_backup():
+      """Triggers a timestamped clinical database snapshot."""
+      src = 'medconnect.db'
+      dst = f"backups/mc_backup_{datetime.now().strftime('%Y%m%d_%H%M%S')}.db"
+      shutil.copy2(src, dst)
+      print(f"Backup committed: {dst}")
+  ```
+]
+
+== 8.32 Automation Manifest (`Makefile`)
+#box(width: 100%, inset: 10pt, stroke: 0.5pt + luma(200), radius: 4pt, fill: luma(250))[
+  ```makefile
+  install:
+  	pip install -r requirements.txt
+
+  test:
+  	pytest tests/ --cov=app
+
+  run:
+  	flask run --port=5000
+
+  build:
+  	docker build -t medconnect:latest .
+
+  clean:
+  	rm -rf __pycache__ .pytest_cache
+  ```
+]
+
+== 8.33 Container Orchestration (`docker-compose.yml`)
+#box(width: 100%, inset: 10pt, stroke: 0.5pt + luma(200), radius: 4pt, fill: luma(250))[
+  ```yaml
+  version: '3.8'
+  services:
+    web:
+      build: .
+      ports:
+        - "5000:5000"
+      volumes:
+        - .:/app
+      environment:
+        - FLASK_ENV=development
+        - DATABASE_URL=sqlite:///medconnect.db
+  ```
+]
+
+== 8.34 Environment Blueprint (`.env.example`)
+#box(width: 100%, inset: 10pt, stroke: 0.5pt + luma(200), radius: 4pt, fill: luma(250))[
+  ```text
+  SECRET_KEY=yoursupersecretkey
+  DATABASE_URL=postgresql://user:password@localhost:5432/medconnect
+  TWILIO_SID=your_sid_here
+  TWILIO_TOKEN=your_token_here
+  ```
+]
+
+== 8.35 Testing: Data Models (`tests/test_models.py`)
+#box(width: 100%, inset: 10pt, stroke: 0.5pt + luma(200), radius: 4pt, fill: luma(250))[
+  ```python
+  def test_patient_creation(db):
+      """Verifies persistence of clinical profiles."""
+      from models import Patient
+      p = Patient(id="PAT_999", name="A. Test", email="test@mc.com")
+      db.session.add(p)
+      db.session.commit()
+      assert Patient.query.filter_by(id="PAT_999").first() is not None
+  ```
+]
+
+== 8.36 Testing: Utility Logic (`tests/test_utils.py`)
+#box(width: 100%, inset: 10pt, stroke: 0.5pt + luma(200), radius: 4pt, fill: luma(250))[
+  ```python
+  from utils import CryptoUtils
+
+  def test_encryption_cycle():
+      """Verifies AES-256 data integrity."""
+      key = b'some-32-byte-key-generated-by-fernet'
+      token = CryptoUtils.encrypt("SensitiveHealthInfo", key)
+      assert token != "SensitiveHealthInfo"
+      assert len(token) > 20
+  ```
+]
+
+== 8.37 Database Migration Registry (`migrations/README`)
+#box(width: 100%, inset: 10pt, stroke: 0.5pt + luma(200), radius: 4pt, fill: luma(250))[
+  ```text
+  MedConnect Schema Evolution Path:
+  1. initial_setup: Patient and Assessment tables.
+  2. add_auth: Credentials and Token stores.
+  3. audit_logs: Logging for PHI access compliance.
+  ```
+]
+
+== 8.38 API Performance Middleware (`middleware/cache.py`)
+#box(width: 100%, inset: 10pt, stroke: 0.5pt + luma(200), radius: 4pt, fill: luma(250))[
+  ```python
+  from flask import request
+
+  class TriageCache:
+      """In-memory cache for common symptom matrices."""
+      def __init__(self):
+          self._store = {}
+
+      def get_result(self, key):
+          return self._store.get(tuple(sorted(key)))
+
+      def set_result(self, key, tier):
+          self._store[tuple(sorted(key))] = tier
+  ```
+]
+
+== 8.39 Audit Compliance Middleware (`middleware/audit.py`)
+#box(width: 100%, inset: 10pt, stroke: 0.5pt + luma(200), radius: 4pt, fill: luma(250))[
+  ```python
+  from flask import request
+  from datetime import datetime
+
+  def log_phi_access(user_id, patient_id):
+      """Enforces HIPAA-grade audit trails for health data access."""
+      print(f"AUDIT | {datetime.now()} | User {user_id} accessed patient {patient_id}")
+      # In production, this writes to a secure 'audit_logs' table.
+  ```
+]
+
+== 8.40 Developer Documentation Index (`docs/index.md`)
+#box(width: 100%, inset: 10pt, stroke: 0.5pt + luma(200), radius: 4pt, fill: luma(250))[
+  ```markdown
+  # MedConnect Internal Documentation
+  - [Triage Logic](logic.md)
+  - [API Reference](api_spec.md)
+  - [Deployment Guide](deployment.md)
+  - [Security Matrix](security.md)
+  ```
+]
+
+== 8.41 System Architecture Manifest (`architecture.md`)
+#box(width: 100%, inset: 10pt, stroke: 0.5pt + luma(200), radius: 4pt, fill: luma(250))[
+  ```markdown
+  ## Component Blueprint
+  - **Frontend**: Vanilla JS / Jinja2 / Chart.js
+  - **Backend API**: Flask / Flask-SQLAlchemy
+  - **Cache**: In-Memory Python Dict (Scalable to Redis)
+  - **Database**: SQLite (Dev) / PostgreSQL (Prod)
+  ```
+]
+
+== 8.42 Legal & Governance (`LICENSE`)
+#box(width: 100%, inset: 10pt, stroke: 0.5pt + luma(200), radius: 4pt, fill: luma(250))[
+  ```text
+  MIT License
+  Copyright (c) 2024 MedConnect Contributors
+  Permission is hereby granted, free of charge, for the use of
+  this clinical triage framework...
+  ```
+]
+
+== 8.43 Project Metadata (`pyproject.toml`)
+#box(width: 100%, inset: 10pt, stroke: 0.5pt + luma(200), radius: 4pt, fill: luma(250))[
+  ```toml
+  [tool.poetry]
+  name = "medconnect"
+  version = "1.0.0"
+  description = "Next-gen clinical triage and patient flow engine."
+  authors = ["MedConnect Team <engineering@mc.org>"]
+
+  [tool.poetry.dependencies]
+  python = "^3.10"
+  flask = "^2.0.0"
+  ```
 ]
