@@ -1,17 +1,18 @@
-#set document(title: "IT Project Proposal: MedConnect", author: "Project Engineering Group")
+#set document(
+  title: "IT Project Proposal: MedConnect",
+  author: "Project Engineering Group",
+)
 #set page(
   paper: "a4",
   margin: (x: 2.5cm, y: 2.5cm),
-  // header: align(right)[#text(
-  //   fill: luma(100),
-  //   size: 8pt,
-  //   weight: "medium",
-  // )[CONFIDENTIAL | IT INFRASTRUCTURE MODERNIZATION]],
+  // header: align(right)[
+  // #text(fill: luma(120), size: 8pt, weight: "medium")[IT PROJECT PROPOSAL | MEDCONNECT]
+  // ],
   footer: [
     #set text(size: 8pt, fill: luma(150))
     #grid(
       columns: (1fr, 1fr),
-      [--------------------------], align(right)[Page #context counter(page).display()],
+      [Sandeep Prasad - 240905050085], align(right)[Page #context counter(page).display()],
     )
   ],
 )
@@ -54,7 +55,11 @@
 #align(center)[
   #text(size: 26pt, weight: "bold", fill: rgb("#0d47a1"))[MedConnect] \
   #v(0.4em)
-  #text(size: 13pt, weight: "medium", fill: rgb("#607d8b"))[Next-Gen Patient Flow & Triage Optimization] \
+  #text(
+    size: 13pt,
+    weight: "medium",
+    fill: rgb("#607d8b"),
+  )[Next-Gen Patient Flow & Triage Optimization] \
   #v(1.5em)
   #line(length: 60%, stroke: 0.5pt + luma(200))
   #v(2em)
@@ -80,7 +85,9 @@ To understand the necessity of MedConnect, we must analyze the "Operational Fric
   [*Metric*], [*Manual Process (Phone-based)*], [*MedConnect System*],
   [Booking Latency], [5–8 minutes per call], [< 90 seconds (Full Portal)],
   [Triage Quality], [Subjective (Administrative staff)], [Standardized (Clinical Logic)],
+
   [Resource Drain], [65% staff time on simple booking], [Autonomous / Self-Service],
+
   [Error Rate], [Moderate (Human data entry)], [Minimal (Atomic Transactions)],
 )
 
@@ -96,6 +103,7 @@ Success depends on addressing the specific needs and pain points of the stakehol
   fill: (x, y) => if y == 0 { rgb("#ECEFF1") },
   [*Stakeholder*], [*Primary Interest*], [*Project Impact*],
   [Clinic Admin], [Profitability & Staff Efficiency], [Lower overhead via automation.],
+
   [Medical Staff], [Workload Predictability], [Reduced high-urgency surprises.],
   [Receptionists], [Burnout Mitigation], [Focus on high-value patient care.],
   [Patients], [Ease of Access], [Frictionless booking experience.],
@@ -110,11 +118,12 @@ An initial assessment of project risks and their associated impact.
   fill: (x, y) => if y == 0 { rgb("#ECEFF1") },
   [*Risk Category*], [*Likelihood*], [*Impact*], [*Preliminary Mitigation*],
   [Data Privacy], [Medium], [Critical], [AES-256 Encryption & Zero-Trust Access.],
+
   [Staff Adoption], [High], [Medium], [Phased training and role-redefinition.],
   [Logic Accuracy], [Low], [Critical], [Clinical SME validation of decision trees.],
 )
 
-#pagebreak()
+
 = 4. The MedConnect Solution
 MedConnect operates as a unified platform bridging the gap between patient needs and provider availability.
 
@@ -147,12 +156,21 @@ The project will follow an *Agile Scrum* methodology, delivering incremental val
   columns: (1.2fr, 3fr),
   inset: 10pt,
   stroke: 0.5pt + luma(220),
-  fill: (x, y) => if x == 0 { rgb("#F8F9FA") } else if y == 0 { rgb("#ECEFF1") },
+  fill: (x, y) => if x == 0 { rgb("#F8F9FA") } else if y == 0 {
+    rgb("#ECEFF1")
+  },
   [*Timeline*], [*Strategic Phase & Key Deliverables*],
-  [Phase 1: Discovery], [*Research & Specification:* Clinical logic validation, UI/UX prototyping, and stakeholder sign-off (Weeks 1–4).],
-  [Phase 2: Alpha], [*Core Development:* Backend API construction, database modeling, and authentication hardening (Weeks 5–10).],
-  [Phase 3: Beta], [*Integration & QA:* Frontend-Backend binding, end-to-end security audits, and staff UAT (Weeks 11–14).],
-  [Phase 4: Launch], [*Deployment:* Production go-live, clinical staff training, and 14-day performance gap analysis (Weeks 15–16).],
+  [Phase 1: Discovery],
+  [*Research & Specification:* Clinical logic validation, UI/UX prototyping, and stakeholder sign-off (Weeks 1–4).],
+
+  [Phase 2: Alpha],
+  [*Core Development:* Backend API construction, database modeling, and authentication hardening (Weeks 5–10).],
+
+  [Phase 3: Beta],
+  [*Integration & QA:* Frontend-Backend binding, end-to-end security audits, and staff UAT (Weeks 11–14).],
+
+  [Phase 4: Launch],
+  [*Deployment:* Production go-live, clinical staff training, and 14-day performance gap analysis (Weeks 15–16).],
 )
 
 = 6. Success Metrics & Performance KPIs

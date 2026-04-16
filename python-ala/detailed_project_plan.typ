@@ -1,13 +1,17 @@
-#set document(title: "IT Project Plan: MedConnect Detailed Blueprint", author: "Project Engineering Group")
+#import "@preview/timeliney:0.4.0"
+#set document(
+  title: "IT Project Plan: MedConnect Detailed Blueprint",
+  author: "Project Engineering Group",
+)
 #set page(
   paper: "a4",
-  margin: (x: 2cm, y: 2.5cm),
-  // header: align(right)[#text(fill: luma(100), size: 8pt, weight: "medium")[ASSIGNMENT 3 | DETAILED PROJECT BLUEPRINT]],
+  margin: (x: 2.5cm, y: 2.5cm),
+  // header: aligs
   footer: [
     #set text(size: 8pt, fill: luma(150))
     #grid(
       columns: (1fr, 1fr),
-      [-----------------------], align(right)[Page #context counter(page).display()],
+      [Sandeep Prasad - 240905050085], align(right)[Page #context counter(page).display()],
     )
   ],
 )
@@ -31,7 +35,11 @@
 // --- TITLE ---
 #v(1em)
 #align(center)[
-  #text(size: 20pt, weight: "bold", fill: rgb("#0d47a1"))[MedConnect Project Blueprint] \
+  #text(
+    size: 20pt,
+    weight: "bold",
+    fill: rgb("#0d47a1"),
+  )[MedConnect Project Blueprint] \
   #v(0.3em)
   #text(
     size: 10pt,
@@ -49,14 +57,19 @@ The execution of *MedConnect* is partitioned into four major phases, with specif
   columns: (0.6fr, 2.5fr, 1fr),
   inset: 6pt,
   stroke: 0.5pt + luma(220),
-  fill: (x, y) => if x == 0 { rgb("#f1f7fd") } else if y == 0 { rgb("#0d47a1") },
+  fill: (x, y) => if x == 0 { rgb("#f1f7fd") } else if y == 0 {
+    rgb("#0d47a1")
+  },
   [*ID*], [#text(fill: white)[*Phase / Task Description*]], [#text(fill: white)[*Owner*]],
+
   [*P1*], [*Discovery & Logic Definition*], [*PM*],
   [1.1], [-- Conduct clinical stakeholder discovery workshops.], [PM / SME],
   [1.2], [-- Map decision-tree logic for urgent vs routine triage.], [SME],
   [1.3], [-- Finalize UI/UX wireframes for patient onboarding portal.], [FE Designer],
+
   [*P2*], [*Core Development Sprint*], [*Dev Team*],
   [2.1], [-- Provision secure cloud infrastructure (PostgreSQL/Redis).], [BE Dev],
+
   [2.2], [-- Engineer the Flask-based Triage Intelligence API.], [BE Dev],
   [2.3], [-- Build responsive frontend booking interface components.], [FE Dev],
   [*P3*], [*Security & Validation Phase*], [*QA / Dev*],
@@ -67,30 +80,61 @@ The execution of *MedConnect* is partitioned into four major phases, with specif
   [4.2], [-- Deliver staff training modules and technical handbook.], [PM],
 )
 
-= 2. Project Timeline & Blueprint
-The following Gantt chart visualizes the overlaps and critical dependencies required to meet the Week-16 launch.
+#pagebreak()
+
+= 2. Project Timeline
+The following technical blueprint illustrates the 16-week execution cycle, detailing individual task dependencies and phased integration.
 
 #v(1em)
-#let gantt-bar(start, end, fill-color, stroke-color, label) = {
-  grid(
-    columns: (1fr * start, 1fr * (end - start), 1fr * (16 - end)),
-    [],
-    rect(width: 100%, height: 1.2em, fill: fill-color, stroke: 0.5pt + stroke-color, radius: 2pt)[
-      #set align(center + horizon)
-      #text(size: 6.5pt, fill: stroke-color.darken(30%))[#label]
-    ],
-    [],
-  )
-}
 
-#box(width: 100%, stroke: 0.5pt + luma(200), inset: 8pt, radius: 4pt)[
-  #grid(columns: (1.2fr, 0.8fr, ..(1fr,) * 16), gutter: 2pt, [], [], ..range(1, 17).map(i => text(size: 6pt, fill: luma(150))[W#i]))
-  #v(0.3em)
-  #let task-row(phase, id, start, end, color) = grid(columns: (1.2fr, 0.8fr, 16fr), gutter: 2pt, text(size: 7.5pt)[#phase], text(size: 7.5pt)[#id], gantt-bar(start, end, color.lighten(80%), color, ""))
-  #task-row("Discovery", "1.1-1.3", 0, 4, rgb("#0d47a1"))
-  #task-row("App Dev", "2.1-2.3", 4, 11, rgb("#2e7d32"))
-  #task-row("Testing", "3.1-3.2", 10, 14, rgb("#f57c00"))
-  #task-row("Launch", "4.1-4.2", 14, 16, rgb("#d32f2f"))
+#block(
+  width: 100%,
+  stroke: 0.5pt + luma(200),
+  radius: 4pt,
+  inset: 10pt,
+)[
+  #timeliney.timeline(
+    show-grid: true,
+    {
+      import timeliney: *
+      headerline(
+        group(([*Month 1*], 4)),
+        group(([*Month 2*], 4)),
+        group(([*Month 3*], 4)),
+        group(([*Month 4*], 4)),
+      )
+      headerline(
+        ..range(1, 17).map(i => group((text(7pt)[W#i], 1))),
+      )
+
+      taskgroup(title: [*P1: Discovery & Logic*], {
+        task("Stakeholder Discovery", (0, 3), style: (stroke: 10pt + rgb("#1976d2").lighten(80%)))
+        task("Logic Tree Mapping", (2, 6), style: (stroke: 10pt + rgb("#1565c0").lighten(80%)))
+        task("UI/UX Design", (4, 8), style: (stroke: 10pt + rgb("#0d47a1").lighten(80%)))
+      })
+
+      taskgroup(title: [*P2: Core Development*], {
+        task("Cloud Infrastructure", (7, 10), style: (stroke: 10pt + rgb("#2e7d32").lighten(80%)))
+        task("Intelligence API Dev", (8, 13), style: (stroke: 10pt + rgb("#388e3c").lighten(80%)))
+        task("Portal Integration", (10, 14), style: (stroke: 10pt + rgb("#43a047").lighten(80%)))
+      })
+
+      taskgroup(title: [*P3: Security & Validation*], {
+        task("Security Hardening", (13, 15), style: (stroke: 10pt + rgb("#ef6c00").lighten(80%)))
+        task("User Acceptance Test", (14, 16), style: (stroke: 10pt + rgb("#f57c00").lighten(80%)))
+      })
+
+      taskgroup(title: [*P4: Deployment & Closure*], {
+        task("Production Rollout", (15, 16), style: (stroke: 10pt + rgb("#c62828").lighten(80%)))
+        task("Project Handover", (15, 16.1), style: (stroke: 10pt + rgb("#d32f2f").lighten(80%)))
+      })
+
+      milestone(at: 3, style: (stroke: (dash: "dashed")), [M1])
+      milestone(at: 8, style: (stroke: (dash: "dashed")), [M2])
+      milestone(at: 12, style: (stroke: (dash: "dashed")), [M3])
+      milestone(at: 16, style: (stroke: (dash: "dashed")), [M4])
+    },
+  )
 ]
 
 #v(1em)
@@ -101,8 +145,13 @@ We have identified high-impact risks with proactive strategies to ensure clinica
 #table(
   columns: (1fr, 0.8fr, 0.8fr, 2fr),
   inset: 7pt,
-  fill: (x, y) => if y == 0 { rgb("#ECEFF1") },
-  [*Risk Event*], [*Prob.*], [*Impact*], [*Mitigation Strategy*],
+  stroke: 0.5pt + luma(220),
+  fill: (x, y) => if y == 0 { rgb("#0d47a1") } else if x == 0 { rgb("#f1f7fd") },
+  [*Risk Event*],
+  [#text(fill: white)[*Prob.*]],
+  [#text(fill: white)[*Impact*]],
+  [#text(fill: white)[*Mitigation Strategy*]],
+
   [Triage Logic Error], [Low], [Critical], [Mandatory double-sign-off by clinical SMEs for all trees.],
   [Security Breach], [Medium], [Critical], [Implementation of Zero-Trust and AES-256 vault protocols.],
   [Resource Churn], [Low], [High], [Maintain detailed technical shadowing and documentation.],
@@ -115,8 +164,13 @@ We have identified high-impact risks with proactive strategies to ensure clinica
   inset: 6pt,
   align: center,
   stroke: 0.5pt + luma(220),
-  fill: (x, y) => if y == 0 { rgb("#ECEFF1") },
-  [*Key Deliverable*], [*PM*], [*Dev BE*], [*Dev FE*], [*SME*],
+  fill: (x, y) => if y == 0 { rgb("#0d47a1") } else if x == 0 { rgb("#f1f7fd") },
+  [*Key Deliverable*],
+  [#text(fill: white)[*PM*]],
+  [#text(fill: white)[*Dev BE*]],
+  [#text(fill: white)[*Dev FE*]],
+  [#text(fill: white)[*SME*]],
+
   [Requirement Spec], [A/R], [C], [I], [R],
   [Logic Intelligence API], [I], [R/A], [I], [C],
   [Patient Portal UI], [C], [I], [R/A], [I],
@@ -134,8 +188,13 @@ MedConnect follows a "Safety-First" QA methodology.
 #table(
   columns: (1fr, 1.5fr, 1fr, 1.5fr),
   inset: 7pt,
-  fill: (x, y) => if y == 0 { rgb("#ECEFF1") },
-  [*Component*], [*Target Stakeholders*], [*Freq*], [*Channel / Deliverable*],
+  stroke: 0.5pt + luma(220),
+  fill: (x, y) => if y == 0 { rgb("#0d47a1") } else if x == 0 { rgb("#f1f7fd") },
+  [*Component*],
+  [#text(fill: white)[*Target Stakeholders*]],
+  [#text(fill: white)[*Freq*]],
+  [#text(fill: white)[*Channel / Deliverable*]],
+
   [Stand-ups], [Dev Team / Project Lead], [Daily], [Slack Collaboration Channel.],
   [Board Progress], [Clinic Administrators], [Weekly], [Automated PDF Status Report.],
   [Logic Review], [Clinical SME / Devs], [Weekly], [Technical workshop (Teams/Zoom).],
