@@ -1,229 +1,287 @@
-#set page(
-  paper: "a4",
-  margin: (x: 2.25cm, y: 2.5cm),
-  background: place(
-    left + top,
-    rect(width: 3pt, height: 100%, fill: rgb("e2e8f0")),
-  ),
-  footer: [
-    #line(length: 100%, stroke: 0.5pt + rgb("e2e8f0"))
-    #grid(
-      columns: (1fr, 1fr),
-      text(size: 8pt, fill: rgb("94a3b8"))[Technical Report: HAAR-CASCADE-01],
-      align(right, text(size: 8pt, fill: rgb("94a3b8"))[Page #context counter(page).display()]),
-    )
+#let rivi_assignment(
+  title: "Assignment Title",
+  subtitle: "Subtitle or subtitle description",
+  author: "Author Name",
+  student_name: "Student Name",
+  ala_number: "I",
+  assignment_name: "Assignment Name",
+  repo_url: "https://github.com/fizzflip/rivi",
+  series_title: "COMPUTER VISION",
+  body,
+) = {
+  // --- DESIGN SYSTEM CONFIGURATION ---
+  let primary-color = rgb("000000")
+  let secondary-color = rgb("666666")
+  let accent-color = rgb("EEEEEE")
+  let code-bg = rgb("F7F9FC")
+
+  set document(title: title, author: author)
+
+  set page(
+    paper: "a4",
+    margin: (left: 25mm, right: 25mm, top: 35mm, bottom: 35mm),
+    header: context {
+      if counter(page).get().first() > 1 {
+        grid(
+          columns: (1fr, 1fr),
+          text(8pt, font: "Inter", fill: secondary-color)[#title],
+          align(right)[#text(8pt, font: "Inter", fill: secondary-color)[#student_name]],
+        )
+        v(-5pt)
+        line(length: 100%, stroke: 0.5pt + accent-color)
+      }
+    },
+    footer: context {
+      if counter(page).get().first() > 1 {
+        line(length: 100%, stroke: 0.5pt + accent-color)
+        v(5pt)
+        align(center)[#text(8pt, font: "Inter", fill: secondary-color)[Page #counter(page).display("1")]]
+      }
+    },
+  )
+
+  set text(font: "Inter", size: 10.5pt, fill: rgb("1A1A1A"))
+  set par(leading: 0.7em, justify: true)
+
+  // Standardized, clean section numbering
+  set heading(numbering: "1.1. ")
+
+  // --- COMPONENT STYLING ---
+  show heading.where(level: 1): it => block(
+    width: 100%,
+    stroke: (bottom: 1pt + accent-color),
+    inset: (bottom: 0.5em),
+    below: 1.2em,
+    above: 2em,
+    text(
+      font: "New Computer Modern",
+      fill: primary-color,
+      weight: "regular",
+      size: 20pt,
+      it,
+    ),
+  )
+
+  show heading.where(level: 2): it => block(
+    below: 0.8em,
+    above: 1.5em,
+    text(font: "Inter", fill: primary-color, weight: "semibold", size: 12pt, it),
+  )
+
+  show raw.where(block: true): it => block(
+    fill: code-bg,
+    stroke: 1pt + accent-color,
+    inset: 12pt,
+    radius: 4pt,
+    width: 100%,
+    breakable: true,
+    {
+      set text(size: 10pt, font: "FiraCode Nerd Font Mono", fill: rgb("333333"))
+      it
+    },
+  )
+
+  // --- COVER PAGE ---
+  page(header: none, footer: none)[
+    #v(15%)
+    #align(center)[
+      #text(12pt, weight: "light", tracking: 2pt)[#series_title]
+      #v(10pt)
+      #line(length: 40%, stroke: 0.5pt + secondary-color)
+      #v(20pt)
+      #text(42pt, font: "New Computer Modern", weight: "regular")[#title]
+      #v(0pt)
+      #text(14pt, style: "italic", fill: secondary-color)[#subtitle]
+      #v(40pt)
+
+      #block(
+        width: 40%,
+        stroke: 0.5pt + accent-color,
+        inset: 20pt,
+        radius: 4pt,
+        [
+          #align(left)[
+            #grid(
+              columns: (1fr, 1.2fr),
+              row-gutter: 10pt,
+              text(8pt, fill: secondary-color)[NAME], text(9pt, weight: "semibold")[#student_name],
+              text(8pt, fill: secondary-color)[ERN], text(9pt, weight: "semibold")[240905050085],
+            )
+          ]
+        ],
+      )
+      #v(1fr)
+      #if repo_url != "" [
+        #block(
+          inset: (bottom: 40pt),
+          [
+            #text(size: 7.5pt, weight: "semibold", fill: secondary-color, tracking: 1.5pt)[Live Demo at] \
+            #v(2pt)
+            #link(repo_url)[#text(size: 8.5pt, font: "FiraCode Nerd Font Mono", fill: primary-color)[#repo_url]]
+          ],
+        )
+      ]
+    ]
+  ]
+  pagebreak()
+  body
+}
+
+// --- UTILITY FUNCTIONS ---
+
+// Styled blocks for definitions
+#let defblock(title, body) = block(
+  fill: rgb("F7F9FC"),
+  stroke: (left: 2pt + rgb("000000")),
+  inset: 12pt,
+  radius: 2pt,
+  width: 100%,
+  [
+    #text(weight: "bold", size: 9pt, title) \
+    #v(2pt)
+    #text(size: 9.5pt, body)
   ],
 )
 
-#set text(
-  font: "Arcon",
-  size: 10.5pt,
-  fill: rgb("0f172a"),
+// Diagram nodes
+#let diagram_node(title, body, fill: white) = block(
+  fill: fill,
+  stroke: 1pt + rgb("DDDDDD"),
+  inset: 10pt,
+  radius: 4pt,
+  width: 100%,
+  align(center)[
+    #text(8pt, weight: "bold", fill: black)[#title] \
+    #v(2pt)
+    #text(7pt, fill: rgb("666666"))[#body]
+  ],
 )
 
-#set par(justify: true, leading: 0.65em)
+#show: rivi_assignment.with(
+  title: "Face Detection",
+  subtitle: "Implementing Haar Cascades on Dense Media",
+  student_name: "Sandeep Prasad",
+  ala_number: "III",
+  assignment_name: "Object Detection",
+  repo_url: "face-detect-demo.netlify.app",
+)
 
-// --- Styling Constants ---
-#let term_font = ("DejaVu Sans Mono", "Liberation Mono")
-#let accent_color = rgb("4f46e5")
-#let tech_gray = rgb("64748b")
+= Objectives
 
-// --- Components ---
+In this practical exercise, the primary objective is to evaluate the viability of Haar Cascade classifiers when subjected to complex, high-density environments. Unlike optimal portrait conditions, dense crowds present unique challenges such as occlusions, diverse scaling, and complex background textures.
 
-#let report_header(title) = {
-  v(1cm)
-  text(size: 28pt, weight: "bold", fill: rgb("1e1b4b"))[#title]
-  v(0.5em)
-  line(length: 100%, stroke: 2pt + accent_color)
-  v(1em)
+The core intent of this experiment is to construct an end-to-end Python script using OpenCV to successfully localize human faces within `dense-crowd.jpg` and document the model tuning necessary to suppress false positives. \
 
-  grid(
-    columns: (1fr, 1fr),
-    gutter: 1cm,
+= Execution Pipeline
+
+To systematically approach the problem, the image processing workflow was designed as a linear sequence of transformations and operations: \ \
+
+#align(center)[
+  #block(
+    fill: white,
+    stroke: 1pt + rgb("EEEEEE"),
+    radius: 8pt,
+    inset: 15pt,
+    width: 90%,
     [
-      #stack(
-        spacing: 0.6em,
-        text(size: 8pt, weight: "bold", fill: tech_gray)[STUDENT IDENTIFICATION],
-        text(size: 11pt, weight: "semibold")[Name: [Your Name Here]],
-        text(size: 11pt, weight: "semibold")[Roll No: [Your Roll Number]],
-      )
-    ],
-    [
-      #stack(
-        spacing: 0.6em,
-        text(size: 8pt, weight: "bold", fill: tech_gray)[SUBMISSION DETAILS],
-        text(size: 11pt, weight: "semibold")[Course: Computer Vision],
-        text(size: 11pt, weight: "semibold")[Date: #datetime.today().display()],
+      #grid(
+        columns: 1fr,
+        row-gutter: 12pt,
+        diagram_node("Image Ingestion", "Read and load the dense crowd image"),
+        align(center)[#text(12pt)[$arrow.b$]],
+        diagram_node("Preprocessing", "Resize constraint (800x500) & convert to Grayscale"),
+        align(center)[#text(12pt)[$arrow.b$]],
+        diagram_node(
+          "Haar Cascade Evaluation",
+          "detectMultiScale() via loaded FrontalFace XML Model",
+          fill: rgb("F7F9FC"),
+        ),
+        align(center)[#text(12pt)[$arrow.b$]],
+        diagram_node("Geometry Rendering", "Draw bounding boxes & text labels highlighting candidates"),
       )
     ],
   )
-  v(3em)
-}
+]
 
-#let report_section(num, title) = {
-  v(2em)
-  text(size: 13pt, weight: "bold", fill: accent_color)[#num. #upper(title)]
-  v(0.6em)
-}
+= Implementation
 
-#let callout_box(title, body) = {
-  v(1em)
-  rect(
-    width: 100%,
-    fill: rgb("eff6ff"),
-    stroke: (left: 3pt + rgb("3b82f6")),
-    inset: 12pt,
-    radius: 2pt,
-  )[
-    #text(size: 9pt, weight: "bold", fill: rgb("1d4ed8"))[#upper(title)] \
-    #text(size: 10pt, fill: rgb("1e40af"))[#body]
-  ]
-  v(1em)
-}
+The following script encapsulates the pipeline described above. Modifications include standardizing the input constraints via `cv2.resize` to normalize the dense image dimensions before passing it to the cascade.
+\ \
+```python
+import cv2
+import os
 
-#let code_box(body, label: "implementation.py") = align(center)[
-  #block(
-    width: 100%,
-    fill: rgb("0f172a"),
-    stroke: 1pt + rgb("1e293b"),
-    radius: 6pt,
-    clip: true,
-  )[
-    #stack(
-      spacing: 0pt,
-      rect(
-        width: 100%,
-        fill: rgb("1e293b"),
-        stroke: none,
-        inset: (x: 10pt, y: 6pt),
-      )[
-        #grid(
-          columns: (auto, auto, auto, 1fr, auto),
-          column-gutter: 5pt,
-          align: (left, center),
-          [#circle(radius: 3pt, fill: rgb("ef4444"))],
-          [#circle(radius: 3pt, fill: rgb("fbbf24"))],
-          [#circle(radius: 3pt, fill: rgb("10b981"))],
-          [],
-          [#text(size: 8pt, fill: rgb("94a3b8"), font: term_font)[#label]],
-        )
-      ],
-      rect(
-        width: 100%,
-        fill: rgb("0f172a"),
-        stroke: none,
-        inset: 14pt,
-      )[
-        #align(left)[
-          #set par(justify: false)
-          #set text(font: term_font, size: 9pt, fill: rgb("cbd5e1"))
-          #body
-        ]
-      ],
+os.makedirs("output", exist_ok=True)
+
+# Initialize the Haar Frontal Face detector
+face_cascade = cv2.CascadeClassifier(
+    cv2.data.haarcascades + "haarcascade_frontalface_default.xml"
+)
+
+# Ingest and sanitize input image
+img = cv2.imread("../samples/images/dense-crowd.jpg")
+img = cv2.resize(img, (800, 500))
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+# Execute detection
+faces = face_cascade.detectMultiScale(
+    gray, scaleFactor=1.05, minNeighbors=3, minSize=(15, 15)
+)
+
+# Apply visual boundary markers
+for (x, y, w, h) in faces:
+    cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
+
+    label = "Face"
+    (text_w, text_h), baseline = cv2.getTextSize(label, cv2.FONT_HERSHEY_SIMPLEX, 0.5, 1)
+    cv2.rectangle(
+        img, (x, y - text_h - 10),
+        (x + text_w + 10, y), (0, 255, 0), -1
     )
-  ]
+    cv2.putText(img, label, (x + 5, y - 5),
+                cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 1)
+
+cv2.imwrite("output/detected-faces.jpg", img)
+```
+#pagebreak()
+= Tuning Hyperparameters
+
+When processing dense images, default configurations often fail by marking random visual artifacts (like folds in clothes or brick textures) as faces.
+
+\
+
+#defblock("MinNeighbors Parameter")[
+  This parameter is the most critical threshold in OpenCV's implementation. It dictates how many overlapping candidate rectangles must exist for a feature to be officially declared a "face". A higher number ensures strictness.
 ]
+\
 
-#let tech_table(header: (), rows: ()) = align(center)[
-  #block(
-    stroke: 0.5pt + rgb("e2e8f0"),
-    radius: 6pt,
-    fill: white,
-    inset: 0pt,
-    clip: true,
-  )[
-    #table(
-      columns: (1.2fr, 2.5fr),
-      fill: (x, y) => if y == 0 { rgb("f8fafc") } else { white },
-      inset: 8pt,
-      stroke: 0.5pt + rgb("f1f5f9"),
-      ..header.map(h => text(size: 8pt, weight: "bold", fill: tech_gray, font: term_font)[#upper(h)]),
-      ..rows.flatten().map(r => text(size: 9pt, fill: rgb("334155"))[#r]),
-    )
-  ]
+For `dense-crowd.jpg`, the following tuning matrix was settled on to balance the recall and precision trade-off:
+
+#align(center)[
+  #table(
+    columns: (1fr, 3fr),
+    fill: (x, y) => if y == 0 { rgb("F7F9FC") } else { white },
+    inset: 10pt,
+    stroke: 0.5pt + rgb("EEEEEE"),
+    [*Argument*], [*Impact Analysis*],
+    [scaleFactor (1.05)],
+    [A fine 5% scaling increment ensures that dense crowds with highly variable subject proximities are exhaustively scanned.],
+
+    [minNeighbors (3)],
+    [A relaxed confidence threshold allows the cascade engine to accept candidiate bounding boxes even where features might overlap or be partially obscured.],
+
+    [minSize (15, 15)],
+    [A strict 15x15 pixel limit is essential for detecting the smallest sub-regions characteristic of distant background figures in full-view dense photography.],
+  )
 ]
+#pagebreak()
+= Evaluation & Output
 
-#let figure_box(path, caption) = align(center)[
-  #v(1em)
-  #block(
-    stroke: 1pt + rgb("e2e8f0"),
-    radius: 8pt,
-    clip: true,
-    inset: 0pt,
-  )[
-    #image(path, width: 100%)
-  ]
-  #v(0.5em)
-  #text(size: 9pt, weight: "medium", fill: tech_gray)[Fig 1.0: #caption]
-  #v(1em)
-]
+The resulting localization map effectively captured the prominent subjects within the crowd. However, the model's high sensitivity settings inadvertently introduced more than 2 instances of false positives, misclassifying certain background textures as faces. This clearly highlights the classic precision-recall trade-off inherent in basic cascading classifiers when processing complex, high-noise imagery. \ \
 
-// --- Report Content ---
-
-#report_header("Face Detection System Synthesis")
-
-#report_section("1", "Abstract")
-This report evaluates the implementation of a real-time facial recognition pipeline utilizing the Viola-Jones framework, specifically optimized through Haar Cascade classifiers. The following sections detail the theoretical underpinnings, the algorithmic implementation in an OpenCV environment, and a critical analysis of detection accuracy in high-density crowd scenarios.
-
-#report_section("2", "Problem Identification")
-Facial detection in unconstrained environments—characterized by varying lighting, occlusions, and diverse orientations—remains a fundamental challenge in computer vision. The objective is to deploy a computationally efficient system capable of isolating facial regions of interest (ROIs) from complex backgrounds with high precision.
-
-#report_section("3", "Theoretical Framework")
-The Haar Cascade classifier functions by evaluating a series of increasingly complex features. Instead of processing raw pixel values, the algorithm utilizes *Integral Images* to compute rectangular feature sums in constant time ($O(1)$).
-
-#tech_table(
-  header: ("Haar Component", "Technical Functional Utility"),
-  rows: (
-    ("Integral Image", "Pre-calculates cumulative sums for extremely fast sub-window checks."),
-    ("AdaBoost", "Iteratively selects the small subset of features that provide maximum classification power."),
-    (
-      "Cascade Architecture",
-      "An ensemble of stages that rejects non-face regions nearly instantly, preserving CPU cycles.",
-    ),
-    ("Haar-like Features", "Edge, line, and center-surround features that map to facial anatomy (e.g. eye sockets)."),
-  ),
+#figure(
+  image("../scripts/output/practical-12-faces.jpg", width: 100%),
+  caption: [Detection Output from `dense-crowd.jpg` showing bounding boxes with false positives.],
 )
-
-#report_section("4", "Implementation Methodology")
-A Python-based solution was developed using the `CascadeClassifier` module. The pipeline involves grayscale normalization to ensure intensity-based feature extraction remains invariant to chrominance noise.
-
-#code_box(label: "vision_system.py")[
-  ```python
-  import cv2
-
-  # System Initialization: Loading pre-trained weights
-  cascade_engine = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
-
-  # Acquisition and Normalization
-  source_data = cv2.imread('source_sample.jpg')
-  normalized_gray = cv2.cvtColor(source_data, cv2.COLOR_BGR2GRAY)
-
-  # Invoking the multi-scale detection engine
-  # Parameters: factor=1.1, neighbors=5, min_size=30x30
-  detections = cascade_engine.detectMultiScale(normalized_gray, 1.1, 5, minSize=(30, 30))
-
-  # Annotation Matrix
-  for (x, y, w, h) in detections:
-      cv2.rectangle(source_data, (x, y), (x + w, y + h), (0, 255, 0), 2)
-      cv2.putText(source_data, "FACE_DETECTED", (x, y - 8),
-                  cv2.FONT_HERSHEY_SIMPLEX, 0.45, (0, 255, 0), 2)
-
-  cv2.imwrite('detection_output.jpg', source_data)
-  ```
-]
-
-#report_section("5", "Experimental Results & Evaluation")
-The system was tested on a high-density crowd image. As shown in the figure below, the classifier successfully localized faces even with significant scale variations.
-
-#figure_box(
-  "../scripts/output/practical-12-faces.jpg",
-  "Experimental detection results within a crowded outdoor environment.",
-)
-
-#callout_box(
-  "Technical Observation",
-  "The algorithm displays exceptional performance on frontal faces but requires higher 'minNeighbors' values (5-7) to avoid false detections in textured backgrounds.",
-)
-
-#report_section("6", "Conclusion")
-The Haar Cascade approach provides a robust baseline for real-time face detection due to its unmatched execution speed. While MTCNN or ResNet-based models offer higher accuracy in edge cases, the current implementation fulfills the requirements for a high-performance, low-latency identification system.
+\ \
+Despite its efficiency and rapid execution speed, the limitations of frontal-only detection are visible. Subjects angled away from the camera are reliably ignored by the engine, contrasting with the false positive misidentifications elsewhere in the unconstrained environment.

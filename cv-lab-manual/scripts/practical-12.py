@@ -7,12 +7,12 @@ face_cascade = cv2.CascadeClassifier(
     cv2.data.haarcascades + "haarcascade_frontalface_default.xml"
 )
 
-img = cv2.imread("../samples/images/crowd-low-res.jpg")
+img = cv2.imread("../samples/images/dense-crowd.jpg")
 img = cv2.resize(img, (800, 500))
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 faces = face_cascade.detectMultiScale(
-    gray, scaleFactor=1.1, minNeighbors=5, minSize=(30, 30)
+    gray, scaleFactor=1.05, minNeighbors=3, minSize=(15, 15)
 )
 
 for (x, y, w, h) in faces:
@@ -21,8 +21,7 @@ for (x, y, w, h) in faces:
     
     # Label background (filled rectangle)
     label = "Face"
-    (text_w, text_h), baseline = 
-            cv2.getTextSize(label, cv2.FONT_HERSHEY_SIMPLEX, 0.5, 1)
+    (text_w, text_h), baseline = cv2.getTextSize(label, cv2.FONT_HERSHEY_SIMPLEX, 0.5, 1)
     cv2.rectangle(
         img, (x, y - text_h - 10),
         (x + text_w + 10, y), (0, 255, 0), -1
