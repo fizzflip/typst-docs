@@ -17,7 +17,7 @@
   footer: context {
     if here().page() > 2 {
       set text(size: 9pt, fill: gray.lighten(30%))
-      [Sorting Algorithm Analysis -- #meta.subject]
+      [Sorting Algorithm Analysis -- ADA]
       h(1fr)
       counter(page).display("1 / 1", both: true)
     }
@@ -70,7 +70,7 @@
       stroke: (x, y) => if x == 0 { (right: .5pt + rgb("#ffffff")) } else {
         none
       },
-      [Analysis and Design of Algorithm], [ADA],
+      [Analysis and Design of Algorithms], [SUB],
       [#meta.roll_no], [#meta.ern],
       [#meta.section], [#meta.cla],
       [I], [#meta.ala],
@@ -667,29 +667,29 @@ Choosing the optimal sorting algorithm for real-world software systems requires 
   #table(
     columns: (1.3fr, 1.2fr, 1.2fr, 1.3fr),
     fill: (x, y) => if y == 0 { rgb("#1b1b1f") } else { none },
-    [*Operational Scenario*], [*Primary Constraint*], [*Recommended \ Algorithm*], [*Engineering Rationale*],
+    [*Operational Scenario*], [*Primary Constraint*], [*Recommended Algorithm*], [*Engineering Rationale*],
     [General System Library],
-    [High average \ throughput],
+    [High average throughput],
     [Introsort / QuickSort],
-    [Optimal CPU cache hit ratio & low constant factor],
+    [Optimal CPU cache hit ratio and low constant factor],
 
     [Database Query Engine],
     [Stable multi-column sort],
     [Timsort / Merge Sort],
-    [Guarantees stable key ordering & $O(n log n)$ bound],
+    [Guarantees stable key ordering and $O(n log n)$ bound],
 
     [Embedded Microcontroller],
     [Strict $O(1)$ RAM limit],
-    [HeapSort or \ In-place QuickSort],
-    [Zero auxiliary \ heap allocation required],
+    [HeapSort / In-place QuickSort],
+    [Zero auxiliary heap allocation required],
 
     [Small Sub-array Partition],
     [Low call-stack depth],
     [Insertion / Bubble Sort],
-    [Eliminates recursive \ function call overhead],
+    [Eliminates recursive function call overhead],
 
-    [Parallel or \ Distributed Systems],
-    [Independent \ partition merging],
+    [Parallel / Distributed Systems],
+    [Independent partition merging],
     [Parallel Merge Sort],
     [Sub-arrays divide cleanly across worker threads],
   )
@@ -728,7 +728,7 @@ Through interactive web visualizers such as vck.app, SortPedia, and SortSim, the
 
 1. *Bubble Sort (Exchange Paradigm)*:
   - Serves strong pedagogical value for introducing element comparison and swapping mechanics.
-  - computationally inefficient for production datasets ($O(n^2)$), but exhibits remarkable linear adaptivity ($O(n)$ comparisons, $O(1)$ swaps) on nearly sorted inputs when equipped with early exit detection.
+  - Computationally inefficient for production datasets ($O(n^2)$), but exhibits remarkable linear adaptivity ($O(n)$ comparisons, $O(1)$ swaps) on nearly sorted inputs when equipped with early exit detection.
 
 2. *QuickSort (Partitioning Paradigm)*:
   - Delivers the highest practical execution speed ($O(n log n)$ average time) due to superior CPU L1/L2 cache locality and minimal constant factors.
