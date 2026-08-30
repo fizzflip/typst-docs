@@ -125,7 +125,7 @@ This report utilizes modern interactive visualization platforms to analyze algor
 3. *SortSim (sortsim.dev)*:
   - *Key Features*: High-performance canvas-based sorting simulator supporting multi-algorithm benchmarking across custom array distributions (*Random*, *Nearly Sorted*, *Reversed*, *Few Unique*).
 
-#v(0.3em)
+#v(0.5em)
 #align(center)[
   #grid(
     columns: (1fr, 1fr),
@@ -153,7 +153,7 @@ This report utilizes modern interactive visualization platforms to analyze algor
   )
 ]
 
-#v(0.2em)
+#v(1em)
 #align(center)[
   #box(
     fill: rgb("#1b1b1f"),
@@ -187,44 +187,18 @@ Bubble Sort repeatedly steps through the list, compares adjacent elements, and s
 - *Cocktail Shaker Sort (Bidirectional Bubble Sort)*: Alternates passes from left-to-right and right-to-left, placing both max and min elements per cycle. Solves the "turtle" problem where small values near the end move slowly to the front.
 
 === Visualizer State
-On array #m[\[38, 27, 43, 3, 9, 82, 10\]], vck.app and SortPedia highlight active comparisons in red and locked sorted elements in green:
+On array #m[\[38, 27, 43, 3, 9, 82, 10\]], active comparisons in red and locked sorted elements in green:
+#v(.5em)
+#grid(
+  columns: (1fr, 1fr),
+  gutter: 1em,
 
-#align(center)[
-  #box(
-    fill: rgb("#1b1b1f"),
-    inset: 5pt,
-    radius: 4pt,
-    stroke: 0.5pt + rgb("#333"),
-    width: 98%,
-  )[
-    #text(weight: "bold", fill: rgb("#38bdf8"), size: 8.5pt)[Pass 1 State Snapshot (vck.app Visualizer)]
-    #v(0.15em)
-    #table(
-      columns: (1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1.2fr),
-      align: center,
-      stroke: 0.3pt + rgb("#555"),
-      fill: (x, y) => if x == 6 { rgb("#16a34a") } else if x == 2 or x == 3 { rgb("#e11d48") } else { rgb("#262626") },
-      [*27*], [*38*], [*43 (cmp)*], [*3 (cmp)*], [*9*], [*10*], [*82 (Sorted)*],
-      [OK], [OK], [Swap!], [Swap!], [--], [--], [Locked],
-    )
-  ]
-]
+  image("assets/bubble-sort-1.png", width: 100%), image("assets/bubble-sort-2.png", width: 100%),
+  image("assets/bubble-sort-3.png", width: 100%), image("assets/bubble-sort-4.png", width: 100%),
+)
 
-#align(center)[
-  #mermaid(
-    "graph LR;
-    S1[Compare 38 and 27\n38 > 27: Swap!] --> S2[Compare 38 and 43\n38 < 43: OK]
-    S2 --> S3[Compare 43 and 82\n43 < 82: OK]
-    S3 --> S4[Compare 82 and 10\n82 > 10: Swap!]
-    S4 --> S5[Pass 1 Finish:\n82 Locked at End]
-    style S1 fill:#e11d48,stroke:#fff,color:#fff
-    style S2 fill:#0284c7,stroke:#fff,color:#fff
-    style S4 fill:#e11d48,stroke:#fff,color:#fff
-    style S5 fill:#16a34a,stroke:#fff,color:#fff
-  ",
-    theme: (background: "#141414"),
-  )
-]
+
+#pagebreak()
 
 === Complexity
 - *Comparisons ($C$)*: Total comparisons across $n-1$ passes:
@@ -239,7 +213,7 @@ On array #m[\[38, 27, 43, 3, 9, 82, 10\]], vck.app and SortPedia highlight activ
 - *Space Complexity*: $O(1)$ auxiliary space (in-place algorithm).
 - *Stability*: *Stable* -- Adjacent swaps are performed only when `arr[j] > arr[j + 1]`. Equal elements are never swapped, preserving their relative initial order.
 
-=== Implementation Code
+=== Implementation
 ```cpp
 // Optimized Bubble Sort with Early Termination Flag
 void bubbleSort(vector<int>& arr) {
@@ -284,7 +258,7 @@ In vck.app and SortPedia, selecting the rightmost element as pivot (Lomuto Parti
 - *Boundary ($i$)*: Tracks the end of elements $\le p$ (marked in Blue). Initialized to `low - 1`.
 - *Scanner ($j$)*: Iterates from `low` to `high - 1` comparing #m[arr[j] < pivot] (marked in Red / Amber when swapping).
 
-#pagebreak()
+// #pagebreak()
 Below is the step-by-step trace of partitioning array #m[\[38, 27, 43, 3, 9, 82, 10\]] with pivot $p = 10$:
 
 #align(center)[
@@ -308,7 +282,7 @@ Below is the step-by-step trace of partitioning array #m[\[38, 27, 43, 3, 9, 82,
   ]
 ]
 
-#v(0.2em)
+// #v(0.2em)
 #align(center)[
   #box(
     fill: rgb("#1b1b1f"),
@@ -334,7 +308,7 @@ Below is the step-by-step trace of partitioning array #m[\[38, 27, 43, 3, 9, 82,
   ]
 ]
 
-#v(0.2em)
+// #v(0.2em)
 #align(center)[
   #box(
     fill: rgb("#1b1b1f"),
@@ -360,7 +334,7 @@ Below is the step-by-step trace of partitioning array #m[\[38, 27, 43, 3, 9, 82,
   ]
 ]
 
-#v(0.2em)
+// #v(0.2em)
 #align(center)[
   #box(
     fill: rgb("#1b1b1f"),
@@ -381,27 +355,16 @@ Below is the step-by-step trace of partitioning array #m[\[38, 27, 43, 3, 9, 82,
     )
   ]
 ]
+#v(.5em)
 
-#v(3em)
+#grid(
+  columns: (1fr, 1fr),
+  gutter: 1em,
 
-#align(center)[
-  #mermaid(
-    "graph TD;
-    P0[Array: 38, 27, 43, 3, 9, 82, 10 | Pivot: 10] --> P1[Left Partition: 3, 9];
-    P0 --> P2[Pivot Placed: 10];
-    P0 --> P3[Right Partition: 38, 27, 43, 82];
-    P1 --> P1a[3];
-    P1 --> P1b[9];
-    P3 --> P3a[Left Sub: 27, 38 | Pivot: 38];
-    P3 --> P3b[Right Sub: 43, 82 | Pivot: 82];
-    style P2 fill:#16a34a,stroke:#fff,color:#fff
-    style P0 fill:#0284c7,stroke:#fff,color:#fff
-  ",
-    theme: (background: "#141414"),
-  )
-]
+  image("assets/quick-sort-1.png", width: 100%), image("assets/quick-sort-2.png", width: 100%),
+  image("assets/quick-sort-4.png", width: 100%), image("assets/quick-sort-3.png", width: 100%),
+)
 
-#v(2em)
 
 === Complexity
 - *Best Case*: $Theta(n log n)$ -- Occurs when pivot splits array into equal halves.
@@ -409,12 +372,15 @@ Below is the step-by-step trace of partitioning array #m[\[38, 27, 43, 3, 9, 82,
 - *Average Case*: $Theta(n log n)$ -- Random pivot choices achieve near-optimal $O(n log n)$ partitioning on average.
 - *Worst Case*: $Theta(n^2)$ -- Occurs when chosen pivot is consistently minimum or maximum element:
   $ T(n) = T(n-1) + T(0) + Theta(n) => T(n) = sum_(k=1)^n k = (n(n+1)) / 2 = Theta(n^2) $
+
+#pagebreak()
+
 - *Space Complexity*:
   - *Average Call-Stack Depth*: $O(log n)$ recursion stack.
   - *Worst-Case Stack Depth*: $O(n)$ without tail call optimization; reduced to $O(log n)$ auxiliary space by sorting smaller sub-arrays first.
 - *Stability*: *Unstable* (long-distance swaps across pivot can reorder duplicate elements).
 
-=== Implementation Code
+=== Implementation
 ```cpp
 // Lomuto Partitioning Scheme
 int partition(vector<int>& arr, int low, int high) {
@@ -462,32 +428,15 @@ Merge Sort is an $O(n log n)$ comparison-based, out-of-place sorting algorithm b
 - *Natural Merge Sort*: Identifies pre-sorted contiguous sub-sequences ("runs") already present in the input sequence and merges them. Reduces runtime to $O(n)$ on partially sorted data.
 
 === Visualizer State
-Visualizing Merge Sort on SortPedia and vck.app highlights the distinct *Divide* phase (downward recursion tree) and *Combine* phase (upward merge pass):
+Visualizing Merge Sort on SortPedia highlights the distinct *Divide* phase (downward recursion tree) and *Combine* phase (upward merge pass):
 
-#align(center)[
-  #mermaid(
-    "graph TD;
-    A[Array: 38, 27, 43, 3, 9, 82, 10] --> B[Left: 38, 27, 43, 3];
-    A --> C[Right: 9, 82, 10];
-    B --> D[Sub: 38, 27];
-    B --> E[Sub: 43, 3];
-    D --> D1[Merge: 27, 38];
-    E --> E1[Merge: 3, 43];
-    D1 --> M1[Merge Left: 3, 27, 38, 43];
-    E1 --> M1;
-    C --> F[Sub: 9, 82];
-    C --> G[Sub: 10];
-    F --> M2[Merge Right: 9, 10, 82];
-    G --> M2;
-    M1 --> FINAL[Final Merged Array: 3, 9, 10, 27, 38, 43, 82];
-    M2 --> FINAL;
-    style FINAL fill:#16a34a,stroke:#fff,color:#fff
-  ",
-    theme: (background: "#141414"),
-  )
-]
+#grid(
+  columns: (1fr, 1fr),
+  gutter: 1em,
 
-#v(1em)
+  image("assets/merge-sort-1.png", width: 100%), image("assets/merge-sort-2.png", width: 100%),
+  image("assets/merge-sort-3.png", width: 100%), image("assets/merge-sort-4.png", width: 100%),
+)
 
 === Complexity
 - *Time Complexity (Best, Average, Worst)*: $Theta(n log n)$ -- Unconditional $O(n)$ merge operations performed across $log_2 n$ tree levels. Recurrence relation:
@@ -495,7 +444,7 @@ Visualizing Merge Sort on SortPedia and vck.app highlights the distinct *Divide*
 - *Space Complexity*: $O(n)$ auxiliary array buffer space + $O(log n)$ recursion stack depth.
 - *Stability*: *Stable* -- During the merge step, when $L[i] <= R[j]$, the element from the left sub-array $L[i]$ is copied first, guaranteeing that equal keys retain their original relative order.
 
-=== Implementation Code
+=== Implementation
 ```cpp
 void merge(vector<int>& arr, int l, int m, int r) {
     vector<int> L(arr.begin() + l, arr.begin() + m + 1);
@@ -659,6 +608,8 @@ Choosing the optimal sorting algorithm for real-world software systems requires 
 4. *Input Entropy*:
   - If input data is frequently nearly sorted, adaptive algorithms (Optimized Bubble Sort or Timsort) execute in $O(n)$ linear time.
 
+\
+
 #v(0.3em)
 #align(center)[
   #text(weight: "bold", size: 1em)[Table 2: Scenario-Based Selection Guide]
@@ -669,34 +620,34 @@ Choosing the optimal sorting algorithm for real-world software systems requires 
     fill: (x, y) => if y == 0 { rgb("#1b1b1f") } else { none },
     [*Operational Scenario*], [*Primary Constraint*], [*Recommended Algorithm*], [*Engineering Rationale*],
     [General System Library],
-    [High average throughput],
+    [High average \ throughput],
     [Introsort / QuickSort],
     [Optimal CPU cache hit ratio and low constant factor],
 
     [Database Query Engine],
     [Stable multi-column sort],
     [Timsort / Merge Sort],
-    [Guarantees stable key ordering and $O(n log n)$ bound],
+    [Guarantees \ stable key ordering and \ $O(n log n)$ bound],
 
     [Embedded Microcontroller],
     [Strict $O(1)$ RAM limit],
-    [HeapSort / In-place QuickSort],
-    [Zero auxiliary heap allocation required],
+    [HeapSort /\ In-place QuickSort],
+    [Zero auxiliary \ heap allocation required],
 
     [Small Sub-array Partition],
     [Low call-stack depth],
-    [Insertion / Bubble Sort],
-    [Eliminates recursive function call overhead],
+    [Insertion /\ Bubble Sort],
+    [Eliminates recursive \ function call overhead],
 
-    [Parallel / Distributed Systems],
-    [Independent partition merging],
+    [Parallel /\ Distributed Systems],
+    [Independent \ partition merging],
     [Parallel Merge Sort],
     [Sub-arrays divide cleanly across worker threads],
   )
 ]
 
 #v(0.4em)
-== Selection Decision Tree
+== Decision Tree
 
 #v(0.3em)
 #align(center)[
@@ -743,5 +694,3 @@ Through interactive web visualizers such as vck.app, SortPedia, and SortSim, the
 Modern commercial runtime engines rarely rely on pure textbook algorithms. Instead, production software utilizes *hybrid adaptive algorithms*:
 - *Timsort* (Python, Java, Android) leverages Merge Sort's stability alongside Insertion Sort's small-array efficiency.
 - *Introsort* (C++ Standard Template Library) combines QuickSort's speed, HeapSort's $O(n log n)$ worst-case safety guarantee, and Insertion Sort's low overhead.
-
-Interactive visual tools bridge abstract mathematical recurrence relations ($T(n) = 2 T(n/2) + Theta(n)$) with concrete hardware operations (array access counts, comparison passes, and stack frame allocations), empowering software engineers to architect optimal sorting pipelines for high-performance software applications.
