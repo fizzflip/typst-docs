@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 712 103"
+   width="712"
+   height="103"
+   version="1.1"
+   id="svg10"
+   sodipodi:docname="huffman_entropy_spectrum.svg"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs10">
+    <rect
+       x="-22.109419"
+       y="50.535816"
+       width="406.54257"
+       height="119.57135"
+       id="rect13" />
+  </defs>
+  <sodipodi:namedview
+     id="namedview10"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.108125"
+     inkscape:cx="316.30006"
+     inkscape:cy="34.29216"
+     inkscape:window-width="1920"
+     inkscape:window-height="1080"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg10" />
+  <style
+     id="style1">
+    .ent-title { font-family: 'DejaVu Sans', sans-serif; font-size: 12px; font-weight: bold; fill: #ffffff; }
+    .ent-txt { font-family: 'DejaVu Sans', sans-serif; font-size: 11px; font-weight: bold; fill: #ffffff; text-anchor: middle; }
+    .ent-sub { font-family: 'DejaVu Sans', sans-serif; font-size: 9.5px; fill: #9ca3af; text-anchor: middle; }
+  </style>
+  <!-- Skewed Distribution Box -->
+  <rect
+     x="4.8518524"
+     y="4.0103416"
+     width="317.08984"
+     height="95.552917"
+     rx="6.7645836"
+     fill="#122019"
+     stroke="#10b981"
+     stroke-width="1.1037"
+     id="rect1" />
+  <text
+     x="20"
+     y="24"
+     class="ent-title"
+     style="fill:#34d399"
+     id="text1"><tspan
+       sodipodi:role="line"
+       id="tspan10"
+       x="20"
+       y="24">Skewed Distribution</tspan><tspan
+       sodipodi:role="line"
+       id="tspan11"
+       x="20"
+       y="39">(Natural Language Text / Logs)</tspan></text>
+  <g
+     transform="translate(10,34)"
+     id="g5">
+    <rect
+       x="12.604544"
+       y="16.433208"
+       width="139.79091"
+       height="38.728859"
+       rx="4.2360878"
+       fill="#064e3b"
+       stroke="#10b981"
+       stroke-width="0.684646"
+       id="rect2" />
+    <text
+       x="82"
+       y="32"
+       class="ent-txt"
+       style="fill:#a7f3d0"
+       id="text2">Frequent Symbols</text>
+    <text
+       x="82"
+       y="46"
+       class="ent-sub"
+       style="fill:#d1fae5"
+       id="text3">Assigned 1-2 Bit Codes</text>
+    <rect
+       x="158.51122"
+       y="16.424746"
+       width="135.97757"
+       height="38.05294"
+       rx="4.1205325"
+       fill="#064e3b"
+       stroke="#10b981"
+       stroke-width="0.669325"
+       id="rect3" />
+    <text
+       x="226"
+       y="32"
+       class="ent-txt"
+       style="fill:#a7f3d0"
+       id="text4">High Savings</text>
+    <text
+       x="226"
+       y="46"
+       class="ent-sub"
+       style="fill:#d1fae5"
+       id="text5">~45% to 55% Reduction</text>
+  </g>
+  <!-- Uniform Distribution Box -->
+  <rect
+     x="335.90927"
+     y="4.5902362"
+     width="369.35162"
+     height="95.096313"
+     rx="7.8795018"
+     fill="#241414"
+     stroke="#ef4444"
+     stroke-width="1.01858"
+     id="rect5" />
+  <text
+     x="351"
+     y="26"
+     class="ent-title"
+     style="fill:#f87171"
+     id="text6"><tspan
+       sodipodi:role="line"
+       id="tspan12"
+       x="351"
+       y="26">Uniform Distribution</tspan><tspan
+       sodipodi:role="line"
+       id="tspan13"
+       x="351"
+       y="41">(Encrypted / Compressed)</tspan></text>
+  <g
+     transform="translate(353,35.219402)"
+     id="g10">
+    <rect
+       x="-0.14834763"
+       y="17.718763"
+       width="165.29669"
+       height="34.562473"
+       rx="5.0089908"
+       fill="#3b1d1d"
+       stroke="#ef4444"
+       stroke-width="0.703305"
+       id="rect6" />
+    <text
+       x="82"
+       y="32"
+       class="ent-txt"
+       style="fill:#fca5a5"
+       id="text7">Equal Frequencies</text>
+    <text
+       x="82"
+       y="46"
+       class="ent-sub"
+       style="fill:#fca5a5"
+       id="text8">All symbols take ~8 bits</text>
+    <rect
+       x="171.84781"
+       y="18.095354"
+       width="165.30438"
+       height="33.809292"
+       rx="5.0092239"
+       fill="#3b1d1d"
+       stroke="#ef4444"
+       stroke-width="0.695615"
+       id="rect8" />
+    <text
+       x="254"
+       y="32"
+       class="ent-txt"
+       style="fill:#fca5a5"
+       id="text9">Zero Savings</text>
+    <text
+       x="254"
+       y="46"
+       class="ent-sub"
+       style="fill:#fca5a5"
+       id="text10">0% saved + Header (~1% exp)</text>
+  </g>
+  <text
+     xml:space="preserve"
+     id="text13"
+     style="font-size:13.3333px;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect13);display:inline;fill:#676c53" />
+</svg>

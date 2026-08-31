@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="981" height="423">
+    <path d="M135 144.667h198V198H135zm-81-72h198V126H54zM135 216h198v54H135zm72 72h198v54H207zm-72 72h198v54H135z" fill="#AAD5EF"/>
+    <g fill="none" stroke="#000" stroke-width="2" stroke-miterlimit="10">
+        <path d="M666 147L774 27l108 120m-36 120l36-120 72 120m-360 0l72-120 36 120m108 120l36-120 36 120m-216 0l36-120 36 120M90 171l54-72-54-72v72m0 288l81-63 54-81-135-72 72 72m0 144l-72-72m0 0l144 72"/>
+        <path d="M162 243l63 81 81 63M162 243l153 63 63 81"/>
+        <path d="M90 315l-18-81 72-63-54-72 162 63 45 99 99 45 54 81"/>
+    </g>
+    <g fill="#FFEBAA" stroke="#000" stroke-miterlimit="10">
+        <circle cx="234" cy="387" r="18"/>
+        <circle cx="306" cy="387" r="18"/>
+        <circle cx="378" cy="387" r="18"/>
+        <circle cx="450" cy="387" r="18"/>
+        <circle cx="90" cy="387" r="18"/>
+        <circle cx="162" cy="387" r="18"/>
+        <circle cx="90" cy="315" r="18"/>
+        <circle cx="162" cy="243" r="18"/>
+        <circle cx="90" cy="171" r="18"/>
+        <circle cx="90" cy="99" r="18"/>
+        <circle cx="90" cy="27" r="18"/>
+        <circle cx="738" cy="387" r="18"/>
+        <circle cx="810" cy="387" r="18"/>
+        <circle cx="882" cy="387" r="18"/>
+        <circle cx="954" cy="267" r="18"/>
+        <circle cx="594" cy="267" r="18"/>
+        <circle cx="666" cy="147" r="18"/>
+        <circle cx="702" cy="267" r="18"/>
+        <circle cx="846" cy="267" r="18"/>
+        <circle cx="882" cy="147" r="18"/>
+        <circle cx="774" cy="27" r="18"/>
+        <circle cx="666" cy="387" r="18"/>
+    </g>
+    <path fill="none" stroke="#B3B3B3" stroke-width="20" stroke-miterlimit="10" d="M441 207h77.824"/>
+    <path fill="#B3B3B3" d="M549 207c-14.199 5.269-31.816 14.258-42.736 23.779l8.6-23.779-8.601-23.774c10.921 9.521 28.538 18.51 42.737 23.774z"/>
+    <g font-family="Times,serif" font-size="24">
+        <text transform="translate(84 396)">4</text>
+        <text transform="translate(150 396)">11</text>
+        <text transform="translate(228 396)">3</text>
+        <text transform="translate(294 396)">12</text>
+        <text transform="translate(222 324)">12</text>
+        <text transform="translate(78 324)">14</text>
+        <text transform="translate(156 324)">4</text>
+        <text transform="translate(78 252)">14</text>
+        <text transform="translate(228 252)">4</text>
+        <text transform="translate(372 396)">1</text>
+        <text transform="translate(300 324)">1</text>
+        <text transform="translate(150 252)">13</text>
+        <text transform="translate(150 180)">14</text>
+        <text transform="translate(150 108)">17</text>
+        <text transform="translate(78 180)">17</text>
+        <text transform="translate(438 396)">15</text>
+        <text transform="translate(588 276)">4</text>
+        <text transform="translate(654 396)">11</text>
+        <text transform="translate(732 396)">3</text>
+        <text transform="translate(798 396)">12</text>
+        <text transform="translate(876 396)">1</text>
+        <text transform="translate(942 276)">15</text>
+        <text transform="translate(366 324)">15</text>
+        <text transform="translate(294 252)">15</text>
+        <text transform="translate(222 180)">15</text>
+        <text transform="translate(78 108)">29</text>
+        <text transform="translate(78 36)">46</text>
+        <text transform="translate(9.445 396)">∞</text>
+        <text transform="translate(513.445 396)">∞</text>
+        <text transform="translate(441.445 324)">∞</text>
+        <text transform="translate(369.445 252)">∞</text>
+        <text transform="translate(297.445 180)">∞</text>
+        <text transform="translate(225.445 108)">∞</text>
+        <text transform="translate(153.445 36)">∞</text>
+        <text transform="translate(9.445 324)">∞</text>
+        <text transform="translate(9.445 252)">∞</text>
+        <text transform="translate(9.445 180)">∞</text>
+        <text transform="translate(9.445 108)">∞</text>
+        <text transform="translate(9.445 36)">∞</text>
+    </g>
+</svg>

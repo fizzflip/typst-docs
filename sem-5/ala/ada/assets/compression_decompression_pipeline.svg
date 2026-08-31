@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 800 235"
+   width="800"
+   height="235"
+   version="1.1"
+   id="svg26"
+   sodipodi:docname="compression_decompression_pipeline.svg"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview26"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.848125"
+     inkscape:cx="574.79735"
+     inkscape:cy="165.07001"
+     inkscape:window-width="1920"
+     inkscape:window-height="1080"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg26" />
+  <defs
+     id="defs5">
+    <linearGradient
+       id="pipeComp"
+       x1="3.3832726"
+       y1="26.116726"
+       x2="284.55481"
+       y2="307.28827"
+       gradientTransform="scale(2.778375,0.35992262)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0%"
+         stop-color="#1e1b2e"
+         id="stop1" />
+      <stop
+         offset="100%"
+         stop-color="#161424"
+         id="stop2" />
+    </linearGradient>
+    <linearGradient
+       id="pipeDecomp"
+       x1="3.3832726"
+       y1="345.62985"
+       x2="284.55481"
+       y2="626.80139"
+       gradientTransform="scale(2.778375,0.35992262)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0%"
+         stop-color="#14241d"
+         id="stop3" />
+      <stop
+         offset="100%"
+         stop-color="#0f1a15"
+         id="stop4" />
+    </linearGradient>
+    <marker
+       id="arr1"
+       viewBox="0 0 10 10"
+       refX="6"
+       refY="5"
+       markerWidth="6"
+       markerHeight="6"
+       orient="auto-start-reverse">
+      <path
+         d="M 0,1 8,5 0,9 Z"
+         fill="#818cf8"
+         id="path4" />
+    </marker>
+    <marker
+       id="arr2"
+       viewBox="0 0 10 10"
+       refX="6"
+       refY="5"
+       markerWidth="6"
+       markerHeight="6"
+       orient="auto-start-reverse">
+      <path
+         d="M 0,1 8,5 0,9 Z"
+         fill="#34d399"
+         id="path5" />
+    </marker>
+  </defs>
+  <style
+     id="style5">
+    .sec-title { font-family: 'DejaVu Sans', sans-serif; font-size: 12.5px; font-weight: bold; fill: #ffffff; }
+    .box-title { font-family: 'DejaVu Sans', sans-serif; font-size: 11px; font-weight: bold; fill: #ffffff; text-anchor: middle; }
+    .box-desc { font-family: 'DejaVu Sans', sans-serif; font-size: 9px; fill: #9ca3af; text-anchor: middle; }
+  </style>
+  <!-- Compression Pipeline Container -->
+  <rect
+     x="10"
+     y="10"
+     width="780"
+     height="100"
+     rx="8"
+     fill="url(#pipeComp)"
+     stroke="#4f46e5"
+     stroke-width="1.2"
+     id="rect5"
+     style="fill:url(#pipeComp)" />
+  <text
+     x="317.45667"
+     y="31.459026"
+     class="sec-title"
+     style="fill:#a5b4fc"
+     id="text5">Compression Pipeline</text>
+  <!-- Steps C1 to C5 -->
+  <g
+     transform="translate(25,42)"
+     id="g15">
+    <!-- C1 -->
+    <rect
+       x="0"
+       y="0"
+       width="125"
+       height="52"
+       rx="5"
+       fill="#2b2b36"
+       stroke="#4b5563"
+       stroke-width="1"
+       id="rect6" />
+    <text
+       x="62"
+       y="22"
+       class="box-title"
+       id="text6">Raw Input File</text>
+    <text
+       x="62"
+       y="38"
+       class="box-desc"
+       id="text7">Uncompressed bytes</text>
+    <line
+       x1="125"
+       y1="26"
+       x2="146.88116"
+       y2="26"
+       stroke="#6366f1"
+       stroke-width="1.88275"
+       marker-end="url(#arr1)"
+       id="line7" />
+    <!-- C2 -->
+    <rect
+       x="150"
+       y="0"
+       width="130"
+       height="52"
+       rx="5"
+       fill="#2b2b36"
+       stroke="#4b5563"
+       stroke-width="1"
+       id="rect7" />
+    <text
+       x="215"
+       y="22"
+       class="box-title"
+       id="text8">Frequency Count</text>
+    <text
+       x="215"
+       y="38"
+       class="box-desc"
+       id="text9">Byte histogram [0..255]</text>
+    <line
+       x1="280"
+       y1="26"
+       x2="301.88116"
+       y2="26"
+       stroke="#6366f1"
+       stroke-width="1.88275"
+       marker-end="url(#arr1)"
+       id="line9" />
+    <!-- C3 -->
+    <rect
+       x="305"
+       y="0"
+       width="130"
+       height="52"
+       rx="5"
+       fill="#2b2b36"
+       stroke="#4b5563"
+       stroke-width="1"
+       id="rect9" />
+    <text
+       x="370"
+       y="22"
+       class="box-title"
+       id="text10">Min-Heap Build</text>
+    <text
+       x="370"
+       y="38"
+       class="box-desc"
+       id="text11">Priority queue insertion</text>
+    <line
+       x1="435"
+       y1="26"
+       x2="455"
+       y2="26"
+       stroke="#6366f1"
+       stroke-width="1.8"
+       marker-end="url(#arr1)"
+       id="line11" />
+    <!-- C4 -->
+    <rect
+       x="460"
+       y="0"
+       width="130"
+       height="52"
+       rx="5"
+       fill="#2b2b36"
+       stroke="#4b5563"
+       stroke-width="1"
+       id="rect11" />
+    <text
+       x="525"
+       y="22"
+       class="box-title"
+       id="text12">Greedy Tree Merge</text>
+    <text
+       x="525"
+       y="38"
+       class="box-desc"
+       id="text13">Extract 2 min &amp; link</text>
+    <line
+       x1="590"
+       y1="26"
+       x2="610"
+       y2="26"
+       stroke="#6366f1"
+       stroke-width="1.8"
+       marker-end="url(#arr1)"
+       id="line13" />
+    <!-- C5 -->
+    <rect
+       x="615"
+       y="0"
+       width="135"
+       height="52"
+       rx="5"
+       fill="#064e3b"
+       stroke="#10b981"
+       stroke-width="1.5"
+       id="rect13" />
+    <text
+       x="682"
+       y="22"
+       class="box-title"
+       style="fill:#6ee7b7"
+       id="text14">Bitstream Output</text>
+    <text
+       x="682"
+       y="38"
+       class="box-desc"
+       style="fill:#a7f3d0"
+       id="text15">Header + Packed Bits</text>
+  </g>
+  <!-- Decompression Pipeline Container -->
+  <rect
+     x="10"
+     y="125"
+     width="780"
+     height="100"
+     rx="8"
+     fill="url(#pipeDecomp)"
+     stroke="#10b981"
+     stroke-width="1.2"
+     id="rect15"
+     style="fill:url(#pipeDecomp)" />
+  <text
+     x="310.41449"
+     y="146.2506"
+     class="sec-title"
+     style="fill:#6ee7b7"
+     id="text16">Decompression Pipeline</text>
+  <!-- Steps D1 to D5 -->
+  <g
+     transform="translate(25,157)"
+     id="g26">
+    <!-- D1 -->
+    <rect
+       x="0"
+       y="0"
+       width="125"
+       height="52"
+       rx="5"
+       fill="#312e81"
+       stroke="#6366f1"
+       stroke-width="1"
+       id="rect16" />
+    <text
+       x="62"
+       y="22"
+       class="box-title"
+       id="text17">Compressed File</text>
+    <text
+       x="62"
+       y="38"
+       class="box-desc"
+       id="text18">Packed stream input</text>
+    <line
+       x1="125"
+       y1="26"
+       x2="147.16333"
+       y2="26"
+       stroke="#10b981"
+       stroke-width="1.89485"
+       marker-end="url(#arr2)"
+       id="line18" />
+    <!-- D2 -->
+    <rect
+       x="150"
+       y="0"
+       width="130"
+       height="52"
+       rx="5"
+       fill="#2b2b36"
+       stroke="#4b5563"
+       stroke-width="1"
+       id="rect18" />
+    <text
+       x="215"
+       y="22"
+       class="box-title"
+       id="text19">Rebuild Tree</text>
+    <text
+       x="215"
+       y="38"
+       class="box-desc"
+       id="text20">Deserialize header</text>
+    <line
+       x1="280"
+       y1="26"
+       x2="301.97522"
+       y2="26"
+       stroke="#10b981"
+       stroke-width="1.88679"
+       marker-end="url(#arr2)"
+       id="line20" />
+    <!-- D3 -->
+    <rect
+       x="305"
+       y="0"
+       width="130"
+       height="52"
+       rx="5"
+       fill="#2b2b36"
+       stroke="#4b5563"
+       stroke-width="1"
+       id="rect20" />
+    <text
+       x="370"
+       y="22"
+       class="box-title"
+       id="text21">Bit Stream Reader</text>
+    <text
+       x="370"
+       y="38"
+       class="box-desc"
+       id="text22">Extract single bits</text>
+    <line
+       x1="435"
+       y1="26"
+       x2="457.26129"
+       y2="26"
+       stroke="#10b981"
+       stroke-width="1.89903"
+       marker-end="url(#arr2)"
+       id="line22" />
+    <!-- D4 -->
+    <rect
+       x="460"
+       y="0"
+       width="130"
+       height="52"
+       rx="5"
+       fill="#2b2b36"
+       stroke="#4b5563"
+       stroke-width="1"
+       id="rect22" />
+    <text
+       x="525"
+       y="22"
+       class="box-title"
+       id="text23">Tree Walk (0/1)</text>
+    <text
+       x="525"
+       y="38"
+       class="box-desc"
+       id="text24">Traverse root to leaf</text>
+    <line
+       x1="590"
+       y1="26"
+       x2="612.06927"
+       y2="26"
+       stroke="#10b981"
+       stroke-width="1.89083"
+       marker-end="url(#arr2)"
+       id="line24" />
+    <!-- D5 -->
+    <rect
+       x="615"
+       y="0"
+       width="135"
+       height="52"
+       rx="5"
+       fill="#064e3b"
+       stroke="#10b981"
+       stroke-width="1.5"
+       id="rect24" />
+    <text
+       x="682"
+       y="22"
+       class="box-title"
+       style="fill:#6ee7b7"
+       id="text25">Restored File</text>
+    <text
+       x="682"
+       y="38"
+       class="box-desc"
+       style="fill:#a7f3d0"
+       id="text26">Exact match to original</text>
+  </g>
+</svg>

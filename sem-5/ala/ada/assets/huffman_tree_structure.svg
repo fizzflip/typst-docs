@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 700 370"
+   width="700"
+   height="370"
+   version="1.1"
+   id="svg32"
+   sodipodi:docname="huffman_tree_structure.svg"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview32"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.69625"
+     inkscape:cx="247.89978"
+     inkscape:cy="181.57701"
+     inkscape:window-width="1920"
+     inkscape:window-height="1080"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg32" />
+  <defs
+     id="defs6">
+    <linearGradient
+       id="rootBg"
+       x1="371"
+       y1="6"
+       x2="429"
+       y2="64"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-100)">
+      <stop
+         offset="0%"
+         stop-color="#4f46e5"
+         id="stop1" />
+      <stop
+         offset="100%"
+         stop-color="#312e81"
+         id="stop2" />
+    </linearGradient>
+    <linearGradient
+       id="internalBg"
+       x1="0"
+       y1="0"
+       x2="1"
+       y2="1">
+      <stop
+         offset="0%"
+         stop-color="#2b2b36"
+         id="stop3" />
+      <stop
+         offset="100%"
+         stop-color="#1e1b2e"
+         id="stop4" />
+    </linearGradient>
+    <linearGradient
+       id="leafBg"
+       x1="0"
+       y1="0"
+       x2="1"
+       y2="1">
+      <stop
+         offset="0%"
+         stop-color="#064e3b"
+         id="stop5" />
+      <stop
+         offset="100%"
+         stop-color="#047857"
+         id="stop6" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#leafBg"
+       id="linearGradient41"
+       x1="64.629654"
+       y1="159.16284"
+       x2="148.43515"
+       y2="242.96832"
+       gradientTransform="matrix(1.6896268,0,0,0.59184667,-100,0)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#internalBg"
+       id="linearGradient42"
+       x1="545.09998"
+       y1="90.099998"
+       x2="594.90002"
+       y2="139.89999"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-100)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#internalBg"
+       id="linearGradient43"
+       x1="407.25"
+       y1="172.25"
+       x2="452.75"
+       y2="217.75"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-100)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#internalBg"
+       id="linearGradient44"
+       x1="657.25"
+       y1="172.25"
+       x2="702.75"
+       y2="217.75"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-100)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#leafBg"
+       id="linearGradient45"
+       x1="170.75301"
+       y1="423.40393"
+       x2="249.67296"
+       y2="502.32388"
+       gradientTransform="matrix(1.664978,0,0,0.60060852,-100,0)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#leafBg"
+       id="linearGradient46"
+       x1="254.8382"
+       y1="423.40393"
+       x2="333.75815"
+       y2="502.32388"
+       gradientTransform="matrix(1.664978,0,0,0.60060852,-100,0)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#internalBg"
+       id="linearGradient47"
+       x1="589.25"
+       y1="254.25"
+       x2="630.75"
+       y2="295.75"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-100)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#leafBg"
+       id="linearGradient48"
+       x1="418.216"
+       y1="406.97388"
+       x2="494.07352"
+       y2="482.83136"
+       gradientTransform="matrix(1.6003692,0,0,0.62485583,-100,0)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#leafBg"
+       id="linearGradient49"
+       x1="276.97717"
+       y1="555.33636"
+       x2="347.87115"
+       y2="626.23041"
+       gradientTransform="matrix(1.7124156,0,0,0.58397039,-100,0)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#leafBg"
+       id="linearGradient50"
+       x1="352.89331"
+       y1="555.33636"
+       x2="423.78732"
+       y2="626.23041"
+       gradientTransform="matrix(1.7124156,0,0,0.58397039,-100,0)"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <style
+     id="style6">
+    .tree-edge { stroke: #6b7280; stroke-width: 1.8; fill: none; }
+    .bit-label { font-family: 'DejaVu Sans Mono', monospace; font-size: 13px; font-weight: bold; fill: #38bdf8; text-anchor: middle; }
+    .node-circle-txt { font-family: 'DejaVu Sans', sans-serif; font-size: 12px; font-weight: bold; fill: #ffffff; text-anchor: middle; }
+    .leaf-txt { font-family: 'DejaVu Sans Mono', monospace; font-size: 12px; font-weight: bold; fill: #ffffff; text-anchor: middle; }
+    .code-txt { font-family: 'DejaVu Sans Mono', monospace; font-size: 10.5px; font-weight: bold; fill: #a7f3d0; text-anchor: middle; }
+  </style>
+  <!-- Edges -->
+  <!-- Root(400, 35) to A(150, 115) & z4(550, 115) -->
+  <line
+     x1="300"
+     y1="35"
+     x2="80"
+     y2="115"
+     class="tree-edge"
+     id="line6" />
+  <text
+     x="175"
+     y="65"
+     class="bit-label"
+     id="text6">0</text>
+  <line
+     x1="300"
+     y1="35"
+     x2="470"
+     y2="115"
+     class="tree-edge"
+     id="line7" />
+  <text
+     x="400"
+     y="65"
+     class="bit-label"
+     id="text7">1</text>
+  <!-- z4(570, 115) to z2(430, 195) & z3(680, 195) -->
+  <line
+     x1="470"
+     y1="115"
+     x2="330"
+     y2="195"
+     class="tree-edge"
+     id="line8" />
+  <text
+     x="385"
+     y="148"
+     class="bit-label"
+     id="text8">0</text>
+  <line
+     x1="470"
+     y1="115"
+     x2="580"
+     y2="195"
+     class="tree-edge"
+     id="line9" />
+  <text
+     x="540"
+     y="148"
+     class="bit-label"
+     id="text9">1</text>
+  <!-- z2(430, 195) to C(350, 275) & B(490, 275) -->
+  <line
+     x1="330"
+     y1="195"
+     x2="250"
+     y2="275"
+     class="tree-edge"
+     id="line10" />
+  <text
+     x="275"
+     y="230"
+     class="bit-label"
+     id="text10">0</text>
+  <line
+     x1="330"
+     y1="195"
+     x2="390"
+     y2="275"
+     class="tree-edge"
+     id="line11" />
+  <text
+     x="375"
+     y="230"
+     class="bit-label"
+     id="text11">1</text>
+  <!-- z3(680, 195) to z1(610, 275) & D(730, 275) -->
+  <line
+     x1="580"
+     y1="195"
+     x2="510"
+     y2="275"
+     class="tree-edge"
+     id="line12" />
+  <text
+     x="530"
+     y="230"
+     class="bit-label"
+     id="text12">0</text>
+  <line
+     x1="580"
+     y1="195"
+     x2="630"
+     y2="275"
+     class="tree-edge"
+     id="line13" />
+  <text
+     x="620"
+     y="230"
+     class="bit-label"
+     id="text13">1</text>
+  <!-- z1(610, 275) to F(540, 345) & E(660, 345) -->
+  <line
+     x1="510"
+     y1="275"
+     x2="440"
+     y2="335"
+     class="tree-edge"
+     id="line14" />
+  <text
+     x="472.92279"
+     y="297.07956"
+     class="bit-label"
+     id="text14">0</text>
+  <line
+     x1="510"
+     y1="275"
+     x2="560"
+     y2="335"
+     class="tree-edge"
+     id="line15" />
+  <text
+     x="550"
+     y="305"
+     class="bit-label"
+     id="text15">1</text>
+  <!-- Nodes -->
+  <!-- Root (100) -->
+  <circle
+     cx="300"
+     cy="35"
+     r="28"
+     fill="url(#rootBg)"
+     stroke="#818cf8"
+     stroke-width="2"
+     id="circle15"
+     style="fill:url(#rootBg)" />
+  <text
+     x="300"
+     y="39"
+     class="node-circle-txt"
+     id="text16">100</text>
+  <!-- Leaf A:45 -->
+  <rect
+     x="10"
+     y="95"
+     width="140"
+     height="48"
+     rx="6"
+     fill="url(#leafBg)"
+     stroke="#10b981"
+     stroke-width="1.6"
+     id="rect16"
+     style="fill:url(#linearGradient41)" />
+  <text
+     x="80"
+     y="115"
+     class="leaf-txt"
+     id="text17">A (45)</text>
+  <text
+     x="80"
+     y="132"
+     class="code-txt"
+     id="text18">Code: 0 [1b]</text>
+  <!-- Node z4 (55) -->
+  <circle
+     cx="470"
+     cy="115"
+     r="24"
+     fill="url(#internalBg)"
+     stroke="#6366f1"
+     stroke-width="1.8"
+     id="circle18"
+     style="fill:url(#linearGradient42)" />
+  <text
+     x="470"
+     y="119"
+     class="node-circle-txt"
+     id="text19">55</text>
+  <text
+     x="468.85663"
+     y="82.135048"
+     class="node-circle-txt"
+     id="text19-6"
+     style="font-weight:bold;font-size:12px;font-family:'DejaVu Sans', sans-serif;text-anchor:middle;fill:#949494;fill-opacity:1"><tspan
+       style="fill:#949494;fill-opacity:1"
+       id="tspan52">z4</tspan></text>
+  <text
+     x="329.21103"
+     y="166.20531"
+     class="node-circle-txt"
+     id="text19-6-3"
+     style="font-weight:bold;font-size:12px;font-family:'DejaVu Sans', sans-serif;text-anchor:middle;fill:#ffffff"><tspan
+       style="fill:#949494;fill-opacity:1"
+       id="tspan52-2">z2</tspan></text>
+  <text
+     x="486.07928"
+     y="251.5426"
+     class="node-circle-txt"
+     id="text19-6-6"
+     style="font-weight:bold;font-size:12px;font-family:'DejaVu Sans', sans-serif;text-anchor:middle;fill:#ffffff"><tspan
+       style="fill:#949494;fill-opacity:1"
+       id="tspan52-1">z1</tspan></text>
+  <text
+     x="608.45337"
+     y="174.93333"
+     class="node-circle-txt"
+     id="text19-6-5"
+     style="font-weight:bold;font-size:12px;font-family:'DejaVu Sans', sans-serif;text-anchor:middle;fill:#ffffff"><tspan
+       style="fill:#949494;fill-opacity:1"
+       id="tspan52-4">z3</tspan></text>
+  <!-- Node z2 (25) -->
+  <circle
+     cx="330"
+     cy="195"
+     r="22"
+     fill="url(#internalBg)"
+     stroke="#6366f1"
+     stroke-width="1.5"
+     id="circle19"
+     style="fill:url(#linearGradient43)" />
+  <text
+     x="330"
+     y="199"
+     class="node-circle-txt"
+     id="text20">25</text>
+  <!-- Node z3 (30) -->
+  <circle
+     cx="580"
+     cy="195"
+     r="22"
+     fill="url(#internalBg)"
+     stroke="#6366f1"
+     stroke-width="1.5"
+     id="circle20"
+     style="fill:url(#linearGradient44)" />
+  <text
+     x="580"
+     y="199"
+     class="node-circle-txt"
+     id="text21">30</text>
+  <!-- Leaf C:12 -->
+  <rect
+     x="185"
+     y="255"
+     width="130"
+     height="46"
+     rx="6"
+     fill="url(#leafBg)"
+     stroke="#10b981"
+     stroke-width="1.4"
+     id="rect21"
+     style="fill:url(#linearGradient45)" />
+  <text
+     x="250"
+     y="273"
+     class="leaf-txt"
+     id="text22">C (12)</text>
+  <text
+     x="250"
+     y="290"
+     class="code-txt"
+     id="text23">Code: 100 [3b]</text>
+  <!-- Leaf B:13 -->
+  <rect
+     x="325"
+     y="255"
+     width="130"
+     height="46"
+     rx="6"
+     fill="url(#leafBg)"
+     stroke="#10b981"
+     stroke-width="1.4"
+     id="rect23"
+     style="fill:url(#linearGradient46)" />
+  <text
+     x="390"
+     y="273"
+     class="leaf-txt"
+     id="text24">B (13)</text>
+  <text
+     x="390"
+     y="290"
+     class="code-txt"
+     id="text25">Code: 101 [3b]</text>
+  <!-- Node z1 (14) -->
+  <circle
+     cx="510"
+     cy="275"
+     r="20"
+     fill="url(#internalBg)"
+     stroke="#6366f1"
+     stroke-width="1.5"
+     id="circle25"
+     style="fill:url(#linearGradient47)" />
+  <text
+     x="510"
+     y="279"
+     class="node-circle-txt"
+     id="text26">14</text>
+  <!-- Leaf D:16 -->
+  <rect
+     x="570"
+     y="255"
+     width="120"
+     height="46"
+     rx="6"
+     fill="url(#leafBg)"
+     stroke="#10b981"
+     stroke-width="1.4"
+     id="rect26"
+     style="fill:url(#linearGradient48)" />
+  <text
+     x="630"
+     y="273"
+     class="leaf-txt"
+     id="text27">D (16)</text>
+  <text
+     x="630"
+     y="290"
+     class="code-txt"
+     id="text28">Code: 111 [3b]</text>
+  <!-- Leaf F:5 -->
+  <rect
+     x="375"
+     y="325"
+     width="120"
+     height="40"
+     rx="5"
+     fill="url(#leafBg)"
+     stroke="#10b981"
+     stroke-width="1.4"
+     id="rect28"
+     style="fill:url(#linearGradient49)" />
+  <text
+     x="435"
+     y="341"
+     class="leaf-txt"
+     id="text29">F (5)</text>
+  <text
+     x="435"
+     y="356"
+     class="code-txt"
+     id="text30">Code: 1100 [4b]</text>
+  <!-- Leaf E:9 -->
+  <rect
+     x="505"
+     y="325"
+     width="120"
+     height="40"
+     rx="5"
+     fill="url(#leafBg)"
+     stroke="#10b981"
+     stroke-width="1.4"
+     id="rect30"
+     style="fill:url(#linearGradient50)" />
+  <text
+     x="565"
+     y="341"
+     class="leaf-txt"
+     id="text31">E (9)</text>
+  <text
+     x="565"
+     y="356"
+     class="code-txt"
+     id="text32">Code: 1101 [4b]</text>
+</svg>

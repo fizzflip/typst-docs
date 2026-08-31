@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 638 170"
+   width="638"
+   height="170"
+   version="1.1"
+   id="svg10"
+   sodipodi:docname="huffman_header_serialization.svg"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview10"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.1994299"
+     inkscape:cx="260.54045"
+     inkscape:cy="-177.58437"
+     inkscape:window-width="1920"
+     inkscape:window-height="1080"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g10" />
+  <defs
+     id="defs4">
+    <linearGradient
+       id="naiveBg"
+       x1="4.3135219"
+       y1="31.380388"
+       x2="235.3266"
+       y2="262.39346"
+       gradientTransform="matrix(2.3883274,0,0,0.30035912,36.176824,-0.11882436)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0%"
+         stop-color="#2a1818"
+         id="stop1" />
+      <stop
+         offset="100%"
+         stop-color="#1c1212"
+         id="stop2" />
+    </linearGradient>
+    <linearGradient
+       id="canonBg"
+       x1="4.4110732"
+       y1="283.01276"
+       x2="242.36224"
+       y2="520.96393"
+       gradientTransform="matrix(2.5673662,0,0,0.30912128,3.0443976,-0.26315409)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0%"
+         stop-color="#14261d"
+         id="stop3" />
+      <stop
+         offset="100%"
+         stop-color="#0f1a14"
+         id="stop4" />
+    </linearGradient>
+  </defs>
+  <style
+     id="style4">
+    .head-title { font-family: 'DejaVu Sans', sans-serif; font-size: 12px; font-weight: bold; fill: #ffffff; }
+    .box-cell { font-family: 'DejaVu Sans Mono', monospace; font-size: 11px; font-weight: bold; fill: #ffffff; text-anchor: middle; }
+    .box-sub { font-family: 'DejaVu Sans', sans-serif; font-size: 9.5px; fill: #9ca3af; text-anchor: middle; }
+  </style>
+  <!-- Naive Header Layout -->
+  <rect
+     x="46.90818"
+     y="9.9081812"
+     width="550.87634"
+     height="68.18364"
+     rx="4.2925429"
+     fill="url(#naiveBg)"
+     stroke="#ef4444"
+     stroke-width="1.01636"
+     id="rect4"
+     style="fill:url(#naiveBg)" />
+  <text
+     x="62"
+     y="28"
+     class="head-title"
+     style="fill:#fca5a5"
+     id="text4">Naive Header: High Overhead (Uncompressed Frequency Array)</text>
+  <g
+     transform="translate(62,36)"
+     id="g6">
+    <rect
+       x="-0.057606928"
+       y="3.4796076"
+       width="280.1152"
+       height="25.040785"
+       rx="4.001646"
+       fill="#3b1d1d"
+       stroke="#ef4444"
+       stroke-width="0.884786"
+       id="rect5" />
+    <text
+       x="140"
+       y="20"
+       class="box-cell"
+       style="fill:#fca5a5"
+       id="text5">Raw 256 Frequency Ints (1024 Bytes)</text>
+    <rect
+       x="289.69775"
+       y="3.9432211"
+       width="228.60452"
+       height="24.113556"
+       rx="2.1265538"
+       fill="#2b2b36"
+       stroke="#4b5563"
+       stroke-width="0.632942"
+       id="rect6" />
+    <text
+       x="404"
+       y="20"
+       class="box-cell"
+       id="text6">Compressed Payload Bitstream</text>
+  </g>
+  <!-- Canonical Header Layout -->
+  <rect
+     x="14.9236"
+     y="87.923599"
+     width="609.79907"
+     height="72.152802"
+     rx="4.7516813"
+     fill="url(#canonBg)"
+     stroke="#10b981"
+     stroke-width="1.2472"
+     id="rect7"
+     style="fill:url(#canonBg)" />
+  <text
+     x="30"
+     y="106"
+     class="head-title"
+     style="fill:#6ee7b7"
+     id="text7">Canonical Huffman Header: Ultra-Low Overhead (~15 to 30 Bytes)</text>
+  <g
+     transform="translate(30,114)"
+     id="g10">
+    <rect
+       x="-0.093863092"
+       y="5.2032819"
+       width="200.18773"
+       height="25.593437"
+       rx="4.0037546"
+       fill="#064e3b"
+       stroke="#10b981"
+       stroke-width="1.01228"
+       id="rect8" />
+    <text
+       x="100"
+       y="22"
+       class="box-cell"
+       style="fill:#a7f3d0"
+       id="text8">Bit-Length Array (~16 B)</text>
+    <rect
+       x="206.85782"
+       y="5.2380662"
+       width="144.28436"
+       height="25.523867"
+       rx="4.4395189"
+       fill="#064e3b"
+       stroke="#10b981"
+       stroke-width="1.06449"
+       id="rect9" />
+    <text
+       x="279"
+       y="22"
+       class="box-cell"
+       style="fill:#a7f3d0"
+       id="text9">Symbol List (~10 B)</text>
+    <rect
+       x="356.8558"
+       y="5.7155166"
+       width="225.28838"
+       height="24.568966"
+       rx="2.4030759"
+       fill="#2b2b36"
+       stroke="#4b5563"
+       stroke-width="0.640319"
+       id="rect10" />
+    <text
+       x="469"
+       y="22"
+       class="box-cell"
+       id="text10">Compressed Payload Bitstream</text>
+  </g>
+</svg>

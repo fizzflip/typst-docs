@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 603 58"
+   width="603"
+   height="58"
+   version="1.1"
+   id="svg6"
+   sodipodi:docname="huffman_memory_streaming.svg"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview6"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.848125"
+     inkscape:cx="78.408253"
+     inkscape:cy="31.83493"
+     inkscape:window-width="1920"
+     inkscape:window-height="1080"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg6" />
+  <defs
+     id="defs1">
+    <marker
+       id="arrMem"
+       viewBox="0 0 10 10"
+       refX="6"
+       refY="5"
+       markerWidth="6"
+       markerHeight="6"
+       orient="auto-start-reverse">
+      <path
+         d="M 0,1 8,5 0,9 Z"
+         fill="#818cf8"
+         id="path1" />
+    </marker>
+  </defs>
+  <style
+     id="style1">
+    .mem-txt { font-family: 'DejaVu Sans', sans-serif; font-size: 11px; font-weight: bold; fill: #ffffff; text-anchor: middle; }
+    .mem-sub { font-family: 'DejaVu Sans Mono', monospace; font-size: 9.5px; fill: #9ca3af; text-anchor: middle; }
+  </style>
+  <rect
+     x="8.0947227"
+     y="7.1028295"
+     width="143.81056"
+     height="44.794342"
+     rx="3.922106"
+     fill="#1e1b2e"
+     stroke="#6366f1"
+     stroke-width="0.749801"
+     id="rect1" />
+  <text
+     x="80"
+     y="24"
+     class="mem-txt"
+     id="text1">Input File (Size N)</text>
+  <text
+     x="80"
+     y="40"
+     class="mem-sub"
+     id="text2">e.g., 1 GB to 100 GB</text>
+  <line
+     x1="158"
+     y1="29"
+     x2="198"
+     y2="29"
+     stroke="#6366f1"
+     stroke-width="1.8"
+     marker-end="url(#arrMem)"
+     id="line2" />
+  <rect
+     x="204.3432"
+     y="7.7475677"
+     width="165.31364"
+     height="43.504864"
+     rx="4.508554"
+     fill="#2b2b36"
+     stroke="#4b5563"
+     stroke-width="0.660209"
+     id="rect2" />
+  <text
+     x="287"
+     y="24"
+     class="mem-txt"
+     id="text3">Streaming 8-Bit Buffer</text>
+  <text
+     x="287"
+     y="40"
+     class="mem-sub"
+     id="text4">Processes chunks in O(1)</text>
+  <line
+     x1="375"
+     y1="29"
+     x2="415"
+     y2="29"
+     stroke="#10b981"
+     stroke-width="1.8"
+     marker-end="url(#arrMem)"
+     id="line4" />
+  <rect
+     x="422.76416"
+     y="7.0964575"
+     width="172.47176"
+     height="44.807083"
+     rx="4.4992633"
+     fill="#064e3b"
+     stroke="#10b981"
+     stroke-width="0.93706"
+     id="rect4" />
+  <text
+     x="509"
+     y="24"
+     class="mem-txt"
+     style="fill:#a7f3d0"
+     id="text5">Fixed RAM: &lt; 5 KB Total</text>
+  <text
+     x="509"
+     y="40"
+     class="mem-sub"
+     style="fill:#d1fae5"
+     id="text6">Independent of file size N</text>
+</svg>

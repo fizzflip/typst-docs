@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 250" width="100%" height="100%">
+  <defs>
+    <marker id="arrEvo1" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#818cf8"/>
+    </marker>
+    <marker id="arrEvo2" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#34d399"/>
+    </marker>
+  </defs>
+
+  <style>
+    .evo-title { font-family: 'DejaVu Sans', sans-serif; font-size: 12px; font-weight: bold; fill: #ffffff; }
+    .evo-box-t { font-family: 'DejaVu Sans', sans-serif; font-size: 11px; font-weight: bold; fill: #ffffff; text-anchor: middle; }
+    .evo-box-s { font-family: 'DejaVu Sans', sans-serif; font-size: 9.5px; fill: #9ca3af; text-anchor: middle; }
+  </style>
+
+  <!-- Classic Pipeline -->
+  <rect x="15" y="10" width="770" height="95" rx="8" fill="#1b1b22" stroke="#4f46e5" stroke-width="1.2"/>
+  <text x="30" y="30" class="evo-title" style="fill: #a5b4fc;">Classic Entropy Pipeline (ZIP / GZIP / PNG)</text>
+
+  <g transform="translate(30, 42)">
+    <rect x="0" y="0" width="155" height="48" rx="5" fill="#2b2b36" stroke="#4b5563" stroke-width="1"/>
+    <text x="77" y="21" class="evo-box-t">Raw Input Data</text>
+    <text x="77" y="37" class="evo-box-s">Uncompressed stream</text>
+
+    <line x1="155" y1="24" x2="185" y2="24" stroke="#6366f1" stroke-width="1.8" marker-end="url(#arrEvo1)"/>
+
+    <rect x="190" y="0" width="170" height="48" rx="5" fill="#2b2b36" stroke="#4b5563" stroke-width="1"/>
+    <text x="275" y="21" class="evo-box-t">LZ77 Dictionary</text>
+    <text x="275" y="37" class="evo-box-s">Sliding window matches</text>
+
+    <line x1="360" y1="24" x2="390" y2="24" stroke="#6366f1" stroke-width="1.8" marker-end="url(#arrEvo1)"/>
+
+    <rect x="395" y="0" width="170" height="48" rx="5" fill="#312e81" stroke="#818cf8" stroke-width="1.4"/>
+    <text x="480" y="21" class="evo-box-t" style="fill: #c7d2fe;">Huffman Coding</text>
+    <text x="480" y="37" class="evo-box-s" style="fill: #e0e7ff;">Tree-based bit codes</text>
+
+    <line x1="565" y1="24" x2="595" y2="24" stroke="#6366f1" stroke-width="1.8" marker-end="url(#arrEvo1)"/>
+
+    <rect x="600" y="0" width="135" height="48" rx="5" fill="#2b2b36" stroke="#4b5563" stroke-width="1"/>
+    <text x="667" y="21" class="evo-box-t">GZIP / ZIP File</text>
+    <text x="667" y="37" class="evo-box-s">~300 MB/s speed</text>
+  </g>
+
+  <!-- Modern Pipeline -->
+  <rect x="15" y="130" width="770" height="105" rx="8" fill="#102017" stroke="#10b981" stroke-width="1.4"/>
+  <text x="30" y="152" class="evo-title" style="fill: #6ee7b7;">Modern State-of-the-Art Pipeline (Zstandard / Brotli)</text>
+
+  <g transform="translate(30, 164)">
+    <rect x="0" y="0" width="155" height="52" rx="5" fill="#2b2b36" stroke="#4b5563" stroke-width="1"/>
+    <text x="77" y="23" class="evo-box-t">Raw Input Data</text>
+    <text x="77" y="39" class="evo-box-s">Uncompressed stream</text>
+
+    <line x1="155" y1="26" x2="185" y2="26" stroke="#10b981" stroke-width="1.8" marker-end="url(#arrEvo2)"/>
+
+    <rect x="190" y="0" width="170" height="52" rx="5" fill="#2b2b36" stroke="#4b5563" stroke-width="1"/>
+    <text x="275" y="23" class="evo-box-t">Static + Dynamic LZ77</text>
+    <text x="275" y="39" class="evo-box-s">Pre-trained dictionaries</text>
+
+    <line x1="360" y1="26" x2="390" y2="26" stroke="#10b981" stroke-width="1.8" marker-end="url(#arrEvo2)"/>
+
+    <rect x="395" y="0" width="170" height="52" rx="5" fill="#064e3b" stroke="#10b981" stroke-width="1.5"/>
+    <text x="480" y="23" class="evo-box-t" style="fill: #a7f3d0;">FSE / ANS Engine</text>
+    <text x="480" y="39" class="evo-box-s" style="fill: #d1fae5;">1 state transition / sym</text>
+
+    <line x1="565" y1="26" x2="595" y2="26" stroke="#10b981" stroke-width="1.8" marker-end="url(#arrEvo2)"/>
+
+    <rect x="600" y="0" width="135" height="52" rx="5" fill="#064e3b" stroke="#10b981" stroke-width="1.2"/>
+    <text x="667" y="23" class="evo-box-t" style="fill: #a7f3d0;">ZSTD / Brotli</text>
+    <text x="667" y="39" class="evo-box-s" style="fill: #d1fae5;">&gt; 1.2 GB/s speed</text>
+  </g>
+</svg>

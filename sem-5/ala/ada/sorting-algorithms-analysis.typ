@@ -252,13 +252,7 @@ The choice of partitioning scheme and pivot selection strategy heavily influence
   - *Randomized Pivot*: Selecting a uniform random pivot index $r in ["low", "high"]$ guarantees expected $O(n log n)$ runtime irrespective of initial input distribution.
   - *Median-of-Three*: Selecting $"median"(A["low"], A["mid"], A["high"])$ mitigates worst-case partitioning on sorted datasets.
 
-=== Visualizer State
-In vck.app and SortPedia, selecting the rightmost element as pivot (Lomuto Partitioning Scheme) establishes dynamic pointers:
-- *Pivot ($p$)*: Element at index `high` (marked in Green).
-- *Boundary ($i$)*: Tracks the end of elements $\le p$ (marked in Blue). Initialized to `low - 1`.
-- *Scanner ($j$)*: Iterates from `low` to `high - 1` comparing #m[arr[j] < pivot] (marked in Red / Amber when swapping).
-
-// #pagebreak()
+=== Example
 Below is the step-by-step trace of partitioning array #m[\[38, 27, 43, 3, 9, 82, 10\]] with pivot $p = 10$:
 
 #align(center)[
@@ -356,6 +350,15 @@ Below is the step-by-step trace of partitioning array #m[\[38, 27, 43, 3, 9, 82,
   ]
 ]
 #v(.5em)
+
+
+=== Visualizer State
+Selecting the rightmost element as pivot (Lomuto Partitioning Scheme) establishes dynamic pointers:
+- *Pivot ($p$)*: Element at index `high` (marked in Green).
+- *Boundary ($i$)*: Tracks the end of elements $\le p$ (marked in Blue). Initialized to `low - 1`.
+- *Scanner ($j$)*: Iterates from `low` to `high - 1` comparing #m[arr[j] < pivot] (marked in Red / Amber when swapping).
+
+
 
 #grid(
   columns: (1fr, 1fr),
@@ -474,7 +477,7 @@ Observations collected across SortSim, SortPedia, and vck.app for input size $N 
 
 #v(0.6em)
 #align(center)[
-  #text(weight: "bold", size: 1.05em)[Table 1: Operation Counter Comparisons ($N = 50$)]
+
   #v(0.3em)
   #set table(inset: 0.55em, stroke: 0.5pt + gray)
   #table(
@@ -490,6 +493,7 @@ Observations collected across SortSim, SortPedia, and vck.app for input size $N 
     [Merge Sort], [Reversed], [212], [284], [Fast ($O(N log N)$)],
     [Merge Sort], [Nearly Sorted], [180], [284], [Fast ($O(N log N)$)],
   )
+  #text(weight: "bold", size: 1.05em)[Table 1: Operation Counter Comparisons ($N = 50$)]
 ]
 
 #v(0.6em)
@@ -612,8 +616,6 @@ Choosing the optimal sorting algorithm for real-world software systems requires 
 
 #v(0.3em)
 #align(center)[
-  #text(weight: "bold", size: 1em)[Table 2: Scenario-Based Selection Guide]
-  #v(0.2em)
   #set table(inset: 0.5em, stroke: 0.5pt + gray)
   #table(
     columns: (1.3fr, 1.2fr, 1.2fr, 1.3fr),
@@ -644,6 +646,7 @@ Choosing the optimal sorting algorithm for real-world software systems requires 
     [Parallel Merge Sort],
     [Sub-arrays divide cleanly across worker threads],
   )
+  #text(weight: "bold", size: 1em)[Table 2: Scenario-Based Selection Guide]
 ]
 
 #v(0.4em)

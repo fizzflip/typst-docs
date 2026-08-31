@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 765 220"
+   width="765"
+   height="220"
+   version="1.1"
+   id="svg20"
+   sodipodi:docname="huffman_encoder_pipeline.svg"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview20"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.848125"
+     inkscape:cx="417.3913"
+     inkscape:cy="33.014001"
+     inkscape:window-width="1920"
+     inkscape:window-height="1080"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg20" />
+  <defs
+     id="defs2">
+    <marker
+       id="arrowP"
+       viewBox="0 0 10 10"
+       refX="6"
+       refY="5"
+       markerWidth="6"
+       markerHeight="6"
+       orient="auto-start-reverse">
+      <path
+         d="M 0,1 8,5 0,9 Z"
+         fill="#818cf8"
+         id="path1" />
+    </marker>
+    <marker
+       id="arrowG"
+       viewBox="0 0 10 10"
+       refX="6"
+       refY="5"
+       markerWidth="6"
+       markerHeight="6"
+       orient="auto-start-reverse">
+      <path
+         d="M 0,1 8,5 0,9 Z"
+         fill="#34d399"
+         id="path2" />
+    </marker>
+  </defs>
+  <style
+     id="style2">
+    .phase-label { font-family: 'DejaVu Sans', sans-serif; font-size: 11.5px; font-weight: bold; fill: #e0e7ff; }
+    .node-title { font-family: 'DejaVu Sans', sans-serif; font-size: 11px; font-weight: bold; fill: #ffffff; text-anchor: middle; }
+    .node-sub { font-family: 'DejaVu Sans Mono', monospace; font-size: 9px; fill: #9ca3af; text-anchor: middle; }
+    .edge-label { font-family: 'DejaVu Sans', sans-serif; font-size: 9.5px; fill: #c7d2fe; }
+  </style>
+  <!-- Phase 1 Box -->
+  <rect
+     x="14.925405"
+     y="14.925405"
+     width="235.1492"
+     height="191.5797"
+     rx="8.0050793"
+     fill="#1b1b22"
+     stroke="#4f46e5"
+     stroke-width="1.05081"
+     id="rect2" />
+  <text
+     x="39.20118"
+     y="39.179073"
+     class="phase-label"
+     style="fill:#818cf8"
+     id="text2">Phase 1: Frequency Analysis</text>
+  <rect
+     x="34.900288"
+     y="61.691002"
+     width="195.19942"
+     height="41.617989"
+     rx="6.0061359"
+     fill="#2b2b36"
+     stroke="#4b5563"
+     stroke-width="0.800582"
+     id="rect3" />
+  <text
+     x="132"
+     y="78"
+     class="node-title"
+     id="text3">Input File Stream</text>
+  <text
+     x="132"
+     y="94"
+     class="node-sub"
+     id="text4">Streaming raw byte buffer</text>
+  <line
+     x1="132"
+     y1="105"
+     x2="132"
+     y2="140"
+     stroke="#818cf8"
+     stroke-width="1.6"
+     marker-end="url(#arrowP)"
+     id="line4" />
+  <text
+     x="47.456032"
+     y="126.83372"
+     class="edge-label"
+     id="text5">1. Stream bytes</text>
+  <rect
+     x="34.884537"
+     y="144.97362"
+     width="195.23093"
+     height="38.399868"
+     rx="6.0071054"
+     fill="#2b2b36"
+     stroke="#4b5563"
+     stroke-width="0.769069"
+     id="rect5" />
+  <text
+     x="132"
+     y="161"
+     class="node-title"
+     id="text6">Frequency Array</text>
+  <text
+     x="132"
+     y="175"
+     class="node-sub"
+     id="text7">Array size: 256 entries</text>
+  <!-- Inter-phase 1 -> 2 connector -->
+  <!-- Phase 2 Box -->
+  <rect
+     x="259.91263"
+     y="14.912619"
+     width="240.17476"
+     height="191.34119"
+     rx="8.005825"
+     fill="#1e1b2e"
+     stroke="#6366f1"
+     stroke-width="1.22524"
+     id="rect7" />
+  <text
+     x="284.43259"
+     y="39.768608"
+     class="phase-label"
+     style="fill:#a5b4fc"
+     id="text8">Phase 2: Greedy Construction</text>
+  <rect
+     x="279.9144"
+     y="60.499908"
+     width="200.17122"
+     height="37.746689"
+     rx="6.005136"
+     fill="#2b2b36"
+     stroke="#4b5563"
+     stroke-width="0.828789"
+     id="rect8" />
+  <text
+     x="380"
+     y="76"
+     class="node-title"
+     id="text9">Merge Parent Node</text>
+  <text
+     x="380"
+     y="91"
+     class="node-sub"
+     id="text10">New freq = L.freq + R.freq</text>
+  <path
+     d="M 350,147 V 102"
+     stroke="#818cf8"
+     stroke-width="1.6"
+     marker-end="url(#arrowP)"
+     id="path10" />
+  <text
+     x="279.42963"
+     y="127.73692"
+     class="edge-label"
+     id="text11">2. Pop 2 min</text>
+  <path
+     d="m 410,101 v 45"
+     stroke="#818cf8"
+     stroke-width="1.6"
+     marker-end="url(#arrowP)"
+     id="path11" />
+  <text
+     x="421.19012"
+     y="127.73692"
+     class="edge-label"
+     id="text12">3. Push parent</text>
+  <rect
+     x="279.87253"
+     y="149.36621"
+     width="200.2549"
+     height="40.267555"
+     rx="6.007647"
+     fill="#312e81"
+     stroke="#818cf8"
+     stroke-width="0.945102"
+     id="rect12" />
+  <text
+     x="380"
+     y="165"
+     class="node-title"
+     style="fill:#c7d2fe"
+     id="text13">Min-Heap Priority Queue</text>
+  <text
+     x="380"
+     y="181"
+     class="node-sub"
+     style="fill:#e0e7ff"
+     id="text14">Produces single root node</text>
+  <!-- Inter-phase 2 -> 3 connector -->
+  <!-- Phase 3 Box -->
+  <rect
+     x="510.92407"
+     y="14.92407"
+     width="240.15186"
+     height="190.60875"
+     rx="8.0050621"
+     fill="#0f291e"
+     stroke="#10b981"
+     stroke-width="1.04815"
+     id="rect14" />
+  <line
+     x1="630.41046"
+     y1="99.355194"
+     x2="630.41046"
+     y2="134.35519"
+     stroke="#34d399"
+     stroke-width="1.6"
+     marker-end="url(#arrowG)"
+     id="line17" />
+  <text
+     x="531.89539"
+     y="39.179073"
+     class="phase-label"
+     style="fill:#34d399"
+     id="text15">Phase 3: Bit Packing &amp; Output</text>
+  <rect
+     x="530.90308"
+     y="59.90308"
+     width="200.19385"
+     height="42.20195"
+     rx="6.0058155"
+     fill="#2b2b36"
+     stroke="#4b5563"
+     stroke-width="0.806158"
+     id="rect15" />
+  <text
+     x="631"
+     y="78"
+     class="node-title"
+     id="text16">Codeword Lookup Table</text>
+  <text
+     x="631"
+     y="92"
+     class="node-sub"
+     id="text17">Map: char → (bits, length)</text>
+  <text
+     x="647.46576"
+     y="121.60579"
+     class="edge-label"
+     style="fill:#a7f3d0"
+     id="text18">4. Shift 'n pack</text>
+  <rect
+     x="530.89514"
+     y="138.89513"
+     width="200.20973"
+     height="46.934128"
+     rx="6.0062919"
+     fill="#064e3b"
+     stroke="#10b981"
+     stroke-width="1.19026"
+     id="rect18" />
+  <text
+     x="631"
+     y="159"
+     class="node-title"
+     style="fill:#a7f3d0"
+     id="text19">Bit Buffer &amp; Out File</text>
+  <text
+     x="631"
+     y="173"
+     class="node-sub"
+     style="fill:#6ee7b7"
+     id="text20">Flush 8-bit bytes to disk</text>
+</svg>
