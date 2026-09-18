@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" font-family="sans-serif">
+  <rect width="400" height="320" fill="#ffffff" rx="8"/>
+  <!-- Central Switch/Hub -->
+  <rect x="160" y="125" width="80" height="50" rx="8" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/>
+  <text x="200" y="155" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">SWITCH</text>
+  <!-- Spokes to Nodes -->
+  <!-- Top Left -->
+  <line x1="200" y1="150" x2="70" y2="60" stroke="#64748b" stroke-width="2"/>
+  <circle cx="70" cy="60" r="24" fill="#0284c7"/><text x="70" y="65" fill="#fff" font-size="11" font-weight="bold" text-anchor="middle">PC 1</text>
+  <!-- Top Right -->
+  <line x1="200" y1="150" x2="330" y2="60" stroke="#64748b" stroke-width="2"/>
+  <circle cx="330" cy="60" r="24" fill="#0284c7"/><text x="330" y="65" fill="#fff" font-size="11" font-weight="bold" text-anchor="middle">PC 2</text>
+  <!-- Bottom Left -->
+  <line x1="200" y1="150" x2="70" y2="240" stroke="#64748b" stroke-width="2"/>
+  <circle cx="70" cy="240" r="24" fill="#0284c7"/><text x="70" y="245" fill="#fff" font-size="11" font-weight="bold" text-anchor="middle">PC 3</text>
+  <!-- Bottom Right -->
+  <line x1="200" y1="150" x2="330" y2="240" stroke="#64748b" stroke-width="2"/>
+  <circle cx="330" cy="240" r="24" fill="#0284c7"/><text x="330" y="245" fill="#fff" font-size="11" font-weight="bold" text-anchor="middle">PC 4</text>
+  <!-- Top Center -->
+  <line x1="200" y1="150" x2="200" y2="35" stroke="#64748b" stroke-width="2"/>
+  <circle cx="200" cy="35" r="24" fill="#0284c7"/><text x="200" y="40" fill="#fff" font-size="11" font-weight="bold" text-anchor="middle">Server</text>
+</svg>

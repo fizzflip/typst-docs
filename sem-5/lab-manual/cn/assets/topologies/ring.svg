@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 320" font-family="sans-serif">
+  <rect width="360" height="320" fill="#ffffff" rx="8"/>
+  <!-- Circular Token Ring Pathway -->
+  <circle cx="180" cy="160" r="100" fill="none" stroke="#2563eb" stroke-width="4" stroke-dasharray="8,5"/>
+  <!-- Nodes on Ring -->
+  <!-- Top (0 deg) -->
+  <circle cx="180" cy="60" r="22" fill="#059669"/><text x="180" y="65" fill="#fff" font-size="11" font-weight="bold" text-anchor="middle">Node 1</text>
+  <!-- Right (72 deg) -->
+  <circle cx="275" cy="129" r="22" fill="#059669"/><text x="275" y="134" fill="#fff" font-size="11" font-weight="bold" text-anchor="middle">Node 2</text>
+  <!-- Bottom Right (144 deg) -->
+  <circle cx="239" cy="241" r="22" fill="#059669"/><text x="239" y="246" fill="#fff" font-size="11" font-weight="bold" text-anchor="middle">Node 3</text>
+  <!-- Bottom Left (216 deg) -->
+  <circle cx="121" cy="241" r="22" fill="#059669"/><text x="121" y="246" fill="#fff" font-size="11" font-weight="bold" text-anchor="middle">Node 4</text>
+  <!-- Left (288 deg) -->
+  <circle cx="85" cy="129" r="22" fill="#059669"/><text x="85" y="134" fill="#fff" font-size="11" font-weight="bold" text-anchor="middle">Node 5</text>
+  <text x="180" y="165" fill="#2563eb" font-size="12" font-weight="bold" text-anchor="middle">Token Ring</text>
+</svg>
