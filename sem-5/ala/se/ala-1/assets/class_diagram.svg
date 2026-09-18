@@ -1,0 +1,255 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 635" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#181824"/>
+      <stop offset="100%" stop-color="#12121c"/>
+    </linearGradient>
+
+    <!-- Canvas Background Gradient -->
+    <linearGradient id="canvasBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#101015"/>
+      <stop offset="50%" stop-color="#13141c"/>
+      <stop offset="100%" stop-color="#0e0e13"/>
+    </linearGradient>
+
+    <!-- Header Gradient for Abstract Base -->
+    <linearGradient id="hdrBase" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#172554"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+
+    <!-- Header Gradient for Content Subclasses -->
+    <linearGradient id="hdrPrimary" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f2942"/>
+      <stop offset="100%" stop-color="#091829"/>
+    </linearGradient>
+
+    <!-- Header Gradient for VectorEmbedding -->
+    <linearGradient id="hdrVector" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f2b26"/>
+      <stop offset="100%" stop-color="#091a17"/>
+    </linearGradient>
+
+    <!-- Header Gradient for UserProfile -->
+    <linearGradient id="hdrUser" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#172554"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+
+    <!-- Header Gradient for Telemetry Signal -->
+    <linearGradient id="hdrSignal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f281e"/>
+      <stop offset="100%" stop-color="#091a13"/>
+    </linearGradient>
+
+    <!-- Header Gradient for FeedSession -->
+    <linearGradient id="hdrSession" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#28153d"/>
+      <stop offset="100%" stop-color="#180b26"/>
+    </linearGradient>
+
+    <!-- Card Shadow -->
+    <filter id="cardShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+
+    <!-- UML 2.5 Generalization Marker (Hollow Closed Triangle) -->
+    <marker id="uml-generalization" viewBox="0 0 16 16" refX="16" refY="8" markerWidth="14" markerHeight="14" orient="auto">
+      <polygon points="1,2 15,8 1,14" fill="#14141d" stroke="#38bdf8" stroke-width="1.8"/>
+    </marker>
+
+    <!-- UML 2.5 Composition Marker (Filled Solid Diamond at Composite End) -->
+    <marker id="uml-composition" viewBox="0 0 16 16" refX="1" refY="8" markerWidth="13" markerHeight="13" orient="auto">
+      <polygon points="1,8 8,2 15,8 8,14" fill="#34d399" stroke="#34d399" stroke-width="1.2"/>
+    </marker>
+
+    <!-- UML 2.5 Aggregation Marker (Hollow Diamond at Aggregate End) -->
+    <marker id="uml-aggregation" viewBox="0 0 16 16" refX="1" refY="8" markerWidth="13" markerHeight="13" orient="auto">
+      <polygon points="1,8 8,2 15,8 8,14" fill="#14141d" stroke="#c084fc" stroke-width="1.4"/>
+    </marker>
+  </defs>
+
+  <!-- Canvas Frame -->
+  <rect width="1060" height="635" rx="10" fill="url(#canvasBg)" stroke="#262a38" stroke-width="1.2"/>
+
+  <!-- ==================== TIER 1: ABSTRACT BASE CLASS ==================== -->
+
+  <!-- Class: ContentItem (Abstract) -->
+  <g transform="translate(405, 20)" filter="url(#cardShadow)">
+    <rect width="250" height="135" rx="6" fill="url(#cardBg)" stroke="#38bdf8" stroke-width="1.5"/>
+    <!-- Header Compartment -->
+    <rect width="250" height="30" rx="6" fill="url(#hdrBase)" stroke="#38bdf8" stroke-width="1"/>
+    <text x="125" y="11" text-anchor="middle" font-family="'DejaVu Sans', 'Inter', sans-serif" font-size="8" font-style="italic" fill="#94a3b8">«abstract»</text>
+    <text x="125" y="24" text-anchor="middle" font-family="'DejaVu Sans', 'Inter', sans-serif" font-size="11.5" font-weight="bold" fill="#38bdf8">ContentItem</text>
+    
+    <!-- Attributes Compartment -->
+    <text x="10" y="43" font-family="'DejaVu Sans Mono', monospace" font-size="8.2" fill="#e2e8f0"># contentId : UUID</text>
+    <text x="10" y="55" font-family="'DejaVu Sans Mono', monospace" font-size="8.2" fill="#e2e8f0"># creatorId : UUID</text>
+    <text x="10" y="67" font-family="'DejaVu Sans Mono', monospace" font-size="8.2" fill="#e2e8f0"># title : String</text>
+    <text x="10" y="79" font-family="'DejaVu Sans Mono', monospace" font-size="8.2" fill="#e2e8f0"># category : ContentCategory</text>
+    <text x="10" y="91" font-family="'DejaVu Sans Mono', monospace" font-size="8.2" fill="#e2e8f0"># publishedAt : DateTime</text>
+    <line x1="0" y1="96" x2="250" y2="96" stroke="#2a334a" stroke-width="1"/>
+
+    <!-- Operations Compartment -->
+    <text x="10" y="109" font-family="'DejaVu Sans Mono', monospace" font-size="8.2" fill="#34d399">+ getFeatures() : FeatureVector</text>
+    <text x="10" y="121" font-family="'DejaVu Sans Mono', monospace" font-size="8.2" fill="#34d399">+ calculateFreshnessDecay() : Float</text>
+    <text x="10" y="133" font-family="'DejaVu Sans Mono', monospace" font-size="8.2" fill="#34d399">+ isEligibleForServing() : Boolean</text>
+  </g>
+
+  <!-- ==================== TIER 2: SPECIALIZED CONTENT & EMBEDDING ==================== -->
+
+  <!-- Class: ArticleContent (Subclass of ContentItem) -->
+  <g transform="translate(45, 195)" filter="url(#cardShadow)">
+    <rect width="260" height="165" rx="6" fill="url(#cardBg)" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect width="260" height="26" rx="6" fill="url(#hdrPrimary)" stroke="#38bdf8" stroke-width="1"/>
+    <text x="130" y="18" text-anchor="middle" font-family="'DejaVu Sans', 'Inter', sans-serif" font-size="12" font-weight="bold" fill="#38bdf8">ArticleContent</text>
+    
+    <!-- Attributes -->
+    <text x="10" y="42" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#e2e8f0">- markdownBody : String</text>
+    <text x="10" y="55" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#e2e8f0">- wordCount : Integer</text>
+    <text x="10" y="68" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#e2e8f0">- readingTimeMinutes : Integer</text>
+    <text x="10" y="81" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#e2e8f0">- languageCode : String</text>
+    <line x1="0" y1="88" x2="260" y2="88" stroke="#2a334a" stroke-width="1"/>
+
+    <!-- Operations -->
+    <text x="10" y="104" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#34d399">+ extractKeyEntities() : List&lt;String&gt;</text>
+    <text x="10" y="119" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#34d399">+ calculateReadability() : Float</text>
+    <text x="10" y="134" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#34d399">+ summarizeContent() : String</text>
+    <text x="10" y="149" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#34d399">+ getAnchorParagraphs() : List&lt;Text&gt;</text>
+  </g>
+
+  <!-- Class: VideoContent (Subclass of ContentItem) -->
+  <g transform="translate(400, 195)" filter="url(#cardShadow)">
+    <rect width="260" height="165" rx="6" fill="url(#cardBg)" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect width="260" height="26" rx="6" fill="url(#hdrPrimary)" stroke="#38bdf8" stroke-width="1"/>
+    <text x="130" y="18" text-anchor="middle" font-family="'DejaVu Sans', 'Inter', sans-serif" font-size="12" font-weight="bold" fill="#38bdf8">VideoContent</text>
+
+    <!-- Attributes -->
+    <text x="10" y="42" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#e2e8f0">- videoUrl : URL</text>
+    <text x="10" y="55" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#e2e8f0">- durationSeconds : Integer</text>
+    <text x="10" y="68" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#e2e8f0">- resolution : String</text>
+    <text x="10" y="81" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#e2e8f0">- frameRate : Integer = 60</text>
+    <line x1="0" y1="88" x2="260" y2="88" stroke="#2a334a" stroke-width="1"/>
+
+    <!-- Operations -->
+    <text x="10" y="104" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#34d399">+ getFrameSampleRate() : Integer</text>
+    <text x="10" y="119" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#34d399">+ extractAudioTranscript() : String</text>
+    <text x="10" y="134" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#34d399">+ getAspectTier() : AspectRatio</text>
+    <text x="10" y="149" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#34d399">+ generateThumbnailGrid() : Image[]</text>
+  </g>
+
+  <!-- Class: VectorEmbedding (Associated with ContentItem) -->
+  <g transform="translate(755, 195)" filter="url(#cardShadow)">
+    <rect width="260" height="165" rx="6" fill="url(#cardBg)" stroke="#2dd4bf" stroke-width="1.5"/>
+    <rect width="260" height="26" rx="6" fill="url(#hdrVector)" stroke="#2dd4bf" stroke-width="1"/>
+    <text x="130" y="18" text-anchor="middle" font-family="'DejaVu Sans', 'Inter', sans-serif" font-size="12" font-weight="bold" fill="#2dd4bf">VectorEmbedding</text>
+
+    <!-- Attributes -->
+    <text x="10" y="42" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#e2e8f0">- embeddingId : UUID</text>
+    <text x="10" y="55" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#e2e8f0">- dimensions : Integer = 512</text>
+    <text x="10" y="68" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#e2e8f0">- vectorValues : Float[]</text>
+    <text x="10" y="81" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#e2e8f0">- modelVersion : String</text>
+    <line x1="0" y1="88" x2="260" y2="88" stroke="#1f3d38" stroke-width="1"/>
+
+    <!-- Operations -->
+    <text x="10" y="104" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#34d399">+ cosineSimilarity(other: Vec) : Float</text>
+    <text x="10" y="119" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#34d399">+ dotProduct(other: Vec) : Float</text>
+    <text x="10" y="134" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#34d399">+ normalizeL2() : Void</text>
+    <text x="10" y="149" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#34d399">+ quantizeInt8() : ByteArray</text>
+  </g>
+
+  <!-- ==================== TIER 3: USER, COMPOSITION & SESSIONS ==================== -->
+
+  <!-- Class: UserProfile -->
+  <g transform="translate(45, 435)" filter="url(#cardShadow)">
+    <rect width="260" height="165" rx="6" fill="url(#cardBg)" stroke="#60a5fa" stroke-width="1.5"/>
+    <rect width="260" height="26" rx="6" fill="url(#hdrUser)" stroke="#60a5fa" stroke-width="1"/>
+    <text x="130" y="18" text-anchor="middle" font-family="'DejaVu Sans', 'Inter', sans-serif" font-size="12" font-weight="bold" fill="#93c5fd">UserProfile</text>
+
+    <!-- Attributes -->
+    <text x="10" y="42" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#e2e8f0">- userId : UUID</text>
+    <text x="10" y="55" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#e2e8f0">- username : String</text>
+    <text x="10" y="68" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#e2e8f0">- isColdStart : Boolean</text>
+    <text x="10" y="81" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#e2e8f0">- contextVector : VectorEmbedding</text>
+    <line x1="0" y1="88" x2="260" y2="88" stroke="#203352" stroke-width="1"/>
+
+    <!-- Operations -->
+    <text x="10" y="104" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#34d399">+ updateInterests(signals: List) : Void</text>
+    <text x="10" y="119" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#34d399">+ decayLongTermWeights(r: Float) : Void</text>
+    <text x="10" y="134" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#34d399">+ getContextFeatures() : ContextMap</text>
+    <text x="10" y="149" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#34d399">+ appendSignal(sig: Signal) : Void</text>
+  </g>
+
+  <!-- Class: InteractionSignal (Composite part of UserProfile) -->
+  <g transform="translate(400, 435)" filter="url(#cardShadow)">
+    <rect width="260" height="165" rx="6" fill="url(#cardBg)" stroke="#34d399" stroke-width="1.5"/>
+    <rect width="260" height="26" rx="6" fill="url(#hdrSignal)" stroke="#34d399" stroke-width="1"/>
+    <text x="130" y="18" text-anchor="middle" font-family="'DejaVu Sans', 'Inter', sans-serif" font-size="12" font-weight="bold" fill="#a7f3d0">InteractionSignal</text>
+
+    <!-- Attributes -->
+    <text x="10" y="42" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#e2e8f0">- signalId : UUID</text>
+    <text x="10" y="55" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#e2e8f0">- signalType : SignalEnum</text>
+    <text x="10" y="68" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#e2e8f0">- dwellTimeMs : Long</text>
+    <text x="10" y="81" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#e2e8f0">- recordedAt : DateTime</text>
+    <line x1="0" y1="88" x2="260" y2="88" stroke="#1b3b2c" stroke-width="1"/>
+
+    <!-- Operations -->
+    <text x="10" y="104" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#34d399">+ getImplicitWeight() : Float</text>
+    <text x="10" y="119" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#34d399">+ isPositiveSignal() : Boolean</text>
+    <text x="10" y="134" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#34d399">+ exportTelemetryEvent() : EventJSON</text>
+    <text x="10" y="149" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#34d399">+ computeGradientDelta() : Float[]</text>
+  </g>
+
+  <!-- Class: FeedSession -->
+  <g transform="translate(755, 435)" filter="url(#cardShadow)">
+    <rect width="260" height="165" rx="6" fill="url(#cardBg)" stroke="#c084fc" stroke-width="1.5"/>
+    <rect width="260" height="26" rx="6" fill="url(#hdrSession)" stroke="#c084fc" stroke-width="1"/>
+    <text x="130" y="18" text-anchor="middle" font-family="'DejaVu Sans', 'Inter', sans-serif" font-size="12" font-weight="bold" fill="#e9d5ff">FeedSession</text>
+
+    <!-- Attributes -->
+    <text x="10" y="42" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#e2e8f0">- sessionId : UUID</text>
+    <text x="10" y="55" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#e2e8f0">- userId : UUID</text>
+    <text x="10" y="68" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#e2e8f0">- retrievalLatencyMs : Integer</text>
+    <text x="10" y="81" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#e2e8f0">- rankingLatencyMs : Integer</text>
+    <line x1="0" y1="88" x2="260" y2="88" stroke="#38244e" stroke-width="1"/>
+
+    <!-- Operations -->
+    <text x="10" y="104" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#34d399">+ appendRankedItem(it: RankedItem) : Void</text>
+    <text x="10" y="119" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#34d399">+ calculateSessionP99() : Float</text>
+    <text x="10" y="134" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#34d399">+ exportPayload() : JSON</text>
+    <text x="10" y="149" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#34d399">+ markServed() : Void</text>
+  </g>
+
+  <!-- ==================== CONNECTORS & RELATIONSHIPS ==================== -->
+
+  <!-- Generalization: ArticleContent -> ContentItem -->
+  <path d="M 175 195 L 175 170 L 470 170 L 470 155" fill="none" stroke="#38bdf8" stroke-width="1.5" marker-end="url(#uml-generalization)"/>
+
+  <!-- Generalization: VideoContent -> ContentItem -->
+  <line x1="530" y1="195" x2="530" y2="155" stroke="#38bdf8" stroke-width="1.5" marker-end="url(#uml-generalization)"/>
+
+  <!-- Association: ContentItem <-> VectorEmbedding (1 to 1) -->
+  <path d="M 655 85 L 885 85 L 885 195" fill="none" stroke="#2dd4bf" stroke-width="1.4"/>
+  <text x="662" y="78" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#2dd4bf">1</text>
+  <text x="892" y="188" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#2dd4bf">1</text>
+  <text x="770" y="78" font-family="'DejaVu Sans', 'Inter', sans-serif" font-size="8" fill="#94a3b8">encodes embedding</text>
+
+  <!-- Composition: UserProfile -> InteractionSignal (1 to 0..*) -->
+  <line x1="305" y1="510" x2="400" y2="510" stroke="#34d399" stroke-width="1.5" marker-start="url(#uml-composition)"/>
+  <text x="325" y="502" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#34d399">1</text>
+  <text x="375" y="502" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#34d399">0..*</text>
+
+  <!-- Association: UserProfile <-> FeedSession (1 to 0..*) -->
+  <path d="M 175 600 L 175 620 L 885 620 L 885 600" fill="none" stroke="#60a5fa" stroke-width="1.3" stroke-dasharray="5,3"/>
+  <text x="183" y="615" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#60a5fa">1</text>
+  <text x="865" y="615" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#60a5fa">0..*</text>
+  <text x="530" y="616" text-anchor="middle" font-family="'DejaVu Sans', 'Inter', sans-serif" font-size="8" fill="#94a3b8">requests sessions</text>
+
+  <!-- Aggregation: FeedSession -> ContentItem (1 to 1..*) -->
+  <path d="M 885 435 L 885 395 L 600 395 L 600 360" fill="none" stroke="#c084fc" stroke-width="1.4" marker-start="url(#uml-aggregation)"/>
+  <text x="895" y="425" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#c084fc">1</text>
+  <text x="608" y="372" font-family="'DejaVu Sans Mono', monospace" font-size="8.5" fill="#c084fc">1..*</text>
+  <text x="740" y="390" font-family="'DejaVu Sans', 'Inter', sans-serif" font-size="8" fill="#94a3b8">aggregates scored candidates</text>
+
+</svg>

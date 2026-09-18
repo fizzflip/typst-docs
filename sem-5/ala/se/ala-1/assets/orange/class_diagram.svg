@@ -1,0 +1,1195 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 1060 700"
+   width="100%"
+   height="100%"
+   version="1.1"
+   id="svg87"
+   sodipodi:docname="class_diagram.svg"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview87"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.8747921"
+     inkscape:cx="222.33854"
+     inkscape:cy="-40.009506"
+     inkscape:window-width="1920"
+     inkscape:window-height="1080"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg87" />
+  <defs
+     id="defs2">
+    <!-- Soft Drop Shadows -->
+    <filter
+       id="cardShadow"
+       x="-0.0035999999"
+       y="-0.0070312498"
+       width="1.0072"
+       height="1.0140625">
+      <feDropShadow
+         dx="0"
+         dy="2"
+         stdDeviation="3"
+         flood-color="#0f172a"
+         flood-opacity="0.08" />
+    </filter>
+    <!-- UML 2.5 Generalization Marker (Hollow Closed Triangle in Orange) -->
+    <marker
+       id="uml-gen-orange"
+       viewBox="0 0 16 16"
+       refX="16"
+       refY="8"
+       markerWidth="14"
+       markerHeight="14"
+       orient="auto">
+      <polygon
+         points="1,2 15,8 1,14"
+         fill="#ffffff"
+         stroke="#ea580c"
+         stroke-width="2"
+         id="polygon1" />
+    </marker>
+    <!-- UML 2.5 Composition Marker (Filled Solid Diamond in Orange) -->
+    <marker
+       id="uml-comp-orange"
+       viewBox="0 0 16 16"
+       refX="1"
+       refY="8"
+       markerWidth="13"
+       markerHeight="13"
+       orient="auto">
+      <polygon
+         points="1,8 8,2 15,8 8,14"
+         fill="#ea580c"
+         stroke="#ea580c"
+         stroke-width="1.2"
+         id="polygon2" />
+    </marker>
+  </defs>
+  <!-- Canvas Frame -->
+  <rect
+     width="1060"
+     height="700"
+     rx="10"
+     fill="#ffffff"
+     stroke="#e2e8f0"
+     stroke-width="1.5"
+     id="rect2" />
+  <!-- Diagram Title -->
+  <!-- ==================== TIER 1: ABSTRACT BASE CLASS ==================== -->
+  <!-- Class: Account (Abstract) -->
+  <g
+     transform="translate(405, 62)"
+     filter="url(#cardShadow)"
+     id="g11">
+    <rect
+       width="250"
+       height="128"
+       rx="6"
+       fill="#ffffff"
+       stroke="#ea580c"
+       stroke-width="1.8"
+       id="rect3" />
+    <!-- Header Compartment -->
+    <rect
+       width="250"
+       height="30"
+       rx="6"
+       fill="#fff7ed"
+       stroke="#ea580c"
+       stroke-width="1"
+       id="rect4" />
+    <text
+       x="125"
+       y="12"
+       text-anchor="middle"
+       font-family="'DM Sans', 'Inter', sans-serif"
+       font-size="8"
+       font-style="italic"
+       fill="#c2410c"
+       id="text4">«abstract»</text>
+    <text
+       x="125"
+       y="24"
+       text-anchor="middle"
+       font-family="'DM Sans', 'Inter', sans-serif"
+       font-size="11.5"
+       font-weight="bold"
+       fill="#ea580c"
+       id="text5">Account</text>
+    <!-- Attributes Compartment -->
+    <text
+       x="10"
+       y="44"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#18181b"
+       id="text6"><tspan
+   fill="#ea580c"
+   font-weight="bold"
+   id="tspan5">#</tspan> accountId : UUID</text>
+    <text
+       x="10"
+       y="57"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#18181b"
+       id="text7"><tspan
+   fill="#ea580c"
+   font-weight="bold"
+   id="tspan6">#</tspan> username : String</text>
+    <text
+       x="10"
+       y="70"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#18181b"
+       id="text8"><tspan
+   fill="#ea580c"
+   font-weight="bold"
+   id="tspan7">#</tspan> email : String</text>
+    <text
+       x="10"
+       y="83"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#18181b"
+       id="text9"><tspan
+   fill="#ea580c"
+   font-weight="bold"
+   id="tspan8">#</tspan> createdAt : DateTime</text>
+    <line
+       x1="0"
+       y1="89"
+       x2="250"
+       y2="89"
+       stroke="#fed7aa"
+       stroke-width="1"
+       id="line9" />
+    <!-- Operations Compartment -->
+    <text
+       x="10"
+       y="103"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#0f172a"
+       id="text10"><tspan
+   fill="#16a34a"
+   font-weight="bold"
+   id="tspan9">+</tspan> authenticate(token: String) : Boolean</text>
+    <text
+       x="10"
+       y="117"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#0f172a"
+       id="text11"><tspan
+   fill="#16a34a"
+   font-weight="bold"
+   id="tspan10">+</tspan> updateSettings(cfg: ConfigMap) : Void</text>
+  </g>
+  <!-- ==================== TIER 2: SPECIALIZED ACTORS & CONTROLLERS ==================== -->
+  <!-- Class: Player (Subclass of Account) -->
+  <g
+     transform="translate(45, 240)"
+     filter="url(#cardShadow)"
+     id="g21">
+    <rect
+       width="260"
+       height="175"
+       rx="6"
+       fill="#ffffff"
+       stroke="#ea580c"
+       stroke-width="1.8"
+       id="rect11" />
+    <rect
+       width="260"
+       height="26"
+       rx="6"
+       fill="#fff7ed"
+       stroke="#ea580c"
+       stroke-width="1"
+       id="rect12" />
+    <text
+       x="130"
+       y="18"
+       text-anchor="middle"
+       font-family="'DM Sans', 'Inter', sans-serif"
+       font-size="12"
+       font-weight="bold"
+       fill="#ea580c"
+       id="text12">Player</text>
+    <!-- Attributes -->
+    <text
+       x="10"
+       y="42"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#18181b"
+       id="text13"><tspan
+   fill="#64748b"
+   font-weight="bold"
+   id="tspan12">-</tspan> mmrRating : Integer</text>
+    <text
+       x="10"
+       y="55"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#18181b"
+       id="text14"><tspan
+   fill="#64748b"
+   font-weight="bold"
+   id="tspan13">-</tspan> competitiveTier : TierEnum</text>
+    <text
+       x="10"
+       y="68"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#18181b"
+       id="text15"><tspan
+   fill="#64748b"
+   font-weight="bold"
+   id="tspan14">-</tspan> walletBalance : Decimal</text>
+    <text
+       x="10"
+       y="81"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#18181b"
+       id="text16"><tspan
+   fill="#64748b"
+   font-weight="bold"
+   id="tspan15">-</tspan> isBanned : Boolean</text>
+    <line
+       x1="0"
+       y1="88"
+       x2="260"
+       y2="88"
+       stroke="#fed7aa"
+       stroke-width="1"
+       id="line16" />
+    <!-- Operations -->
+    <text
+       x="10"
+       y="104"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#0f172a"
+       id="text17"><tspan
+   fill="#16a34a"
+   font-weight="bold"
+   id="tspan16">+</tspan> queueMatch(mode: GameMode) : Ticket</text>
+    <text
+       x="10"
+       y="119"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#0f172a"
+       id="text18"><tspan
+   fill="#16a34a"
+   font-weight="bold"
+   id="tspan17">+</tspan> equipSkin(itemId: UUID) : Boolean</text>
+    <text
+       x="10"
+       y="134"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#0f172a"
+       id="text19"><tspan
+   fill="#16a34a"
+   font-weight="bold"
+   id="tspan18">+</tspan> inviteToParty(friendId: UUID) : Void</text>
+    <text
+       x="10"
+       y="149"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#0f172a"
+       id="text20"><tspan
+   fill="#16a34a"
+   font-weight="bold"
+   id="tspan19">+</tspan> purchasePass(passId: UUID) : Boolean</text>
+    <text
+       x="10"
+       y="164"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#0f172a"
+       id="text21"><tspan
+   fill="#16a34a"
+   font-weight="bold"
+   id="tspan20">+</tspan> reportPlayer(targetId, reason) : Void</text>
+  </g>
+  <!-- Class: PartyLobby -->
+  <g
+     transform="translate(400, 240)"
+     filter="url(#cardShadow)"
+     id="g30">
+    <rect
+       width="260"
+       height="155"
+       rx="6"
+       fill="#ffffff"
+       stroke="#ea580c"
+       stroke-width="1.8"
+       id="rect21" />
+    <rect
+       width="260"
+       height="26"
+       rx="6"
+       fill="#fff7ed"
+       stroke="#ea580c"
+       stroke-width="1"
+       id="rect22" />
+    <text
+       x="130"
+       y="18"
+       text-anchor="middle"
+       font-family="'DM Sans', 'Inter', sans-serif"
+       font-size="12"
+       font-weight="bold"
+       fill="#ea580c"
+       id="text22">PartyLobby</text>
+    <!-- Attributes -->
+    <text
+       x="10"
+       y="42"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#18181b"
+       id="text23"><tspan
+   fill="#64748b"
+   font-weight="bold"
+   id="tspan22">-</tspan> lobbyId : UUID</text>
+    <text
+       x="10"
+       y="55"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#18181b"
+       id="text24"><tspan
+   fill="#64748b"
+   font-weight="bold"
+   id="tspan23">-</tspan> leaderId : UUID</text>
+    <text
+       x="10"
+       y="68"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#18181b"
+       id="text25"><tspan
+   fill="#64748b"
+   font-weight="bold"
+   id="tspan24">-</tspan> maxPartySize : Integer = 5</text>
+    <text
+       x="10"
+       y="81"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#18181b"
+       id="text26"><tspan
+   fill="#64748b"
+   font-weight="bold"
+   id="tspan25">-</tspan> partyStatus : LobbyStatus</text>
+    <line
+       x1="0"
+       y1="88"
+       x2="260"
+       y2="88"
+       stroke="#fed7aa"
+       stroke-width="1"
+       id="line26" />
+    <!-- Operations -->
+    <text
+       x="10"
+       y="104"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#0f172a"
+       id="text27"><tspan
+   fill="#16a34a"
+   font-weight="bold"
+   id="tspan26">+</tspan> addMember(p: Player) : Boolean</text>
+    <text
+       x="10"
+       y="119"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#0f172a"
+       id="text28"><tspan
+   fill="#16a34a"
+   font-weight="bold"
+   id="tspan27">+</tspan> removeMember(pId: UUID) : Boolean</text>
+    <text
+       x="10"
+       y="134"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#0f172a"
+       id="text29"><tspan
+   fill="#16a34a"
+   font-weight="bold"
+   id="tspan28">+</tspan> setReady(pId: UUID, state: Bool) : Void</text>
+    <text
+       x="10"
+       y="149"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#0f172a"
+       id="text30"><tspan
+   fill="#16a34a"
+   font-weight="bold"
+   id="tspan29">+</tspan> disband() : Void</text>
+  </g>
+  <!-- Class: GameModerator (Subclass of Account) -->
+  <g
+     transform="translate(755, 240)"
+     filter="url(#cardShadow)"
+     id="g38">
+    <rect
+       width="260"
+       height="145"
+       rx="6"
+       fill="#ffffff"
+       stroke="#9333ea"
+       stroke-width="1.6"
+       id="rect30" />
+    <rect
+       width="260"
+       height="26"
+       rx="6"
+       fill="#faf5ff"
+       stroke="#9333ea"
+       stroke-width="1"
+       id="rect31" />
+    <text
+       x="130"
+       y="18"
+       text-anchor="middle"
+       font-family="'DM Sans', 'Inter', sans-serif"
+       font-size="12"
+       font-weight="bold"
+       fill="#7e22ce"
+       id="text31">GameModerator</text>
+    <!-- Attributes -->
+    <text
+       x="10"
+       y="42"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#18181b"
+       id="text32"><tspan
+   fill="#64748b"
+   font-weight="bold"
+   id="tspan31">-</tspan> staffLevel : Integer</text>
+    <text
+       x="10"
+       y="55"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#18181b"
+       id="text33"><tspan
+   fill="#64748b"
+   font-weight="bold"
+   id="tspan32">-</tspan> department : String</text>
+    <text
+       x="10"
+       y="68"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#18181b"
+       id="text34"><tspan
+   fill="#64748b"
+   font-weight="bold"
+   id="tspan33">-</tspan> permissions : List&lt;String&gt;</text>
+    <line
+       x1="0"
+       y1="75"
+       x2="260"
+       y2="75"
+       stroke="#f3e8ff"
+       stroke-width="1"
+       id="line34" />
+    <!-- Operations -->
+    <text
+       x="10"
+       y="93"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#0f172a"
+       id="text35"><tspan
+   fill="#16a34a"
+   font-weight="bold"
+   id="tspan34">+</tspan> inspectReplay(mId: UUID) : Stream</text>
+    <text
+       x="10"
+       y="108"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#0f172a"
+       id="text36"><tspan
+   fill="#16a34a"
+   font-weight="bold"
+   id="tspan35">+</tspan> issueBan(pId: UUID, r: String) : Receipt</text>
+    <text
+       x="10"
+       y="123"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#0f172a"
+       id="text37"><tspan
+   fill="#16a34a"
+   font-weight="bold"
+   id="tspan36">+</tspan> auditReport(rId: UUID) : Void</text>
+    <text
+       x="10"
+       y="138"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#0f172a"
+       id="text38"><tspan
+   fill="#16a34a"
+   font-weight="bold"
+   id="tspan37">+</tspan> escalateIncident(rId: UUID) : Void</text>
+  </g>
+  <!-- ==================== TIER 3: RESOURCES, SESSIONS & SECURITY ==================== -->
+  <!-- Class: InventoryItem (Composite part of Player) -->
+  <g
+     transform="translate(45, 495)"
+     filter="url(#cardShadow)"
+     id="g46">
+    <rect
+       width="260"
+       height="145"
+       rx="6"
+       fill="#ffffff"
+       stroke="#0d9488"
+       stroke-width="1.6"
+       id="rect38" />
+    <rect
+       width="260"
+       height="26"
+       rx="6"
+       fill="#f0fdfa"
+       stroke="#0d9488"
+       stroke-width="1"
+       id="rect39" />
+    <text
+       x="130"
+       y="18"
+       text-anchor="middle"
+       font-family="'DM Sans', 'Inter', sans-serif"
+       font-size="12"
+       font-weight="bold"
+       fill="#0f766e"
+       id="text39">InventoryItem</text>
+    <!-- Attributes -->
+    <text
+       x="10"
+       y="42"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#18181b"
+       id="text40"><tspan
+   fill="#64748b"
+   font-weight="bold"
+   id="tspan39">-</tspan> itemId : UUID</text>
+    <text
+       x="10"
+       y="55"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#18181b"
+       id="text41"><tspan
+   fill="#64748b"
+   font-weight="bold"
+   id="tspan40">-</tspan> itemName : String</text>
+    <text
+       x="10"
+       y="68"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#18181b"
+       id="text42"><tspan
+   fill="#64748b"
+   font-weight="bold"
+   id="tspan41">-</tspan> rarity : RarityTier</text>
+    <text
+       x="10"
+       y="81"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#18181b"
+       id="text43"><tspan
+   fill="#64748b"
+   font-weight="bold"
+   id="tspan42">-</tspan> isEquipped : Boolean</text>
+    <line
+       x1="0"
+       y1="88"
+       x2="260"
+       y2="88"
+       stroke="#ccfbf1"
+       stroke-width="1"
+       id="line43" />
+    <!-- Operations -->
+    <text
+       x="10"
+       y="104"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#0f172a"
+       id="text44"><tspan
+   fill="#16a34a"
+   font-weight="bold"
+   id="tspan43">+</tspan> equipItem() : Boolean</text>
+    <text
+       x="10"
+       y="119"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#0f172a"
+       id="text45"><tspan
+   fill="#16a34a"
+   font-weight="bold"
+   id="tspan44">+</tspan> unequipItem() : Boolean</text>
+    <text
+       x="10"
+       y="134"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#0f172a"
+       id="text46"><tspan
+   fill="#16a34a"
+   font-weight="bold"
+   id="tspan45">+</tspan> transferOwner(newId: UUID) : Receipt</text>
+  </g>
+  <!-- Class: MatchSession -->
+  <g
+     transform="translate(400, 480)"
+     filter="url(#cardShadow)"
+     id="g55">
+    <rect
+       width="260"
+       height="160"
+       rx="6"
+       fill="#ffffff"
+       stroke="#ea580c"
+       stroke-width="1.8"
+       id="rect46" />
+    <rect
+       width="260"
+       height="26"
+       rx="6"
+       fill="#fff7ed"
+       stroke="#ea580c"
+       stroke-width="1"
+       id="rect47" />
+    <text
+       x="130"
+       y="18"
+       text-anchor="middle"
+       font-family="'DM Sans', 'Inter', sans-serif"
+       font-size="12"
+       font-weight="bold"
+       fill="#ea580c"
+       id="text47">MatchSession</text>
+    <!-- Attributes -->
+    <text
+       x="10"
+       y="42"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#18181b"
+       id="text48"><tspan
+   fill="#64748b"
+   font-weight="bold"
+   id="tspan47">-</tspan> matchId : UUID</text>
+    <text
+       x="10"
+       y="55"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#18181b"
+       id="text49"><tspan
+   fill="#64748b"
+   font-weight="bold"
+   id="tspan48">-</tspan> serverIp : String</text>
+    <text
+       x="10"
+       y="68"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#18181b"
+       id="text50"><tspan
+   fill="#64748b"
+   font-weight="bold"
+   id="tspan49">-</tspan> tickRate : Integer = 128</text>
+    <text
+       x="10"
+       y="81"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#18181b"
+       id="text51"><tspan
+   fill="#64748b"
+   font-weight="bold"
+   id="tspan50">-</tspan> matchState : MatchStatus</text>
+    <line
+       x1="0"
+       y1="88"
+       x2="260"
+       y2="88"
+       stroke="#fed7aa"
+       stroke-width="1"
+       id="line51" />
+    <!-- Operations -->
+    <text
+       x="10"
+       y="104"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#0f172a"
+       id="text52"><tspan
+   fill="#16a34a"
+   font-weight="bold"
+   id="tspan51">+</tspan> allocateHost() : ServerSlot</text>
+    <text
+       x="10"
+       y="119"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#0f172a"
+       id="text53"><tspan
+   fill="#16a34a"
+   font-weight="bold"
+   id="tspan52">+</tspan> recordStats() : MatchResult</text>
+    <text
+       x="10"
+       y="134"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#0f172a"
+       id="text54"><tspan
+   fill="#16a34a"
+   font-weight="bold"
+   id="tspan53">+</tspan> streamTickDelta() : Void</text>
+    <text
+       x="10"
+       y="149"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#0f172a"
+       id="text55"><tspan
+   fill="#16a34a"
+   font-weight="bold"
+   id="tspan54">+</tspan> terminate() : Void</text>
+  </g>
+  <!-- Class: AntiCheatReport -->
+  <g
+     transform="translate(755, 465)"
+     filter="url(#cardShadow)"
+     id="g64">
+    <rect
+       width="260"
+       height="165"
+       rx="6"
+       fill="#ffffff"
+       stroke="#dc2626"
+       stroke-width="1.6"
+       id="rect55" />
+    <rect
+       width="260"
+       height="26"
+       rx="6"
+       fill="#fef2f2"
+       stroke="#dc2626"
+       stroke-width="1"
+       id="rect56" />
+    <text
+       x="130"
+       y="18"
+       text-anchor="middle"
+       font-family="'DM Sans', 'Inter', sans-serif"
+       font-size="12"
+       font-weight="bold"
+       fill="#b91c1c"
+       id="text56">AntiCheatReport</text>
+    <!-- Attributes -->
+    <text
+       x="10"
+       y="42"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#18181b"
+       id="text57"><tspan
+   fill="#64748b"
+   font-weight="bold"
+   id="tspan56">-</tspan> reportId : UUID</text>
+    <text
+       x="10"
+       y="55"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#18181b"
+       id="text58"><tspan
+   fill="#64748b"
+   font-weight="bold"
+   id="tspan57">-</tspan> cheatType : CheatEnum</text>
+    <text
+       x="10"
+       y="68"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#18181b"
+       id="text59"><tspan
+   fill="#64748b"
+   font-weight="bold"
+   id="tspan58">-</tspan> confidenceScore : Float</text>
+    <text
+       x="10"
+       y="81"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#18181b"
+       id="text60"><tspan
+   fill="#64748b"
+   font-weight="bold"
+   id="tspan59">-</tspan> status : ReportStatus</text>
+    <line
+       x1="0"
+       y1="88"
+       x2="260"
+       y2="88"
+       stroke="#fee2e2"
+       stroke-width="1"
+       id="line60" />
+    <!-- Operations -->
+    <text
+       x="10"
+       y="104"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#0f172a"
+       id="text61"><tspan
+   fill="#16a34a"
+   font-weight="bold"
+   id="tspan60">+</tspan> triggerShadowBan() : Void</text>
+    <text
+       x="10"
+       y="119"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#0f172a"
+       id="text62"><tspan
+   fill="#16a34a"
+   font-weight="bold"
+   id="tspan61">+</tspan> exportEvidence() : Packet</text>
+    <text
+       x="10"
+       y="134"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#0f172a"
+       id="text63"><tspan
+   fill="#16a34a"
+   font-weight="bold"
+   id="tspan62">+</tspan> attachMemoryDump(b: Bytes) : Void</text>
+    <text
+       x="10"
+       y="149"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       fill="#0f172a"
+       id="text64"><tspan
+   fill="#16a34a"
+   font-weight="bold"
+   id="tspan63">+</tspan> dismissReport() : Void</text>
+  </g>
+  <!-- ==================== RELATIONSHIPS & CONNECTORS ==================== -->
+  <!-- 1. GENERALIZATION TREE (Orange Palette) -->
+  <line
+     x1="530"
+     y1="215"
+     x2="530"
+     y2="190"
+     stroke="#ea580c"
+     stroke-width="1.8"
+     marker-end="url(#uml-gen-orange)"
+     id="line64" />
+  <line
+     x1="175"
+     y1="215"
+     x2="885"
+     y2="215"
+     stroke="#ea580c"
+     stroke-width="1.8"
+     id="line65" />
+  <line
+     x1="175"
+     y1="215"
+     x2="175"
+     y2="240"
+     stroke="#ea580c"
+     stroke-width="1.8"
+     id="line66" />
+  <line
+     x1="885"
+     y1="215"
+     x2="885"
+     y2="240"
+     stroke="#ea580c"
+     stroke-width="1.8"
+     id="line67" />
+  <!-- 2. COMPOSITION: Player (1) owns InventoryItem (0..*) -->
+  <line
+     x1="175"
+     y1="415"
+     x2="175"
+     y2="495"
+     stroke="#ea580c"
+     stroke-width="1.8"
+     marker-start="url(#uml-comp-orange)"
+     id="line68" />
+  <!-- Multiplicities -->
+  <text
+     x="187"
+     y="435"
+     font-family="'DM Mono', monospace"
+     font-size="9"
+     font-weight="bold"
+     fill="#ea580c"
+     id="text68">1</text>
+  <text
+     x="187"
+     y="485"
+     font-family="'DM Mono', monospace"
+     font-size="9"
+     font-weight="bold"
+     fill="#0d9488"
+     id="text69">0..*</text>
+  <text
+     x="120"
+     y="455"
+     font-family="'DM Sans', 'Inter', sans-serif"
+     font-size="8"
+     fill="#64748b"
+     id="text70">composes ▶</text>
+  <!-- 3. ASSOCIATION: Player (1..*) to PartyLobby (0..1) -->
+  <line
+     x1="305"
+     y1="315"
+     x2="400"
+     y2="315"
+     stroke="#ea580c"
+     stroke-width="1.6"
+     id="line70" />
+  <text
+     x="315"
+     y="307"
+     font-family="'DM Mono', monospace"
+     font-size="9"
+     font-weight="bold"
+     fill="#ea580c"
+     id="text71">1..*</text>
+  <text
+     x="370"
+     y="307"
+     font-family="'DM Mono', monospace"
+     font-size="9"
+     font-weight="bold"
+     fill="#ea580c"
+     id="text72">0..1</text>
+  <text
+     x="352"
+     y="330"
+     text-anchor="middle"
+     font-family="'DM Sans', 'Inter', sans-serif"
+     font-size="8"
+     fill="#64748b"
+     id="text73">assembles ▶</text>
+  <!-- 4. ASSOCIATION: PartyLobby (2..*) to MatchSession (1) -->
+  <line
+     x1="530"
+     y1="395"
+     x2="530"
+     y2="480"
+     stroke="#ea580c"
+     stroke-width="1.6"
+     id="line73" />
+  <text
+     x="542"
+     y="415"
+     font-family="'DM Mono', monospace"
+     font-size="9"
+     font-weight="bold"
+     fill="#ea580c"
+     id="text74">2..*</text>
+  <text
+     x="542"
+     y="468"
+     font-family="'DM Mono', monospace"
+     font-size="9"
+     font-weight="bold"
+     fill="#ea580c"
+     id="text75">1</text>
+  <text
+     x="490"
+     y="440"
+     font-family="'DM Sans', 'Inter', sans-serif"
+     font-size="8"
+     fill="#64748b"
+     id="text76">joins ▼</text>
+  <!-- 5. ASSOCIATION: MatchSession (1) generates AntiCheatReport (0..*) -->
+  <line
+     x1="660"
+     y1="550"
+     x2="755"
+     y2="550"
+     stroke="#dc2626"
+     stroke-width="1.6"
+     id="line76" />
+  <text
+     x="672"
+     y="542"
+     font-family="'DM Mono', monospace"
+     font-size="9"
+     font-weight="bold"
+     fill="#ea580c"
+     id="text77">1</text>
+  <text
+     x="725"
+     y="542"
+     font-family="'DM Mono', monospace"
+     font-size="9"
+     font-weight="bold"
+     fill="#dc2626"
+     id="text78">0..*</text>
+  <text
+     x="707"
+     y="567"
+     text-anchor="middle"
+     font-family="'DM Sans', 'Inter', sans-serif"
+     font-size="8"
+     fill="#64748b"
+     id="text79">generates ▶</text>
+  <!-- 6. ASSOCIATION: GameModerator (1) audits AntiCheatReport (0..*) -->
+  <line
+     x1="885"
+     y1="385"
+     x2="885"
+     y2="465"
+     stroke="#9333ea"
+     stroke-width="1.6"
+     id="line79" />
+  <text
+     x="897"
+     y="405"
+     font-family="'DM Mono', monospace"
+     font-size="9"
+     font-weight="bold"
+     fill="#9333ea"
+     id="text80">1</text>
+  <text
+     x="897"
+     y="452"
+     font-family="'DM Mono', monospace"
+     font-size="9"
+     font-weight="bold"
+     fill="#dc2626"
+     id="text81">0..*</text>
+  <text
+     x="846"
+     y="428"
+     font-family="'DM Sans', 'Inter', sans-serif"
+     font-size="8"
+     fill="#9333ea"
+     id="text82">audits ▼</text>
+  <!-- ==================== DIAGRAM LEGEND ==================== -->
+  <g
+     transform="translate(250, 660)"
+     id="g87">
+    <rect
+       width="560"
+       height="26"
+       rx="4"
+       fill="#f8fafc"
+       stroke="#e2e8f0"
+       stroke-width="1"
+       id="rect82" />
+    <line
+       x1="25"
+       y1="13"
+       x2="55"
+       y2="13"
+       stroke="#ea580c"
+       stroke-width="1.6"
+       marker-end="url(#uml-gen-orange)"
+       id="line82" />
+    <text
+       x="62"
+       y="17"
+       font-family="'DM Sans', 'Inter', sans-serif"
+       font-size="8.5"
+       fill="#334155"
+       id="text83">Generalization</text>
+    <line
+       x1="165"
+       y1="13"
+       x2="200"
+       y2="13"
+       stroke="#ea580c"
+       stroke-width="1.6"
+       marker-start="url(#uml-comp-orange)"
+       id="line83" />
+    <text
+       x="208"
+       y="17"
+       font-family="'DM Sans', 'Inter', sans-serif"
+       font-size="8.5"
+       fill="#334155"
+       id="text84">Composition</text>
+    <line
+       x1="300"
+       y1="13"
+       x2="335"
+       y2="13"
+       stroke="#ea580c"
+       stroke-width="1.6"
+       id="line84" />
+    <text
+       x="342"
+       y="17"
+       font-family="'DM Sans', 'Inter', sans-serif"
+       font-size="8.5"
+       fill="#334155"
+       id="text85">Association</text>
+    <text
+       x="440"
+       y="17"
+       font-family="'DM Mono', monospace"
+       font-size="8.5"
+       font-weight="bold"
+       fill="#ea580c"
+       id="text86">1..* / 0..*</text>
+    <text
+       x="503.57346"
+       y="16.714218"
+       font-family="'DM Sans', Inter, sans-serif"
+       font-size="8.5px"
+       fill="#64748b"
+       id="text87">Multiplicity</text>
+  </g>
+</svg>

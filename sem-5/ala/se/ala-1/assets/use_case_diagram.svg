@@ -1,0 +1,1198 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 1040 575"
+   width="100%"
+   height="100%"
+   version="1.1"
+   id="svg71"
+   sodipodi:docname="use_case_diagram.svg"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview71"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.3048077"
+     inkscape:cx="583.61091"
+     inkscape:cy="411.5549"
+     inkscape:window-width="1920"
+     inkscape:window-height="1080"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g71" />
+  <defs
+     id="defs22">
+    <!-- Background Gradient -->
+    <linearGradient
+       id="bgGrad"
+       x1="0%"
+       y1="0%"
+       x2="100%"
+       y2="100%">
+      <stop
+         offset="0%"
+         stop-color="#111116"
+         id="stop1" />
+      <stop
+         offset="50%"
+         stop-color="#14141d"
+         id="stop2" />
+      <stop
+         offset="100%"
+         stop-color="#0e0e13"
+         id="stop3" />
+    </linearGradient>
+    <!-- System Boundary Fill Gradient -->
+    <linearGradient
+       id="sysGrad"
+       x1="0%"
+       y1="0%"
+       x2="100%"
+       y2="100%">
+      <stop
+         offset="0%"
+         stop-color="#161722"
+         id="stop4" />
+      <stop
+         offset="100%"
+         stop-color="#101118"
+         id="stop5" />
+    </linearGradient>
+    <!-- Use Case Ellipse Gradients -->
+    <linearGradient
+       id="ucPrimaryGrad"
+       x1="0%"
+       y1="0%"
+       x2="100%"
+       y2="100%">
+      <stop
+         offset="0%"
+         stop-color="#1e2436"
+         id="stop6" />
+      <stop
+         offset="100%"
+         stop-color="#141824"
+         id="stop7" />
+    </linearGradient>
+    <linearGradient
+       id="ucCreatorGrad"
+       x1="0%"
+       y1="0%"
+       x2="100%"
+       y2="100%">
+      <stop
+         offset="0%"
+         stop-color="#241935"
+         id="stop8" />
+      <stop
+         offset="100%"
+         stop-color="#171022"
+         id="stop9" />
+    </linearGradient>
+    <linearGradient
+       id="ucIncludedGrad"
+       x1="0%"
+       y1="0%"
+       x2="100%"
+       y2="100%">
+      <stop
+         offset="0%"
+         stop-color="#132626"
+         id="stop10" />
+      <stop
+         offset="100%"
+         stop-color="#0e1a1a"
+         id="stop11" />
+    </linearGradient>
+    <linearGradient
+       id="ucMlGrad"
+       x1="0%"
+       y1="0%"
+       x2="100%"
+       y2="100%">
+      <stop
+         offset="0%"
+         stop-color="#142338"
+         id="stop12" />
+      <stop
+         offset="100%"
+         stop-color="#0e1624"
+         id="stop13" />
+    </linearGradient>
+    <linearGradient
+       id="ucSecurityGrad"
+       x1="0%"
+       y1="0%"
+       x2="100%"
+       y2="100%">
+      <stop
+         offset="0%"
+         stop-color="#2a181b"
+         id="stop14" />
+      <stop
+         offset="100%"
+         stop-color="#1c1113"
+         id="stop15" />
+    </linearGradient>
+    <linearGradient
+       id="ucExtendedGrad"
+       x1="0%"
+       y1="0%"
+       x2="100%"
+       y2="100%">
+      <stop
+         offset="0%"
+         stop-color="#2a2014"
+         id="stop16" />
+      <stop
+         offset="100%"
+         stop-color="#1a140d"
+         id="stop17" />
+    </linearGradient>
+    <linearGradient
+       id="ucTelemetryGrad"
+       x1="0%"
+       y1="0%"
+       x2="100%"
+       y2="100%">
+      <stop
+         offset="0%"
+         stop-color="#12261e"
+         id="stop18" />
+      <stop
+         offset="100%"
+         stop-color="#0c1a14"
+         id="stop19" />
+    </linearGradient>
+    <linearGradient
+       id="ucAdminGrad"
+       x1="0%"
+       y1="0%"
+       x2="100%"
+       y2="100%">
+      <stop
+         offset="0%"
+         stop-color="#2a2014"
+         id="stop20" />
+      <stop
+         offset="100%"
+         stop-color="#1a140d"
+         id="stop21" />
+    </linearGradient>
+    <!-- Card Dropshadow Filter -->
+    <filter
+       id="subtleGlow"
+       x="-0.0048387097"
+       y="-0.016304348"
+       width="1.0096774"
+       height="1.0326087">
+      <feDropShadow
+         dx="0"
+         dy="3"
+         stdDeviation="4"
+         flood-color="#000000"
+         flood-opacity="0.6" />
+    </filter>
+    <!-- Standard UML 2.5 Open Stick Arrowheads for Dependencies -->
+    <marker
+       id="stick-include"
+       viewBox="0 0 10 10"
+       refX="9"
+       refY="5"
+       markerWidth="8"
+       markerHeight="8"
+       orient="auto-start-reverse">
+      <path
+         d="M 1 1.5 L 9 5 L 1 8.5"
+         fill="none"
+         stroke="#38bdf8"
+         stroke-width="1.6"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         id="path21" />
+    </marker>
+    <marker
+       id="stick-extend"
+       viewBox="0 0 10 10"
+       refX="9"
+       refY="5"
+       markerWidth="8"
+       markerHeight="8"
+       orient="auto-start-reverse">
+      <path
+         d="M 1 1.5 L 9 5 L 1 8.5"
+         fill="none"
+         stroke="#f59e0b"
+         stroke-width="1.6"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         id="path22" />
+    </marker>
+  </defs>
+  <!-- Canvas Frame -->
+  <rect
+     width="1040"
+     height="575"
+     rx="10"
+     fill="url(#bgGrad)"
+     stroke="#262a38"
+     stroke-width="1.2"
+     id="rect22" />
+  <!-- ==================== SYSTEM BOUNDARY ==================== -->
+  <g
+     transform="translate(220, 20)"
+     id="g24">
+    <rect
+       width="600"
+       height="505"
+       rx="8"
+       fill="url(#sysGrad)"
+       stroke="#38bdf8"
+       stroke-width="1.4"
+       stroke-dasharray="7,4"
+       id="rect23" />
+    <!-- System Boundary Label Box -->
+    <rect
+       x="15"
+       y="10"
+       width="290"
+       height="22"
+       rx="4"
+       fill="#0f172a"
+       stroke="#38bdf8"
+       stroke-width="0.8"
+       id="rect24" />
+    <text
+       x="160"
+       y="25"
+       text-anchor="middle"
+       font-family="'DejaVu Sans', 'Inter', sans-serif"
+       font-size="10"
+       font-weight="bold"
+       fill="#38bdf8"
+       id="text24">System: PulseFeed Discovery Engine</text>
+  </g>
+  <!-- ==================== ACTORS (EXTERNAL) ==================== -->
+  <!-- Actor 1: User / Consumer (Primary Human Actor - Left Top) -->
+  <g
+     transform="translate(95, 130)"
+     id="g28">
+    <circle
+       cx="0"
+       cy="0"
+       r="13"
+       fill="#1e293b"
+       stroke="#38bdf8"
+       stroke-width="2"
+       id="circle24" />
+    <line
+       x1="0"
+       y1="13"
+       x2="0"
+       y2="48"
+       stroke="#38bdf8"
+       stroke-width="2.2"
+       id="line24" />
+    <line
+       x1="-22"
+       y1="26"
+       x2="22"
+       y2="26"
+       stroke="#38bdf8"
+       stroke-width="2.2"
+       stroke-linecap="round"
+       id="line25" />
+    <line
+       x1="0"
+       y1="48"
+       x2="-16"
+       y2="82"
+       stroke="#38bdf8"
+       stroke-width="2.2"
+       stroke-linecap="round"
+       id="line26" />
+    <line
+       x1="0"
+       y1="48"
+       x2="16"
+       y2="82"
+       stroke="#38bdf8"
+       stroke-width="2.2"
+       stroke-linecap="round"
+       id="line27" />
+    <text
+       x="0"
+       y="98"
+       text-anchor="middle"
+       font-family="'DejaVu Sans', 'Inter', sans-serif"
+       font-size="8.5"
+       fill="#94a3b8"
+       id="text27">«primary actor»</text>
+    <text
+       x="0"
+       y="113"
+       text-anchor="middle"
+       font-family="'DejaVu Sans', 'Inter', sans-serif"
+       font-size="11.5"
+       font-weight="bold"
+       fill="#38bdf8"
+       id="text28">User / Consumer</text>
+  </g>
+  <!-- Actor 2: Content Creator (Human Actor - Left Middle) -->
+  <g
+     transform="translate(95, 315)"
+     id="g32">
+    <circle
+       cx="0"
+       cy="0"
+       r="13"
+       fill="#241935"
+       stroke="#c084fc"
+       stroke-width="2"
+       id="circle28" />
+    <line
+       x1="0"
+       y1="13"
+       x2="0"
+       y2="48"
+       stroke="#c084fc"
+       stroke-width="2.2"
+       id="line28" />
+    <line
+       x1="-22"
+       y1="26"
+       x2="22"
+       y2="26"
+       stroke="#c084fc"
+       stroke-width="2.2"
+       stroke-linecap="round"
+       id="line29" />
+    <line
+       x1="0"
+       y1="48"
+       x2="-16"
+       y2="82"
+       stroke="#c084fc"
+       stroke-width="2.2"
+       stroke-linecap="round"
+       id="line30" />
+    <line
+       x1="0"
+       y1="48"
+       x2="16"
+       y2="82"
+       stroke="#c084fc"
+       stroke-width="2.2"
+       stroke-linecap="round"
+       id="line31" />
+    <text
+       x="0"
+       y="98"
+       text-anchor="middle"
+       font-family="'DejaVu Sans', 'Inter', sans-serif"
+       font-size="8.5"
+       fill="#c084fc"
+       id="text31">«creator actor»</text>
+    <text
+       x="0"
+       y="113"
+       text-anchor="middle"
+       font-family="'DejaVu Sans', 'Inter', sans-serif"
+       font-size="11.5"
+       font-weight="bold"
+       fill="#e9d5ff"
+       id="text32">Content Creator</text>
+  </g>
+  <!-- Actor 3: Telemetry Pipeline (Streaming Agent - Bottom Left) -->
+  <g
+     transform="translate(25, 450)"
+     id="g34">
+    <rect
+       width="155"
+       height="46"
+       rx="6"
+       fill="#0f231a"
+       stroke="#34d399"
+       stroke-width="1.5"
+       filter="url(#subtleGlow)"
+       id="rect32" />
+    <text
+       x="77.5"
+       y="17"
+       text-anchor="middle"
+       font-family="'DejaVu Sans', 'Inter', sans-serif"
+       font-size="8.5"
+       fill="#6ee7b7"
+       id="text33">«streaming agent»</text>
+    <text
+       x="77.5"
+       y="34"
+       text-anchor="middle"
+       font-family="'DejaVu Sans', 'Inter', sans-serif"
+       font-size="10"
+       font-weight="bold"
+       fill="#a7f3d0"
+       id="text34">Telemetry Pipeline</text>
+  </g>
+  <!-- Actor 4: Vector Index Engine (Backend Service - Top Right) -->
+  <g
+     transform="translate(855, 68)"
+     id="g36">
+    <rect
+       width="155"
+       height="46"
+       rx="6"
+       fill="#0f1f1e"
+       stroke="#2dd4bf"
+       stroke-width="1.5"
+       filter="url(#subtleGlow)"
+       id="rect34" />
+    <text
+       x="77.5"
+       y="17"
+       text-anchor="middle"
+       font-family="'DejaVu Sans', 'Inter', sans-serif"
+       font-size="8.5"
+       fill="#5eead4"
+       id="text35">«backend service»</text>
+    <text
+       x="77.5"
+       y="34"
+       text-anchor="middle"
+       font-family="'DejaVu Sans', 'Inter', sans-serif"
+       font-size="10"
+       font-weight="bold"
+       fill="#99f6e4"
+       id="text36">Vector Index Engine</text>
+  </g>
+  <!-- Actor 5: Deep ML Ranker (ML Service - Middle Top Right) -->
+  <g
+     transform="translate(855, 160)"
+     id="g38">
+    <rect
+       width="155"
+       height="46"
+       rx="6"
+       fill="#0f1a2e"
+       stroke="#60a5fa"
+       stroke-width="1.5"
+       filter="url(#subtleGlow)"
+       id="rect36" />
+    <text
+       x="77.5"
+       y="17"
+       text-anchor="middle"
+       font-family="'DejaVu Sans', 'Inter', sans-serif"
+       font-size="8.5"
+       fill="#93c5fd"
+       id="text37">«ml service»</text>
+    <text
+       x="77.5"
+       y="34"
+       text-anchor="middle"
+       font-family="'DejaVu Sans', 'Inter', sans-serif"
+       font-size="10"
+       font-weight="bold"
+       fill="#bfdbfe"
+       id="text38">Deep ML Ranker</text>
+  </g>
+  <!-- Actor 6: Safety Classifier (Security Agent - Middle Bottom Right) -->
+  <g
+     transform="translate(855, 305)"
+     id="g40">
+    <rect
+       width="155"
+       height="46"
+       rx="6"
+       fill="#1c1317"
+       stroke="#ef4444"
+       stroke-width="1.5"
+       filter="url(#subtleGlow)"
+       id="rect38" />
+    <text
+       x="77.5"
+       y="17"
+       text-anchor="middle"
+       font-family="'DejaVu Sans', 'Inter', sans-serif"
+       font-size="8.5"
+       fill="#f87171"
+       id="text39">«security agent»</text>
+    <text
+       x="77.5"
+       y="34"
+       text-anchor="middle"
+       font-family="'DejaVu Sans', 'Inter', sans-serif"
+       font-size="10"
+       font-weight="bold"
+       fill="#fca5a5"
+       id="text40">Safety Classifier</text>
+  </g>
+  <!-- Actor 7: Content Moderator (Human Admin - Bottom Right) -->
+  <g
+     transform="translate(930, 420)"
+     id="g44">
+    <circle
+       cx="0"
+       cy="0"
+       r="13"
+       fill="#291c10"
+       stroke="#f59e0b"
+       stroke-width="2"
+       id="circle40" />
+    <line
+       x1="0"
+       y1="13"
+       x2="0"
+       y2="48"
+       stroke="#f59e0b"
+       stroke-width="2.2"
+       id="line40" />
+    <line
+       x1="-22"
+       y1="26"
+       x2="22"
+       y2="26"
+       stroke="#f59e0b"
+       stroke-width="2.2"
+       stroke-linecap="round"
+       id="line41" />
+    <line
+       x1="0"
+       y1="48"
+       x2="-16"
+       y2="82"
+       stroke="#f59e0b"
+       stroke-width="2.2"
+       stroke-linecap="round"
+       id="line42" />
+    <line
+       x1="0"
+       y1="48"
+       x2="16"
+       y2="82"
+       stroke="#f59e0b"
+       stroke-width="2.2"
+       stroke-linecap="round"
+       id="line43" />
+    <text
+       x="0"
+       y="98"
+       text-anchor="middle"
+       font-family="'DejaVu Sans', 'Inter', sans-serif"
+       font-size="8.5"
+       fill="#fbbf24"
+       id="text43">«admin actor»</text>
+    <text
+       x="0"
+       y="113"
+       text-anchor="middle"
+       font-family="'DejaVu Sans', 'Inter', sans-serif"
+       font-size="11.5"
+       font-weight="bold"
+       fill="#fde68a"
+       id="text44">Content Moderator</text>
+  </g>
+  <!-- ==================== USE CASES (INSIDE BOUNDARY) ==================== -->
+  <!-- Row 1: Search & Retrieval -->
+  <!-- UC-01: Search Content Semantically (Base) -->
+  <g
+     transform="translate(370, 90)"
+     filter="url(#subtleGlow)"
+     id="g45">
+    <ellipse
+       cx="0"
+       cy="0"
+       rx="98"
+       ry="23"
+       fill="url(#ucPrimaryGrad)"
+       stroke="#38bdf8"
+       stroke-width="1.5"
+       id="ellipse44" />
+    <text
+       y="4"
+       text-anchor="middle"
+       font-family="'DejaVu Sans', 'Inter', sans-serif"
+       font-size="9.2"
+       font-weight="bold"
+       fill="#38bdf8"
+       id="text45">Search Content Semantically</text>
+  </g>
+  <!-- UC-02: Retrieve Candidate Pool (Included) -->
+  <g
+     transform="translate(670, 90)"
+     filter="url(#subtleGlow)"
+     id="g46">
+    <ellipse
+       cx="0"
+       cy="0"
+       rx="98"
+       ry="23"
+       fill="url(#ucIncludedGrad)"
+       stroke="#2dd4bf"
+       stroke-width="1.5"
+       id="ellipse45" />
+    <text
+       y="4"
+       text-anchor="middle"
+       font-family="'DejaVu Sans', 'Inter', sans-serif"
+       font-size="9.2"
+       font-weight="bold"
+       fill="#2dd4bf"
+       id="text46">Retrieve Candidate Pool</text>
+  </g>
+  <!-- Row 2: Feed Discovery & Ranking -->
+  <!-- UC-03: Explore Personalized Feed (Base) -->
+  <g
+     transform="translate(370, 180)"
+     filter="url(#subtleGlow)"
+     id="g47">
+    <ellipse
+       cx="0"
+       cy="0"
+       rx="98"
+       ry="23"
+       fill="url(#ucPrimaryGrad)"
+       stroke="#38bdf8"
+       stroke-width="1.5"
+       id="ellipse46" />
+    <text
+       y="4"
+       text-anchor="middle"
+       font-family="'DejaVu Sans', 'Inter', sans-serif"
+       font-size="9.2"
+       font-weight="bold"
+       fill="#38bdf8"
+       id="text47">Explore Personalized Feed</text>
+  </g>
+  <!-- UC-04: Score & Rank Candidates (Included) -->
+  <g
+     transform="translate(670, 180)"
+     filter="url(#subtleGlow)"
+     id="g48">
+    <ellipse
+       cx="0"
+       cy="0"
+       rx="98"
+       ry="23"
+       fill="url(#ucMlGrad)"
+       stroke="#60a5fa"
+       stroke-width="1.5"
+       id="ellipse47" />
+    <text
+       y="4"
+       text-anchor="middle"
+       font-family="'DejaVu Sans', 'Inter', sans-serif"
+       font-size="9.2"
+       font-weight="bold"
+       fill="#93c5fd"
+       id="text48">Score &amp; Rank Candidates</text>
+  </g>
+  <!-- Extension 1: Trigger Cold-Start Boost (Extends Score & Rank) -->
+  <g
+     transform="translate(520, 250)"
+     filter="url(#subtleGlow)"
+     id="g49">
+    <ellipse
+       cx="0"
+       cy="0"
+       rx="100"
+       ry="22"
+       fill="url(#ucExtendedGrad)"
+       stroke="#f59e0b"
+       stroke-width="1.4"
+       id="ellipse48" />
+    <text
+       y="4"
+       text-anchor="middle"
+       font-family="'DejaVu Sans', 'Inter', sans-serif"
+       font-size="9"
+       font-weight="bold"
+       fill="#fbbf24"
+       id="text49">Trigger Cold-Start Boost</text>
+  </g>
+  <!-- Row 3: Ingestion & Safety -->
+  <!-- UC-05: Publish Multimedia Content (Base) -->
+  <g
+     transform="translate(370, 330)"
+     filter="url(#subtleGlow)"
+     id="g50">
+    <ellipse
+       cx="0"
+       cy="0"
+       rx="98"
+       ry="23"
+       fill="url(#ucCreatorGrad)"
+       stroke="#c084fc"
+       stroke-width="1.5"
+       id="ellipse49" />
+    <text
+       y="4"
+       text-anchor="middle"
+       font-family="'DejaVu Sans', 'Inter', sans-serif"
+       font-size="9.2"
+       font-weight="bold"
+       fill="#e9d5ff"
+       id="text50">Publish Multimedia Content</text>
+  </g>
+  <!-- UC-06: Verify Content Safety (Included) -->
+  <g
+     transform="translate(670, 330)"
+     filter="url(#subtleGlow)"
+     id="g51">
+    <ellipse
+       cx="0"
+       cy="0"
+       rx="98"
+       ry="23"
+       fill="url(#ucSecurityGrad)"
+       stroke="#ef4444"
+       stroke-width="1.5"
+       id="ellipse50" />
+    <text
+       y="4"
+       text-anchor="middle"
+       font-family="'DejaVu Sans', 'Inter', sans-serif"
+       font-size="9.2"
+       font-weight="bold"
+       fill="#f87171"
+       id="text51">Verify Content Safety</text>
+  </g>
+  <!-- Extension 2: Quarantine Policy Violation (Extends Verify Safety) -->
+  <g
+     transform="translate(520, 400)"
+     filter="url(#subtleGlow)"
+     id="g52">
+    <ellipse
+       cx="0"
+       cy="0"
+       rx="98"
+       ry="22"
+       fill="url(#ucSecurityGrad)"
+       stroke="#ef4444"
+       stroke-width="1.4"
+       id="ellipse51" />
+    <text
+       y="4"
+       text-anchor="middle"
+       font-family="'DejaVu Sans', 'Inter', sans-serif"
+       font-size="9"
+       font-weight="bold"
+       fill="#fca5a5"
+       id="text52">Quarantine Violation</text>
+  </g>
+  <!-- Row 4: Telemetry & Moderation -->
+  <!-- UC-07: Stream Interaction Telemetry (Base) -->
+  <g
+     transform="translate(370, 470)"
+     filter="url(#subtleGlow)"
+     id="g53">
+    <ellipse
+       cx="0"
+       cy="0"
+       rx="98"
+       ry="23"
+       fill="url(#ucTelemetryGrad)"
+       stroke="#34d399"
+       stroke-width="1.5"
+       id="ellipse52" />
+    <text
+       y="4"
+       text-anchor="middle"
+       font-family="'DejaVu Sans', 'Inter', sans-serif"
+       font-size="9.2"
+       font-weight="bold"
+       fill="#6ee7b7"
+       id="text53">Stream Interaction Telemetry</text>
+  </g>
+  <!-- UC-08: Audit Quarantined Items (Admin) -->
+  <g
+     transform="translate(670, 470)"
+     filter="url(#subtleGlow)"
+     id="g54">
+    <ellipse
+       cx="0"
+       cy="0"
+       rx="98"
+       ry="23"
+       fill="url(#ucAdminGrad)"
+       stroke="#f59e0b"
+       stroke-width="1.5"
+       id="ellipse53" />
+    <text
+       y="4"
+       text-anchor="middle"
+       font-family="'DejaVu Sans', 'Inter', sans-serif"
+       font-size="9.2"
+       font-weight="bold"
+       fill="#fbbf24"
+       id="text54">Audit Quarantined Items</text>
+  </g>
+  <!-- ==================== ASSOCIATIONS (SOLID LINES) ==================== -->
+  <!-- User -> Search Semantically -->
+  <line
+     x1="120"
+     y1="145"
+     x2="272"
+     y2="92"
+     stroke="#38bdf8"
+     stroke-width="1.5"
+     id="line54" />
+  <!-- User -> Explore Personalized Feed -->
+  <line
+     x1="120"
+     y1="155"
+     x2="272"
+     y2="180"
+     stroke="#38bdf8"
+     stroke-width="1.5"
+     id="line55" />
+  <!-- User -> Stream Telemetry (Clean routed line) -->
+  <path
+     d="M 120 170 L 175 200 L 175 440 L 272 470"
+     fill="none"
+     stroke="#38bdf8"
+     stroke-width="1.4"
+     id="path55" />
+  <!-- Telemetry Pipeline -> Stream Telemetry -->
+  <line
+     x1="180"
+     y1="472"
+     x2="272"
+     y2="472"
+     stroke="#34d399"
+     stroke-width="1.5"
+     id="line56" />
+  <!-- Content Creator -> Publish Multimedia Content -->
+  <line
+     x1="120"
+     y1="330"
+     x2="272"
+     y2="330"
+     stroke="#c084fc"
+     stroke-width="1.5"
+     id="line57" />
+  <!-- Vector Index Engine -> Retrieve Candidate Pool -->
+  <line
+     x1="855"
+     y1="90"
+     x2="768"
+     y2="90"
+     stroke="#2dd4bf"
+     stroke-width="1.5"
+     id="line58" />
+  <!-- Deep ML Ranker -> Score & Rank Candidates -->
+  <line
+     x1="855"
+     y1="180"
+     x2="768"
+     y2="180"
+     stroke="#60a5fa"
+     stroke-width="1.5"
+     id="line59" />
+  <!-- Safety Classifier -> Verify Content Safety -->
+  <line
+     x1="855"
+     y1="330"
+     x2="768"
+     y2="330"
+     stroke="#ef4444"
+     stroke-width="1.5"
+     id="line60" />
+  <!-- Content Moderator -> Audit Quarantined Items -->
+  <line
+     x1="905"
+     y1="470"
+     x2="768"
+     y2="470"
+     stroke="#f59e0b"
+     stroke-width="1.5"
+     id="line61" />
+  <!-- ==================== UML DEPENDENCIES (ZERO-CROSSING) ==================== -->
+  <!-- «include»: Search Content -> Retrieve Candidates (Horizontal) -->
+  <line
+     x1="468"
+     y1="90"
+     x2="572"
+     y2="90"
+     stroke="#38bdf8"
+     stroke-width="1.4"
+     stroke-dasharray="5,4"
+     marker-end="url(#stick-include)"
+     id="line62" />
+  <g
+     transform="translate(520, 80)"
+     id="g62">
+    <rect
+       x="-30"
+       y="-8"
+       width="60"
+       height="16"
+       rx="3"
+       fill="#0f172a"
+       stroke="#38bdf8"
+       stroke-width="0.7"
+       id="rect62" />
+    <text
+       y="4"
+       text-anchor="middle"
+       font-family="'DejaVu Sans', 'Inter', sans-serif"
+       font-size="7.5"
+       font-weight="bold"
+       fill="#38bdf8"
+       id="text62">«include»</text>
+  </g>
+  <!-- «include»: Explore Feed -> Score & Rank (Horizontal) -->
+  <line
+     x1="468"
+     y1="180"
+     x2="572"
+     y2="180"
+     stroke="#38bdf8"
+     stroke-width="1.4"
+     stroke-dasharray="5,4"
+     marker-end="url(#stick-include)"
+     id="line63" />
+  <g
+     transform="translate(520, 170)"
+     id="g63">
+    <rect
+       x="-30"
+       y="-8"
+       width="60"
+       height="16"
+       rx="3"
+       fill="#0f172a"
+       stroke="#38bdf8"
+       stroke-width="0.7"
+       id="rect63" />
+    <text
+       y="4"
+       text-anchor="middle"
+       font-family="'DejaVu Sans', 'Inter', sans-serif"
+       font-size="7.5"
+       font-weight="bold"
+       fill="#38bdf8"
+       id="text63">«include»</text>
+  </g>
+  <!-- «include»: Explore Feed -> Retrieve Candidates (Diagonal Upward, No crossing!) -->
+  <line
+     x1="440"
+     y1="165"
+     x2="595"
+     y2="108"
+     stroke="#38bdf8"
+     stroke-width="1.3"
+     stroke-dasharray="5,4"
+     marker-end="url(#stick-include)"
+     id="line64" />
+  <g
+     transform="translate(510, 130)"
+     id="g64">
+    <rect
+       x="-30"
+       y="-8"
+       width="60"
+       height="16"
+       rx="3"
+       fill="#0f172a"
+       stroke="#38bdf8"
+       stroke-width="0.7"
+       id="rect64" />
+    <text
+       y="4"
+       text-anchor="middle"
+       font-family="'DejaVu Sans', 'Inter', sans-serif"
+       font-size="7.5"
+       font-weight="bold"
+       fill="#38bdf8"
+       id="text64">«include»</text>
+  </g>
+  <!-- «extend»: Trigger Cold-Start Boost -> Score & Rank (Arrow points to base UC, No crossing!) -->
+  <line
+     x1="570"
+     y1="235"
+     x2="630"
+     y2="200"
+     stroke="#f59e0b"
+     stroke-width="1.4"
+     stroke-dasharray="5,4"
+     marker-end="url(#stick-extend)"
+     id="line65" />
+  <g
+     transform="translate(605, 222)"
+     id="g65">
+    <rect
+       x="-28"
+       y="-8"
+       width="56"
+       height="16"
+       rx="3"
+       fill="#0f172a"
+       stroke="#f59e0b"
+       stroke-width="0.7"
+       id="rect65" />
+    <text
+       y="4"
+       text-anchor="middle"
+       font-family="'DejaVu Sans', 'Inter', sans-serif"
+       font-size="7.5"
+       font-weight="bold"
+       fill="#fbbf24"
+       id="text65">«extend»</text>
+  </g>
+  <!-- «include»: Publish Multimedia -> Verify Content Safety (Horizontal) -->
+  <line
+     x1="468"
+     y1="330"
+     x2="572"
+     y2="330"
+     stroke="#c084fc"
+     stroke-width="1.4"
+     stroke-dasharray="5,4"
+     marker-end="url(#stick-include)"
+     id="line66" />
+  <g
+     transform="translate(520, 320)"
+     id="g66">
+    <rect
+       x="-30"
+       y="-8"
+       width="60"
+       height="16"
+       rx="3"
+       fill="#1a1129"
+       stroke="#c084fc"
+       stroke-width="0.7"
+       id="rect66" />
+    <text
+       y="4"
+       text-anchor="middle"
+       font-family="'DejaVu Sans', 'Inter', sans-serif"
+       font-size="7.5"
+       font-weight="bold"
+       fill="#e9d5ff"
+       id="text66">«include»</text>
+  </g>
+  <!-- «extend»: Quarantine Violation -> Verify Safety (Arrow points to base UC, No crossing!) -->
+  <line
+     x1="570"
+     y1="385"
+     x2="630"
+     y2="350"
+     stroke="#ef4444"
+     stroke-width="1.4"
+     stroke-dasharray="5,4"
+     marker-end="url(#stick-extend)"
+     id="line67" />
+  <g
+     transform="translate(605, 372)"
+     id="g67">
+    <rect
+       x="-28"
+       y="-8"
+       width="56"
+       height="16"
+       rx="3"
+       fill="#1c1113"
+       stroke="#ef4444"
+       stroke-width="0.7"
+       id="rect67" />
+    <text
+       y="4"
+       text-anchor="middle"
+       font-family="'DejaVu Sans', 'Inter', sans-serif"
+       font-size="7.5"
+       font-weight="bold"
+       fill="#fca5a5"
+       id="text67">«extend»</text>
+  </g>
+  <!-- ==================== DIAGRAM LEGEND ==================== -->
+  <g
+     transform="translate(240, 535)"
+     id="g71">
+    <rect
+       width="578.18927"
+       height="23.987326"
+       rx="4.1299233"
+       fill="#0b0e14"
+       stroke="#252a38"
+       stroke-width="0.812674"
+       id="rect68"
+       x="0.0063369167"
+       y="0.0063369167" />
+    <line
+       x1="20"
+       y1="12"
+       x2="50"
+       y2="12"
+       stroke="#38bdf8"
+       stroke-width="1.5"
+       id="line68" />
+    <text
+       x="56"
+       y="16"
+       font-family="'DejaVu Sans', 'Inter', sans-serif"
+       font-size="8.5"
+       fill="#cbd5e1"
+       id="text68">Association</text>
+    <line
+       x1="140"
+       y1="12"
+       x2="175"
+       y2="12"
+       stroke="#38bdf8"
+       stroke-width="1.3"
+       stroke-dasharray="4,3"
+       marker-end="url(#stick-include)"
+       id="line69" />
+    <text
+       x="185"
+       y="16"
+       font-family="'DejaVu Sans', 'Inter', sans-serif"
+       font-size="8.5"
+       fill="#38bdf8"
+       id="text69">«include» Mandate</text>
+    <line
+       x1="305"
+       y1="12"
+       x2="340"
+       y2="12"
+       stroke="#f59e0b"
+       stroke-width="1.3"
+       stroke-dasharray="4,3"
+       marker-end="url(#stick-extend)"
+       id="line70" />
+    <text
+       x="350"
+       y="16"
+       font-family="'DejaVu Sans', 'Inter', sans-serif"
+       font-size="8.5"
+       fill="#fbbf24"
+       id="text70">«extend» Condition</text>
+    <line
+       x1="475"
+       y1="12"
+       x2="505"
+       y2="12"
+       stroke="#34d399"
+       stroke-width="1.2"
+       stroke-dasharray="3,2"
+       id="line71" />
+    <text
+       x="507.97641"
+       y="14.850405"
+       font-family="'DejaVu Sans', Inter, sans-serif"
+       font-size="8.5px"
+       fill="#a7f3d0"
+       id="text71">Async Event</text>
+  </g>
+</svg>

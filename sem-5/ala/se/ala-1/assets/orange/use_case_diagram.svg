@@ -1,0 +1,839 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 1040 640"
+   width="100%"
+   height="100%"
+   version="1.1"
+   id="svg40"
+   sodipodi:docname="use_case_diagram.svg"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview40"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.65240385"
+     inkscape:cx="863.72881"
+     inkscape:cy="315.75534"
+     inkscape:window-width="1920"
+     inkscape:window-height="1080"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg40" />
+  <defs
+     id="defs2">
+    <!-- Soft Light Shadows -->
+    <filter
+       id="softShadow"
+       x="-0.0040816327"
+       y="-0.016666667"
+       width="1.0081633"
+       height="1.0333333">
+      <feDropShadow
+         dx="0"
+         dy="2"
+         stdDeviation="3"
+         flood-color="#0f172a"
+         flood-opacity="0.08" />
+    </filter>
+    <filter
+       id="cardShadow"
+       x="-0.0051724138"
+       y="-0.015625"
+       width="1.0103448"
+       height="1.03125">
+      <feDropShadow
+         dx="0"
+         dy="3"
+         stdDeviation="4"
+         flood-color="#0f172a"
+         flood-opacity="0.07" />
+    </filter>
+    <!-- Standard UML 2.5 Open Stick Arrowheads (Light/Orange Palette) -->
+    <marker
+       id="stick-include-orange"
+       viewBox="0 0 10 10"
+       refX="9"
+       refY="5"
+       markerWidth="8"
+       markerHeight="8"
+       orient="auto-start-reverse">
+      <path
+         d="M 1 1.5 L 9 5 L 1 8.5"
+         fill="none"
+         stroke="#ea580c"
+         stroke-width="1.6"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         id="path1" />
+    </marker>
+    <marker
+       id="stick-extend-orange"
+       viewBox="0 0 10 10"
+       refX="9"
+       refY="5"
+       markerWidth="8"
+       markerHeight="8"
+       orient="auto-start-reverse">
+      <path
+         d="M 1 1.5 L 9 5 L 1 8.5"
+         fill="none"
+         stroke="#f97316"
+         stroke-width="1.6"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         id="path2" />
+    </marker>
+  </defs>
+  <!-- Canvas Frame -->
+  <rect
+     width="1040"
+     height="640"
+     rx="10"
+     fill="#ffffff"
+     stroke="#e2e8f0"
+     stroke-width="1.5"
+     id="rect2" />
+  <!-- Diagram Header -->
+  <!-- ==================== SYSTEM BOUNDARY ==================== -->
+  <g
+     transform="matrix(1.0440332,0,0,0.99993984,216.3456,68.016392)"
+     id="g4">
+    <!-- Light warm background for the boundary -->
+    <rect
+       width="590"
+       height="545"
+       rx="8"
+       fill="#fafafa"
+       stroke="#ea580c"
+       stroke-width="1.5"
+       stroke-dasharray="7, 4"
+       id="rect3"
+       x="0"
+       y="0" />
+    <!-- System Boundary Label Box -->
+    <rect
+       x="15"
+       y="10"
+       width="280"
+       height="22"
+       rx="4"
+       fill="#fff7ed"
+       stroke="#ea580c"
+       stroke-width="1"
+       id="rect4" />
+    <text
+       x="155"
+       y="25"
+       text-anchor="middle"
+       font-family="'DM Sans', Inter, sans-serif"
+       font-size="10px"
+       font-weight="bold"
+       fill="#c2410c"
+       id="text4">System: NexusPlay Cloud Infrastructure</text>
+  </g>
+  <!-- ==================== ACTORS (EXTERNAL) ==================== -->
+  <!-- Actor 1: Player (Primary Human Actor - Left) -->
+  <g
+     transform="translate(100, 190)"
+     id="g8">
+    <!-- Vector Stick Figure in Orange & Deep Slate -->
+    <circle
+       cx="0"
+       cy="0"
+       r="14"
+       fill="#fff7ed"
+       stroke="#ea580c"
+       stroke-width="2.2"
+       id="circle4" />
+    <line
+       x1="0"
+       y1="14"
+       x2="0"
+       y2="52"
+       stroke="#ea580c"
+       stroke-width="2.4"
+       id="line4" />
+    <line
+       x1="-24"
+       y1="28"
+       x2="24"
+       y2="28"
+       stroke="#ea580c"
+       stroke-width="2.4"
+       stroke-linecap="round"
+       id="line5" />
+    <line
+       x1="0"
+       y1="52"
+       x2="-18"
+       y2="90"
+       stroke="#ea580c"
+       stroke-width="2.4"
+       stroke-linecap="round"
+       id="line6" />
+    <line
+       x1="0"
+       y1="52"
+       x2="18"
+       y2="90"
+       stroke="#ea580c"
+       stroke-width="2.4"
+       stroke-linecap="round"
+       id="line7" />
+    <!-- Label -->
+    <text
+       x="0"
+       y="108"
+       text-anchor="middle"
+       font-family="'DM Sans', 'Inter', sans-serif"
+       font-size="8.5"
+       fill="#64748b"
+       id="text7">«primary actor»</text>
+    <text
+       x="0"
+       y="123"
+       text-anchor="middle"
+       font-family="'DM Sans', 'Inter', sans-serif"
+       font-size="12"
+       font-weight="bold"
+       fill="#0f172a"
+       id="text8">Player</text>
+  </g>
+  <!-- Actor 2: Anti-Cheat Sentinel Daemon (Security Agent - Bottom Left) -->
+  <g
+     transform="translate(30, 485)"
+     filter="url(#cardShadow)"
+     id="g10">
+    <rect
+       width="145"
+       height="48"
+       rx="6"
+       fill="#ffffff"
+       stroke="#dc2626"
+       stroke-width="1.5"
+       id="rect8" />
+    <text
+       x="72.5"
+       y="18"
+       text-anchor="middle"
+       font-family="'DM Sans', 'Inter', sans-serif"
+       font-size="8.5"
+       fill="#dc2626"
+       id="text9">«security agent»</text>
+    <text
+       x="72.5"
+       y="35"
+       text-anchor="middle"
+       font-family="'DM Sans', 'Inter', sans-serif"
+       font-size="10.5"
+       font-weight="bold"
+       fill="#991b1b"
+       id="text10">Anti-Cheat Daemon</text>
+  </g>
+  <!-- Actor 3: Matchmaker Engine (Backend Service - Top Right) -->
+  <g
+     transform="translate(860, 115)"
+     filter="url(#cardShadow)"
+     id="g12">
+    <rect
+       width="145"
+       height="48"
+       rx="6"
+       fill="#ffffff"
+       stroke="#0d9488"
+       stroke-width="1.5"
+       id="rect10" />
+    <text
+       x="72.5"
+       y="18"
+       text-anchor="middle"
+       font-family="'DM Sans', 'Inter', sans-serif"
+       font-size="8.5"
+       fill="#0d9488"
+       id="text11">«backend service»</text>
+    <text
+       x="72.5"
+       y="35"
+       text-anchor="middle"
+       font-family="'DM Sans', 'Inter', sans-serif"
+       font-size="10.5"
+       font-weight="bold"
+       fill="#115e59"
+       id="text12">Matchmaker Engine</text>
+  </g>
+  <!-- Actor 4: Game Moderator (Administrative Human Actor - Middle Right) -->
+  <g
+     transform="translate(930, 275)"
+     id="g16">
+    <circle
+       cx="0"
+       cy="0"
+       r="14"
+       fill="#faf5ff"
+       stroke="#9333ea"
+       stroke-width="2.2"
+       id="circle12" />
+    <line
+       x1="0"
+       y1="14"
+       x2="0"
+       y2="52"
+       stroke="#9333ea"
+       stroke-width="2.4"
+       id="line12" />
+    <line
+       x1="-24"
+       y1="28"
+       x2="24"
+       y2="28"
+       stroke="#9333ea"
+       stroke-width="2.4"
+       stroke-linecap="round"
+       id="line13" />
+    <line
+       x1="0"
+       y1="52"
+       x2="-18"
+       y2="90"
+       stroke="#9333ea"
+       stroke-width="2.4"
+       stroke-linecap="round"
+       id="line14" />
+    <line
+       x1="0"
+       y1="52"
+       x2="18"
+       y2="90"
+       stroke="#9333ea"
+       stroke-width="2.4"
+       stroke-linecap="round"
+       id="line15" />
+    <text
+       x="0"
+       y="108"
+       text-anchor="middle"
+       font-family="'DM Sans', 'Inter', sans-serif"
+       font-size="8.5"
+       fill="#9333ea"
+       id="text15">«admin actor»</text>
+    <text
+       x="0"
+       y="123"
+       text-anchor="middle"
+       font-family="'DM Sans', 'Inter', sans-serif"
+       font-size="12"
+       font-weight="bold"
+       fill="#0f172a"
+       id="text16">Game Moderator</text>
+  </g>
+  <!-- Actor 5: Payment Gateway (External Clearinghouse - Bottom Right) -->
+  <g
+     transform="translate(860, 420)"
+     filter="url(#cardShadow)"
+     id="g18">
+    <rect
+       width="145"
+       height="48"
+       rx="6"
+       fill="#ffffff"
+       stroke="#ea580c"
+       stroke-width="1.5"
+       id="rect16" />
+    <text
+       x="72.5"
+       y="18"
+       text-anchor="middle"
+       font-family="'DM Sans', 'Inter', sans-serif"
+       font-size="8.5"
+       fill="#ea580c"
+       id="text17">«external service»</text>
+    <text
+       x="72.5"
+       y="35"
+       text-anchor="middle"
+       font-family="'DM Sans', 'Inter', sans-serif"
+       font-size="10.5"
+       font-weight="bold"
+       fill="#9a3412"
+       id="text18">Payment Gateway</text>
+  </g>
+  <!-- ==================== USE CASES ==================== -->
+  <!-- UC-01: Queue for Ranked Match -->
+  <g
+     transform="translate(365, 140)"
+     filter="url(#softShadow)"
+     id="g19">
+    <ellipse
+       cx="0"
+       cy="0"
+       rx="98"
+       ry="24"
+       fill="#ffffff"
+       stroke="#ea580c"
+       stroke-width="1.6"
+       id="ellipse18" />
+    <text
+       y="4"
+       text-anchor="middle"
+       font-family="'DM Sans', 'Inter', sans-serif"
+       font-size="10"
+       font-weight="bold"
+       fill="#ea580c"
+       id="text19">Queue for Ranked Match</text>
+  </g>
+  <!-- UC-02: Create Party Lobby -->
+  <g
+     transform="translate(365, 230)"
+     filter="url(#softShadow)"
+     id="g20">
+    <ellipse
+       cx="0"
+       cy="0"
+       rx="98"
+       ry="24"
+       fill="#ffffff"
+       stroke="#ea580c"
+       stroke-width="1.5"
+       id="ellipse19" />
+    <text
+       y="4"
+       text-anchor="middle"
+       font-family="'DM Sans', 'Inter', sans-serif"
+       font-size="10"
+       font-weight="bold"
+       fill="#18181b"
+       id="text20">Create Party Lobby</text>
+  </g>
+  <!-- UC-03: Manage In-Game Items -->
+  <g
+     transform="translate(365, 320)"
+     filter="url(#softShadow)"
+     id="g21">
+    <ellipse
+       cx="0"
+       cy="0"
+       rx="98"
+       ry="24"
+       fill="#ffffff"
+       stroke="#ea580c"
+       stroke-width="1.5"
+       id="ellipse20" />
+    <text
+       y="4"
+       text-anchor="middle"
+       font-family="'DM Sans', 'Inter', sans-serif"
+       font-size="10"
+       font-weight="bold"
+       fill="#18181b"
+       id="text21">Manage In-Game Items</text>
+  </g>
+  <!-- UC-04: Purchase Currency & Pass -->
+  <g
+     transform="translate(520, 420)"
+     filter="url(#softShadow)"
+     id="g22">
+    <ellipse
+       cx="0"
+       cy="0"
+       rx="104"
+       ry="24"
+       fill="#fff7ed"
+       stroke="#ea580c"
+       stroke-width="1.6"
+       id="ellipse21" />
+    <text
+       y="4"
+       text-anchor="middle"
+       font-family="'DM Sans', 'Inter', sans-serif"
+       font-size="10"
+       font-weight="bold"
+       fill="#c2410c"
+       id="text22">Purchase Currency &amp; Pass</text>
+  </g>
+  <!-- UC-05: Calibrate MMR & Ping (Included) -->
+  <g
+     transform="translate(680, 125)"
+     filter="url(#softShadow)"
+     id="g23">
+    <ellipse
+       cx="0"
+       cy="0"
+       rx="98"
+       ry="24"
+       fill="#f0fdfa"
+       stroke="#0d9488"
+       stroke-width="1.5"
+       id="ellipse22" />
+    <text
+       y="4"
+       text-anchor="middle"
+       font-family="'DM Sans', 'Inter', sans-serif"
+       font-size="10"
+       font-weight="bold"
+       fill="#0f766e"
+       id="text23">Calibrate MMR &amp; Ping</text>
+  </g>
+  <!-- UC-06: Authenticate Token (Included) -->
+  <g
+     transform="translate(680, 200)"
+     filter="url(#softShadow)"
+     id="g24">
+    <ellipse
+       cx="0"
+       cy="0"
+       rx="98"
+       ry="24"
+       fill="#eff6ff"
+       stroke="#2563eb"
+       stroke-width="1.5"
+       id="ellipse23" />
+    <text
+       y="4"
+       text-anchor="middle"
+       font-family="'DM Sans', 'Inter', sans-serif"
+       font-size="10"
+       font-weight="bold"
+       fill="#1d4ed8"
+       id="text24">Authenticate Token</text>
+  </g>
+  <!-- UC-07: Review Replay & Ban (Moderator) -->
+  <g
+     transform="translate(680, 310)"
+     filter="url(#softShadow)"
+     id="g25">
+    <ellipse
+       cx="0"
+       cy="0"
+       rx="98"
+       ry="24"
+       fill="#faf5ff"
+       stroke="#9333ea"
+       stroke-width="1.5"
+       id="ellipse24" />
+    <text
+       y="4"
+       text-anchor="middle"
+       font-family="'DM Sans', 'Inter', sans-serif"
+       font-size="10"
+       font-weight="bold"
+       fill="#7e22ce"
+       id="text25">Review Replay &amp; Ban</text>
+  </g>
+  <!-- UC-08: Stream Client Telemetry (Anti-Cheat) -->
+  <g
+     transform="translate(365, 510)"
+     filter="url(#softShadow)"
+     id="g26">
+    <ellipse
+       cx="0"
+       cy="0"
+       rx="98"
+       ry="24"
+       fill="#fef2f2"
+       stroke="#dc2626"
+       stroke-width="1.5"
+       id="ellipse25" />
+    <text
+       y="4"
+       text-anchor="middle"
+       font-family="'DM Sans', 'Inter', sans-serif"
+       font-size="10"
+       font-weight="bold"
+       fill="#b91c1c"
+       id="text26">Stream Client Telemetry</text>
+  </g>
+  <!-- UC-09: Flag Cheating Anomaly (Extends Telemetry) -->
+  <g
+     transform="translate(680, 510)"
+     filter="url(#softShadow)"
+     id="g27">
+    <ellipse
+       cx="0"
+       cy="0"
+       rx="98"
+       ry="24"
+       fill="#fff7ed"
+       stroke="#ea580c"
+       stroke-width="1.5"
+       id="ellipse26" />
+    <text
+       y="4"
+       text-anchor="middle"
+       font-family="'DM Sans', 'Inter', sans-serif"
+       font-size="10"
+       font-weight="bold"
+       fill="#c2410c"
+       id="text27">Flag Cheating Anomaly</text>
+  </g>
+  <!-- ==================== ASSOCIATIONS (SOLID LINES) ==================== -->
+  <!-- Player -> UC-01 (Queue Match) -->
+  <line
+     x1="125"
+     y1="210"
+     x2="267"
+     y2="145"
+     stroke="#ea580c"
+     stroke-width="1.6"
+     id="line27" />
+  <!-- Player -> UC-02 (Create Lobby) -->
+  <line
+     x1="125"
+     y1="225"
+     x2="267"
+     y2="230"
+     stroke="#ea580c"
+     stroke-width="1.6"
+     id="line28" />
+  <!-- Player -> UC-03 (Manage Items) -->
+  <line
+     x1="125"
+     y1="240"
+     x2="267"
+     y2="315"
+     stroke="#ea580c"
+     stroke-width="1.6"
+     id="line29" />
+  <!-- Player -> UC-04 (Purchase Currency) - Routed cleanly below Items -->
+  <path
+     d="M 125 255 L 180 280 L 180 395 L 420 415"
+     fill="none"
+     stroke="#ea580c"
+     stroke-width="1.5"
+     id="path29" />
+  <!-- Anti-Cheat Daemon -> UC-08 (Stream Telemetry) -->
+  <line
+     x1="175"
+     y1="510"
+     x2="267"
+     y2="510"
+     stroke="#dc2626"
+     stroke-width="1.6"
+     id="line30" />
+  <!-- Matchmaker Engine -> UC-05 (Calibrate MMR & Ping) -->
+  <line
+     x1="860"
+     y1="135"
+     x2="778"
+     y2="128"
+     stroke="#0d9488"
+     stroke-width="1.6"
+     id="line31" />
+  <!-- Matchmaker Engine -> UC-01 (Coordination link) -->
+  <path
+     d="M 860 145 L 820 155 L 780 155"
+     fill="none"
+     stroke="#0d9488"
+     stroke-width="1.2"
+     stroke-dasharray="4,3"
+     id="path31" />
+  <!-- Game Moderator -> UC-07 (Review Replay & Ban) -->
+  <line
+     x1="906"
+     y1="310"
+     x2="778"
+     y2="310"
+     stroke="#9333ea"
+     stroke-width="1.6"
+     id="line32" />
+  <!-- Payment Gateway -> UC-04 (Purchase Currency) -->
+  <line
+     x1="860"
+     y1="435"
+     x2="624"
+     y2="425"
+     stroke="#ea580c"
+     stroke-width="1.6"
+     id="line33" />
+  <!-- Moderator audit link to Flag Cheating Anomaly -->
+  <path
+     d="M 906 335 L 815 365 L 815 485 L 760 500"
+     fill="none"
+     stroke="#9333ea"
+     stroke-width="1.2"
+     stroke-dasharray="4,3"
+     id="path33" />
+  <!-- ==================== UML STEREOTYPES (DASHED + STICK ARROWS) ==================== -->
+  <!-- «include»: Queue Match -> Calibrate MMR & Ping -->
+  <path
+     d="M 463 135 L 582 128"
+     fill="none"
+     stroke="#ea580c"
+     stroke-width="1.5"
+     stroke-dasharray="5,4"
+     marker-end="url(#stick-include-orange)"
+     id="path34" />
+  <g
+     transform="translate(522, 122)"
+     id="g34">
+    <rect
+       x="-34"
+       y="-9"
+       width="68"
+       height="18"
+       rx="3"
+       fill="#fff7ed"
+       stroke="#ea580c"
+       stroke-width="0.8"
+       id="rect34" />
+    <text
+       y="4"
+       text-anchor="middle"
+       font-family="'DM Sans', 'Inter', sans-serif"
+       font-size="8"
+       font-weight="bold"
+       fill="#c2410c"
+       id="text34">«include»</text>
+  </g>
+  <!-- «include»: Queue Match -> Authenticate Token -->
+  <path
+     d="M 450 155 L 590 190"
+     fill="none"
+     stroke="#ea580c"
+     stroke-width="1.5"
+     stroke-dasharray="5,4"
+     marker-end="url(#stick-include-orange)"
+     id="path35" />
+  <g
+     transform="translate(520, 180)"
+     id="g35">
+    <rect
+       x="-34"
+       y="-9"
+       width="68"
+       height="18"
+       rx="3"
+       fill="#fff7ed"
+       stroke="#ea580c"
+       stroke-width="0.8"
+       id="rect35" />
+    <text
+       y="4"
+       text-anchor="middle"
+       font-family="'DM Sans', 'Inter', sans-serif"
+       font-size="8"
+       font-weight="bold"
+       fill="#c2410c"
+       id="text35">«include»</text>
+  </g>
+  <!-- «extend»: Flag Cheating Anomaly -> Stream Client Telemetry (Arrow points to base UC) -->
+  <path
+     d="M 582 510 L 463 510"
+     fill="none"
+     stroke="#f97316"
+     stroke-width="1.5"
+     stroke-dasharray="5,4"
+     marker-end="url(#stick-extend-orange)"
+     id="path36" />
+  <g
+     transform="translate(522, 510)"
+     id="g36">
+    <rect
+       x="-34"
+       y="-9"
+       width="68"
+       height="18"
+       rx="3"
+       fill="#fff7ed"
+       stroke="#f97316"
+       stroke-width="0.8"
+       id="rect36" />
+    <text
+       y="4"
+       text-anchor="middle"
+       font-family="'DM Sans', 'Inter', sans-serif"
+       font-size="8"
+       font-weight="bold"
+       fill="#ea580c"
+       id="text36">«extend»</text>
+  </g>
+  <!-- ==================== DIAGRAM LEGEND ==================== -->
+  <g
+     transform="translate(240, 580)"
+     id="g40">
+    <rect
+       width="573.0174"
+       height="25.988665"
+       rx="4.0929813"
+       fill="#ffffff"
+       stroke="#e2e8f0"
+       stroke-width="1.01134"
+       id="rect37"
+       x="0.0056676911"
+       y="0.0056676911" />
+    <line
+       x1="20"
+       y1="13"
+       x2="50"
+       y2="13"
+       stroke="#ea580c"
+       stroke-width="1.6"
+       id="line37" />
+    <text
+       x="56.406445"
+       y="16.051632"
+       font-family="'DM Sans', Inter, sans-serif"
+       font-size="8.5px"
+       fill="#334155"
+       id="text37">Association</text>
+    <line
+       x1="140"
+       y1="13"
+       x2="175"
+       y2="13"
+       stroke="#ea580c"
+       stroke-width="1.4"
+       stroke-dasharray="4,3"
+       marker-end="url(#stick-include-orange)"
+       id="line38" />
+    <text
+       x="183.44197"
+       y="15.71293"
+       font-family="'DM Sans', Inter, sans-serif"
+       font-size="8.5px"
+       fill="#c2410c"
+       id="text38">«include» Mandate</text>
+    <line
+       x1="305"
+       y1="13"
+       x2="340"
+       y2="13"
+       stroke="#f97316"
+       stroke-width="1.4"
+       stroke-dasharray="4,3"
+       marker-end="url(#stick-extend-orange)"
+       id="line39" />
+    <text
+       x="349.3226"
+       y="15.848412"
+       font-family="'DM Sans', Inter, sans-serif"
+       font-size="8.5px"
+       fill="#ea580c"
+       id="text39">«extend» Interception</text>
+    <line
+       x1="475"
+       y1="13"
+       x2="505"
+       y2="13"
+       stroke="#0d9488"
+       stroke-width="1.2"
+       stroke-dasharray="3,2"
+       id="line40" />
+    <text
+       x="511.1857"
+       y="15.850406"
+       font-family="'DM Sans', Inter, sans-serif"
+       font-size="8.5px"
+       fill="#64748b"
+       id="text40">Async Signal</text>
+  </g>
+</svg>
