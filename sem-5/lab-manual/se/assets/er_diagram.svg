@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 580" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad8" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+    <filter id="shadow8" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#64748b" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <rect width="940" height="580" rx="14" fill="url(#bgGrad8)" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- Title -->
+  <text x="470" y="28" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="15" font-weight="bold" fill="#0f172a">ENTITY-RELATIONSHIP (ER) RELATIONAL SCHEMA DIAGRAM</text>
+  <text x="470" y="46" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="10.5" fill="#475569">Conceptual Data Model: Entities, Primary/Foreign Keys, Cardinality &amp; Relationships</text>
+
+  <!-- ENTITY 1: USER & SUBTYPES -->
+  <g transform="translate(30, 75)" filter="url(#shadow8)">
+    <rect width="180" height="110" rx="6" fill="#ffffff" stroke="#0284c7" stroke-width="1.5"/>
+    <rect width="180" height="24" rx="6" fill="#f8fafc" stroke="#0284c7" stroke-width="1"/>
+    <text x="90" y="17" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="11" font-weight="bold" fill="#0284c7">USER</text>
+    <text x="10" y="42" font-family="DejaVu Sans Mono, monospace" font-size="8.5" font-weight="bold" text-decoration="underline" fill="#0284c7">PK user_id: UUID</text>
+    <text x="10" y="56" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#334155">email: VARCHAR(100)</text>
+    <text x="10" y="70" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#334155">password_hash: TEXT</text>
+    <text x="10" y="84" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#334155">user_type: ENUM</text>
+    <text x="10" y="98" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#475569">created_at: TIMESTAMP</text>
+  </g>
+
+  <!-- ENTITY 2: CUSTOMER -->
+  <g transform="translate(30, 240)" filter="url(#shadow8)">
+    <rect width="180" height="100" rx="6" fill="#ffffff" stroke="#4f46e5" stroke-width="1.5"/>
+    <rect width="180" height="24" rx="6" fill="#f8fafc" stroke="#4f46e5" stroke-width="1"/>
+    <text x="90" y="17" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="11" font-weight="bold" fill="#4338ca">CUSTOMER</text>
+    <text x="10" y="42" font-family="DejaVu Sans Mono, monospace" font-size="8.5" font-weight="bold" text-decoration="underline" fill="#4338ca">PK/FK user_id: UUID</text>
+    <text x="10" y="56" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#334155">address: VARCHAR(255)</text>
+    <text x="10" y="70" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#334155">phone: VARCHAR(20)</text>
+    <text x="10" y="84" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#334155">loyalty_points: INT</text>
+  </g>
+
+  <!-- ENTITY 3: CATEGORY -->
+  <g transform="translate(730, 75)" filter="url(#shadow8)">
+    <rect width="180" height="90" rx="6" fill="#ffffff" stroke="#d97706" stroke-width="1.5"/>
+    <rect width="180" height="24" rx="6" fill="#f8fafc" stroke="#d97706" stroke-width="1"/>
+    <text x="90" y="17" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="11" font-weight="bold" fill="#d97706">CATEGORY</text>
+    <text x="10" y="42" font-family="DejaVu Sans Mono, monospace" font-size="8.5" font-weight="bold" text-decoration="underline" fill="#d97706">PK category_id: INT</text>
+    <text x="10" y="56" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#334155">cat_name: VARCHAR(50)</text>
+    <text x="10" y="70" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#334155">parent_id: INT (Self-FK)</text>
+  </g>
+
+  <!-- ENTITY 4: VEHICLE -->
+  <g transform="translate(490, 75)" filter="url(#shadow8)">
+    <rect width="180" height="110" rx="6" fill="#ffffff" stroke="#0284c7" stroke-width="1.5"/>
+    <rect width="180" height="24" rx="6" fill="#f8fafc" stroke="#0284c7" stroke-width="1"/>
+    <text x="90" y="17" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="11" font-weight="bold" fill="#0284c7">VEHICLE</text>
+    <text x="10" y="42" font-family="DejaVu Sans Mono, monospace" font-size="8.5" font-weight="bold" text-decoration="underline" fill="#0284c7">PK vehicle_id: UUID</text>
+    <text x="10" y="56" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#047857">FK category_id: INT</text>
+    <text x="10" y="70" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#334155">title: VARCHAR(150)</text>
+    <text x="10" y="84" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#334155">fare_per_km: DECIMAL</text>
+    <text x="10" y="98" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#334155">stock_distance_km: INT</text>
+  </g>
+
+  <!-- ENTITY 5: RIDES -->
+  <g transform="translate(260, 240)" filter="url(#shadow8)">
+    <rect width="180" height="110" rx="6" fill="#ffffff" stroke="#059669" stroke-width="1.5"/>
+    <rect width="180" height="24" rx="6" fill="#f8fafc" stroke="#059669" stroke-width="1"/>
+    <text x="90" y="17" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="11" font-weight="bold" fill="#047857">RIDES</text>
+    <text x="10" y="42" font-family="DejaVu Sans Mono, monospace" font-size="8.5" font-weight="bold" text-decoration="underline" fill="#047857">PK ride_id: UUID</text>
+    <text x="10" y="56" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#4338ca">FK rider_id: UUID</text>
+    <text x="10" y="70" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#334155">ride_date: DATETIME</text>
+    <text x="10" y="84" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#334155">total_fare: DECIMAL</text>
+    <text x="10" y="98" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#334155">status: VARCHAR(30)</text>
+  </g>
+
+  <!-- ENTITY 6: RIDE_SEGMENT -->
+  <g transform="translate(490, 240)" filter="url(#shadow8)">
+    <rect width="180" height="100" rx="6" fill="#ffffff" stroke="#059669" stroke-width="1.5"/>
+    <rect width="180" height="24" rx="6" fill="#f8fafc" stroke="#059669" stroke-width="1"/>
+    <text x="90" y="17" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="11" font-weight="bold" fill="#047857">RIDE_SEGMENT</text>
+    <text x="10" y="42" font-family="DejaVu Sans Mono, monospace" font-size="8.5" font-weight="bold" text-decoration="underline" fill="#047857">PK segment_id: UUID</text>
+    <text x="10" y="56" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#047857">FK ride_id: UUID</text>
+    <text x="10" y="70" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#0284c7">FK vehicle_id: UUID</text>
+    <text x="10" y="84" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#334155">distance_km: INT, price</text>
+  </g>
+
+  <!-- ENTITY 7: PAYMENT -->
+  <g transform="translate(140, 420)" filter="url(#shadow8)">
+    <rect width="180" height="100" rx="6" fill="#ffffff" stroke="#ec4899" stroke-width="1.5"/>
+    <rect width="180" height="24" rx="6" fill="#f8fafc" stroke="#ec4899" stroke-width="1"/>
+    <text x="90" y="17" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="11" font-weight="bold" fill="#db2777">PAYMENT</text>
+    <text x="10" y="42" font-family="DejaVu Sans Mono, monospace" font-size="8.5" font-weight="bold" text-decoration="underline" fill="#db2777">PK payment_id: UUID</text>
+    <text x="10" y="56" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#047857">FK ride_id: UUID</text>
+    <text x="10" y="70" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#334155">payment_method: VARCHAR</text>
+    <text x="10" y="84" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#334155">status, gateway_txn_id</text>
+  </g>
+
+  <!-- ENTITY 8: SHIPMENT -->
+  <g transform="translate(380, 420)" filter="url(#shadow8)">
+    <rect width="180" height="100" rx="6" fill="#ffffff" stroke="#9333ea" stroke-width="1.5"/>
+    <rect width="180" height="24" rx="6" fill="#f8fafc" stroke="#9333ea" stroke-width="1"/>
+    <text x="90" y="17" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="11" font-weight="bold" fill="#7e22ce">SHIPMENT</text>
+    <text x="10" y="42" font-family="DejaVu Sans Mono, monospace" font-size="8.5" font-weight="bold" text-decoration="underline" fill="#7e22ce">PK trip_id: UUID</text>
+    <text x="10" y="56" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#047857">FK ride_id: UUID</text>
+    <text x="10" y="70" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#334155">tracking_no: VARCHAR(50)</text>
+    <text x="10" y="84" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#334155">carrier, dispatch_date</text>
+  </g>
+
+  <!-- RELATIONSHIP DIAMONDS & CONNECTORS -->
+  <!-- USER is-a CUSTOMER (1:1) -->
+  <line x1="120" y1="185" x2="120" y2="240" stroke="#4f46e5" stroke-width="1.5"/>
+  <text x="126" y="215" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" fill="#4f46e5">1 : 1 (is-a)</text>
+
+  <!-- CUSTOMER places RIDES (1 : N) -->
+  <line x1="210" y1="290" x2="260" y2="290" stroke="#4f46e5" stroke-width="1.5"/>
+  <text x="220" y="282" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" fill="#4f46e5">1</text>
+  <text x="245" y="282" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" fill="#4f46e5">N</text>
+
+  <!-- RIDES contains RIDE_SEGMENT (1 : N) -->
+  <line x1="440" y1="290" x2="490" y2="290" stroke="#059669" stroke-width="1.5"/>
+  <text x="448" y="282" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" fill="#059669">1</text>
+  <text x="478" y="282" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" fill="#059669">N</text>
+
+  <!-- VEHICLE in RIDE_SEGMENT (1 : N) -->
+  <line x1="580" y1="185" x2="580" y2="240" stroke="#0284c7" stroke-width="1.5"/>
+  <text x="586" y="200" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" fill="#0284c7">1</text>
+  <text x="586" y="230" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" fill="#0284c7">N</text>
+
+  <!-- CATEGORY categorizes VEHICLE (1 : N) -->
+  <line x1="730" y1="120" x2="670" y2="120" stroke="#d97706" stroke-width="1.5"/>
+  <text x="715" y="112" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" fill="#d97706">1</text>
+  <text x="680" y="112" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" fill="#d97706">N</text>
+
+  <!-- RIDES has PAYMENT (1 : 1) -->
+  <path d="M 310 350 L 310 385 L 230 385 L 230 420" fill="none" stroke="#ec4899" stroke-width="1.5"/>
+  <text x="316" y="375" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" fill="#ec4899">1</text>
+  <text x="215" y="410" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" fill="#ec4899">1</text>
+
+  <!-- RIDES fulfilled-by SHIPMENT (1 : 0..1) -->
+  <path d="M 390 350 L 390 385 L 470 385 L 470 420" fill="none" stroke="#9333ea" stroke-width="1.5"/>
+  <text x="396" y="375" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" fill="#9333ea">1</text>
+  <text x="476" y="410" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" fill="#9333ea">0..1</text>
+
+</svg>

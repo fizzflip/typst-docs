@@ -1,0 +1,176 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+    <filter id="shadow5" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#64748b" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <rect width="940" height="600" rx="14" fill="url(#bgGrad5)" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- Title -->
+  <text x="470" y="30" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="15" font-weight="bold" fill="#0f172a">UML CLASS DIAGRAM -- SWIFTRIDE DOMAIN MODEL</text>
+  <text x="470" y="48" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="10.5" fill="#475569">Static Structure: Inheritance, Composition, Aggregation, Multiplicities, &amp; Encapsulation</text>
+
+  <!-- CLASS 1: User (Abstract Base Class) -->
+  <g transform="translate(40, 75)" filter="url(#shadow5)">
+    <rect width="190" height="115" rx="4" fill="#ffffff" stroke="#0284c7" stroke-width="1.5"/>
+    <!-- Header -->
+    <rect width="190" height="30" rx="4" fill="#f8fafc" stroke="#0284c7" stroke-width="1"/>
+    <text x="95" y="14" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="8.5" font-style="italic" fill="#475569">&lt;&lt;abstract&gt;&gt;</text>
+    <text x="95" y="26" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="11" font-weight="bold" fill="#0284c7">User</text>
+    <!-- Attributes -->
+    <text x="8" y="44" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#0f172a"># userId: String</text>
+    <text x="8" y="56" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#0f172a"># email: String</text>
+    <text x="8" y="68" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#0f172a"># passwordHash: String</text>
+    <!-- Separator -->
+    <line x1="0" y1="74" x2="190" y2="74" stroke="#e2e8f0" stroke-width="1"/>
+    <!-- Methods -->
+    <text x="8" y="88" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#047857">+ login(): boolean</text>
+    <text x="8" y="102" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#047857">+ logout(): void</text>
+  </g>
+
+  <!-- CLASS 2: Rider (Inherits User) -->
+  <g transform="translate(40, 240)" filter="url(#shadow5)">
+    <rect width="190" height="120" rx="4" fill="#ffffff" stroke="#4f46e5" stroke-width="1.5"/>
+    <rect width="190" height="24" rx="4" fill="#f8fafc" stroke="#4f46e5" stroke-width="1"/>
+    <text x="95" y="17" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="11" font-weight="bold" fill="#4338ca">Rider</text>
+    <text x="8" y="38" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#0f172a">- shippingAddress: String</text>
+    <text x="8" y="50" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#0f172a">- phone: String</text>
+    <text x="8" y="62" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#0f172a">- loyaltyPoints: int</text>
+    <line x1="0" y1="68" x2="190" y2="68" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="8" y="82" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#047857">+ addToRideSession(p, qty)</text>
+    <text x="8" y="96" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#047857">+ confirmRide(): Ride</text>
+    <text x="8" y="110" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#047857">+ trackRide(id)</text>
+  </g>
+
+  <!-- CLASS 3: Administrator (Inherits User) -->
+  <g transform="translate(40, 420)" filter="url(#shadow5)">
+    <rect width="190" height="90" rx="4" fill="#ffffff" stroke="#ea580c" stroke-width="1.5"/>
+    <rect width="190" height="24" rx="4" fill="#f8fafc" stroke="#ea580c" stroke-width="1"/>
+    <text x="95" y="17" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="11" font-weight="bold" fill="#d97706">Administrator</text>
+    <text x="8" y="38" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#0f172a">- adminRole: String</text>
+    <line x1="0" y1="46" x2="190" y2="46" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="8" y="60" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#047857">+ addVehicle(p)</text>
+    <text x="8" y="74" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#047857">+ updateStock(id, q)</text>
+  </g>
+
+  <!-- CLASS 4: RideSession -->
+  <g transform="translate(350, 75)" filter="url(#shadow5)">
+    <rect width="180" height="105" rx="4" fill="#ffffff" stroke="#0284c7" stroke-width="1.5"/>
+    <rect width="180" height="24" rx="4" fill="#f8fafc" stroke="#0284c7" stroke-width="1"/>
+    <text x="90" y="17" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="11" font-weight="bold" fill="#0284c7">RideSession</text>
+    <text x="8" y="38" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#0f172a">- cartId: String</text>
+    <text x="8" y="50" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#0f172a">- totalAmount: double</text>
+    <line x1="0" y1="58" x2="180" y2="58" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="8" y="72" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#047857">+ addItem(item)</text>
+    <text x="8" y="86" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#047857">+ removeItem(item)</text>
+    <text x="8" y="100" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#047857">+ cancelRide(): void</text>
+  </g>
+
+  <!-- CLASS 5: Ride -->
+  <g transform="translate(350, 240)" filter="url(#shadow5)">
+    <rect width="180" height="120" rx="4" fill="#ffffff" stroke="#059669" stroke-width="1.5"/>
+    <rect width="180" height="24" rx="4" fill="#f8fafc" stroke="#059669" stroke-width="1"/>
+    <text x="90" y="17" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="11" font-weight="bold" fill="#047857">Ride</text>
+    <text x="8" y="38" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#0f172a">- rideId: String</text>
+    <text x="8" y="50" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#0f172a">- rideDate: Date</text>
+    <text x="8" y="62" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#0f172a">- status: RideStatus</text>
+    <line x1="0" y1="68" x2="180" y2="68" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="8" y="82" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#047857">+ calculateTotal()</text>
+    <text x="8" y="96" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#047857">+ cancelRide()</text>
+    <text x="8" y="110" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#047857">+ confirmPayment()</text>
+  </g>
+
+  <!-- CLASS 6: RideSegment -->
+  <g transform="translate(620, 240)" filter="url(#shadow5)">
+    <rect width="170" height="100" rx="4" fill="#ffffff" stroke="#059669" stroke-width="1.5"/>
+    <rect width="170" height="24" rx="4" fill="#f8fafc" stroke="#059669" stroke-width="1"/>
+    <text x="85" y="17" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="11" font-weight="bold" fill="#047857">RideSegment</text>
+    <text x="8" y="38" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#0f172a">- itemId: String</text>
+    <text x="8" y="50" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#0f172a">- distance_km: int</text>
+    <text x="8" y="62" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#0f172a">- unitPrice: double</text>
+    <line x1="0" y1="68" x2="170" y2="68" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="8" y="84" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#047857">+ getSubtotal()</text>
+  </g>
+
+  <!-- CLASS 7: Vehicle -->
+  <g transform="translate(620, 75)" filter="url(#shadow5)">
+    <rect width="170" height="115" rx="4" fill="#ffffff" stroke="#0284c7" stroke-width="1.5"/>
+    <rect width="170" height="24" rx="4" fill="#f8fafc" stroke="#0284c7" stroke-width="1"/>
+    <text x="85" y="17" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="11" font-weight="bold" fill="#0284c7">Vehicle</text>
+    <text x="8" y="38" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#0f172a">- productId: String</text>
+    <text x="8" y="50" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#0f172a">- name: String</text>
+    <text x="8" y="62" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#0f172a">- price: double</text>
+    <text x="8" y="74" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#0f172a">- stockQty: int</text>
+    <line x1="0" y1="80" x2="170" y2="80" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="8" y="94" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#047857">+ reduceStock(n)</text>
+    <text x="8" y="108" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#047857">+ isAvailable(): bool</text>
+  </g>
+
+  <!-- CLASS 8: Payment (Abstract) -->
+  <g transform="translate(350, 420)" filter="url(#shadow5)">
+    <rect width="180" height="95" rx="4" fill="#ffffff" stroke="#ec4899" stroke-width="1.5"/>
+    <rect width="180" height="28" rx="4" fill="#f8fafc" stroke="#ec4899" stroke-width="1"/>
+    <text x="90" y="13" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="8.5" font-style="italic" fill="#475569">&lt;&lt;abstract&gt;&gt;</text>
+    <text x="90" y="25" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="11" font-weight="bold" fill="#db2777">Payment</text>
+    <text x="8" y="42" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#0f172a"># paymentId: String</text>
+    <text x="8" y="54" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#0f172a"># amount: double</text>
+    <line x1="0" y1="62" x2="180" y2="62" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="8" y="78" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#047857">+ processPayment()</text>
+  </g>
+
+  <!-- CLASS 9: Trip -->
+  <g transform="translate(620, 420)" filter="url(#shadow5)">
+    <rect width="170" height="95" rx="4" fill="#ffffff" stroke="#9333ea" stroke-width="1.5"/>
+    <rect width="170" height="24" rx="4" fill="#f8fafc" stroke="#9333ea" stroke-width="1"/>
+    <text x="85" y="17" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="11" font-weight="bold" fill="#7e22ce">Trip</text>
+    <text x="8" y="38" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#0f172a">- trackingNo: String</text>
+    <text x="8" y="50" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#0f172a">- courierName: String</text>
+    <line x1="0" y1="60" x2="170" y2="60" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="8" y="75" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#047857">+ updateLocation()</text>
+  </g>
+
+  <!-- RELATIONSHIPS & CONNECTORS -->
+  <!-- Generalization 1: User <- Rider (Open triangle at User) -->
+  <line x1="135" y1="240" x2="135" y2="200" stroke="#0f172a" stroke-width="1.5"/>
+  <polygon points="135,190 128,205 142,205" fill="#ffffff" stroke="#0f172a" stroke-width="1.5"/>
+
+  <!-- Generalization 2: User <- Admin -->
+  <path d="M 135 420 L 135 380 L 15 380 L 15 200 L 128 200" fill="none" stroke="#0f172a" stroke-width="1.2" stroke-dasharray="2,2"/>
+
+  <!-- Rider -> RideSession (1 to 1 Association) -->
+  <path d="M 230 260 L 290 260 L 290 120 L 350 120" fill="none" stroke="#0284c7" stroke-width="1.5"/>
+  <text x="235" y="254" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" fill="#0284c7">1</text>
+  <text x="335" y="114" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" fill="#0284c7">1</text>
+
+  <!-- Rider -> Ride (1 to 0..*) -->
+  <line x1="230" y1="300" x2="350" y2="300" stroke="#4f46e5" stroke-width="1.5"/>
+  <text x="235" y="294" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" fill="#4f46e5">1</text>
+  <text x="320" y="294" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" fill="#4f46e5">0..*</text>
+
+  <!-- Ride -> RideSegment (Composition: Filled diamond at Ride) -->
+  <line x1="530" y1="290" x2="620" y2="290" stroke="#059669" stroke-width="1.5"/>
+  <polygon points="530,290 538,285 546,290 538,295" fill="#059669" stroke="#059669"/>
+  <text x="552" y="284" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" fill="#059669">1</text>
+  <text x="600" y="284" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" fill="#059669">1..*</text>
+
+  <!-- Ride -> Payment (Association 1 to 1) -->
+  <line x1="440" y1="360" x2="440" y2="420" stroke="#ec4899" stroke-width="1.5"/>
+  <text x="445" y="375" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" fill="#ec4899">1</text>
+  <text x="445" y="412" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" fill="#ec4899">1</text>
+
+  <!-- Ride -> Trip (Association 1 to 0..1) -->
+  <path d="M 530 340 L 580 340 L 580 470 L 620 470" fill="none" stroke="#9333ea" stroke-width="1.5"/>
+  <text x="535" y="334" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" fill="#9333ea">1</text>
+  <text x="590" y="464" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" fill="#9333ea">0..1</text>
+
+  <!-- RideSegment -> Vehicle (Aggregation: Open diamond at RideSegment) -->
+  <line x1="705" y1="240" x2="705" y2="190" stroke="#0284c7" stroke-width="1.5"/>
+  <polygon points="705,240 700,232 705,224 710,232" fill="#ffffff" stroke="#0284c7" stroke-width="1.5"/>
+  <text x="715" y="215" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" fill="#0284c7">1</text>
+
+</svg>

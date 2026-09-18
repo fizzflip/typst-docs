@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 580" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+    <filter id="shadow6" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#64748b" flood-opacity="0.35"/>
+    </filter>
+    <marker id="seq-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#0284c7"/>
+    </marker>
+    <marker id="seq-arrow-ret" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#475569"/>
+    </marker>
+    <marker id="seq-arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#dc2626"/>
+    </marker>
+  </defs>
+
+  <rect width="940" height="580" rx="14" fill="url(#bgGrad6)" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- Title -->
+  <text x="470" y="28" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="15" font-weight="bold" fill="#0f172a">UML SEQUENCE DIAGRAM -- ORDER CHECKOUT &amp; PAYMENT</text>
+  <text x="470" y="46" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="10.5" fill="#475569">Lifelines, Message Exchanges, Activation Boxes, and Alt Fragment (Success vs. Failure)</text>
+
+  <!-- LIFELINE PARTICIPANTS (X Coordinates: 75, 230, 410, 580, 740, 875) -->
+  <!-- Participant 1: Rider -->
+  <g transform="translate(20, 65)">
+    <rect width="110" height="32" rx="4" fill="#f8fafc" stroke="#0284c7" stroke-width="1.5"/>
+    <text x="55" y="20" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="11" font-weight="bold" fill="#0284c7">:Rider</text>
+    <line x1="55" y1="32" x2="55" y2="490" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="4,4"/>
+  </g>
+
+  <!-- Participant 2: WebUI -->
+  <g transform="translate(175, 65)">
+    <rect width="110" height="32" rx="4" fill="#f8fafc" stroke="#4f46e5" stroke-width="1.5"/>
+    <text x="55" y="20" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="11" font-weight="bold" fill="#4338ca">:RiderAppUI</text>
+    <line x1="55" y1="32" x2="55" y2="490" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="4,4"/>
+  </g>
+
+  <!-- Participant 3: RideController -->
+  <g transform="translate(345, 65)">
+    <rect width="130" height="32" rx="4" fill="#f8fafc" stroke="#059669" stroke-width="1.5"/>
+    <text x="65" y="20" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="11" font-weight="bold" fill="#047857">:RideService</text>
+    <line x1="65" y1="32" x2="65" y2="490" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="4,4"/>
+  </g>
+
+  <!-- Participant 4: DispatchService -->
+  <g transform="translate(520, 65)">
+    <rect width="130" height="32" rx="4" fill="#f8fafc" stroke="#ea580c" stroke-width="1.5"/>
+    <text x="65" y="20" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="11" font-weight="bold" fill="#d97706">:DispatchService</text>
+    <line x1="65" y1="32" x2="65" y2="490" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="4,4"/>
+  </g>
+
+  <!-- Participant 5: PaymentGateway -->
+  <g transform="translate(680, 65)">
+    <rect width="125" height="32" rx="4" fill="#f8fafc" stroke="#ec4899" stroke-width="1.5"/>
+    <text x="62" y="20" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="11" font-weight="bold" fill="#db2777">:PaymentGateway</text>
+    <line x1="62" y1="32" x2="62" y2="490" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="4,4"/>
+  </g>
+
+  <!-- Participant 6: NotificationService -->
+  <g transform="translate(825, 65)">
+    <rect width="105" height="32" rx="4" fill="#f8fafc" stroke="#06b6d4" stroke-width="1.5"/>
+    <text x="52" y="20" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="11" font-weight="bold" fill="#22d3ee">:NotifService</text>
+    <line x1="52" y1="32" x2="52" y2="490" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="4,4"/>
+  </g>
+
+  <!-- ACTIVATION BOXES -->
+  <!-- Rider activation -->
+  <rect x="70" y="115" width="10" height="390" fill="#0284c7" stroke="#0369a1"/>
+  <!-- WebUI activation -->
+  <rect x="225" y="125" width="10" height="370" fill="#4f46e5" stroke="#4f46e5"/>
+  <!-- RideService activation -->
+  <rect x="405" y="140" width="10" height="335" fill="#059669" stroke="#059669"/>
+  <!-- DispatchService activation 1 -->
+  <rect x="580" y="155" width="10" height="40" fill="#ea580c" stroke="#d97706"/>
+  <!-- PaymentGateway activation -->
+  <rect x="737" y="215" width="10" height="50" fill="#ec4899" stroke="#db2777"/>
+  <!-- Notification activation -->
+  <rect x="872" y="340" width="10" height="35" fill="#06b6d4" stroke="#0891b2"/>
+  <!-- DispatchService activation 2 (Stock release) -->
+  <rect x="580" y="445" width="10" height="30" fill="#ea580c" stroke="#d97706"/>
+
+  <!-- MESSAGES & CALLS -->
+  <!-- 1: booking(cartItems) -->
+  <line x1="80" y1="125" x2="225" y2="125" stroke="#0284c7" stroke-width="1.5" marker-end="url(#seq-arrow)"/>
+  <text x="152" y="118" text-anchor="middle" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#0f172a">1: bookRide(session)</text>
+
+  <!-- 2: placeRide(cart, paymentMethod) -->
+  <line x1="235" y1="140" x2="405" y2="140" stroke="#0284c7" stroke-width="1.5" marker-end="url(#seq-arrow)"/>
+  <text x="320" y="133" text-anchor="middle" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#0f172a">2: confirmRide(session, payMethod)</text>
+
+  <!-- 3: reserveStock(items) -->
+  <line x1="415" y1="155" x2="580" y2="155" stroke="#0284c7" stroke-width="1.5" marker-end="url(#seq-arrow)"/>
+  <text x="497" y="148" text-anchor="middle" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#0f172a">3: reserveStock(items)</text>
+
+  <!-- 4: stockReservedToken (Return) -->
+  <line x1="580" y1="190" x2="415" y2="190" stroke="#475569" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#seq-arrow-ret)"/>
+  <text x="497" y="183" text-anchor="middle" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#475569">4: token: 'RES-980' (ack)</text>
+
+  <!-- 5: authorizeAndCharge(amount, token) -->
+  <line x1="415" y1="215" x2="737" y2="215" stroke="#0284c7" stroke-width="1.5" marker-end="url(#seq-arrow)"/>
+  <text x="575" y="208" text-anchor="middle" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#0f172a">5: authorizeAndCharge(amt, card)</text>
+
+  <!-- COMBINED FRAGMENT: alt -->
+  <g transform="translate(30, 270)">
+    <rect width="880" height="225" rx="6" fill="#ffffff" fill-opacity="0.7" stroke="#94a3b8" stroke-width="1.2"/>
+    <!-- Alt header tab -->
+    <path d="M 0 0 L 50 0 L 60 18 L 0 18 Z" fill="#e2e8f0"/>
+    <text x="22" y="13" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="10" font-weight="bold" fill="#0f172a">alt</text>
+    <!-- Condition 1: [Payment Success] -->
+    <text x="70" y="14" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" font-weight="bold" fill="#047857">[payment_status == 'SUCCESS']</text>
+
+    <!-- Success Flow -->
+    <!-- Return from PG to RideService -->
+    <line x1="707" y1="35" x2="385" y2="35" stroke="#047857" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#seq-arrow)"/>
+    <text x="545" y="28" text-anchor="middle" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#047857">6: chargeConfirmed(txnId: 'TXN-442')</text>
+
+    <!-- 7: sendNotification -->
+    <line x1="385" y1="70" x2="842" y2="70" stroke="#0284c7" stroke-width="1.5" marker-end="url(#seq-arrow)"/>
+    <text x="615" y="63" text-anchor="middle" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#0f172a">7: sendEmailReceipt(rideId, email)</text>
+
+    <!-- 8: return success to UI -->
+    <line x1="375" y1="95" x2="205" y2="95" stroke="#047857" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#seq-arrow)"/>
+    <text x="290" y="88" text-anchor="middle" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#047857">8: return rideSuccess(rideId)</text>
+
+    <!-- UI to Rider -->
+    <line x1="195" y1="105" x2="50" y2="105" stroke="#047857" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#seq-arrow)"/>
+    <text x="122" y="98" text-anchor="middle" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#047857">displayConfirmation()</text>
+
+    <!-- Divider Line for [else: Payment Failed] -->
+    <line x1="0" y1="125" x2="880" y2="125" stroke="#94a3b8" stroke-dasharray="5,5" stroke-width="1.2"/>
+    <text x="70" y="140" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" font-weight="bold" fill="#dc2626">[else: payment_status == 'FAILED']</text>
+
+    <!-- Failure Flow -->
+    <!-- PG returns failure -->
+    <line x1="707" y1="155" x2="385" y2="155" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#seq-arrow-red)"/>
+    <text x="545" y="148" text-anchor="middle" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#dc2626">9: paymentDeclined('Insufficient Funds')</text>
+
+    <!-- RideService releases stock in Inventory -->
+    <line x1="385" y1="180" x2="550" y2="180" stroke="#dc2626" stroke-width="1.5" marker-end="url(#seq-arrow-red)"/>
+    <text x="467" y="173" text-anchor="middle" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#dc2626">10: releaseDriver(assignmentId)</text>
+
+    <!-- Return error to rider -->
+    <line x1="375" y1="205" x2="50" y2="205" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#seq-arrow-red)"/>
+    <text x="210" y="198" text-anchor="middle" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#dc2626">11: displayPaymentError('Transaction Failed, Please Retry')</text>
+  </g>
+
+</svg>

@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad7" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+    <filter id="shadow7" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#64748b" flood-opacity="0.35"/>
+    </filter>
+    <marker id="dfd-arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#0284c7"/>
+    </marker>
+  </defs>
+
+  <rect width="940" height="600" rx="14" fill="url(#bgGrad7)" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- Title -->
+  <text x="470" y="26" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="15" font-weight="bold" fill="#0f172a">DATA FLOW DIAGRAM (DFD) -- LEVEL 0 &amp; LEVEL 1 HIERARCHY</text>
+  <text x="470" y="44" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="10.5" fill="#475569">Context Analysis and Detailed Process Decomposition with Data Stores</text>
+
+  <!-- ==================== SECTION A: LEVEL 0 CONTEXT DIAGRAM ==================== -->
+  <rect x="20" y="60" width="900" height="155" rx="8" fill="#f8fafc" fill-opacity="0.4" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="35" y="80" font-family="DejaVu Sans, Inter, sans-serif" font-size="11" font-weight="bold" fill="#0284c7">LEVEL 0: CONTEXT DIAGRAM</text>
+
+  <!-- Level 0 Central Process -->
+  <g transform="translate(370, 90)" filter="url(#shadow7)">
+    <circle cx="100" cy="50" r="46" fill="#ffffff" stroke="#0284c7" stroke-width="2"/>
+    <text x="100" y="42" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" fill="#475569">0.0</text>
+    <text x="100" y="55" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="10.5" font-weight="bold" fill="#0f172a">SwiftRide</text>
+    <text x="100" y="68" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="9.5" fill="#0284c7">System</text>
+  </g>
+
+  <!-- Level 0 Entities -->
+  <!-- Rider -->
+  <g transform="translate(45, 115)" filter="url(#shadow7)">
+    <rect width="115" height="42" rx="4" fill="#ffffff" stroke="#4f46e5" stroke-width="1.5"/>
+    <text x="57" y="25" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="11" font-weight="bold" fill="#4338ca">Rider</text>
+  </g>
+  <!-- Admin -->
+  <g transform="translate(775, 115)" filter="url(#shadow7)">
+    <rect width="115" height="42" rx="4" fill="#ffffff" stroke="#ea580c" stroke-width="1.5"/>
+    <text x="57" y="25" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="11" font-weight="bold" fill="#d97706">Administrator</text>
+  </g>
+
+  <!-- Level 0 Data Flows -->
+  <!-- Rider -> System -->
+  <path d="M 160 126 L 420 126" fill="none" stroke="#0284c7" stroke-width="1.5" marker-end="url(#dfd-arrow)"/>
+  <text x="290" y="120" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="8.5" fill="#334155">Rides, Inquiries &amp; Auth</text>
+  <!-- System -> Rider -->
+  <path d="M 420 148 L 160 148" fill="none" stroke="#0284c7" stroke-width="1.5" marker-end="url(#dfd-arrow)"/>
+  <text x="290" y="162" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="8.5" fill="#334155">Invoices, Status, Vehicle Feed</text>
+
+  <!-- System -> Admin -->
+  <path d="M 520 126 L 775 126" fill="none" stroke="#ea580c" stroke-width="1.5" marker-end="url(#dfd-arrow)"/>
+  <text x="645" y="120" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="8.5" fill="#334155">Sales Analytics &amp; Reports</text>
+  <!-- Admin -> System -->
+  <path d="M 775 148 L 520 148" fill="none" stroke="#ea580c" stroke-width="1.5" marker-end="url(#dfd-arrow)"/>
+  <text x="645" y="162" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="8.5" fill="#334155">Catalog &amp; Inventory Updates</text>
+
+
+  <!-- ==================== SECTION B: LEVEL 1 DFD ==================== -->
+  <rect x="20" y="225" width="900" height="355" rx="8" fill="#f8fafc" fill-opacity="0.4" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="35" y="245" font-family="DejaVu Sans, Inter, sans-serif" font-size="11" font-weight="bold" fill="#0284c7">LEVEL 1: DECOMPOSED DATA FLOW DIAGRAM</text>
+
+  <!-- External Entities -->
+  <g transform="translate(35, 275)" filter="url(#shadow7)">
+    <rect width="105" height="36" rx="4" fill="#ffffff" stroke="#4f46e5" stroke-width="1.5"/>
+    <text x="52" y="22" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="10.5" font-weight="bold" fill="#4338ca">Rider</text>
+  </g>
+  <g transform="translate(35, 495)" filter="url(#shadow7)">
+    <rect width="105" height="36" rx="4" fill="#ffffff" stroke="#059669" stroke-width="1.5"/>
+    <text x="52" y="22" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="10" font-weight="bold" fill="#047857">Payment Gateway</text>
+  </g>
+  <g transform="translate(800, 275)" filter="url(#shadow7)">
+    <rect width="105" height="36" rx="4" fill="#ffffff" stroke="#ea580c" stroke-width="1.5"/>
+    <text x="52" y="22" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="10.5" font-weight="bold" fill="#d97706">Admin</text>
+  </g>
+
+  <!-- Processes (Circles / Rounded Rects) -->
+  <!-- Process 1.0: User Authentication -->
+  <g transform="translate(200, 270)" filter="url(#shadow7)">
+    <circle cx="45" cy="45" r="38" fill="#ffffff" stroke="#0284c7" stroke-width="1.5"/>
+    <text x="45" y="36" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="8.5" fill="#475569">1.0</text>
+    <text x="45" y="48" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" font-weight="bold" fill="#0f172a">User</text>
+    <text x="45" y="60" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" fill="#0284c7">Auth</text>
+  </g>
+
+  <!-- Process 2.0: Catalog & Search -->
+  <g transform="translate(430, 270)" filter="url(#shadow7)">
+    <circle cx="45" cy="45" r="38" fill="#ffffff" stroke="#0284c7" stroke-width="1.5"/>
+    <text x="45" y="36" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="8.5" fill="#475569">2.0</text>
+    <text x="45" y="48" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" font-weight="bold" fill="#0f172a">Catalog</text>
+    <text x="45" y="60" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" fill="#0284c7">Search</text>
+  </g>
+
+  <!-- Process 3.0: RideSession & Ride -->
+  <g transform="translate(200, 440)" filter="url(#shadow7)">
+    <circle cx="45" cy="45" r="38" fill="#ffffff" stroke="#0284c7" stroke-width="1.5"/>
+    <text x="45" y="36" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="8.5" fill="#475569">3.0</text>
+    <text x="45" y="48" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" font-weight="bold" fill="#0f172a">Ride &amp;</text>
+    <text x="45" y="60" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" fill="#0284c7">Booking</text>
+  </g>
+
+  <!-- Process 4.0: Payment & Billing -->
+  <g transform="translate(430, 440)" filter="url(#shadow7)">
+    <circle cx="45" cy="45" r="38" fill="#ffffff" stroke="#0284c7" stroke-width="1.5"/>
+    <text x="45" y="36" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="8.5" fill="#475569">4.0</text>
+    <text x="45" y="48" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" font-weight="bold" fill="#0f172a">Payment</text>
+    <text x="45" y="60" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" fill="#0284c7">Processing</text>
+  </g>
+
+  <!-- Process 5.0: Inventory & Shipping -->
+  <g transform="translate(660, 440)" filter="url(#shadow7)">
+    <circle cx="45" cy="45" r="38" fill="#ffffff" stroke="#0284c7" stroke-width="1.5"/>
+    <text x="45" y="36" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="8.5" fill="#475569">5.0</text>
+    <text x="45" y="48" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" font-weight="bold" fill="#0f172a">Inventory</text>
+    <text x="45" y="60" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" fill="#0284c7">&amp; Dispatch</text>
+  </g>
+
+  <!-- Data Stores (Open-ended rects / D1, D2, D3) -->
+  <!-- D1: Users -->
+  <g transform="translate(320, 260)">
+    <line x1="0" y1="0" x2="80" y2="0" stroke="#4338ca" stroke-width="1.5"/>
+    <line x1="0" y1="28" x2="80" y2="28" stroke="#4338ca" stroke-width="1.5"/>
+    <text x="5" y="18" font-family="DejaVu Sans Mono, monospace" font-size="8.5" font-weight="bold" fill="#4338ca">D1</text>
+    <text x="25" y="18" font-family="DejaVu Sans, Inter, sans-serif" font-size="8.5" fill="#0f172a">Users</text>
+  </g>
+
+  <!-- D2: Vehicles -->
+  <g transform="translate(560, 260)">
+    <line x1="0" y1="0" x2="90" y2="0" stroke="#d97706" stroke-width="1.5"/>
+    <line x1="0" y1="28" x2="90" y2="28" stroke="#d97706" stroke-width="1.5"/>
+    <text x="5" y="18" font-family="DejaVu Sans Mono, monospace" font-size="8.5" font-weight="bold" fill="#d97706">D2</text>
+    <text x="25" y="18" font-family="DejaVu Sans, Inter, sans-serif" font-size="8.5" fill="#0f172a">Vehicles</text>
+  </g>
+
+  <!-- D3: Rides DB -->
+  <g transform="translate(330, 480)">
+    <line x1="0" y1="0" x2="80" y2="0" stroke="#047857" stroke-width="1.5"/>
+    <line x1="0" y1="28" x2="80" y2="28" stroke="#047857" stroke-width="1.5"/>
+    <text x="5" y="18" font-family="DejaVu Sans Mono, monospace" font-size="8.5" font-weight="bold" fill="#047857">D3</text>
+    <text x="25" y="18" font-family="DejaVu Sans, Inter, sans-serif" font-size="8.5" fill="#0f172a">Rides</text>
+  </g>
+
+  <!-- D4: Inventory DB -->
+  <g transform="translate(560, 480)">
+    <line x1="0" y1="0" x2="85" y2="0" stroke="#7e22ce" stroke-width="1.5"/>
+    <line x1="0" y1="28" x2="85" y2="28" stroke="#7e22ce" stroke-width="1.5"/>
+    <text x="5" y="18" font-family="DejaVu Sans Mono, monospace" font-size="8.5" font-weight="bold" fill="#7e22ce">D4</text>
+    <text x="25" y="18" font-family="DejaVu Sans, Inter, sans-serif" font-size="8.5" fill="#0f172a">Stock</text>
+  </g>
+
+  <!-- Level 1 Data Flows -->
+  <!-- Rider -> 1.0 Auth -->
+  <line x1="140" y1="292" x2="200" y2="292" stroke="#0284c7" stroke-width="1.2" marker-end="url(#dfd-arrow)"/>
+  <!-- 1.0 -> D1 Users -->
+  <line x1="280" y1="280" x2="320" y2="275" stroke="#4338ca" stroke-width="1.2" marker-end="url(#dfd-arrow)"/>
+  <!-- 2.0 Catalog -> D2 Vehicles -->
+  <line x1="510" y1="285" x2="560" y2="275" stroke="#d97706" stroke-width="1.2" marker-end="url(#dfd-arrow)"/>
+  <!-- Admin -> D2 Vehicles -->
+  <line x1="800" y1="290" x2="655" y2="275" stroke="#ea580c" stroke-width="1.2" marker-end="url(#dfd-arrow)"/>
+  <!-- Rider -> 3.0 Ride -->
+  <path d="M 90 311 L 90 470 L 200 470" fill="none" stroke="#0284c7" stroke-width="1.2" marker-end="url(#dfd-arrow)"/>
+  <!-- 3.0 Ride -> D3 Rides -->
+  <line x1="285" y1="485" x2="330" y2="490" stroke="#047857" stroke-width="1.2" marker-end="url(#dfd-arrow)"/>
+  <!-- 3.0 Ride -> 4.0 Payment -->
+  <line x1="285" y1="465" x2="430" y2="465" stroke="#0284c7" stroke-width="1.2" marker-end="url(#dfd-arrow)"/>
+  <!-- 4.0 Payment <-> PG -->
+  <path d="M 435 505 L 435 520 L 140 520" fill="none" stroke="#059669" stroke-width="1.2" marker-end="url(#dfd-arrow)"/>
+  <!-- 4.0 Payment -> 5.0 Inventory -->
+  <line x1="515" y1="485" x2="660" y2="485" stroke="#0284c7" stroke-width="1.2" marker-end="url(#dfd-arrow)"/>
+  <!-- 5.0 Inventory -> D4 Stock -->
+  <line x1="660" y1="495" x2="645" y2="495" stroke="#7e22ce" stroke-width="1.2" marker-end="url(#dfd-arrow)"/>
+
+</svg>

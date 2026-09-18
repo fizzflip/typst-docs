@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 580" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+    <filter id="shadow4" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#64748b" flood-opacity="0.4"/>
+    </filter>
+    <marker id="act-arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#0284c7"/>
+    </marker>
+    <marker id="act-arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#dc2626"/>
+    </marker>
+  </defs>
+
+  <rect width="940" height="580" rx="14" fill="url(#bgGrad4)" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- Title -->
+  <text x="470" y="30" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="15" font-weight="bold" fill="#0f172a">UML ACTIVITY &amp; SWIMLANE DIAGRAM -- ORDER FULFILLMENT</text>
+  <text x="470" y="48" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="10.5" fill="#475569">Multi-Partition Operational Workflow: Decision Logic, Concurrency (Fork/Join), &amp; Exception Handling</text>
+
+  <!-- 4 Swimlanes -->
+  <!-- Lane Headers -->
+  <g transform="translate(20, 65)">
+    <!-- Lane 1: Rider -->
+    <rect x="0" y="0" width="220" height="495" fill="#f8fafc" fill-opacity="0.5" stroke="#e2e8f0" stroke-width="1"/>
+    <rect x="0" y="0" width="220" height="32" fill="#f8fafc" stroke="#0284c7" stroke-width="1"/>
+    <text x="110" y="21" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="11.5" font-weight="bold" fill="#0284c7">1. Rider (Client)</text>
+
+    <!-- Lane 2: Ride Service -->
+    <rect x="225" y="0" width="225" height="495" fill="#f8fafc" fill-opacity="0.5" stroke="#e2e8f0" stroke-width="1"/>
+    <rect x="225" y="0" width="225" height="32" fill="#f8fafc" stroke="#4f46e5" stroke-width="1"/>
+    <text x="337" y="21" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="11.5" font-weight="bold" fill="#4338ca">2. Ride Processing Service</text>
+
+    <!-- Lane 3: Payment Gateway -->
+    <rect x="455" y="0" width="220" height="495" fill="#f8fafc" fill-opacity="0.5" stroke="#e2e8f0" stroke-width="1"/>
+    <rect x="455" y="0" width="220" height="32" fill="#f8fafc" stroke="#059669" stroke-width="1"/>
+    <text x="565" y="21" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="11.5" font-weight="bold" fill="#047857">3. Payment Gateway</text>
+
+    <!-- Lane 4: Warehouse / Logistics -->
+    <rect x="680" y="0" width="220" height="495" fill="#f8fafc" fill-opacity="0.5" stroke="#e2e8f0" stroke-width="1"/>
+    <rect x="680" y="0" width="220" height="32" fill="#f8fafc" stroke="#ea580c" stroke-width="1"/>
+    <text x="790" y="21" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="11.5" font-weight="bold" fill="#d97706">4. Warehouse / Logistics</text>
+
+    <!-- ACTIVITIES & NODES -->
+    <!-- Start Node (Lane 1) -->
+    <circle cx="110" cy="55" r="11" fill="#0284c7" stroke="#020617" stroke-width="1.5"/>
+
+    <!-- Action 1: Rider submits ride -->
+    <g transform="translate(25, 85)" filter="url(#shadow4)">
+      <rect width="170" height="36" rx="8" fill="#ffffff" stroke="#0284c7" stroke-width="1.2"/>
+      <text x="85" y="22" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="10" fill="#0f172a">Select Items &amp; Booking</text>
+    </g>
+
+    <!-- Action 2: Ride Service validates stock -->
+    <g transform="translate(250, 85)" filter="url(#shadow4)">
+      <rect width="175" height="36" rx="8" fill="#ffffff" stroke="#4f46e5" stroke-width="1.2"/>
+      <text x="87" y="22" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="10" fill="#0f172a">Verify Stock Availability</text>
+    </g>
+
+    <!-- Decision 1: Stock Check Diamond -->
+    <polygon points="337,145 372,165 337,185 302,165" fill="#f8fafc" stroke="#4f46e5" stroke-width="1.5"/>
+    <text x="337" y="169" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" fill="#0f172a">In Stock?</text>
+
+    <!-- Out of Stock Error Action (Lane 1) -->
+    <g transform="translate(25, 147)" filter="url(#shadow4)">
+      <rect width="170" height="36" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="1.2"/>
+      <text x="85" y="22" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="9.5" fill="#991b1b">Display Out-of-Stock Alert</text>
+    </g>
+    <!-- End Node 1 -->
+    <circle cx="110" cy="210" r="10" fill="#ffffff" stroke="#dc2626" stroke-width="1.5"/>
+    <circle cx="110" cy="210" r="6" fill="#dc2626"/>
+
+    <!-- Action 3: Reserve items & invoke payment -->
+    <g transform="translate(250, 210)" filter="url(#shadow4)">
+      <rect width="175" height="36" rx="8" fill="#ffffff" stroke="#4f46e5" stroke-width="1.2"/>
+      <text x="87" y="22" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="10" fill="#0f172a">Reserve Inventory &amp; Lock</text>
+    </g>
+
+    <!-- Action 4: Payment Gateway authorizes transaction -->
+    <g transform="translate(480, 210)" filter="url(#shadow4)">
+      <rect width="170" height="36" rx="8" fill="#ffffff" stroke="#059669" stroke-width="1.2"/>
+      <text x="85" y="22" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="10" fill="#0f172a">Process 3DS &amp; Debit</text>
+    </g>
+
+    <!-- Decision 2: Payment Success Diamond -->
+    <polygon points="565,275 600,295 565,315 530,295" fill="#f8fafc" stroke="#059669" stroke-width="1.5"/>
+    <text x="565" y="299" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" fill="#0f172a">Success?</text>
+
+    <!-- Fork Bar (Lane 2) -->
+    <rect x="245" y="340" width="185" height="6" rx="3" fill="#0284c7"/>
+
+    <!-- Parallel Task A (Lane 2): Generate Invoice -->
+    <g transform="translate(250, 365)" filter="url(#shadow4)">
+      <rect width="175" height="36" rx="8" fill="#ffffff" stroke="#4f46e5" stroke-width="1.2"/>
+      <text x="87" y="22" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="10" fill="#0f172a">Generate Invoice &amp; Email</text>
+    </g>
+
+    <!-- Parallel Task B (Lane 4): Warehouse fulfillment -->
+    <g transform="translate(705, 365)" filter="url(#shadow4)">
+      <rect width="170" height="36" rx="8" fill="#ffffff" stroke="#ea580c" stroke-width="1.2"/>
+      <text x="85" y="22" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="10" fill="#0f172a">Pick, Pack &amp; Label Parcel</text>
+    </g>
+
+    <!-- Join Bar -->
+    <rect x="337" y="425" width="380" height="6" rx="3" fill="#0284c7"/>
+
+    <!-- Final Action (Lane 4): Ship Ride -->
+    <g transform="translate(705, 445)" filter="url(#shadow4)">
+      <rect width="170" height="34" rx="8" fill="#ffffff" stroke="#ea580c" stroke-width="1.2"/>
+      <text x="85" y="21" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="10" fill="#0f172a">Dispatch to Courier</text>
+    </g>
+
+    <!-- Final Success End Node -->
+    <circle cx="790" cy="485" r="10" fill="#ffffff" stroke="#059669" stroke-width="1.5"/>
+    <circle cx="790" cy="485" r="6" fill="#059669"/>
+
+    <!-- FLOW ARROWS -->
+    <!-- Start -> Action 1 -->
+    <line x1="110" y1="66" x2="110" y2="85" stroke="#0284c7" stroke-width="1.5" marker-end="url(#act-arrow)"/>
+    <!-- Action 1 -> Action 2 -->
+    <line x1="195" y1="103" x2="250" y2="103" stroke="#0284c7" stroke-width="1.5" marker-end="url(#act-arrow)"/>
+    <!-- Action 2 -> Decision 1 -->
+    <line x1="337" y1="121" x2="337" y2="145" stroke="#0284c7" stroke-width="1.5" marker-end="url(#act-arrow)"/>
+    <!-- Decision 1 [No] -> Out of Stock -->
+    <line x1="302" y1="165" x2="195" y2="165" stroke="#dc2626" stroke-width="1.5" marker-end="url(#act-arrow-red)"/>
+    <text x="245" y="158" font-family="DejaVu Sans, Inter, sans-serif" font-size="8.5" fill="#dc2626">[No]</text>
+    <!-- Out of Stock -> End Node 1 -->
+    <line x1="110" y1="183" x2="110" y2="200" stroke="#dc2626" stroke-width="1.5" marker-end="url(#act-arrow-red)"/>
+    <!-- Decision 1 [Yes] -> Action 3 -->
+    <line x1="337" y1="185" x2="337" y2="210" stroke="#0284c7" stroke-width="1.5" marker-end="url(#act-arrow)"/>
+    <text x="345" y="200" font-family="DejaVu Sans, Inter, sans-serif" font-size="8.5" fill="#047857">[Yes]</text>
+    <!-- Action 3 -> Action 4 (Payment) -->
+    <line x1="425" y1="228" x2="480" y2="228" stroke="#0284c7" stroke-width="1.5" marker-end="url(#act-arrow)"/>
+    <!-- Action 4 -> Decision 2 -->
+    <line x1="565" y1="246" x2="565" y2="275" stroke="#0284c7" stroke-width="1.5" marker-end="url(#act-arrow)"/>
+    <!-- Decision 2 [Yes] -> Fork Bar -->
+    <path d="M 565 315 L 565 330 L 337 330 L 337 340" fill="none" stroke="#0284c7" stroke-width="1.5" marker-end="url(#act-arrow)"/>
+    <text x="572" y="326" font-family="DejaVu Sans, Inter, sans-serif" font-size="8.5" fill="#047857">[Yes]</text>
+    <!-- Decision 2 [No] -> Back to Rider -->
+    <path d="M 600 295 L 670 295 L 670 165 L 425 165" fill="none" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#act-arrow-red)"/>
+    <text x="610" y="288" font-family="DejaVu Sans, Inter, sans-serif" font-size="8.5" fill="#dc2626">[Failed]</text>
+    <!-- Fork -> Task A & Task B -->
+    <line x1="337" y1="346" x2="337" y2="365" stroke="#0284c7" stroke-width="1.5" marker-end="url(#act-arrow)"/>
+    <path d="M 400 346 L 400 355 L 790 355 L 790 365" fill="none" stroke="#0284c7" stroke-width="1.5" marker-end="url(#act-arrow)"/>
+    <!-- Task A & Task B -> Join Bar -->
+    <line x1="337" y1="401" x2="337" y2="425" stroke="#0284c7" stroke-width="1.5" marker-end="url(#act-arrow)"/>
+    <line x1="790" y1="401" x2="790" y2="425" stroke="#0284c7" stroke-width="1.5" marker-end="url(#act-arrow)"/>
+    <!-- Join Bar -> Final Dispatch Action -->
+    <path d="M 527 431 L 527 440 L 790 440 L 790 445" fill="none" stroke="#0284c7" stroke-width="1.5" marker-end="url(#act-arrow)"/>
+    <!-- Final Dispatch -> End Node -->
+    <line x1="790" y1="479" x2="790" y2="475" stroke="#059669" stroke-width="1.5"/>
+  </g>
+
+</svg>

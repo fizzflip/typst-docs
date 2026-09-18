@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad10" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+    <filter id="shadow10" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#64748b" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <rect width="940" height="480" rx="14" fill="url(#bgGrad10)" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- Title -->
+  <text x="470" y="28" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="15" font-weight="bold" fill="#0f172a">TEST DESIGN METHODOLOGIES &amp; INPUT COVERAGE TAXONOMY</text>
+  <text x="470" y="46" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="10.5" fill="#475569">Equivalence Partitioning (ECP), Boundary Value Analysis (BVA), &amp; White-Box Structural Coverage</text>
+
+  <!-- COLUMN 1: Equivalence Partitioning & Boundary Value Analysis (X: 30 to 480) -->
+  <g transform="translate(30, 65)">
+    <rect width="440" height="390" rx="8" fill="#ffffff" stroke="#0284c7" stroke-width="1.2" filter="url(#shadow10)"/>
+    <text x="220" y="26" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="12" font-weight="bold" fill="#0284c7">1. Black-Box: ECP &amp; Boundary Value Analysis (BVA)</text>
+
+    <!-- Visual Input Domain Bar -->
+    <g transform="translate(20, 50)">
+      <text x="0" y="16" font-family="DejaVu Sans, Inter, sans-serif" font-size="10" font-weight="bold" fill="#0f172a">Input Domain Range: [Age / Quantity: 1 to 100]</text>
+      
+      <!-- Invalid Left Partition -->
+      <rect x="0" y="30" width="80" height="40" rx="4" fill="#fee2e2" stroke="#dc2626" stroke-width="1"/>
+      <text x="40" y="50" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" fill="#991b1b">Invalid &lt; 1</text>
+      <text x="40" y="63" text-anchor="middle" font-family="DejaVu Sans Mono, monospace" font-size="8" fill="#dc2626">[-∞, 0]</text>
+
+      <!-- Valid Middle Partition -->
+      <rect x="85" y="30" width="220" height="40" rx="4" fill="#064e3b" stroke="#059669" stroke-width="1.5"/>
+      <text x="195" y="50" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="9.5" font-weight="bold" fill="#6ee7b7">Valid Equivalence Class [1 .. 100]</text>
+      <text x="195" y="63" text-anchor="middle" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#047857">Representative Nominal Value: 50</text>
+
+      <!-- Invalid Right Partition -->
+      <rect x="310" y="30" width="90" height="40" rx="4" fill="#fee2e2" stroke="#dc2626" stroke-width="1"/>
+      <text x="355" y="50" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" fill="#991b1b">Invalid &gt; 100</text>
+      <text x="355" y="63" text-anchor="middle" font-family="DejaVu Sans Mono, monospace" font-size="8" fill="#dc2626">[101, +∞]</text>
+    </g>
+
+    <!-- BVA Point Callouts -->
+    <g transform="translate(20, 140)">
+      <text x="0" y="18" font-family="DejaVu Sans, Inter, sans-serif" font-size="10.5" font-weight="bold" fill="#d97706">Boundary Value Test Vectors (6-Point &amp; Robustness):</text>
+      
+      <g transform="translate(0, 30)">
+        <rect width="395" height="26" rx="4" fill="#f8fafc" stroke="#e2e8f0"/>
+        <text x="10" y="17" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#991b1b"><tspan font-weight="bold">Min - 1 (0):</tspan> Boundary Fallback -&gt; Expect Error 'Value &lt; Min'</text>
+      </g>
+      <g transform="translate(0, 62)">
+        <rect width="395" height="26" rx="4" fill="#f8fafc" stroke="#e2e8f0"/>
+        <text x="10" y="17" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#6ee7b7"><tspan font-weight="bold">Min (1):</tspan> Lower Valid Boundary -&gt; Expect Success</text>
+      </g>
+      <g transform="translate(0, 94)">
+        <rect width="395" height="26" rx="4" fill="#f8fafc" stroke="#e2e8f0"/>
+        <text x="10" y="17" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#6ee7b7"><tspan font-weight="bold">Min + 1 (2):</tspan> Just Inside Lower Boundary -&gt; Expect Success</text>
+      </g>
+      <g transform="translate(0, 126)">
+        <rect width="395" height="26" rx="4" fill="#f8fafc" stroke="#e2e8f0"/>
+        <text x="10" y="17" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#6ee7b7"><tspan font-weight="bold">Max - 1 (99):</tspan> Just Inside Upper Boundary -&gt; Expect Success</text>
+      </g>
+      <g transform="translate(0, 158)">
+        <rect width="395" height="26" rx="4" fill="#f8fafc" stroke="#e2e8f0"/>
+        <text x="10" y="17" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#6ee7b7"><tspan font-weight="bold">Max (100):</tspan> Upper Valid Boundary -&gt; Expect Success</text>
+      </g>
+      <g transform="translate(0, 190)">
+        <rect width="395" height="26" rx="4" fill="#f8fafc" stroke="#e2e8f0"/>
+        <text x="10" y="17" font-family="DejaVu Sans Mono, monospace" font-size="8.5" fill="#991b1b"><tspan font-weight="bold">Max + 1 (101):</tspan> Boundary Overflow -&gt; Expect Error 'Value &gt; Max'</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- COLUMN 2: White-Box Structural Coverage Hierarchy (X: 490 to 910) -->
+  <g transform="translate(490, 65)">
+    <rect width="420" height="390" rx="8" fill="#ffffff" stroke="#059669" stroke-width="1.2" filter="url(#shadow10)"/>
+    <text x="210" y="26" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="12" font-weight="bold" fill="#047857">2. White-Box Coverage Hierarchy</text>
+
+    <!-- Hierarchy Stack (Pyramid levels from basic to strongest) -->
+    <!-- Level 1: Statement Coverage -->
+    <g transform="translate(20, 50)">
+      <rect width="380" height="65" rx="6" fill="#f8fafc" stroke="#0284c7" stroke-width="1.2"/>
+      <rect x="0" y="0" width="8" height="65" rx="2" fill="#0284c7"/>
+      <text x="20" y="22" font-family="DejaVu Sans, Inter, sans-serif" font-size="10.5" font-weight="bold" fill="#0284c7">Level 1: Statement (Line) Coverage (C1)</text>
+      <text x="20" y="38" font-family="DejaVu Sans, Inter, sans-serif" font-size="8.5" fill="#334155">Executes every reachable source statement at least once.</text>
+      <text x="20" y="52" font-family="DejaVu Sans Mono, monospace" font-size="8" fill="#475569">Metric: (Executed Statements / Total Statements) * 100%</text>
+    </g>
+
+    <!-- Level 2: Branch / Decision Coverage -->
+    <g transform="translate(20, 125)">
+      <rect width="380" height="65" rx="6" fill="#f8fafc" stroke="#4f46e5" stroke-width="1.2"/>
+      <rect x="0" y="0" width="8" height="65" rx="2" fill="#4f46e5"/>
+      <text x="20" y="22" font-family="DejaVu Sans, Inter, sans-serif" font-size="10.5" font-weight="bold" fill="#4338ca">Level 2: Decision / Branch Coverage (C2)</text>
+      <text x="20" y="38" font-family="DejaVu Sans, Inter, sans-serif" font-size="8.5" fill="#334155">Traverses every Boolean branch decision (True &amp; False).</text>
+      <text x="20" y="52" font-family="DejaVu Sans Mono, monospace" font-size="8" fill="#475569">Metric: (Executed Outcomes / Total Branch Outcomes) * 100%</text>
+    </g>
+
+    <!-- Level 3: Condition / MC/DC Coverage -->
+    <g transform="translate(20, 200)">
+      <rect width="380" height="65" rx="6" fill="#f8fafc" stroke="#ea580c" stroke-width="1.2"/>
+      <rect x="0" y="0" width="8" height="65" rx="2" fill="#ea580c"/>
+      <text x="20" y="22" font-family="DejaVu Sans, Inter, sans-serif" font-size="10.5" font-weight="bold" fill="#d97706">Level 3: Condition / MC-DC Coverage (C3)</text>
+      <text x="20" y="38" font-family="DejaVu Sans, Inter, sans-serif" font-size="8.5" fill="#334155">Evaluates all sub-conditions in compound expressions.</text>
+      <text x="20" y="52" font-family="DejaVu Sans Mono, monospace" font-size="8" fill="#475569">Metric: Validates independent effect of each condition.</text>
+    </g>
+
+    <!-- Level 4: Basis Path Coverage -->
+    <g transform="translate(20, 275)">
+      <rect width="380" height="65" rx="6" fill="#f8fafc" stroke="#059669" stroke-width="1.5"/>
+      <rect x="0" y="0" width="8" height="65" rx="2" fill="#059669"/>
+      <text x="20" y="22" font-family="DejaVu Sans, Inter, sans-serif" font-size="10.5" font-weight="bold" fill="#047857">Level 4: Basis Path Coverage (McCabe V(G))</text>
+      <text x="20" y="38" font-family="DejaVu Sans, Inter, sans-serif" font-size="8.5" fill="#334155">Executes every independent linear path through code.</text>
+      <text x="20" y="52" font-family="DejaVu Sans Mono, monospace" font-size="8" fill="#6ee7b7">Guarantees 100% Statement &amp; Branch Coverage.</text>
+    </g>
+  </g>
+
+</svg>

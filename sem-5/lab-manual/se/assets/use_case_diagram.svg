@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 560" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+    <filter id="shadow3" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#64748b" flood-opacity="0.4"/>
+    </filter>
+    <marker id="uc-arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#0284c7"/>
+    </marker>
+  </defs>
+
+  <rect width="940" height="560" rx="14" fill="url(#bgGrad3)" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- Title -->
+  <text x="470" y="32" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="16" font-weight="bold" fill="#0f172a">UML USE CASE DIAGRAM -- SWIFTRIDE RIDE-SHARING PLATFORM</text>
+  <text x="470" y="50" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="10.5" fill="#475569">Actors, System Boundary, Use Cases, &lt;&lt;include&gt;&gt; and &lt;&lt;extend&gt;&gt; Relationships</text>
+
+  <!-- System Boundary -->
+  <rect x="210" y="70" width="520" height="470" rx="10" fill="#ffffff" stroke="#0284c7" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <rect x="220" y="80" width="230" height="24" rx="4" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="335" y="96" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="11" font-weight="bold" fill="#0284c7">System: SwiftRide Web Platform</text>
+
+  <!-- ACTOR 1: Rider (Left) -->
+  <g transform="translate(90, 180)">
+    <!-- Stick Figure -->
+    <circle cx="25" cy="18" r="14" fill="#f8fafc" stroke="#0284c7" stroke-width="2"/>
+    <line x1="25" y1="32" x2="25" y2="70" stroke="#0284c7" stroke-width="2"/>
+    <line x1="0" y1="48" x2="50" y2="48" stroke="#0284c7" stroke-width="2"/>
+    <line x1="25" y1="70" x2="5" y2="105" stroke="#0284c7" stroke-width="2"/>
+    <line x1="25" y1="70" x2="45" y2="105" stroke="#0284c7" stroke-width="2"/>
+    <text x="25" y="125" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="12" font-weight="bold" fill="#0f172a">&lt;&lt;actor&gt;&gt;</text>
+    <text x="25" y="140" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="13" font-weight="bold" fill="#0284c7">Rider</text>
+  </g>
+
+  <!-- ACTOR 2: Admin (Right) -->
+  <g transform="translate(800, 180)">
+    <!-- Stick Figure -->
+    <circle cx="25" cy="18" r="14" fill="#f8fafc" stroke="#ea580c" stroke-width="2"/>
+    <line x1="25" y1="32" x2="25" y2="70" stroke="#ea580c" stroke-width="2"/>
+    <line x1="0" y1="48" x2="50" y2="48" stroke="#ea580c" stroke-width="2"/>
+    <line x1="25" y1="70" x2="5" y2="105" stroke="#ea580c" stroke-width="2"/>
+    <line x1="25" y1="70" x2="45" y2="105" stroke="#ea580c" stroke-width="2"/>
+    <text x="25" y="125" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="12" font-weight="bold" fill="#0f172a">&lt;&lt;actor&gt;&gt;</text>
+    <text x="25" y="140" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="13" font-weight="bold" fill="#d97706">Administrator</text>
+  </g>
+
+  <!-- ACTOR 3: Payment Gateway (Bottom Left) -->
+  <g transform="translate(90, 420)">
+    <rect width="100" height="46" rx="6" fill="#f8fafc" stroke="#059669" stroke-width="1.5"/>
+    <text x="50" y="20" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" fill="#475569">&lt;&lt;secondary actor&gt;&gt;</text>
+    <text x="50" y="36" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="11" font-weight="bold" fill="#047857">Payment Gateway</text>
+  </g>
+
+  <!-- ACTOR 4: Logistics Provider (Bottom Right) -->
+  <g transform="translate(760, 420)">
+    <rect width="110" height="46" rx="6" fill="#f8fafc" stroke="#9333ea" stroke-width="1.5"/>
+    <text x="55" y="20" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" fill="#475569">&lt;&lt;secondary actor&gt;&gt;</text>
+    <text x="55" y="36" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="11" font-weight="bold" fill="#7e22ce">Maps API</text>
+  </g>
+
+  <!-- USE CASES (Ovals) -->
+  <!-- UC 1: User Auth -->
+  <g transform="translate(390, 115)" filter="url(#shadow3)">
+    <ellipse cx="80" cy="18" rx="75" ry="18" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.2"/>
+    <text x="80" y="22" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="10.5" fill="#0f172a">Sign In / Register</text>
+  </g>
+
+  <!-- UC 2: Browse & Search -->
+  <g transform="translate(240, 160)" filter="url(#shadow3)">
+    <ellipse cx="80" cy="18" rx="75" ry="18" fill="#f8fafc" stroke="#0284c7" stroke-width="1.2"/>
+    <text x="80" y="22" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="10.5" fill="#0f172a">Enter Drop Location</text>
+  </g>
+
+  <!-- UC 3: Manage RideSession -->
+  <g transform="translate(240, 215)" filter="url(#shadow3)">
+    <ellipse cx="80" cy="18" rx="75" ry="18" fill="#f8fafc" stroke="#0284c7" stroke-width="1.2"/>
+    <text x="80" y="22" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="10.5" fill="#0f172a">Manage Ride Booking</text>
+  </g>
+
+  <!-- UC 4: Booking & Ride -->
+  <g transform="translate(250, 280)" filter="url(#shadow3)">
+    <ellipse cx="85" cy="20" rx="80" ry="20" fill="#f8fafc" stroke="#0284c7" stroke-width="1.5"/>
+    <text x="85" y="24" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="10.5" font-weight="bold" fill="#0284c7">Confirm &amp; Book Ride</text>
+  </g>
+
+  <!-- UC 5: Apply Promo Code (Extended) -->
+  <g transform="translate(480, 240)" filter="url(#shadow3)">
+    <ellipse cx="75" cy="18" rx="70" ry="18" fill="#f8fafc" stroke="#1e293b" stroke-dasharray="3,3" stroke-width="1.2"/>
+    <text x="75" y="22" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="10" fill="#334155">Apply Promo Code</text>
+  </g>
+
+  <!-- UC 6: Process Payment (Included) -->
+  <g transform="translate(250, 360)" filter="url(#shadow3)">
+    <ellipse cx="85" cy="20" rx="80" ry="20" fill="#f8fafc" stroke="#059669" stroke-width="1.5"/>
+    <text x="85" y="24" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="10.5" font-weight="bold" fill="#047857">Process Payment</text>
+  </g>
+
+  <!-- UC 7: 3D Secure / OTP (Included from Payment) -->
+  <g transform="translate(480, 360)" filter="url(#shadow3)">
+    <ellipse cx="75" cy="18" rx="70" ry="18" fill="#f8fafc" stroke="#059669" stroke-dasharray="3,3" stroke-width="1.2"/>
+    <text x="75" y="22" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="9.5" fill="#065f46">Verify OTP / 3DSecure</text>
+  </g>
+
+  <!-- UC 8: Track Ride -->
+  <g transform="translate(260, 440)" filter="url(#shadow3)">
+    <ellipse cx="75" cy="18" rx="70" ry="18" fill="#f8fafc" stroke="#0284c7" stroke-width="1.2"/>
+    <text x="75" y="22" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="10" fill="#0f172a">Track Driver Live</text>
+  </g>
+
+  <!-- UC 9: Admin - Manage Catalog -->
+  <g transform="translate(540, 160)" filter="url(#shadow3)">
+    <ellipse cx="80" cy="18" rx="75" ry="18" fill="#f8fafc" stroke="#ea580c" stroke-width="1.2"/>
+    <text x="80" y="22" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="10" fill="#0f172a">Manage Driver Fleet</text>
+  </g>
+
+  <!-- UC 10: Admin - View Sales Analytics -->
+  <g transform="translate(540, 440)" filter="url(#shadow3)">
+    <ellipse cx="80" cy="18" rx="75" ry="18" fill="#f8fafc" stroke="#ea580c" stroke-width="1.2"/>
+    <text x="80" y="22" text-anchor="middle" font-family="DejaVu Sans, Inter, sans-serif" font-size="10" fill="#0f172a">View Sales Analytics</text>
+  </g>
+
+  <!-- Actor Associations (Solid Lines) -->
+  <!-- Rider to UC1, UC2, UC3, UC4, UC8 -->
+  <line x1="140" y1="220" x2="390" y2="133" stroke="#94a3b8" stroke-width="1.2"/>
+  <line x1="140" y1="230" x2="240" y2="178" stroke="#0284c7" stroke-width="1.2"/>
+  <line x1="140" y1="240" x2="240" y2="233" stroke="#0284c7" stroke-width="1.2"/>
+  <line x1="140" y1="250" x2="250" y2="300" stroke="#0284c7" stroke-width="1.5"/>
+  <line x1="140" y1="260" x2="260" y2="458" stroke="#0284c7" stroke-width="1.2"/>
+
+  <!-- Admin to UC1, UC9, UC10 -->
+  <line x1="800" y1="220" x2="540" y2="133" stroke="#94a3b8" stroke-width="1.2"/>
+  <line x1="800" y1="235" x2="695" y2="178" stroke="#ea580c" stroke-width="1.2"/>
+  <line x1="800" y1="255" x2="695" y2="458" stroke="#ea580c" stroke-width="1.2"/>
+
+  <!-- Payment Gateway to UC6 -->
+  <line x1="190" y1="440" x2="255" y2="385" stroke="#059669" stroke-width="1.5"/>
+
+  <!-- Logistics to UC8 -->
+  <line x1="760" y1="445" x2="410" y2="458" stroke="#9333ea" stroke-width="1.2"/>
+
+  <!-- <<include>> and <<extend>> Relationships (Dashed with arrows) -->
+  <!-- Booking  -  <<include>> --> Process Payment -->
+  <path d="M 335 320 L 335 360" fill="none" stroke="#0284c7" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#uc-arrow)"/>
+  <text x="345" y="344" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" fill="#0284c7">&lt;&lt;include&gt;&gt;</text>
+
+  <!-- Process Payment  -  <<include>> --> 3DSecure -->
+  <path d="M 420 380 L 480 378" fill="none" stroke="#059669" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#uc-arrow)"/>
+  <text x="424" y="372" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" fill="#047857">&lt;&lt;include&gt;&gt;</text>
+
+  <!-- Apply Promo Code  -  <<extend>> --> Booking -->
+  <path d="M 485 265 L 415 285" fill="none" stroke="#1e293b" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#uc-arrow)"/>
+  <text x="430" y="272" font-family="DejaVu Sans, Inter, sans-serif" font-size="9" fill="#334155">&lt;&lt;extend&gt;&gt;</text>
+
+</svg>
