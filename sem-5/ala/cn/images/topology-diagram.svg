@@ -1,0 +1,202 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 530" width="100%" height="100%">
+  <defs>
+    <filter id="ptShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="1" dy="2" stdDeviation="2.5" flood-color="#000000" flood-opacity="0.2" />
+    </filter>
+  </defs>
+
+  <!-- Cisco Packet Tracer Workspace Background -->
+  <rect width="900" height="530" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
+
+  <!-- Technical Grid Dots (Packet Tracer workspace style) -->
+  <g fill="#cbd5e1" opacity="0.6">
+    <pattern id="dotGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" />
+    </pattern>
+    <rect width="900" height="530" fill="url(#dotGrid)" />
+  </g>
+
+  <!-- PT Workspace Top Bar -->
+  <rect x="0" y="0" width="900" height="32" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1" />
+  <text x="14" y="21" fill="#334155" font-family="'Segoe UI', 'DejaVu Sans', sans-serif" font-size="11.5" font-weight="600">Cisco Packet Tracer 8.2.1 - [Inter-VLAN-ROAS-Simulation.pkt *]</text>
+  
+  <!-- Workspace Mode Badges -->
+  <g transform="translate(685, 4)">
+    <rect x="0" y="0" width="85" height="24" rx="3" fill="#ffffff" stroke="#94a3b8" stroke-width="0.8" />
+    <text x="42" y="16" fill="#0f172a" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="bold" text-anchor="middle">Logical</text>
+    
+    <rect x="95" y="0" width="105" height="24" rx="3" fill="#22c55e" fill-opacity="0.15" stroke="#16a34a" stroke-width="0.8" />
+    <circle cx="107" cy="12" r="4" fill="#16a34a" />
+    <text x="150" y="16" fill="#15803d" font-family="'Segoe UI', sans-serif" font-size="10.5" font-weight="bold" text-anchor="middle">Realtime</text>
+  </g>
+
+  <!-- ================= COPPER STRAIGHT-THROUGH CABLES ================= -->
+  <!-- R1 (450, 95) to S1 (450, 185): 802.1Q Trunk Link -->
+  <line x1="450" y1="95" x2="450" y2="185" stroke="#000000" stroke-width="2.5" />
+  
+  <!-- S1 (420, 205) to PC-A (225, 365): Clean Direct Trajectory -->
+  <line x1="420" y1="205" x2="225" y2="365" stroke="#000000" stroke-width="2" />
+  
+  <!-- S1 (480, 205) to PC-B (675, 365): Clean Direct Trajectory -->
+  <line x1="480" y1="205" x2="675" y2="365" stroke="#000000" stroke-width="2" />
+
+  <!-- ================= LINK LIGHTS (GREEN TRIANGLES) ================= -->
+  <!-- R1 G0/0 link light -->
+  <polygon points="446,112 454,112 450,104" fill="#16a34a" stroke="#15803d" stroke-width="0.7" />
+  <!-- S1 G0/1 link light -->
+  <polygon points="446,172 454,172 450,180" fill="#16a34a" stroke="#15803d" stroke-width="0.7" />
+  <!-- S1 Fa0/1 link light -->
+  <polygon points="408,218 416,218 412,210" fill="#16a34a" stroke="#15803d" stroke-width="0.7" />
+  <!-- PC-A Fa0 link light -->
+  <polygon points="233,352 241,352 237,360" fill="#16a34a" stroke="#15803d" stroke-width="0.7" />
+  <!-- S1 Fa0/2 link light -->
+  <polygon points="484,218 492,218 488,210" fill="#16a34a" stroke="#15803d" stroke-width="0.7" />
+  <!-- PC-B Fa0 link light -->
+  <polygon points="659,352 667,352 663,360" fill="#16a34a" stroke="#15803d" stroke-width="0.7" />
+
+  <!-- ================= PORT LABELS (YELLOW TOOLTIP STYLE) ================= -->
+  <!-- Gig0/0 on Router (Left side of cable, completely clear of text) -->
+  <g transform="translate(395, 108)">
+    <rect width="46" height="18" rx="2" fill="#fffde7" stroke="#cbd5e1" stroke-width="0.8" />
+    <text x="23" y="13" fill="#1e293b" font-family="'DejaVu Sans Mono', monospace" font-size="9" font-weight="bold" text-anchor="middle">Gig0/0</text>
+  </g>
+  <!-- Gig0/1 on Switch (Left side of cable, completely clear of text) -->
+  <g transform="translate(395, 165)">
+    <rect width="46" height="18" rx="2" fill="#fffde7" stroke="#cbd5e1" stroke-width="0.8" />
+    <text x="23" y="13" fill="#1e293b" font-family="'DejaVu Sans Mono', monospace" font-size="9" font-weight="bold" text-anchor="middle">Gig0/1</text>
+  </g>
+  <!-- Fa0/1 on Switch (Above left cable line) -->
+  <g transform="translate(325, 235)">
+    <rect width="42" height="18" rx="2" fill="#fffde7" stroke="#cbd5e1" stroke-width="0.8" />
+    <text x="21" y="13" fill="#1e293b" font-family="'DejaVu Sans Mono', monospace" font-size="9" font-weight="bold" text-anchor="middle">Fa0/1</text>
+  </g>
+  <!-- Fa0/2 on Switch (Above right cable line) -->
+  <g transform="translate(535, 235)">
+    <rect width="42" height="18" rx="2" fill="#fffde7" stroke="#cbd5e1" stroke-width="0.8" />
+    <text x="21" y="13" fill="#1e293b" font-family="'DejaVu Sans Mono', monospace" font-size="9" font-weight="bold" text-anchor="middle">Fa0/2</text>
+  </g>
+
+  <!-- Trunk Link Annotation Box -->
+  <g transform="translate(520, 115)">
+    <rect width="180" height="42" rx="4" fill="#fffde7" stroke="#eab308" stroke-width="1.2" filter="url(#ptShadow)" />
+    <text x="10" y="17" fill="#a16207" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="bold">802.1Q Trunk Link</text>
+    <text x="10" y="31" fill="#1e293b" font-family="'DejaVu Sans Mono', monospace" font-size="9.5">VLANs: 1, 10, 20 Allowed</text>
+  </g>
+
+  <!-- ================= ROUTER R1 (CISCO 3D CYLINDER) ================= -->
+  <g transform="translate(450, 75)" filter="url(#ptShadow)">
+    <path d="M -26 0 L -26 15 A 26 8.5 0 0 0 26 15 L 26 0 Z" fill="#0284c7" />
+    <ellipse cx="0" cy="15" rx="26" ry="8.5" fill="none" stroke="#0369a1" stroke-width="1" />
+    <ellipse cx="0" cy="0" rx="26" ry="8.5" fill="#38bdf8" stroke="#0284c7" stroke-width="1.3" />
+    <g stroke="#ffffff" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M -14 0 L 14 0" />
+      <path d="M -9 -3.5 L -14 0 L -9 3.5" />
+      <path d="M 9 -3.5 L 14 0 L 9 3.5" />
+      <path d="M 0 -3.5 L 0 3.5" />
+      <path d="M -3 -1 L 0 -3.5 L 3 -1" />
+      <path d="M -3 1 L 0 3.5 L 3 1" />
+    </g>
+    <text x="0" y="28" fill="#0f172a" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="bold" text-anchor="middle">R1</text>
+    <text x="0" y="40" fill="#64748b" font-family="'Segoe UI', sans-serif" font-size="9.5" font-weight="600" text-anchor="middle">1941</text>
+  </g>
+
+  <!-- Router Sub-interface Note -->
+  <g transform="translate(130, 55)">
+    <rect width="210" height="52" rx="4" fill="#fffde7" stroke="#fbc02d" stroke-width="1" filter="url(#ptShadow)" />
+    <text x="10" y="16" fill="#854d0e" font-family="'DejaVu Sans Mono', monospace" font-size="9.5" font-weight="bold">R1 Sub-interfaces (ROAS):</text>
+    <text x="10" y="31" fill="#1e293b" font-family="'DejaVu Sans Mono', monospace" font-size="9.5">G0/0.10: 192.168.10.1 (VLAN 10)</text>
+    <text x="10" y="45" fill="#1e293b" font-family="'DejaVu Sans Mono', monospace" font-size="9.5">G0/0.20: 192.168.20.1 (VLAN 20)</text>
+  </g>
+
+  <!-- ================= SWITCH S1 (CISCO 2960 SWITCH) ================= -->
+  <g transform="translate(450, 195)" filter="url(#ptShadow)">
+    <rect x="-32" y="-11" width="64" height="22" rx="2" fill="#059669" stroke="#047857" stroke-width="1.3" />
+    <g stroke="#ffffff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M -20 -3.5 L -4 -3.5 M -7 -7 L -4 -3.5 L -7 0" />
+      <path d="M 4 -3.5 L 20 -3.5 M 7 -7 L 4 -3.5 L 7 0" />
+      <path d="M -4 3.5 L -20 3.5 M -17 0 L -20 3.5 L -17 7" />
+      <path d="M 20 3.5 L 4 3.5 M 17 0 L 20 3.5 L 17 7" />
+    </g>
+    <text x="0" y="24" fill="#0f172a" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="bold" text-anchor="middle">S1</text>
+    <text x="0" y="36" fill="#64748b" font-family="'Segoe UI', sans-serif" font-size="9.5" font-weight="600" text-anchor="middle">2960-24TT</text>
+  </g>
+
+  <!-- ================= VLAN BOUNDING BOXES (SYMMETRICAL MIRROR) ================= -->
+  <!-- Left Box: VLAN 10 (Sales Subnet) -->
+  <g transform="translate(35, 265)">
+    <rect width="375" height="245" rx="10" fill="#e0f2fe" fill-opacity="0.75" stroke="#0284c7" stroke-width="1.8" stroke-dasharray="6,4" />
+    
+    <!-- Title Badge -->
+    <rect x="14" y="12" width="150" height="24" rx="4" fill="#0284c7" />
+    <text x="89" y="28" fill="#ffffff" font-family="'Segoe UI', 'DejaVu Sans', sans-serif" font-size="11" font-weight="bold" text-anchor="middle">VLAN 10 : SALES</text>
+    
+    <!-- Subnet Info Note -->
+    <g transform="translate(14, 50)">
+      <rect width="175" height="74" rx="4" fill="#fffde7" stroke="#fbc02d" stroke-width="1" filter="url(#ptShadow)" />
+      <text x="10" y="18" fill="#854d0e" font-family="'DejaVu Sans Mono', monospace" font-size="9.5" font-weight="bold">Network Parameters:</text>
+      <text x="10" y="34" fill="#1e293b" font-family="'DejaVu Sans Mono', monospace" font-size="9">Subnet: 192.168.10.0/24</text>
+      <text x="10" y="49" fill="#1e293b" font-family="'DejaVu Sans Mono', monospace" font-size="9">Gateway: 192.168.10.1</text>
+      <text x="10" y="64" fill="#1e293b" font-family="'DejaVu Sans Mono', monospace" font-size="9">Access Port: Fa0/1</text>
+    </g>
+
+    <!-- PC-A Workstation (Centered at 290) -->
+    <g transform="translate(290, 115)" filter="url(#ptShadow)">
+      <!-- Monitor -->
+      <rect x="-26" y="-30" width="52" height="36" rx="3" fill="#334155" stroke="#1e293b" stroke-width="1.5" />
+      <rect x="-22" y="-26" width="44" height="28" rx="2" fill="#0284c7" />
+      <line x1="-16" y1="-18" x2="6" y2="-18" stroke="#ffffff" stroke-width="1.5" opacity="0.7" />
+      <line x1="-16" y1="-12" x2="16" y2="-12" stroke="#ffffff" stroke-width="1.5" opacity="0.7" />
+      <line x1="-16" y1="-6" x2="-2" y2="-6" stroke="#ffffff" stroke-width="1.5" opacity="0.7" />
+      <!-- Stand & Base -->
+      <rect x="-5" y="6" width="10" height="7" fill="#64748b" />
+      <rect x="-16" y="13" width="32" height="3" rx="1" fill="#475569" />
+      <!-- PC Tower -->
+      <rect x="30" y="-28" width="16" height="42" rx="2" fill="#1e293b" />
+      <circle cx="38" cy="-20" r="2" fill="#38bdf8" />
+      <line x1="34" y1="-14" x2="42" y2="-14" stroke="#64748b" stroke-width="1" />
+      <line x1="34" y1="-10" x2="42" y2="-10" stroke="#64748b" stroke-width="1" />
+      <!-- Label -->
+      <text x="0" y="32" fill="#0f172a" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="bold" text-anchor="middle">PC-A</text>
+      <text x="0" y="47" fill="#0284c7" font-family="'DejaVu Sans Mono', monospace" font-size="10" font-weight="600" text-anchor="middle">192.168.10.2</text>
+    </g>
+  </g>
+
+  <!-- Right Box: VLAN 20 (Engineering Subnet) - PERFECT MIRROR -->
+  <g transform="translate(490, 265)">
+    <rect width="375" height="245" rx="10" fill="#dcfce7" fill-opacity="0.75" stroke="#16a34a" stroke-width="1.8" stroke-dasharray="6,4" />
+    
+    <!-- Title Badge (Mirrored on Right) -->
+    <rect x="185" y="12" width="176" height="24" rx="4" fill="#16a34a" />
+    <text x="273" y="28" fill="#ffffff" font-family="'Segoe UI', 'DejaVu Sans', sans-serif" font-size="11" font-weight="bold" text-anchor="middle">VLAN 20 : ENGINEERING</text>
+    
+    <!-- Subnet Info Note (Mirrored on Right) -->
+    <g transform="translate(185, 50)">
+      <rect width="175" height="74" rx="4" fill="#fffde7" stroke="#fbc02d" stroke-width="1" filter="url(#ptShadow)" />
+      <text x="10" y="18" fill="#854d0e" font-family="'DejaVu Sans Mono', monospace" font-size="9.5" font-weight="bold">Network Parameters:</text>
+      <text x="10" y="34" fill="#1e293b" font-family="'DejaVu Sans Mono', monospace" font-size="9">Subnet: 192.168.20.0/24</text>
+      <text x="10" y="49" fill="#1e293b" font-family="'DejaVu Sans Mono', monospace" font-size="9">Gateway: 192.168.20.1</text>
+      <text x="10" y="64" fill="#1e293b" font-family="'DejaVu Sans Mono', monospace" font-size="9">Access Port: Fa0/2</text>
+    </g>
+
+    <!-- PC-B Workstation (Centered at 85) -->
+    <g transform="translate(85, 115)" filter="url(#ptShadow)">
+      <!-- Monitor -->
+      <rect x="-26" y="-30" width="52" height="36" rx="3" fill="#334155" stroke="#1e293b" stroke-width="1.5" />
+      <rect x="-22" y="-26" width="44" height="28" rx="2" fill="#16a34a" />
+      <line x1="-16" y1="-18" x2="6" y2="-18" stroke="#ffffff" stroke-width="1.5" opacity="0.7" />
+      <line x1="-16" y1="-12" x2="16" y2="-12" stroke="#ffffff" stroke-width="1.5" opacity="0.7" />
+      <line x1="-16" y1="-6" x2="-2" y2="-6" stroke="#ffffff" stroke-width="1.5" opacity="0.7" />
+      <!-- Stand & Base -->
+      <rect x="-5" y="6" width="10" height="7" fill="#64748b" />
+      <rect x="-16" y="13" width="32" height="3" rx="1" fill="#475569" />
+      <!-- PC Tower -->
+      <rect x="-46" y="-28" width="16" height="42" rx="2" fill="#1e293b" />
+      <circle cx="-38" cy="-20" r="2" fill="#4ade80" />
+      <line x1="-42" y1="-14" x2="-34" y2="-14" stroke="#64748b" stroke-width="1" />
+      <line x1="-42" y1="-10" x2="-34" y2="-10" stroke="#64748b" stroke-width="1" />
+      <!-- Label -->
+      <text x="0" y="32" fill="#0f172a" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="bold" text-anchor="middle">PC-B</text>
+      <text x="0" y="47" fill="#16a34a" font-family="'DejaVu Sans Mono', monospace" font-size="10" font-weight="600" text-anchor="middle">192.168.20.2</text>
+    </g>
+  </g>
+</svg>

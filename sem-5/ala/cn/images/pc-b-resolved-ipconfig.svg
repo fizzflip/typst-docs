@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="100%">
+  <!-- Window Frame -->
+  <rect width="800" height="480" rx="6" fill="#f0f0f0" stroke="#999999" stroke-width="1" />
+
+  <!-- Title Bar -->
+  <rect x="0" y="0" width="800" height="32" rx="6" fill="#ffffff" />
+  <rect x="0" y="26" width="800" height="6" fill="#ffffff" />
+  <line x1="0" y1="32" x2="800" y2="32" stroke="#d4d4d4" stroke-width="1" />
+  <text x="14" y="21" fill="#1e293b" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="600">PC-B</text>
+  
+  <!-- Window Controls -->
+  <g transform="translate(725, 6)">
+    <line x1="4" y1="10" x2="16" y2="10" stroke="#333333" stroke-width="1.2" />
+    <rect x="28" y="4" width="12" height="12" fill="none" stroke="#333333" stroke-width="1.2" />
+    <line x1="52" y1="4" x2="64" y2="16" stroke="#333333" stroke-width="1.2" />
+    <line x1="64" y1="4" x2="52" y2="16" stroke="#333333" stroke-width="1.2" />
+  </g>
+
+  <!-- PT Tabs Bar -->
+  <g transform="translate(10, 38)">
+    <rect x="0" y="0" width="80" height="26" rx="2" fill="#e1e4e8" stroke="#cbd5e1" stroke-width="1" />
+    <text x="40" y="17" fill="#475569" font-family="'Segoe UI', sans-serif" font-size="11" text-anchor="middle">Physical</text>
+
+    <rect x="85" y="0" width="80" height="26" rx="2" fill="#e1e4e8" stroke="#cbd5e1" stroke-width="1" />
+    <text x="125" y="17" fill="#475569" font-family="'Segoe UI', sans-serif" font-size="11" text-anchor="middle">Config</text>
+
+    <!-- Tab: Desktop (Active) -->
+    <rect x="170" y="0" width="85" height="27" rx="2" fill="#ffffff" stroke="#999999" stroke-width="1" />
+    <line x1="171" y1="27" x2="254" y2="27" stroke="#ffffff" stroke-width="2" />
+    <text x="212" y="17" fill="#0f172a" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="bold" text-anchor="middle">Desktop</text>
+
+    <rect x="260" y="0" width="95" height="26" rx="2" fill="#e1e4e8" stroke="#cbd5e1" stroke-width="1" />
+    <text x="307" y="17" fill="#475569" font-family="'Segoe UI', sans-serif" font-size="11" text-anchor="middle">Programming</text>
+  </g>
+
+  <!-- Desktop Applet Sub-Window: IP Configuration -->
+  <g transform="translate(25, 75)">
+    <rect width="750" height="380" fill="#ffffff" stroke="#b0b0b0" stroke-width="1" />
+    <rect width="750" height="28" fill="#e8eaed" stroke="#b0b0b0" stroke-width="0.8" />
+    <text x="12" y="19" fill="#1f2937" font-family="'Segoe UI', sans-serif" font-size="11.5" font-weight="bold">IP Configuration</text>
+
+    <!-- Radio Buttons -->
+    <g transform="translate(25, 45)">
+      <text x="0" y="14" fill="#374151" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="bold">Interface:</text>
+      <text x="75" y="14" fill="#1f2937" font-family="'Segoe UI', sans-serif" font-size="11">FastEthernet0</text>
+      
+      <g transform="translate(180, 0)">
+        <circle cx="10" cy="10" r="6" fill="#ffffff" stroke="#9ca3af" stroke-width="1.5" />
+        <text x="24" y="14" fill="#374151" font-family="'Segoe UI', sans-serif" font-size="11">DHCP</text>
+        
+        <circle cx="95" cy="10" r="6" fill="#ffffff" stroke="#16a34a" stroke-width="1.5" />
+        <circle cx="95" cy="10" r="3" fill="#16a34a" />
+        <text x="109" y="14" fill="#111827" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="bold">Static</text>
+      </g>
+    </g>
+
+    <!-- IPv4 Form Group -->
+    <g transform="translate(25, 85)">
+      <rect width="700" height="24" fill="#f3f4f6" />
+      <text x="10" y="16" fill="#1f2937" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="bold">IPv4 Configuration (Corrected)</text>
+      
+      <!-- IP Address -->
+      <g transform="translate(15, 38)">
+        <text x="0" y="15" fill="#374151" font-family="'Segoe UI', sans-serif" font-size="11">IP Address</text>
+        <rect x="140" y="0" width="300" height="24" fill="#ffffff" stroke="#9ca3af" stroke-width="1" />
+        <text x="150" y="16" fill="#111827" font-family="'Courier New', monospace" font-size="11.5">192.168.20.2</text>
+      </g>
+
+      <!-- Subnet Mask -->
+      <g transform="translate(15, 70)">
+        <text x="0" y="15" fill="#374151" font-family="'Segoe UI', sans-serif" font-size="11">Subnet Mask</text>
+        <rect x="140" y="0" width="300" height="24" fill="#ffffff" stroke="#9ca3af" stroke-width="1" />
+        <text x="150" y="16" fill="#111827" font-family="'Courier New', monospace" font-size="11.5">255.255.255.0</text>
+      </g>
+
+      <!-- Default Gateway (RESOLVED) -->
+      <g transform="translate(15, 102)">
+        <text x="0" y="15" fill="#16a34a" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="bold">Default Gateway</text>
+        <rect x="140" y="0" width="300" height="24" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.8" />
+        <text x="150" y="16" fill="#15803d" font-family="'Courier New', monospace" font-size="11.5" font-weight="bold">192.168.20.1</text>
+        <!-- Green Callout Box -->
+        <g transform="translate(455, -2)">
+          <rect width="210" height="28" rx="3" fill="#dcfce7" stroke="#16a34a" stroke-width="1" />
+          <text x="10" y="18" fill="#15803d" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="bold">[RESOLVED: Gateway = R1:G0/0.20]</text>
+        </g>
+      </g>
+
+      <!-- DNS Server -->
+      <g transform="translate(15, 134)">
+        <text x="0" y="15" fill="#374151" font-family="'Segoe UI', sans-serif" font-size="11">DNS Server</text>
+        <rect x="140" y="0" width="300" height="24" fill="#ffffff" stroke="#9ca3af" stroke-width="1" />
+        <text x="150" y="16" fill="#9ca3af" font-family="'Courier New', monospace" font-size="11.5">0.0.0.0</text>
+      </g>
+    </g>
+
+    <!-- Success Message Banner -->
+    <g transform="translate(25, 260)">
+      <rect width="700" height="42" rx="4" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1" />
+      <text x="14" y="18" fill="#16a34a" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="bold">Remediation Status: Success</text>
+      <text x="14" y="32" fill="#374151" font-family="'Segoe UI', sans-serif" font-size="10.5">PC-B now successfully addresses inter-VLAN return traffic to the R1 sub-interface gateway.</text>
+    </g>
+  </g>
+</svg>

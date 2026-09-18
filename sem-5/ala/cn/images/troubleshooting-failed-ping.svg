@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="100%">
+  <!-- Window Frame -->
+  <rect width="800" height="480" rx="6" fill="#f0f0f0" stroke="#999999" stroke-width="1" />
+
+  <!-- Title Bar -->
+  <rect x="0" y="0" width="800" height="32" rx="6" fill="#ffffff" />
+  <rect x="0" y="26" width="800" height="6" fill="#ffffff" />
+  <line x1="0" y1="32" x2="800" y2="32" stroke="#d4d4d4" stroke-width="1" />
+  <text x="14" y="21" fill="#1e293b" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="600">PC-A - Command Prompt</text>
+  
+  <!-- Window Controls -->
+  <g transform="translate(725, 6)">
+    <line x1="4" y1="10" x2="16" y2="10" stroke="#333333" stroke-width="1.2" />
+    <rect x="28" y="4" width="12" height="12" fill="none" stroke="#333333" stroke-width="1.2" />
+    <line x1="52" y1="4" x2="64" y2="16" stroke="#333333" stroke-width="1.2" />
+    <line x1="64" y1="4" x2="52" y2="16" stroke="#333333" stroke-width="1.2" />
+  </g>
+
+  <!-- Terminal Body -->
+  <rect x="10" y="42" width="780" height="426" fill="#000000" stroke="#555555" stroke-width="1" />
+
+  <g transform="translate(24, 66)" font-family="'Courier New', Courier, monospace" font-size="12" fill="#ffffff">
+    <text y="0" fill="#9ca3af">Packet Tracer PC Command Line 1.0</text>
+    
+    <!-- Local Gateway Ping -->
+    <text y="24">C:\&gt; ping 192.168.10.1</text>
+    <text y="42">Pinging 192.168.10.1 with 32 bytes of data:</text>
+    <text y="60">Reply from 192.168.10.1: bytes=32 time&lt;1ms TTL=255</text>
+    <text y="76">Reply from 192.168.10.1: bytes=32 time&lt;1ms TTL=255</text>
+    
+    <!-- Failed Cross-VLAN Ping -->
+    <text y="104">C:\&gt; ping 192.168.20.2</text>
+    <text y="122">Pinging 192.168.20.2 with 32 bytes of data:</text>
+    <text y="140" fill="#f87171">Request timed out.</text>
+    <text y="156" fill="#f87171">Request timed out.</text>
+    <text y="172" fill="#f87171">Request timed out.</text>
+    <text y="188" fill="#f87171">Request timed out.</text>
+    <text y="210">Ping statistics for 192.168.20.2:</text>
+    <text y="226">    Packets: Sent = 4, Received = 0, Lost = 4 <tspan fill="#f87171">(100% loss)</tspan>,</text>
+
+    <!-- Inspection on PC-B -->
+    <line x1="0" y1="242" x2="750" y2="242" stroke="#4b5563" stroke-width="1" stroke-dasharray="4,4" />
+    <text y="260" fill="#fbbf24">// Diagnostic Trace on PC-B Console:</text>
+    <text y="280">PC-B&gt; ipconfig</text>
+    <text y="298">FastEthernet0 Connection:</text>
+    <text y="316">   IP Address. . . . . . . . . : 192.168.20.2</text>
+    <text y="332">   Subnet Mask . . . . . . . . : 255.255.255.0</text>
+    <text y="348" fill="#f87171">   Default Gateway . . . . . . : 192.168.20.99  &lt;-- [UNREACHABLE GATEWAY]</text>
+    <text y="372">PC-B&gt; _</text>
+  </g>
+</svg>

@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="100%">
+  <!-- Window Frame (Windows/Qt Native Look) -->
+  <rect width="800" height="480" rx="6" fill="#f0f0f0" stroke="#999999" stroke-width="1" />
+
+  <!-- Title Bar -->
+  <rect x="0" y="0" width="800" height="32" rx="6" fill="#ffffff" />
+  <rect x="0" y="26" width="800" height="6" fill="#ffffff" />
+  <line x1="0" y1="32" x2="800" y2="32" stroke="#d4d4d4" stroke-width="1" />
+  
+  <!-- Window Title -->
+  <text x="14" y="21" fill="#1e293b" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="600">S1</text>
+  
+  <!-- Window Control Buttons -->
+  <g transform="translate(725, 6)">
+    <rect x="0" y="0" width="20" height="20" fill="none" />
+    <line x1="4" y1="10" x2="16" y2="10" stroke="#333333" stroke-width="1.2" />
+    <rect x="24" y="0" width="20" height="20" fill="none" />
+    <rect x="28" y="4" width="12" height="12" fill="none" stroke="#333333" stroke-width="1.2" />
+    <rect x="48" y="0" width="20" height="20" fill="none" />
+    <line x1="52" y1="4" x2="64" y2="16" stroke="#333333" stroke-width="1.2" />
+    <line x1="64" y1="4" x2="52" y2="16" stroke="#333333" stroke-width="1.2" />
+  </g>
+
+  <!-- PT Tabs Bar -->
+  <g transform="translate(10, 38)">
+    <!-- Tab: Physical -->
+    <rect x="0" y="0" width="80" height="26" rx="2" fill="#e1e4e8" stroke="#cbd5e1" stroke-width="1" />
+    <text x="40" y="17" fill="#475569" font-family="'Segoe UI', sans-serif" font-size="11" text-anchor="middle">Physical</text>
+
+    <!-- Tab: Config -->
+    <rect x="85" y="0" width="80" height="26" rx="2" fill="#e1e4e8" stroke="#cbd5e1" stroke-width="1" />
+    <text x="125" y="17" fill="#475569" font-family="'Segoe UI', sans-serif" font-size="11" text-anchor="middle">Config</text>
+
+    <!-- Tab: CLI (Active) -->
+    <rect x="170" y="0" width="75" height="27" rx="2" fill="#ffffff" stroke="#999999" stroke-width="1" />
+    <line x1="171" y1="27" x2="244" y2="27" stroke="#ffffff" stroke-width="2" />
+    <text x="207" y="17" fill="#0f172a" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="bold" text-anchor="middle">CLI</text>
+
+    <!-- Tab: Attributes -->
+    <rect x="250" y="0" width="85" height="26" rx="2" fill="#e1e4e8" stroke="#cbd5e1" stroke-width="1" />
+    <text x="292" y="17" fill="#475569" font-family="'Segoe UI', sans-serif" font-size="11" text-anchor="middle">Attributes</text>
+  </g>
+
+  <!-- Terminal Canvas (Cisco IOS Console) -->
+  <rect x="10" y="65" width="780" height="400" fill="#000000" stroke="#777777" stroke-width="1" />
+
+  <g transform="translate(24, 90)" font-family="'Courier New', Courier, monospace" font-size="12" fill="#ffffff">
+    <text y="0">Switch&gt; enable</text>
+    <text y="18">Switch# configure terminal</text>
+    <text y="36" fill="#9ca3af">Enter configuration commands, one per line.  End with CNTL/Z.</text>
+    <text y="54">Switch(config)# hostname S1</text>
+    <text y="76">S1(config)# vlan 10</text>
+    <text y="94">S1(config-vlan)# name Sales</text>
+    <text y="112">S1(config-vlan)# vlan 20</text>
+    <text y="130">S1(config-vlan)# name Engineering</text>
+    <text y="148">S1(config-vlan)# exit</text>
+    <text y="170">S1(config)# interface FastEthernet0/1</text>
+    <text y="188">S1(config-if)# switchport mode access</text>
+    <text y="206">S1(config-if)# switchport access vlan 10</text>
+    <text y="224">S1(config-if)# interface FastEthernet0/2</text>
+    <text y="242">S1(config-if)# switchport mode access</text>
+    <text y="260">S1(config-if)# switchport access vlan 20</text>
+    <text y="282">S1(config-if)# interface GigabitEthernet0/1</text>
+    <text y="300">S1(config-if)# switchport mode trunk</text>
+    <text y="318">S1(config-if)# end</text>
+    <text y="340" fill="#4ade80">%SYS-5-CONFIG_I: Configured from console by console</text>
+    <text y="360">S1# show interfaces trunk</text>
+    <text y="378">Port        Mode         Encapsulation  Status        Native vlan</text>
+    <text y="394">Gig0/1      on           802.1q         trunking      1</text>
+  </g>
+</svg>
