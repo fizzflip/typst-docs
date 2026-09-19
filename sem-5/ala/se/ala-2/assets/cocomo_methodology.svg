@@ -1,0 +1,258 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e0f14" />
+      <stop offset="50%" stop-color="#12131a" />
+      <stop offset="100%" stop-color="#0b0c10" />
+    </linearGradient>
+
+    <linearGradient id="stepGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+
+    <linearGradient id="stepGradActive" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0c2d48" />
+      <stop offset="100%" stop-color="#071b2d" />
+    </linearGradient>
+
+    <linearGradient id="stepGradMath" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b" />
+      <stop offset="100%" stop-color="#0f0e26" />
+    </linearGradient>
+
+    <marker id="arrowHead" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M 0 1 L 7 4 L 0 7 z" fill="#38bdf8" />
+    </marker>
+
+    <marker id="arrowHeadPurple" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M 0 1 L 7 4 L 0 7 z" fill="#a78bfa" />
+    </marker>
+
+    <marker id="arrowHeadGreen" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M 0 1 L 7 4 L 0 7 z" fill="#34d399" />
+    </marker>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="1000" height="480" fill="url(#bgGrad2)" rx="12" stroke="#252736" stroke-width="1.2" />
+
+  <!-- Diagram Title Header removed -->
+  <g transform="translate(0, -40)">
+
+  <!-- ==================== STAGE 1: SYSTEM SIZING ==================== -->
+  <g transform="translate(40, 80)">
+    <rect width="168" height="390" rx="8" fill="url(#stepGrad1)" stroke="#334155" stroke-width="1.2" />
+    <rect x="12" y="14" width="144" height="24" rx="4" fill="#1e293b" />
+    <text x="84" y="30" fill="#38bdf8" font-family="'Inter', sans-serif" font-size="10.5" font-weight="700" text-anchor="middle">1. SYSTEM SIZING</text>
+
+    <text x="14" y="62" fill="#e2e8f0" font-family="'Inter', sans-serif" font-size="11" font-weight="600">Module Sizing (KLOC)</text>
+    <line x1="14" y1="70" x2="154" y2="70" stroke="#334155" stroke-width="1" />
+
+    <text x="14" y="92" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="9.5">M1: Plaza Edge</text>
+    <text x="154" y="92" fill="#f1f5f9" font-family="'DejaVu Sans Mono', monospace" font-size="9" text-anchor="end">15.5</text>
+
+    <text x="14" y="114" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="9.5">M2: ISO Switch</text>
+    <text x="154" y="114" fill="#f1f5f9" font-family="'DejaVu Sans Mono', monospace" font-size="9" text-anchor="end">16.0</text>
+
+    <text x="14" y="136" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="9.5">M3: Crypto HSM</text>
+    <text x="154" y="136" fill="#f1f5f9" font-family="'DejaVu Sans Mono', monospace" font-size="9" text-anchor="end">9.5</text>
+
+    <text x="14" y="158" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="9.5">M4: Offline Buffer</text>
+    <text x="154" y="158" fill="#f1f5f9" font-family="'DejaVu Sans Mono', monospace" font-size="9" text-anchor="end">11.0</text>
+
+    <text x="14" y="180" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="9.5">M5: Reconciliation</text>
+    <text x="154" y="180" fill="#f1f5f9" font-family="'DejaVu Sans Mono', monospace" font-size="9" text-anchor="end">13.5</text>
+
+    <text x="14" y="202" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="9.5">M6: Bank Gateway</text>
+    <text x="154" y="202" fill="#f1f5f9" font-family="'DejaVu Sans Mono', monospace" font-size="9" text-anchor="end">10.5</text>
+
+    <line x1="14" y1="218" x2="154" y2="218" stroke="#334155" stroke-dasharray="3 3" stroke-width="1" />
+
+    <rect x="14" y="228" width="140" height="42" rx="4" fill="#0c1e30" stroke="#0284c7" stroke-width="1" />
+    <text x="84" y="244" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="8.5" text-anchor="middle">AGGREGATE SIZE</text>
+    <text x="84" y="261" fill="#38bdf8" font-family="'DejaVu Sans Mono', monospace" font-size="13" font-weight="700" text-anchor="middle">76.0 KLOC</text>
+
+    <text x="14" y="295" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="8.5">Sizing Confidence:</text>
+    <text x="14" y="310" fill="#cbd5e1" font-family="'Inter', sans-serif" font-size="9">• Delphi Expert Consensus</text>
+    <text x="14" y="326" fill="#cbd5e1" font-family="'Inter', sans-serif" font-size="9">• Functional Points Map</text>
+    <text x="14" y="342" fill="#cbd5e1" font-family="'Inter', sans-serif" font-size="9">• Analogous NETC Switch</text>
+    <text x="14" y="358" fill="#cbd5e1" font-family="'Inter', sans-serif" font-size="9">• ISO 8583 Message Spec</text>
+  </g>
+
+  <!-- Arrow 1 to 2 -->
+  <path d="M 208 275 L 232 275" stroke="#38bdf8" stroke-width="1.8" fill="none" marker-end="url(#arrowHead)" />
+
+  <!-- ==================== STAGE 2: MODE CLASSIFICATION ==================== -->
+  <g transform="translate(236, 80)">
+    <rect width="176" height="390" rx="8" fill="url(#stepGrad1)" stroke="#334155" stroke-width="1.2" />
+    <rect x="12" y="14" width="152" height="24" rx="4" fill="#1e293b" />
+    <text x="88" y="30" fill="#38bdf8" font-family="'Inter', sans-serif" font-size="10.5" font-weight="700" text-anchor="middle">2. MODE SELECTION</text>
+
+    <!-- Organic option -->
+    <g transform="translate(12, 48)">
+      <rect width="152" height="52" rx="4" fill="#181820" stroke="#2a2e3d" stroke-width="1" />
+      <text x="10" y="18" fill="#64748b" font-family="'Inter', sans-serif" font-size="10" font-weight="600">Organic Mode</text>
+      <text x="10" y="32" fill="#475569" font-family="'Inter', sans-serif" font-size="8">Small team, relaxed constraints</text>
+      <text x="10" y="44" fill="#ef4444" font-family="'Inter', sans-serif" font-size="8" font-weight="600">✘ Rejected: Hardware SLAs</text>
+    </g>
+
+    <!-- Semi-Detached (Selected) -->
+    <g transform="translate(12, 108)">
+      <rect width="152" height="150" rx="6" fill="url(#stepGradActive)" stroke="#0284c7" stroke-width="1.5" />
+      <rect x="8" y="8" width="136" height="18" rx="3" fill="#0284c7" />
+      <text x="76" y="21" fill="#ffffff" font-family="'Inter', sans-serif" font-size="8.5" font-weight="700" text-anchor="middle">✔ SELECTED: SEMI-DETACHED</text>
+      
+      <text x="10" y="42" fill="#f8fafc" font-family="'Inter', sans-serif" font-size="9" font-weight="600">Boehm Parameters:</text>
+      <text x="10" y="58" fill="#7dd3fc" font-family="'DejaVu Sans Mono', monospace" font-size="9.5">a = 3.0  |  b = 1.12</text>
+      <text x="10" y="72" fill="#7dd3fc" font-family="'DejaVu Sans Mono', monospace" font-size="9.5">c = 2.5  |  d = 0.35</text>
+      
+      <line x1="8" y1="80" x2="144" y2="80" stroke="#0369a1" stroke-width="0.8" />
+      <text x="10" y="94" fill="#e0f2fe" font-family="'Inter', sans-serif" font-size="8.5">• Medium team (18-22)</text>
+      <text x="10" y="108" fill="#e0f2fe" font-family="'Inter', sans-serif" font-size="8.5">• Mixed experience (HW+Fin)</text>
+      <text x="10" y="122" fill="#e0f2fe" font-family="'Inter', sans-serif" font-size="8.5">• Strict lane latency SLA</text>
+      <text x="10" y="136" fill="#e0f2fe" font-family="'Inter', sans-serif" font-size="8.5">• Linux edge container env</text>
+    </g>
+
+    <!-- Embedded option -->
+    <g transform="translate(12, 266)">
+      <rect width="152" height="52" rx="4" fill="#181820" stroke="#2a2e3d" stroke-width="1" />
+      <text x="10" y="18" fill="#64748b" font-family="'Inter', sans-serif" font-size="10" font-weight="600">Embedded Mode</text>
+      <text x="10" y="32" fill="#475569" font-family="'Inter', sans-serif" font-size="8">Tightly coupled avionics/ASIC</text>
+      <text x="10" y="44" fill="#ef4444" font-family="'Inter', sans-serif" font-size="8" font-weight="600">✘ Rejected: Cloud microservices</text>
+    </g>
+
+    <text x="12" y="342" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="8.5">Sensitivity Multiplier:</text>
+    <text x="12" y="356" fill="#cbd5e1" font-family="'Inter', sans-serif" font-size="8.5">Organic: 226.5 PM (0.59x)</text>
+    <text x="12" y="370" fill="#38bdf8" font-family="'Inter', sans-serif" font-size="8.5" font-weight="600">Semi-Det: 383.4 PM (1.00x)</text>
+    <text x="12" y="384" fill="#cbd5e1" font-family="'Inter', sans-serif" font-size="8.5">Embedded: 650.6 PM (1.70x)</text>
+  </g>
+
+  <!-- Arrow 2 to 3 -->
+  <path d="M 412 275 L 436 275" stroke="#38bdf8" stroke-width="1.8" fill="none" marker-end="url(#arrowHead)" />
+
+  <!-- ==================== STAGE 3: COST DRIVERS & EAF ==================== -->
+  <g transform="translate(440, 80)">
+    <rect width="176" height="390" rx="8" fill="url(#stepGrad1)" stroke="#334155" stroke-width="1.2" />
+    <rect x="12" y="14" width="152" height="24" rx="4" fill="#1e293b" />
+    <text x="88" y="30" fill="#38bdf8" font-family="'Inter', sans-serif" font-size="10.5" font-weight="700" text-anchor="middle">3. 15 COST DRIVERS</text>
+
+    <text x="12" y="58" fill="#e2e8f0" font-family="'Inter', sans-serif" font-size="9.5" font-weight="600">Key Effort Multipliers (EM)</text>
+    <line x1="12" y1="64" x2="164" y2="64" stroke="#334155" stroke-width="1" />
+
+    <text x="12" y="82" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="9">RELY (Reliability)</text>
+    <text x="164" y="82" fill="#f87171" font-family="'DejaVu Sans Mono', monospace" font-size="9" font-weight="600" text-anchor="end">1.40 (V.Hi)</text>
+
+    <text x="12" y="100" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="9">DATA (DB Size)</text>
+    <text x="164" y="100" fill="#fbbf24" font-family="'DejaVu Sans Mono', monospace" font-size="9" text-anchor="end">1.08 (High)</text>
+
+    <text x="12" y="118" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="9">CPLX (Complexity)</text>
+    <text x="164" y="118" fill="#fbbf24" font-family="'DejaVu Sans Mono', monospace" font-size="9" text-anchor="end">1.15 (High)</text>
+
+    <text x="12" y="136" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="9">TIME (Exec Latency)</text>
+    <text x="164" y="136" fill="#fbbf24" font-family="'DejaVu Sans Mono', monospace" font-size="9" text-anchor="end">1.11 (High)</text>
+
+    <text x="12" y="154" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="9">ACAP (Analyst Cap)</text>
+    <text x="164" y="154" fill="#34d399" font-family="'DejaVu Sans Mono', monospace" font-size="9" text-anchor="end">0.86 (High)</text>
+
+    <text x="12" y="172" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="9">PCAP (Prog Cap)</text>
+    <text x="164" y="172" fill="#34d399" font-family="'DejaVu Sans Mono', monospace" font-size="9" text-anchor="end">0.86 (High)</text>
+
+    <text x="12" y="190" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="9">MODP (Modern Dev)</text>
+    <text x="164" y="190" fill="#34d399" font-family="'DejaVu Sans Mono', monospace" font-size="9" text-anchor="end">0.91 (High)</text>
+
+    <text x="12" y="208" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="9">TOOL (SW Tools)</text>
+    <text x="164" y="208" fill="#34d399" font-family="'DejaVu Sans Mono', monospace" font-size="9" text-anchor="end">0.91 (High)</text>
+
+    <text x="12" y="226" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="9">Other 7 Drivers</text>
+    <text x="164" y="226" fill="#94a3b8" font-family="'DejaVu Sans Mono', monospace" font-size="9" text-anchor="end">Nominal</text>
+
+    <line x1="12" y1="240" x2="164" y2="240" stroke="#334155" stroke-dasharray="3 3" stroke-width="1" />
+
+    <rect x="12" y="252" width="152" height="60" rx="4" fill="#082f49" stroke="#0284c7" stroke-width="1" />
+    <text x="88" y="270" fill="#bae6fd" font-family="'Inter', sans-serif" font-size="9" text-anchor="middle">EFFORT ADJUSTMENT</text>
+    <text x="88" y="288" fill="#38bdf8" font-family="'DejaVu Sans Mono', monospace" font-size="14" font-weight="700" text-anchor="middle">EAF = 1.028</text>
+    <text x="88" y="303" fill="#7dd3fc" font-family="'Inter', sans-serif" font-size="7.5" text-anchor="middle">+2.8% net penalty for reliability</text>
+
+    <text x="12" y="336" fill="#cbd5e1" font-family="'Inter', sans-serif" font-size="8.5">• High RELY offsets team skills</text>
+    <text x="12" y="352" fill="#cbd5e1" font-family="'Inter', sans-serif" font-size="8.5">• Tooling &amp; TDD gains saved effort</text>
+    <text x="12" y="368" fill="#cbd5e1" font-family="'Inter', sans-serif" font-size="8.5">• Calibrated to ISO 8583 domain</text>
+  </g>
+
+  <!-- Arrow 3 to 4 -->
+  <path d="M 616 275 L 640 275" stroke="#38bdf8" stroke-width="1.8" fill="none" marker-end="url(#arrowHead)" />
+
+  <!-- ==================== STAGE 4: MATHEMATICAL ENGINE ==================== -->
+  <g transform="translate(644, 80)">
+    <rect width="176" height="390" rx="8" fill="url(#stepGradMath)" stroke="#4338ca" stroke-width="1.2" />
+    <rect x="12" y="14" width="152" height="24" rx="4" fill="#312e81" />
+    <text x="88" y="30" fill="#a78bfa" font-family="'Inter', sans-serif" font-size="10.5" font-weight="700" text-anchor="middle">4. MATH ENGINE</text>
+
+    <!-- Basic Formula Result -->
+    <rect x="12" y="48" width="152" height="74" rx="4" fill="#1e1b4b" stroke="#3730a3" stroke-width="0.8" />
+    <text x="20" y="66" fill="#c7d2fe" font-family="'Inter', sans-serif" font-size="9" font-weight="600">Basic COCOMO:</text>
+    <text x="20" y="82" fill="#a5b4fc" font-family="'DejaVu Sans Mono', monospace" font-size="8.5">E = 3.0*(76)^1.12</text>
+    <text x="20" y="98" fill="#818cf8" font-family="'DejaVu Sans Mono', monospace" font-size="11" font-weight="700">= 383.38 PM</text>
+    <text x="20" y="112" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="8">T<tspan baseline-shift="sub" font-size="75%">dev</tspan> = 20.05 Mos | SS = 19.1</text>
+
+    <!-- Intermediate Adjustment -->
+    <rect x="12" y="132" width="152" height="138" rx="6" fill="#18153b" stroke="#6366f1" stroke-width="1.2" />
+    <text x="20" y="152" fill="#f8fafc" font-family="'Inter', sans-serif" font-size="9.5" font-weight="700">Intermediate Result:</text>
+    
+    <text x="20" y="172" fill="#c7d2fe" font-family="'Inter', sans-serif" font-size="8.5">E<tspan baseline-shift="sub" font-size="75%">adj</tspan> = 383.38 * 1.028</text>
+    <text x="20" y="192" fill="#c084fc" font-family="'DejaVu Sans Mono', monospace" font-size="13" font-weight="700">394.11 PM</text>
+    
+    <line x1="20" y1="202" x2="154" y2="202" stroke="#3730a3" stroke-width="0.8" />
+
+    <text x="20" y="218" fill="#c7d2fe" font-family="'Inter', sans-serif" font-size="8.5">T<tspan baseline-shift="sub" font-size="75%">dev</tspan> = 2.5*(394.11)^0.35</text>
+    <text x="20" y="236" fill="#c084fc" font-family="'DejaVu Sans Mono', monospace" font-size="12" font-weight="700">20.27 Months</text>
+
+    <line x1="20" y1="244" x2="154" y2="244" stroke="#3730a3" stroke-width="0.8" />
+    <text x="20" y="258" fill="#38bdf8" font-family="'DejaVu Sans Mono', monospace" font-size="9.5" font-weight="600">SS = 19.4 (~20 Eng)</text>
+
+    <!-- Productivity -->
+    <text x="12" y="295" fill="#e2e8f0" font-family="'Inter', sans-serif" font-size="9" font-weight="600">Productivity (P):</text>
+    <text x="12" y="312" fill="#a5b4fc" font-family="'DejaVu Sans Mono', monospace" font-size="9.5">P = 76.0 / 394.11</text>
+    <text x="12" y="328" fill="#34d399" font-family="'DejaVu Sans Mono', monospace" font-size="11" font-weight="700">= 193 LOC / PM</text>
+    <text x="12" y="344" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="8">(High-assurance fintech range)</text>
+  </g>
+
+  <!-- Arrow 4 to 5 -->
+  <path d="M 820 275 L 844 275" stroke="#a78bfa" stroke-width="1.8" fill="none" marker-end="url(#arrowHeadPurple)" />
+
+  <!-- ==================== STAGE 5: BUDGETING & SCHEDULE ==================== -->
+  <g transform="translate(848, 80)">
+    <rect width="112" height="390" rx="8" fill="url(#stepGrad1)" stroke="#059669" stroke-width="1.2" />
+    <rect x="8" y="14" width="96" height="24" rx="4" fill="#064e3b" />
+    <text x="56" y="30" fill="#34d399" font-family="'Inter', sans-serif" font-size="9" font-weight="700" text-anchor="middle">5. CAPITAL BUDGET</text>
+
+    <text x="8" y="58" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="8">Loaded Rate:</text>
+    <text x="8" y="72" fill="#f1f5f9" font-family="'DejaVu Sans Mono', monospace" font-size="8.5">₹1.75 L / PM</text>
+
+    <line x1="8" y1="84" x2="104" y2="84" stroke="#1e293b" stroke-width="1" />
+
+    <text x="8" y="104" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="8">Labor Cost:</text>
+    <text x="8" y="118" fill="#6ee7b7" font-family="'DejaVu Sans Mono', monospace" font-size="8.5">394.11 * ₹1.75L</text>
+    <text x="8" y="134" fill="#34d399" font-family="'DejaVu Sans Mono', monospace" font-size="10.5" font-weight="700">₹6.90 Cr</text>
+
+    <line x1="8" y1="148" x2="104" y2="148" stroke="#1e293b" stroke-width="1" />
+
+    <text x="8" y="168" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="8">Overheads (16%):</text>
+    <text x="8" y="182" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="7.5">Cloud, Lab, Audit</text>
+    <text x="8" y="198" fill="#6ee7b7" font-family="'DejaVu Sans Mono', monospace" font-size="10.5" font-weight="700">₹1.10 Cr</text>
+
+    <line x1="8" y1="212" x2="104" y2="212" stroke="#1e293b" stroke-width="1" />
+
+    <rect x="6" y="226" width="100" height="54" rx="4" fill="#022c22" stroke="#059669" stroke-width="1.2" />
+    <text x="56" y="242" fill="#a7f3d0" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">TOTAL BUDGET</text>
+    <text x="56" y="262" fill="#34d399" font-family="'DejaVu Sans Mono', monospace" font-size="12" font-weight="700" text-anchor="middle">₹8.00 Cr</text>
+    <text x="56" y="273" fill="#6ee7b7" font-family="'Inter', sans-serif" font-size="7" text-anchor="middle">(Total Outlay)</text>
+
+    <text x="8" y="306" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="7.5">Timeline:</text>
+    <text x="8" y="320" fill="#f1f5f9" font-family="'DejaVu Sans Mono', monospace" font-size="8.5">20.3 Mos</text>
+    <text x="8" y="340" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="7.5">Team Peak:</text>
+    <text x="8" y="354" fill="#f1f5f9" font-family="'DejaVu Sans Mono', monospace" font-size="8.5">22 Eng</text>
+    <text x="8" y="374" fill="#38bdf8" font-family="'Inter', sans-serif" font-size="7.5" font-weight="600">On-Time Buffer</text>
+  </g>
+  </g>
+</svg>

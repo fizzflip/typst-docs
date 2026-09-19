@@ -1,0 +1,228 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 540" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e0f14" />
+      <stop offset="50%" stop-color="#12131a" />
+      <stop offset="100%" stop-color="#0b0c10" />
+    </linearGradient>
+
+    <linearGradient id="edgeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e2438" />
+      <stop offset="100%" stop-color="#141824" />
+    </linearGradient>
+
+    <linearGradient id="switchGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1a2b3c" />
+      <stop offset="100%" stop-color="#101d2a" />
+    </linearGradient>
+
+    <linearGradient id="bankGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#241e38" />
+      <stop offset="100%" stop-color="#161224" />
+    </linearGradient>
+
+    <filter id="boxShadow" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feOffset dx="0" dy="4" result="offset" />
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.35" />
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <marker id="arrowCyan" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M 0 1 L 7 4 L 0 7 z" fill="#38bdf8" />
+    </marker>
+    <marker id="arrowEmerald" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M 0 1 L 7 4 L 0 7 z" fill="#34d399" />
+    </marker>
+    <marker id="arrowPurple" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M 0 1 L 7 4 L 0 7 z" fill="#a78bfa" />
+    </marker>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="1000" height="540" fill="url(#bgGrad)" rx="12" stroke="#252736" stroke-width="1.2" />
+
+  <!-- Diagram Title Header removed -->
+  <g transform="translate(0, -40)">
+
+  <!-- ==================== LAYER 1: PLAZA EDGE (LEFT) ==================== -->
+  <g transform="translate(40, 80)">
+    <!-- Layer Container Box -->
+    <rect width="280" height="460" rx="10" fill="#10131d" stroke="#2a354f" stroke-dasharray="5 5" stroke-width="1.2" />
+    <rect x="16" y="-10" width="200" height="22" rx="4" fill="#1e273f" stroke="#3b4d75" stroke-width="0.8" />
+    <text x="26" y="5" fill="#60a5fa" font-family="'Inter', sans-serif" font-size="10.5" font-weight="700" letter-spacing="0.4">TIER 1: TOLL PLAZA EDGE</text>
+
+    <!-- M1: Plaza Edge Controller -->
+    <g transform="translate(16, 28)" filter="url(#boxShadow)">
+      <rect width="248" height="180" rx="8" fill="url(#edgeGrad)" stroke="#3b82f6" stroke-width="1.2" />
+      <rect x="12" y="12" width="62" height="18" rx="4" fill="#1d4ed8" />
+      <text x="43" y="24" fill="#ffffff" font-family="'DejaVu Sans Mono', monospace" font-size="9" font-weight="700" text-anchor="middle">M1</text>
+      <text x="82" y="25" fill="#93c5fd" font-family="'DejaVu Sans Mono', monospace" font-size="10.5" font-weight="700">15.5 KLOC (20.4%)</text>
+      
+      <text x="14" y="48" fill="#f1f5f9" font-family="'Inter', sans-serif" font-size="12.5" font-weight="700">Plaza Edge Controller</text>
+      <text x="14" y="64" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="10.5">&amp; Hardware IO Interface</text>
+
+      <line x1="14" y1="76" x2="234" y2="76" stroke="#253250" stroke-width="1" />
+
+      <text x="14" y="96" fill="#cbd5e1" font-family="'Inter', sans-serif" font-size="10">• EPC Gen-2 RFID Readers (RS-485)</text>
+      <text x="14" y="114" fill="#cbd5e1" font-family="'Inter', sans-serif" font-size="10">• Optical Vehicle Classifier (AVC)</text>
+      <text x="14" y="132" fill="#cbd5e1" font-family="'Inter', sans-serif" font-size="10">• Barrier Solenoid &amp; Traffic Light</text>
+      <text x="14" y="150" fill="#cbd5e1" font-family="'Inter', sans-serif" font-size="10">• Sub-100ms Lane Actuation SLA</text>
+      <rect x="14" y="154" width="132" height="16" rx="4" fill="#172554" />
+      <text x="18" y="166" fill="#60a5fa" font-family="'DejaVu Sans Mono', monospace" font-size="8.5">C/C++ Native Daemon</text>
+    </g>
+
+    <!-- M4: Store & Forward Offline Buffer -->
+    <g transform="translate(16, 235)" filter="url(#boxShadow)">
+      <rect width="248" height="195" rx="8" fill="url(#edgeGrad)" stroke="#60a5fa" stroke-width="1" />
+      <rect x="12" y="12" width="62" height="18" rx="4" fill="#2563eb" />
+      <text x="43" y="24" fill="#ffffff" font-family="'DejaVu Sans Mono', monospace" font-size="9" font-weight="700" text-anchor="middle">M4</text>
+      <text x="82" y="25" fill="#93c5fd" font-family="'DejaVu Sans Mono', monospace" font-size="10.5" font-weight="700">11.0 KLOC (14.5%)</text>
+      
+      <text x="14" y="48" fill="#f1f5f9" font-family="'Inter', sans-serif" font-size="12.5" font-weight="700">Store-and-Forward</text>
+      <text x="14" y="64" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="10.5">Offline Buffer Manager</text>
+
+      <line x1="14" y1="76" x2="234" y2="76" stroke="#253250" stroke-width="1" />
+
+      <text x="14" y="96" fill="#cbd5e1" font-family="'Inter', sans-serif" font-size="10">• Local SQLite / RocksDB WAL</text>
+      <text x="14" y="114" fill="#cbd5e1" font-family="'Inter', sans-serif" font-size="10">• 72-Hour Autonomous Lane Buffering</text>
+      <text x="14" y="132" fill="#cbd5e1" font-family="'Inter', sans-serif" font-size="10">• Diff Sync on WAN Recovery</text>
+      <text x="14" y="150" fill="#cbd5e1" font-family="'Inter', sans-serif" font-size="10">• Local Cryptographic Audit Hash</text>
+      <rect x="14" y="168" width="140" height="16" rx="4" fill="#172554" />
+      <text x="18" y="180" fill="#60a5fa" font-family="'DejaVu Sans Mono', monospace" font-size="8.5">Embedded C++ Engine</text>
+    </g>
+  </g>
+
+  <!-- ==================== LAYER 2: CENTRAL SWITCH (CENTER) ==================== -->
+  <g transform="translate(360, 80)">
+    <!-- Layer Container Box -->
+    <rect width="280" height="460" rx="10" fill="#0d1720" stroke="#1e4459" stroke-dasharray="5 5" stroke-width="1.2" />
+    <rect x="16" y="-10" width="220" height="22" rx="4" fill="#153648" stroke="#256282" stroke-width="0.8" />
+    <text x="26" y="5" fill="#38bdf8" font-family="'Inter', sans-serif" font-size="10.5" font-weight="700" letter-spacing="0.4">TIER 2: TRANSACTION SWITCH</text>
+
+    <!-- M2: ISO Switch Engine -->
+    <g transform="translate(16, 28)" filter="url(#boxShadow)">
+      <rect width="248" height="180" rx="8" fill="url(#switchGrad)" stroke="#0284c7" stroke-width="1.2" />
+      <rect x="12" y="12" width="62" height="18" rx="4" fill="#0284c7" />
+      <text x="43" y="24" fill="#ffffff" font-family="'DejaVu Sans Mono', monospace" font-size="9" font-weight="700" text-anchor="middle">M2</text>
+      <text x="82" y="25" fill="#7dd3fc" font-family="'DejaVu Sans Mono', monospace" font-size="10.5" font-weight="700">16.0 KLOC (21.1%)</text>
+      
+      <text x="14" y="48" fill="#f1f5f9" font-family="'Inter', sans-serif" font-size="12.5" font-weight="700">Transaction Switch</text>
+      <text x="14" y="64" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="10.5">&amp; ISO Message Engine</text>
+
+      <line x1="14" y1="76" x2="234" y2="76" stroke="#16384c" stroke-width="1" />
+
+      <text x="14" y="96" fill="#cbd5e1" font-family="'Inter', sans-serif" font-size="10">• ISO 8583 / XML Parsing Pipeline</text>
+      <text x="14" y="114" fill="#cbd5e1" font-family="'Inter', sans-serif" font-size="10">• Dynamic Bank Acquirer Routing</text>
+      <text x="14" y="132" fill="#cbd5e1" font-family="'Inter', sans-serif" font-size="10">• Lockless Priority Queue (&lt;20ms)</text>
+      <text x="14" y="150" fill="#cbd5e1" font-family="'Inter', sans-serif" font-size="10">• High-Concurrency gRPC Serving</text>
+      <rect x="14" y="154" width="124" height="16" rx="4" fill="#082f49" />
+      <text x="18" y="166" fill="#38bdf8" font-family="'DejaVu Sans Mono', monospace" font-size="8.5">Go / gRPC Service</text>
+    </g>
+
+    <!-- M3: Cryptographic Tag Authentication -->
+    <g transform="translate(16, 235)" filter="url(#boxShadow)">
+      <rect width="248" height="195" rx="8" fill="url(#switchGrad)" stroke="#38bdf8" stroke-width="1" />
+      <rect x="12" y="12" width="62" height="18" rx="4" fill="#0369a1" />
+      <text x="43" y="24" fill="#ffffff" font-family="'DejaVu Sans Mono', monospace" font-size="9" font-weight="700" text-anchor="middle">M3</text>
+      <text x="82" y="25" fill="#7dd3fc" font-family="'DejaVu Sans Mono', monospace" font-size="10.5" font-weight="700">9.5 KLOC (12.5%)</text>
+      
+      <text x="14" y="48" fill="#f1f5f9" font-family="'Inter', sans-serif" font-size="12.5" font-weight="700">Cryptographic Auth</text>
+      <text x="14" y="64" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="10.5">&amp; HSM Client Module</text>
+
+      <line x1="14" y1="76" x2="234" y2="76" stroke="#16384c" stroke-width="1" />
+
+      <text x="14" y="96" fill="#cbd5e1" font-family="'Inter', sans-serif" font-size="10">• PKCS#11 Hardware Security Module</text>
+      <text x="14" y="114" fill="#cbd5e1" font-family="'Inter', sans-serif" font-size="10">• AES-128 / 3DES Tag Mutual Auth</text>
+      <text x="14" y="132" fill="#cbd5e1" font-family="'Inter', sans-serif" font-size="10">• Master Key Derivation &amp; Rotation</text>
+      <text x="14" y="150" fill="#cbd5e1" font-family="'Inter', sans-serif" font-size="10">• Anti-Cloning Digital Signatures</text>
+      <rect x="14" y="168" width="134" height="16" rx="4" fill="#082f49" />
+      <text x="18" y="180" fill="#38bdf8" font-family="'DejaVu Sans Mono', monospace" font-size="8.5">Rust / HSM Wrapper</text>
+    </g>
+  </g>
+
+  <!-- ==================== LAYER 3: SETTLEMENT & BANKING (RIGHT) ==================== -->
+  <g transform="translate(680, 80)">
+    <!-- Layer Container Box -->
+    <rect width="280" height="460" rx="10" fill="#14101e" stroke="#3b2b52" stroke-dasharray="5 5" stroke-width="1.2" />
+    <rect x="16" y="-10" width="220" height="22" rx="4" fill="#291b3e" stroke="#4c346e" stroke-width="0.8" />
+    <text x="26" y="5" fill="#c084fc" font-family="'Inter', sans-serif" font-size="10.5" font-weight="700" letter-spacing="0.4">TIER 3: CLEARING &amp; BANKING</text>
+
+    <!-- M5: Settlement & Reconciliation -->
+    <g transform="translate(16, 28)" filter="url(#boxShadow)">
+      <rect width="248" height="180" rx="8" fill="url(#bankGrad)" stroke="#7c3aed" stroke-width="1.2" />
+      <rect x="12" y="12" width="62" height="18" rx="4" fill="#6d28d9" />
+      <text x="43" y="24" fill="#ffffff" font-family="'DejaVu Sans Mono', monospace" font-size="9" font-weight="700" text-anchor="middle">M5</text>
+      <text x="82" y="25" fill="#d8b4fe" font-family="'DejaVu Sans Mono', monospace" font-size="10.5" font-weight="700">13.5 KLOC (17.8%)</text>
+      
+      <text x="14" y="48" fill="#f1f5f9" font-family="'Inter', sans-serif" font-size="12.5" font-weight="700">Settlement &amp; Dispute</text>
+      <text x="14" y="64" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="10.5">Reconciliation Engine</text>
+
+      <line x1="14" y1="76" x2="234" y2="76" stroke="#35264c" stroke-width="1" />
+
+      <text x="14" y="96" fill="#cbd5e1" font-family="'Inter', sans-serif" font-size="10">• Multi-Bank Net Settlement Cycles</text>
+      <text x="14" y="114" fill="#cbd5e1" font-family="'Inter', sans-serif" font-size="10">• Automated Chargeback &amp; Disputes</text>
+      <text x="14" y="132" fill="#cbd5e1" font-family="'Inter', sans-serif" font-size="10">• Real-Time Blacklist Diff Publisher</text>
+      <text x="14" y="150" fill="#cbd5e1" font-family="'Inter', sans-serif" font-size="10">• Double-Entry Ledger Invariants</text>
+      <rect x="14" y="154" width="134" height="16" rx="4" fill="#2e1065" />
+      <text x="18" y="166" fill="#c084fc" font-family="'DejaVu Sans Mono', monospace" font-size="8.5">Java / Kafka Streams</text>
+    </g>
+
+    <!-- M6: Bank Gateway -->
+    <g transform="translate(16, 235)" filter="url(#boxShadow)">
+      <rect width="248" height="195" rx="8" fill="url(#bankGrad)" stroke="#a855f7" stroke-width="1" />
+      <rect x="12" y="12" width="62" height="18" rx="4" fill="#7e22ce" />
+      <text x="43" y="24" fill="#ffffff" font-family="'DejaVu Sans Mono', monospace" font-size="9" font-weight="700" text-anchor="middle">M6</text>
+      <text x="82" y="25" fill="#d8b4fe" font-family="'DejaVu Sans Mono', monospace" font-size="10.5" font-weight="700">10.5 KLOC (13.7%)</text>
+      
+      <text x="14" y="48" fill="#f1f5f9" font-family="'Inter', sans-serif" font-size="12.5" font-weight="700">Member Bank Gateway</text>
+      <text x="14" y="64" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="10.5">&amp; Webhook Router</text>
+
+      <line x1="14" y1="76" x2="234" y2="76" stroke="#35264c" stroke-width="1" />
+
+      <text x="14" y="96" fill="#cbd5e1" font-family="'Inter', sans-serif" font-size="10">• Mutual TLS 1.3 Bank Endpoints</text>
+      <text x="14" y="114" fill="#cbd5e1" font-family="'Inter', sans-serif" font-size="10">• NPCI NETC Protocol Compliance</text>
+      <text x="14" y="132" fill="#cbd5e1" font-family="'Inter', sans-serif" font-size="10">• Balance Inquiry Proxy Cache</text>
+      <text x="14" y="150" fill="#cbd5e1" font-family="'Inter', sans-serif" font-size="10">• Webhook Event Fan-out</text>
+      <rect x="14" y="168" width="128" height="16" rx="4" fill="#2e1065" />
+      <text x="18" y="180" fill="#c084fc" font-family="'DejaVu Sans Mono', monospace" font-size="8.5">Go API Gateway</text>
+    </g>
+  </g>
+
+  <!-- ==================== FLOW CONNECTORS & BUSES ==================== -->
+  <!-- M1 to M2 (Lane Request) -->
+  <path d="M 304 190 L 376 190" stroke="#38bdf8" stroke-width="1.8" fill="none" marker-end="url(#arrowCyan)" />
+  <rect x="312" y="174" width="56" height="14" rx="3" fill="#0f172a" stroke="#1e293b" stroke-width="0.6" />
+  <text x="340" y="184" fill="#38bdf8" font-family="'DejaVu Sans Mono', monospace" font-size="8" text-anchor="middle">gRPC/WAN</text>
+
+  <!-- M2 to M3 (Crypto Verification) -->
+  <path d="M 500 288 L 500 315" stroke="#38bdf8" stroke-width="1.8" fill="none" marker-end="url(#arrowCyan)" />
+  <rect x="505" y="292" width="60" height="14" rx="3" fill="#082f49" stroke="#0369a1" stroke-width="0.6" />
+  <text x="535" y="302" fill="#7dd3fc" font-family="'DejaVu Sans Mono', monospace" font-size="8" text-anchor="middle">PKCS#11</text>
+
+  <!-- M1 to M4 (Local Lane Fallback Buffer) -->
+  <path d="M 180 288 L 180 315" stroke="#60a5fa" stroke-width="1.8" fill="none" marker-end="url(#arrowCyan)" />
+  <rect x="185" y="292" width="68" height="14" rx="3" fill="#172554" stroke="#1d4ed8" stroke-width="0.6" />
+  <text x="219" y="302" fill="#93c5fd" font-family="'DejaVu Sans Mono', monospace" font-size="8" text-anchor="middle">SQLite WAL</text>
+
+  <!-- M2 to M5 (Settlement Event Stream) -->
+  <path d="M 624 190 L 696 190" stroke="#a78bfa" stroke-width="1.8" fill="none" marker-end="url(#arrowPurple)" />
+  <rect x="632" y="174" width="58" height="14" rx="3" fill="#2e1065" stroke="#4c1d95" stroke-width="0.6" />
+  <text x="661" y="184" fill="#c084fc" font-family="'DejaVu Sans Mono', monospace" font-size="8" text-anchor="middle">Kafka Bus</text>
+
+  <!-- M5 to M6 (Clearing Batch Dispatch) -->
+  <path d="M 820 288 L 820 315" stroke="#a78bfa" stroke-width="1.8" fill="none" marker-end="url(#arrowPurple)" />
+  <rect x="825" y="292" width="58" height="14" rx="3" fill="#2e1065" stroke="#4c1d95" stroke-width="0.6" />
+  <text x="854" y="302" fill="#c084fc" font-family="'DejaVu Sans Mono', monospace" font-size="8" text-anchor="middle">mTLS 1.3</text>
+
+  <!-- M4 to M2 (Asynchronous Store-and-Forward Diff Sync) -->
+  <path d="M 304 410 C 340 410, 340 220, 376 220" stroke="#34d399" stroke-width="1.4" stroke-dasharray="4 4" fill="none" marker-end="url(#arrowEmerald)" />
+  <rect x="314" y="315" width="54" height="14" rx="3" fill="#064e3b" stroke="#059669" stroke-width="0.6" />
+  <text x="341" y="325" fill="#34d399" font-family="'DejaVu Sans Mono', monospace" font-size="8" text-anchor="middle">Re-Sync</text>
+  </g>
+</svg>
