@@ -182,6 +182,7 @@ The Internet scales by grouping routers into *Autonomous Systems (AS)*:
 - #key-term[Intra-AS Routing (Interior Gateway Protocols - IGPs):] Operates within an organization's network. Emphasizes pure performance and shortest path. Examples: *OSPF* (Open Shortest Path First - Link-State) and *RIP* (Distance-Vector).
 - #key-term[Inter-AS Routing (Border Gateway Protocol - BGP):] Coordinates routing between distinct autonomous systems. Operates on *Path Vector* logic, factoring in business contracts, political peering policies, and transit agreements rather than raw physical link speed.
 
+#pagebreak()
 #extra-pill
 = 4.7 Broadcasting and Multicasting in Routing
 
