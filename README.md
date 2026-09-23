@@ -29,6 +29,16 @@ The documents in this repository represent coursework, lab experiments, and eval
 | [![Academic Lab Practical](samples/academic_lab_practical.png)](samples/academic_lab_practical.png) | [![Photographic Practical Guide](samples/hardware_cabling_guide.png)](samples/hardware_cabling_guide.png) |
 | *Formal framed academic manual with hybrid topology diagram & table ([CN Lab](sem-5/lab-manual/cn))* | *Step-by-step photographic RJ-45 crimping & continuity testing sequence ([CN Lab](sem-5/lab-manual/cn))* |
 
+| **Project Timeline & Gantt Blueprint** | **Computer Vision Feature Matching** |
+| :---: | :---: |
+| [![Project Timeline & Gantt Blueprint](samples/project_timeline_gantt.png)](samples/project_timeline_gantt.png) | [![Computer Vision Feature Matching](samples/cv_feature_matching.png)](samples/cv_feature_matching.png) |
+| *16-week phased Gantt schedule with milestone tracking & risk register ([Python ALA](sem-4/ala/python))* | *ORB keypoint correspondence, RANSAC homography, & macOS window framing ([CV Lab](sem-4/lab-manual/cv))* |
+
+| **Concurrency & Deadlock RAG** | **Database Trigger Execution Flow** |
+| :---: | :---: |
+| [![Concurrency & Deadlock RAG](samples/os_deadlock_rag.png)](samples/os_deadlock_rag.png) | [![Database Trigger Execution Flow](samples/dbms_trigger_flowchart.png)](samples/dbms_trigger_flowchart.png) |
+| *Dark-mode multi-threaded deadlock analysis with Coffman criteria & Mermaid RAG graph ([OS ALA](sem-4/ala/os))* | *DML trigger intercept and validation sequence diagram typeset with Fletcher ([DBMS ALA](sem-4/ala/dbms))* |
+
 ## Structure
 
 The repository is organized by semester and subject:
@@ -49,11 +59,16 @@ typst-docs/
 │   │   ├── ada/          # Analysis and Design of Algorithms (ADA) - Sorting Analysis & Huffman Coding Report
 │   │   ├── ai/           # Artificial Intelligence (AI) - Autonomous Vehicles & Real-World AI Slides
 │   │   ├── cn/           # Computer Networks (CN) - Topology Design & Packet Rescue (VLAN Configuration)
-│   │   └── se/           # Software Engineering (SE) - UML Blueprints (PulseFeed Content Discovery Engine)
+│   │   └── se/           # Software Engineering (SE) - PulseFeed SRS/UML (ALA-1) & COCOMO Estimation (ALA-2)
 │   ├── lab-manual/
 │   │   ├── cn/           # Computer Networks (CN) - Comprehensive Lab Manual (Cabling, Commands, Wireshark)
 │   │   └── se/           # Software Engineering (SE) - Lab Manual (SDLC Models, SRS, UML, & Testing)
-│   └── revision/         # Revision Materials - ADA Time & Space Complexity Cheatsheet
+│   └── revision/         # Revision Materials - ADA Complexities Cheatsheet & CN 5-Unit Study Guide
+├── internship/           # Summer Internship 2026 Documentation & Templates
+│   ├── original/         # Official university internship guidelines & source templates (.docx, .pdf)
+│   └── template/
+│       ├── original/     # 1:1 Typst translation of the official university report template
+│       └── fixed/        # Typographically refined template with grammar fixes, styling, & clean pagination
 ├── misc/                 # Miscellaneous academic materials and metadata (e.g., student metadata)
 └── old/                  # Legacy/Archived documents (Heat Transfer, older OS Lab Manuals)
 ```
@@ -71,10 +86,12 @@ typst-docs/
 | **`sem-5/ala/ada`** | **ADA** | Sorting algorithms comparative analysis, Huffman coding & compression theory, benchmark visualizers | `.typ`, `.pdf`, `.png`, `.svg` |
 | **`sem-5/ala/ai`** | **Artificial Intelligence** | Real-world AI applications, autonomous vehicle perception & sensor architectures | `.typ`, `.pdf`, `.jpg` |
 | **`sem-5/ala/cn`** | **Computer Networks** | Network topology design with CeTZ, Cisco Packet Tracer VLAN configuration & rescue | `.typ`, `.pdf`, `.svg` |
-| **`sem-5/ala/se`** | **Software Engineering** | UML blueprints for content discovery engine (SRS, use case, class, sequence, state machine) | `.typ`, `.pdf`, `.svg` |
+| **`sem-5/ala/se`** | **Software Engineering** | UML blueprints for PulseFeed content discovery engine (ALA-1); COCOMO model software sizing & cost estimation (ALA-2) | `.typ`, `.pdf`, `.svg` |
 | **`sem-5/lab-manual/cn`** | **Computer Networks** | Network cabling/crimping, CLI utilities, OSI/TCP-IP models, Wireshark packet capture & protocol analysis | `.typ`, `.pdf`, `.png`, `.svg`, `.jpg` |
 | **`sem-5/lab-manual/se`** | **Software Engineering** | SDLC models, SRS documentation, comprehensive UML suite, testing methodologies & bug reports | `.typ`, `.pdf`, `.py`, `.md` |
-| **`sem-5/revision`** | **ADA Revision** | Fast-lookup revision cheatsheet for algorithmic time and auxiliary space complexities | `.typ`, `.pdf` |
+| **`sem-5/revision`** | **ADA & CN Revision** | Fast-lookup ADA algorithmic complexity cheatsheet; comprehensive 5-unit Computer Networks revision handbook with network diagrams | `.typ`, `.pdf`, `.png`, `.jpg` |
+| **`internship/`** | **Summer Internship** | Official university guidelines & templates: 1:1 Typst translation and enhanced typographical edition with grammar fixes | `.typ`, `.pdf`, `.docx`, `.png` |
+| **`misc/`** | **Metadata & Config** | Centralized student metadata (`metadata.json`) referenced across coursework documents | `.json` |
 | **`old/`** | **Legacy Archives** | Heat Transfer coursework, legacy OS lab practicals | `.typ`, `.pdf`, `.svg` |
 
 
@@ -88,8 +105,20 @@ To view or build the final PDF documents, you will need the [Typst CLI](https://
 # Compile a specific document to PDF
 typst compile path/to/document.typ
 
+# Compile documents referencing repository-root assets or metadata (e.g., misc/metadata.json)
+typst compile --root . path/to/document.typ
+
 # Compile and automatically watch for modifications (auto-recompiles on save)
 typst watch path/to/document.typ
+```
+
+### Nix Tooling & Utilities
+
+For external dependencies or utilities not installed on the base system, use Nix:
+
+```bash
+# Render PDF pages to high-resolution PNGs via Poppler
+nix shell nixpkgs#poppler-utils -c pdftoppm -png -r 144 path/to/document.pdf output
 ```
 
 ### Nix Development Environment (`devenv`)
