@@ -24,6 +24,33 @@
   leading: 0.8em,
 )
 
+
+// Semantic Heading Styling for Body
+#show heading: it => {
+  set text(font: "Times New Roman")
+  if it.level == 1 {
+    text(size: 16pt, weight: "bold")[#it.body]
+  } else if it.level == 2 {
+    text(size: 14pt, weight: "bold")[#it.body]
+  } else {
+    text(size: 12pt, weight: "bold")[#it.body]
+  }
+}
+
+// Automatic Outline Entry Styling
+#show outline.entry: it => {
+  let sz = if it.level == 1 { 13pt } else { 12pt }
+  let wt = if it.level <= 2 { "bold" } else { "regular" }
+  let ind = if it.level == 1 { 0pt } else if it.level == 2 { 11pt } else { 22pt }
+  v(if it.level == 1 { 0.35em } else { 0.18em })
+  h(ind)
+  text(size: sz, weight: wt)[#link(it.element.location())[#it.element.body]]
+  h(0.3em)
+  box(width: 1fr, repeat[.])
+  h(0.3em)
+  text(size: sz, weight: wt)[#link(it.element.location())[#it.page()]]
+}
+
 // Helper definitions
 #let toc-ch(title) = {
   v(0.4em)
@@ -112,7 +139,7 @@
   This is to certify that the project report submitted along with the project#linebreak(justify: true)
   entitled *PROJECT NAME* has been carried out by *STUDENT’S FULL*#linebreak(justify: true)
   *NAME* under my guidance in partial fulfillment in the *5#super[th] Semester* of degree#linebreak(justify: true)
-  of *Diploma Engineering /Bachelor of Technology in Computer*#linebreak(justify: true)
+  of *Diploma Engineering / Bachelor of Technology in Computer*#linebreak(justify: true)
   *Engineering / Computer Science and Engineering, Gyanmanjari*#linebreak(justify: true)
   *Innovative University*, Bhavnagar during the academic year *2026-27*.
 ]
@@ -120,11 +147,11 @@
 #v(1fr)
 #grid(
   columns: (1fr, 1fr),
-  align: (left, center),
+  align: (center, center),
   [
     #text(size: 14pt, weight: "bold")[Prof. Mayank K. Champaneri]\
     #v(0.8em)
-    #h(28pt)#text(size: 14pt, weight: "bold")[Internal Guide]
+    #text(size: 14pt, weight: "bold")[Internal Guide]
   ],
   [
     #text(size: 14pt, weight: "bold")[Prof. Dhaval R. Chandarana]\
@@ -240,139 +267,17 @@
 #pagebreak()
 
 // ==========================================
-// PAGE 6: TABLE OF CONTENT (PART 1)
+// TABLE OF CONTENTS (AUTOMATIC)
 // ==========================================
 #set par(leading: 0.55em)
-#align(center)[#text(size: 16pt, weight: "bold")[Table of Contents]]
-#v(1em)
-
-#toc-item("Acknowledgement", "1", level: 1, bold: true)
-#toc-item("Abstract", "2", level: 1, bold: true)
-
-#toc-ch("Chapter-1: Introduction")
-#toc-item("1.1 Project Summary", "3", level: 2, bold: true)
-#toc-item("1.2 Project Details", "4", level: 2, bold: true)
-#toc-item("1.3 Project Specification", "6", level: 2, bold: true)
-#toc-item("1.4 Objectives of the System", "8", level: 2, bold: true)
-
-#toc-item("1.4.1 Objective 1", "8", level: 3, bold: false)
-#toc-item("1.4.2 Objective 2", "8", level: 3, bold: false)
-#toc-item("1.4.3 Objective 3", "8", level: 3, bold: false)
-#toc-item("1.5 Scope of the Project", "9", level: 2, bold: true)
-
-#toc-item("1.5.1 Target Users", "9", level: 3, bold: false)
-#toc-item("1.5.2 Core Functionalities", "10", level: 3, bold: false)
-#toc-item("1.5.3 Technical Scope", "10", level: 3, bold: false)
-#toc-item("1.5.4 Limitations", "10", level: 3, bold: false)
-#toc-item("1.5.5 Future Scope", "11", level: 3, bold: false)
-
-#toc-ch("Chapter-2: Literature Review")
-#toc-item("2.1 Evolution", "12", level: 2, bold: true)
-#toc-item("2.2 Existing Platforms", "13", level: 2, bold: true)
-#toc-item("2.3 Summary of Literature Review", "14", level: 2, bold: true)
-
-#toc-ch("Chapter-3: System Requirement Study")
-#toc-item("3.1 Study of Current System", "2", level: 2, bold: true)
-#toc-item("3.2 Problems and Weaknesses of Current System", "2", level: 2, bold: true)
-#toc-item("3.3 User Characteristics", "2", level: 2, bold: true)
+#outline(title: [Table of Contents])
 
 #pagebreak()
-
-// ==========================================
-// PAGE 7: TABLE OF CONTENT (PART 2)
-// ==========================================
-#set par(leading: 0.55em)
-#toc-item("3.4 Hardware and Software Requirements", "2", level: 2, bold: true)
-#toc-item("3.5 Constraints", "18", level: 2, bold: true)
-#toc-item("3.5.1 User Interface", "18", level: 3, bold: false)
-#toc-item("3.5.2 Communications Interface", "18", level: 3, bold: false)
-#toc-item("3.5.3 Hardware Interface", "18", level: 3, bold: false)
-#toc-item("3.5.4 Criticality of the Application", "18", level: 3, bold: false)
-#toc-item("3.5.5 Safety and Security Considerations", "18", level: 3, bold: false)
-#toc-item("3.6 Assumptions and Dependencies", "19", level: 2, bold: true)
-#toc-item("3.6.1 Assumptions", "19", level: 3, bold: false)
-#toc-item("3.6.2 Dependencies", "20", level: 3, bold: false)
-
-#toc-ch("Chapter-4: System Design")
-#toc-item("4.1 Overview of System Workflow", "21", level: 2, bold: true)
-#toc-item("4.2 Database Design and ER Diagrams", "21", level: 2, bold: true)
-#toc-item("4.2.1. Database Structure", "21", level: 3, bold: false)
-#toc-item("4.2.2. Entity-Relationship (ER) Model", "23", level: 3, bold: false)
-#toc-item("4.3 User Interface and Experience Design (UI/UX)", "24", level: 2, bold: true)
-#toc-item("4.3.1. User Interface Design Principles", "24", level: 3, bold: false)
-#toc-item("4.3.2. User Experience Enhancements", "24", level: 3, bold: false)
-#toc-item("4.4 Class Diagrams and System Components", "27", level: 2, bold: true)
-#toc-item("4.4.1. Major System Components", "27", level: 3, bold: false)
-#toc-item("4.4.2. Class Diagram Structure", "28", level: 3, bold: false)
-
-#toc-ch("Chapter-5: Implementation and Development")
-#toc-item("5.1 Technology Stack", "31", level: 2, bold: true)
-#toc-item("5.2 Frontend Implementation", "31", level: 2, bold: true)
-#toc-item("5.3 Backend Implementation", "32", level: 2, bold: true)
-#toc-item("5.4 Database Integration", "33", level: 2, bold: true)
-#toc-item("5.5 Role-Based Access Control", "33", level: 2, bold: true)
-
-#pagebreak()
-
-// ==========================================
-// PAGE 8: TABLE OF CONTENT (PART 3)
-// ==========================================
-#set par(leading: 0.55em)
-#toc-ch("Chapter-6: Testing and Deployment")
-#toc-item("6.1 Testing Strategies (Unit, Integration, User Testing)", "34", level: 2, bold: true)
-#toc-item("6.1.1. Unit Testing", "34", level: 3, bold: false)
-#toc-item("6.1.2. Integration Testing", "34", level: 3, bold: false)
-#toc-item("6.1.3. User Acceptance Testing (UAT)", "34", level: 3, bold: false)
-#toc-item("6.2 Performance Testing & Load Testing", "35", level: 2, bold: true)
-#toc-item("6.2.1 Load Testing", "35", level: 3, bold: false)
-#toc-item("6.2.2 Stress Testing", "35", level: 3, bold: false)
-#toc-item("6.2.3 Database Performance Testing", "35", level: 3, bold: false)
-#toc-item("6.3 Deployment Strategy (CI/CD, Server Setup, AWS S3, etc.)", "36", level: 2, bold: true)
-#toc-item("6.3.1 CI/CD Pipeline Setup", "36", level: 3, bold: false)
-#toc-item("6.3.2 Server Configuration", "36", level: 3, bold: false)
-#toc-item("6.3.3 AWS S3 Integration", "36", level: 3, bold: false)
-#toc-item("6.3.4 Deployment Process", "36", level: 3, bold: false)
-#toc-item("6.4 Challenges Faced During Deployment", "37", level: 2, bold: true)
-#toc-item("6.4.1 Server Downtime During Migration", "37", level: 3, bold: false)
-#toc-item("6.4.2 SSL Configuration for Secure Access", "37", level: 3, bold: false)
-#toc-item("6.4.3 Load Balancing Configuration", "37", level: 3, bold: false)
-
-#toc-ch("Chapter-7: Results and Discussions")
-#toc-item("7.1 Key Achievements", "38", level: 2, bold: true)
-#toc-item("7.2 User Adoption and Feedback", "39", level: 2, bold: true)
-#toc-item("7.2.1. Student Experience", "39", level: 3, bold: false)
-#toc-item("7.2.2. Faculty and Administrative Feedback", "39", level: 3, bold: false)
-#toc-item("7.2.3. Key Areas for Improvement", "39", level: 3, bold: false)
-#toc-item("7.3 User Feedback and Insights", "40", level: 2, bold: true)
-#toc-item("7.4 Performance Analysis", "40", level: 2, bold: true)
-#toc-item("7.5 Limitations", "41", level: 2, bold: true)
-
-#pagebreak()
-
-// ==========================================
-// PAGE 9: TABLE OF CONTENT (PART 4)
-// ==========================================
-#set par(leading: 0.55em)
-#toc-ch("Chapter-8: Conclusion and Future Scope")
-#toc-item("8.1 Conclusion", "42", level: 2, bold: true)
-#toc-item("8.2 Future Scope", "43", level: 2, bold: true)
-
-#v(1.2em)
-#toc-item("Final Thoughts", "46", level: 1, bold: true)
-
-#v(0.8em)
-#toc-item("References", "47", level: 1, bold: true)
-
-#v(0.8em)
-#toc-item("Appendix", "48", level: 1, bold: true)
-
-#pagebreak()
-
 // ==========================================
 // PAGE 10: TABLE OF FIGURE
 // ==========================================
 #set par(leading: 0.55em)
-#align(center)[#text(size: 16pt, weight: "bold")[Table of Figures]]
+#align(center)[#heading(level: 1, outlined: false)[Table of Figures]]
 #v(1.5em)
 
 #toc-item("Fig 1.1", "22", level: 1, bold: true)
@@ -385,8 +290,9 @@
 
 // ==========================================
 // PAGE 11: ACKNOWLEDGEMENT (Page 1)
+#counter(page).update(1)
 // ==========================================
-#align(center)[#text(size: 16pt, weight: "bold")[Acknowledgement]]
+#align(center)[#heading(level: 1, numbering: none)[Acknowledgement]]
 #v(1.8em)
 
 #set par(leading: 0.9em, justify: true)
@@ -434,7 +340,7 @@
 // ==========================================
 // PAGE 12: ABSTRACT (Page 2)
 // ==========================================
-#align(center)[#text(size: 16pt, weight: "bold")[Abstract]]
+#align(center)[#heading(level: 1, numbering: none)[Abstract]]
 
 #pagebreak()
 
@@ -442,10 +348,10 @@
 // PAGE 13: CHAPTER 1: INTRODUCTION (Page 3)
 // ==========================================
 #align(left)[
-  #text(size: 16pt, weight: "bold")[Chapter 1: Introduction]
+  #heading(level: 1, numbering: none)[Chapter 1: Introduction]
 
   #v(1.2em)
-  #text(size: 14pt, weight: "bold")[1.1 Project Summary]
+  #heading(level: 2, numbering: none)[1.1 Project Summary]
 ]
 
 #pagebreak()
@@ -454,7 +360,7 @@
 // PAGE 14: 1.2 PROJECT DETAILS (Page 4)
 // ==========================================
 #align(left)[
-  #text(size: 14pt, weight: "bold")[1.2 Project Details]
+  #heading(level: 2, numbering: none)[1.2 Project Details]
 
   #v(1.8em)
   #text(size: 12pt, weight: "bold")[Objective:]
@@ -487,7 +393,7 @@
   #text(size: 12pt, weight: "bold")[Long-Term Vision:]
 
   #v(2.8em)
-  #text(size: 14pt, weight: "bold")[1.3 Project Specification]
+  #heading(level: 2, numbering: none)[1.3 Project Specification]
 
   #v(0.8em)
   #text(
@@ -498,16 +404,16 @@
   #text(size: 12pt)[The following specifications describe the key features and technical scope of the system:]
 
   #v(0.8em)
-  #text(size: 12pt, weight: "bold")[1.3.1 General Description]
+  #heading(level: 3, numbering: none)[1.3.1 General Description]
 
   #v(0.8em)
-  #text(size: 12pt, weight: "bold")[1.3.2 Functional Specifications]
+  #heading(level: 3, numbering: none)[1.3.2 Functional Specifications]
 
   #v(0.8em)
-  #text(size: 12pt, weight: "bold")[1.3.3 Administrative and Vendor Capabilities]
+  #heading(level: 3, numbering: none)[1.3.3 Administrative and Vendor Capabilities]
 
   #v(0.8em)
-  #text(size: 12pt, weight: "bold")[1.3.4 Limitations and Future Scope]
+  #heading(level: 3, numbering: none)[1.3.4 Limitations and Future Scope]
 ]
 
 #pagebreak()
@@ -516,7 +422,7 @@
 // PAGE 16: 1.4 OBJECTIVES & 1.5 SCOPE (Page 6)
 // ==========================================
 #align(left)[
-  #text(size: 14pt, weight: "bold")[1.4 Objectives of the System]
+  #heading(level: 2, numbering: none)[1.4 Objectives of the System]
 
   #v(1.2em)
   #text(
@@ -527,28 +433,28 @@
   #text(size: 12pt)[The system aims to fulfill the following objectives:]
 
   #v(1em)
-  #text(size: 12pt, weight: "bold")[1.4.1 Objective 1]
+  #heading(level: 3, numbering: none)[1.4.1 Objective 1]
 
   #v(1.2em)
-  #text(size: 12pt, weight: "bold")[1.4.2 Objective 2]
+  #heading(level: 3, numbering: none)[1.4.2 Objective 2]
 
   #v(1.2em)
-  #text(size: 12pt, weight: "bold")[1.4.3 Objective 3]
+  #heading(level: 3, numbering: none)[1.4.3 Objective 3]
 
   #v(1.2em)
-  #text(size: 12pt, weight: "bold")[1.4.4 Objective 4]
+  #heading(level: 3, numbering: none)[1.4.4 Objective 4]
 
   #v(1.2em)
-  #text(size: 12pt, weight: "bold")[1.4.5 Objective 5]
+  #heading(level: 3, numbering: none)[1.4.5 Objective 5]
 
   #v(1.2em)
-  #text(size: 12pt, weight: "bold")[1.4.6 Objective 6]
+  #heading(level: 3, numbering: none)[1.4.6 Objective 6]
 
   #v(1.2em)
-  #text(size: 12pt, weight: "bold")[1.4.7 Objective 7]
+  #heading(level: 3, numbering: none)[1.4.7 Objective 7]
 
   #v(2.2em)
-  #text(size: 14pt, weight: "bold")[1.5 Scope of the Project]
+  #heading(level: 2, numbering: none)[1.5 Scope of the Project]
 
   #v(1em)
   #text(
@@ -559,7 +465,7 @@
   #text(size: 12pt)[The scope of this project includes the following aspects:]
 
   #v(1em)
-  #text(size: 12pt, weight: "bold")[1.5.1 Target Users]
+  #heading(level: 3, numbering: none)[1.5.1 Target Users]
 ]
 
 #pagebreak()
@@ -568,28 +474,28 @@
 // PAGE 17: CORE FUNCTIONALITIES & CHAPTER 2 (Page 7)
 // ==========================================
 #align(left)[
-  #text(size: 12pt, weight: "bold")[1.5.2 Core Functionalities]
+  #heading(level: 3, numbering: none)[1.5.2 Core Functionalities]
 
   #v(1.5em)
-  #text(size: 12pt, weight: "bold")[1.5.3 Technical Scope]
+  #heading(level: 3, numbering: none)[1.5.3 Technical Scope]
 
   #v(1.5em)
-  #text(size: 12pt, weight: "bold")[1.5.4 Limitations]
+  #heading(level: 3, numbering: none)[1.5.4 Limitations]
 
   #v(1.5em)
-  #text(size: 12pt, weight: "bold")[1.5.5 Future Scope]
+  #heading(level: 3, numbering: none)[1.5.5 Future Scope]
 
   #v(2.8em)
-  #text(size: 16pt, weight: "bold")[Chapter 2: Literature Review]
+  #heading(level: 1, numbering: none)[Chapter 2: Literature Review]
 
   #v(1.5em)
-  #text(size: 14pt, weight: "bold")[2.1 Evolution]
+  #heading(level: 2, numbering: none)[2.1 Evolution]
 
   #v(1.5em)
-  #text(size: 14pt, weight: "bold")[2.2 Existing Platforms]
+  #heading(level: 2, numbering: none)[2.2 Existing Platforms]
 
   #v(1.5em)
-  #text(size: 14pt, weight: "bold")[2.3 Summary of Literature Review]
+  #heading(level: 2, numbering: none)[2.3 Summary of Literature Review]
 ]
 
 #pagebreak()
@@ -598,19 +504,19 @@
 // PAGE 18: CHAPTER 3: SYSTEM REQUIREMENT STUDY (Page 8)
 // ==========================================
 #align(left)[
-  #text(size: 16pt, weight: "bold")[Chapter 3: System Requirement Study]
+  #heading(level: 1, numbering: none)[Chapter 3: System Requirement Study]
 
   #v(1.5em)
-  #text(size: 14pt, weight: "bold")[3.1 Study of Current System]
+  #heading(level: 2, numbering: none)[3.1 Study of Current System]
 
   #v(2em)
-  #text(size: 14pt, weight: "bold")[3.2 Problems and Weaknesses of Current System]
+  #heading(level: 2, numbering: none)[3.2 Problems and Weaknesses of Current System]
 
   #v(2em)
-  #text(size: 14pt, weight: "bold")[3.3 User Characteristics]
+  #heading(level: 2, numbering: none)[3.3 User Characteristics]
 
   #v(2em)
-  #text(size: 14pt, weight: "bold")[3.4 Hardware and Software Requirements]
+  #heading(level: 2, numbering: none)[3.4 Hardware and Software Requirements]
 
   #v(1.2em)
   #text(size: 12pt, weight: "bold")[Hardware Requirements]
@@ -619,22 +525,22 @@
   #text(size: 12pt, weight: "bold")[Software Requirements]
 
   #v(1.2em)
-  #text(size: 14pt, weight: "bold")[3.5 Constraints]
+  #heading(level: 2, numbering: none)[3.5 Constraints]
 
   #v(1.2em)
-  #text(size: 12pt, weight: "bold")[3.5.1 User Interface]
+  #heading(level: 3, numbering: none)[3.5.1 User Interface]
 
   #v(1.2em)
-  #text(size: 12pt, weight: "bold")[3.5.2 Communications Interface]
+  #heading(level: 3, numbering: none)[3.5.2 Communications Interface]
 
   #v(1.2em)
-  #text(size: 12pt, weight: "bold")[3.5.3 Hardware Interface]
+  #heading(level: 3, numbering: none)[3.5.3 Hardware Interface]
 
   #v(1.2em)
-  #text(size: 12pt, weight: "bold")[3.5.4 Criticality of the Application]
+  #heading(level: 3, numbering: none)[3.5.4 Criticality of the Application]
 
   #v(1.2em)
-  #text(size: 12pt, weight: "bold")[3.5.5 Safety and Security Considerations]
+  #heading(level: 3, numbering: none)[3.5.5 Safety and Security Considerations]
 ]
 
 #pagebreak()
@@ -643,46 +549,46 @@
 // PAGE 19: 3.6 ASSUMPTIONS & CHAPTER 4 (Page 9)
 // ==========================================
 #align(left)[
-  #text(size: 14pt, weight: "bold")[3.6 Assumptions and Dependencies]
+  #heading(level: 2, numbering: none)[3.6 Assumptions and Dependencies]
 
   #v(1.5em)
-  #text(size: 12pt, weight: "bold")[3.6.1 Assumptions]
+  #heading(level: 3, numbering: none)[3.6.1 Assumptions]
 
   #v(2em)
-  #text(size: 12pt, weight: "bold")[3.6.2 Dependencies]
+  #heading(level: 3, numbering: none)[3.6.2 Dependencies]
 
   #v(2.5em)
-  #text(size: 16pt, weight: "bold")[Chapter 4: System Design]
+  #heading(level: 1, numbering: none)[Chapter 4: System Design]
 
   #v(1.5em)
-  #text(size: 14pt, weight: "bold")[4.1 Overview of System Workflow]
+  #heading(level: 2, numbering: none)[4.1 Overview of System Workflow]
 
   #v(1.5em)
-  #text(size: 14pt, weight: "bold")[4.2 Database Design and ER Diagrams]
+  #heading(level: 2, numbering: none)[4.2 Database Design and ER Diagrams]
 
   #v(1.2em)
-  #text(size: 12pt, weight: "bold")[4.2.1. Database Structure]
+  #heading(level: 3, numbering: none)[4.2.1. Database Structure]
 
   #v(2.5em)
-  #text(size: 12pt, weight: "bold")[4.2.2. Entity-Relationship (ER) Model]
+  #heading(level: 3, numbering: none)[4.2.2. Entity-Relationship (ER) Model]
 
   #v(2.8em)
-  #text(size: 14pt, weight: "bold")[4.3 User Interface and Experience Design (UI/UX)]
+  #heading(level: 2, numbering: none)[4.3 User Interface and Experience Design (UI/UX)]
 
   #v(1.5em)
-  #text(size: 12pt, weight: "bold")[4.3.1. User Interface Design Principles]
+  #heading(level: 3, numbering: none)[4.3.1. User Interface Design Principles]
 
   #v(1.5em)
-  #text(size: 12pt, weight: "bold")[4.3.2. User Experience Enhancements]
+  #heading(level: 3, numbering: none)[4.3.2. User Experience Enhancements]
 
   #v(2.8em)
-  #text(size: 14pt, weight: "bold")[4.4 Class Diagrams and System Components]
+  #heading(level: 2, numbering: none)[4.4 Class Diagrams and System Components]
 
   #v(1.5em)
-  #text(size: 12pt, weight: "bold")[4.4.1. Major System Components]
+  #heading(level: 3, numbering: none)[4.4.1. Major System Components]
 
   #v(1.5em)
-  #text(size: 12pt, weight: "bold")[4.4.2. Class Diagram Structure]
+  #heading(level: 3, numbering: none)[4.4.2. Class Diagram Structure]
 ]
 
 #pagebreak()
@@ -691,49 +597,49 @@
 // PAGE 20: CHAPTER 5 & CHAPTER 6 (Page 10)
 // ==========================================
 #align(left)[
-  #text(size: 16pt, weight: "bold")[Chapter 5: Implementation and Development]
+  #heading(level: 1, numbering: none)[Chapter 5: Implementation and Development]
 
   #v(1.5em)
-  #text(size: 14pt, weight: "bold")[5.1 Technology Stack]
+  #heading(level: 2, numbering: none)[5.1 Technology Stack]
 
   #v(1.5em)
-  #text(size: 14pt, weight: "bold")[5.2 Frontend Implementation]
+  #heading(level: 2, numbering: none)[5.2 Frontend Implementation]
 
   #v(1.5em)
-  #text(size: 14pt, weight: "bold")[5.3 Backend Implementation]
+  #heading(level: 2, numbering: none)[5.3 Backend Implementation]
 
   #v(1.5em)
-  #text(size: 14pt, weight: "bold")[5.4 Database Integration]
+  #heading(level: 2, numbering: none)[5.4 Database Integration]
 
   #v(1.5em)
-  #text(size: 14pt, weight: "bold")[5.5 Role-Based Access Control]
+  #heading(level: 2, numbering: none)[5.5 Role-Based Access Control]
 
   #v(2.5em)
-  #text(size: 16pt, weight: "bold")[Chapter 6: Testing and Deployment]
+  #heading(level: 1, numbering: none)[Chapter 6: Testing and Deployment]
 
   #v(1.5em)
-  #text(size: 14pt, weight: "bold")[6.1 Testing Strategies (Unit, Integration, User Testing)]
+  #heading(level: 2, numbering: none)[6.1 Testing Strategies (Unit, Integration, User Testing)]
 
   #v(1.5em)
-  #text(size: 12pt, weight: "bold")[6.1.1. Unit Testing]
+  #heading(level: 3, numbering: none)[6.1.1. Unit Testing]
 
   #v(1.2em)
-  #text(size: 12pt, weight: "bold")[6.1.2. Integration Testing]
+  #heading(level: 3, numbering: none)[6.1.2. Integration Testing]
 
   #v(1.2em)
-  #text(size: 12pt, weight: "bold")[6.1.3. User Acceptance Testing (UAT)]
+  #heading(level: 3, numbering: none)[6.1.3. User Acceptance Testing (UAT)]
 
   #v(2.5em)
-  #text(size: 14pt, weight: "bold")[6.2 Performance Testing & Load Testing]
+  #heading(level: 2, numbering: none)[6.2 Performance Testing & Load Testing]
 
   #v(1.5em)
-  #text(size: 12pt, weight: "bold")[6.2.1 Load Testing]
+  #heading(level: 3, numbering: none)[6.2.1 Load Testing]
 
   #v(1.2em)
-  #text(size: 12pt, weight: "bold")[6.2.2 Stress Testing]
+  #heading(level: 3, numbering: none)[6.2.2 Stress Testing]
 
   #v(1.2em)
-  #text(size: 12pt, weight: "bold")[6.2.3 Database Performance Testing]
+  #heading(level: 3, numbering: none)[6.2.3 Database Performance Testing]
 ]
 
 #pagebreak()
@@ -742,49 +648,49 @@
 // PAGE 21: 6.3 DEPLOYMENT & CHAPTER 7 (Page 11)
 // ==========================================
 #align(left)[
-  #text(size: 14pt, weight: "bold")[6.3 Deployment Strategy (CI/CD, Server Setup, AWS S3, etc.)]
+  #heading(level: 2, numbering: none)[6.3 Deployment Strategy (CI/CD, Server Setup, AWS S3, etc.)]
 
   #v(1.2em)
-  #text(size: 12pt, weight: "bold")[6.3.1 CI/CD Pipeline Setup]
+  #heading(level: 3, numbering: none)[6.3.1 CI/CD Pipeline Setup]
 
   #v(1.2em)
-  #text(size: 12pt, weight: "bold")[6.3.2 Server Configuration]
+  #heading(level: 3, numbering: none)[6.3.2 Server Configuration]
 
   #v(1.2em)
-  #text(size: 12pt, weight: "bold")[6.3.3 AWS S3 Integration]
+  #heading(level: 3, numbering: none)[6.3.3 AWS S3 Integration]
 
   #v(1.2em)
-  #text(size: 12pt, weight: "bold")[6.3.4 Deployment Process]
+  #heading(level: 3, numbering: none)[6.3.4 Deployment Process]
 
   #v(2.5em)
-  #text(size: 14pt, weight: "bold")[6.4 Challenges Faced During Deployment]
+  #heading(level: 2, numbering: none)[6.4 Challenges Faced During Deployment]
 
   #v(1.2em)
-  #text(size: 12pt, weight: "bold")[6.4.1 Server Downtime During Migration]
+  #heading(level: 3, numbering: none)[6.4.1 Server Downtime During Migration]
 
   #v(1.2em)
-  #text(size: 12pt, weight: "bold")[6.4.2 SSL Configuration for Secure Access]
+  #heading(level: 3, numbering: none)[6.4.2 SSL Configuration for Secure Access]
 
   #v(1.2em)
-  #text(size: 12pt, weight: "bold")[6.4.3 Load Balancing Configuration]
+  #heading(level: 3, numbering: none)[6.4.3 Load Balancing Configuration]
 
   #v(2.5em)
-  #text(size: 16pt, weight: "bold")[Chapter 7: Results and Discussions]
+  #heading(level: 1, numbering: none)[Chapter 7: Results and Discussions]
 
   #v(2em)
-  #text(size: 14pt, weight: "bold")[7.1 Key Achievements]
+  #heading(level: 2, numbering: none)[7.1 Key Achievements]
 
   #v(1.5em)
-  #text(size: 14pt, weight: "bold")[7.2 User Adoption and Feedback]
+  #heading(level: 2, numbering: none)[7.2 User Adoption and Feedback]
 
   #v(1.2em)
-  #text(size: 12pt, weight: "bold")[7.2.1. Student Experience]
+  #heading(level: 3, numbering: none)[7.2.1. Student Experience]
 
   #v(1.2em)
-  #text(size: 12pt, weight: "bold")[7.2.2. Faculty and Administrative Feedback]
+  #heading(level: 3, numbering: none)[7.2.2. Faculty and Administrative Feedback]
 
   #v(1.2em)
-  #text(size: 12pt, weight: "bold")[7.2.3. Key Areas for Improvement]
+  #heading(level: 3, numbering: none)[7.2.3. Key Areas for Improvement]
 ]
 
 #pagebreak()
@@ -793,22 +699,22 @@
 // PAGE 22: 7.3 USER FEEDBACK & CHAPTER 8 (Page 12)
 // ==========================================
 #align(left)[
-  #text(size: 14pt, weight: "bold")[7.3 User Feedback and Insights]
+  #heading(level: 2, numbering: none)[7.3 User Feedback and Insights]
 
   #v(1.5em)
-  #text(size: 14pt, weight: "bold")[7.4 Performance Analysis]
+  #heading(level: 2, numbering: none)[7.4 Performance Analysis]
 
   #v(1.5em)
-  #text(size: 14pt, weight: "bold")[7.5 Limitations]
+  #heading(level: 2, numbering: none)[7.5 Limitations]
 
   #v(2.5em)
-  #text(size: 16pt, weight: "bold")[Chapter 8: Conclusion and Future Scope]
+  #heading(level: 1, numbering: none)[Chapter 8: Conclusion and Future Scope]
 
   #v(1.5em)
-  #text(size: 14pt, weight: "bold")[8.1 Conclusion]
+  #heading(level: 2, numbering: none)[8.1 Conclusion]
 
   #v(1.5em)
-  #text(size: 14pt, weight: "bold")[8.2 Future Scope]
+  #heading(level: 2, numbering: none)[8.2 Future Scope]
 ]
 
 #pagebreak()
@@ -847,14 +753,14 @@
 // ==========================================
 // PAGE 24: FINAL THOUGHTS (Page 14)
 // ==========================================
-#align(center)[#text(size: 16pt, weight: "bold")[Final Thoughts]]
+#align(center)[#heading(level: 1, numbering: none)[Final Thoughts]]
 
 #pagebreak()
 
 // ==========================================
 // PAGE 25: REFERENCES (Page 15)
 // ==========================================
-#align(center)[#text(size: 16pt, weight: "bold")[References]]
+#align(center)[#heading(level: 1, numbering: none)[References]]
 #v(2.5em)
 
 #set par(justify: true, leading: 0.8em)
@@ -879,7 +785,7 @@
 // ==========================================
 // PAGE 26: APPENDIX (Page 16)
 // ==========================================
-#align(center)[#text(size: 16pt, weight: "bold")[Appendix]]
+#align(center)[#heading(level: 1, numbering: none)[Appendix]]
 #v(3em)
 
 #align(left)[
