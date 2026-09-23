@@ -1,5 +1,8 @@
 # Assignments and Lab Manuals
 
+[![Code License: MIT](https://img.shields.io/badge/Code-MIT-yellow.svg)](LICENSE-MIT)
+[![Content License: CC BY-NC-SA 4.0](https://img.shields.io/badge/Content-CC_BY--NC--SA_4.0-lightgrey.svg)](LICENSE-CC)
+
 This repository contains a collection of Active Learning Assessments (ALAs) and comprehensive lab manuals typeset using [Typst](https://typst.app/), the modern and fast markup-based typesetting system.
 
 The documents in this repository represent coursework, lab experiments, and evaluations organized by academic semester.
@@ -103,3 +106,16 @@ To enter the shell in `sem-4/lab-manual/cv/`, run:
 cd sem-4/lab-manual/cv
 devenv shell
 ```
+
+## License
+
+This repository is dual-licensed based on content type:
+
+- **Code, Scripts & Typst Templates**: Licensed under the [MIT License](LICENSE-MIT). You are free to adapt the Typst layouts, macros, and helper scripts in your own projects.
+- **Academic Content, Manuals & Media**: Licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0)](LICENSE-CC).
+
+For full details, please refer to the master [LICENSE](LICENSE) file.
+
+## Academic Integrity
+
+The documents provided in this repository reflect personal coursework, laboratory submissions, and study materials. They are made publicly available for self-study, reference, and typesetting inspiration. Please adhere to your institution's academic integrity policies and honor codes regarding coursework plagiarism.

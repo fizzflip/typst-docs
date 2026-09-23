@@ -1,0 +1,43 @@
+# Licensing Terms
+
+This repository contains both software code/templates and academic coursework/manuals. Accordingly, materials in this repository are dual-licensed based on content type:
+
+## 1. Code, Scripts, and Typst Templates (MIT License)
+
+All software code, executable scripts, developer environment configurations, and reusable Typst layout and template markup are licensed under the **MIT License**.
+
+Copyright (c) 2024-2026 Sandeep Prasad
+
+This applies to:
+- Typst template definitions, formatting functions, layout macros, and document scaffolding (`.typ` layout and styling code)
+- Python scripts (`*.py`)
+- Shell scripts (`*.sh`)
+- Build and environment configurations (`*.nix`, `*.toml`, `*.yaml`, `*.json`)
+
+A full copy of the MIT License is available in [LICENSE-MIT](LICENSE-MIT).
+
+---
+
+## 2. Coursework, Documentation, and Media (Creative Commons CC BY-NC-SA 4.0)
+
+All original written prose, educational documentation, lab manuals, Active Learning Assessments (ALAs), revision guides, diagrams, and media are licensed under the **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0)**.
+
+Copyright (c) 2024-2026 Sandeep Prasad
+
+This applies to:
+- Academic lab manuals, experiment writeups, and project documentation
+- Active Learning Assessments (ALAs), presentations, and project reports
+- Revision sheets, summaries, and complexity cheatsheets
+- Original diagrams, charts, schematics, and screenshots (`.svg`, `.png`, `.jpg`, `.jpeg`)
+
+A full copy of the license is available in [LICENSE-CC](LICENSE-CC) or online at [creativecommons.org/licenses/by-nc-sa/4.0/](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+
+---
+
+## 3. Academic Integrity & Coursework Notice
+
+The materials in this repository represent university coursework, laboratory experiments, and study notes. They are shared openly for educational, self-study, and typesetting reference purposes only.
+
+- If you are a student enrolled in similar courses, you are encouraged to study the concepts and typesetting approaches.
+- Do not submit any part of this work as your own. Plagiarism violates academic honor codes and university conduct policies.
+- Problem statements, syllabus prompts, or curriculum guidelines belong to their respective academic institutions and professors; the licenses herein apply to original solutions, explanatory text, code, diagrams, and typesetting implementations.
